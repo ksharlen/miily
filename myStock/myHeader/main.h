@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 16:58:22 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/03/11 12:56:52 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/03/12 08:44:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void	ft_putstr(char *str);
 int		ft_strlen(char *str);
 char	*ft_strlowcase(char *str);
 char	*ft_strupcase(char *str);
+void	ft_putnbr(int n);
 
 #endif
