@@ -13,7 +13,7 @@
 #include "ft_mem_header.h"
 //#include "temp_header.h"
 
-void	ft_print_numeric_array(const void *print_array, const size_t size_print_array)
+void	ft_print_numeric_array(const int *print_array, const size_t size_print_array)
 {
 	size_t i;
 
@@ -25,7 +25,7 @@ void	ft_print_numeric_array(const void *print_array, const size_t size_print_arr
 	i = 0;
 	while (i < size_print_array)
 	{
-		printf("print_numeric_array[%zu] = %c\n", i, *((unsigned char *)print_array + i));
+		printf("print_numeric_array[%zu] = %d\n", i, print_array[i]);
 		i++;
 	}
 }
