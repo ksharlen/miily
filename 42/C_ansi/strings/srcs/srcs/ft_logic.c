@@ -20,3 +20,4 @@ char	*ft_list_to_str(t_file *begin_list)
 	main_str[i] = '\0';
 	return (main_str);
 }
+
