@@ -11,7 +11,8 @@
 # **************************************************************************** #
 
 NAME := source
-FLAGS := -Wextra -Werror -Wall
+OBJ := *.o
+#FLAGS := -Wextra -Werror -Wall
 INCLUDES := ./includes
 SRCS := ./srcs/
 MEM := $(SRCS)mem_fun/
@@ -22,10 +23,13 @@ FUNCTION := $(MEM)ft_memset.c $(OTH)ft_test_functions_one.c $(MEM)ft_bzero.c $(M
 MAIN := ./main/
 
 all:
-	@gcc $(FLAGS) -I $(INCLUDES) $(MAIN)main_strclr.c $(FUNCTION) -o $(NAME)
+	gcc -c -I $(INCLUDES) $(FUNCTION)
+	ar rc libft.a $(OBJ)
+	ranlib libft.a
+	#@gcc -I $(INCLUDES) $(MAIN)main_strclr.c $(FUNCTION) -o $(NAME)
 
 clean:
-
+	rm *.o
 
 fclean:
 

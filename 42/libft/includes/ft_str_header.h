@@ -20,6 +20,5 @@ int		ft_atoi(const char *nptr);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
-void	ft_striter(char *s, void (*f)(char *))
 
 #endif
