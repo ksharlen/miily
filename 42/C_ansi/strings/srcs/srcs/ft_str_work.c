@@ -21,6 +21,7 @@ void    ft_main_space(char *str)
     size_t     	i;
     int     	j;
     int     	k;
+//	char		*p_space;
     size_t  	space;
 
     ft_skip_space(&str);
@@ -29,9 +30,12 @@ void    ft_main_space(char *str)
     {
         if ((str[i] == ' ') && (str[i + 1]) == ' ')
         {
+//			p_space = &str[i];
+			printf("its ok\n");
             k = i;
-            space = ft_space_count(str);
+            space = ft_space_count(&str[i]) - 1;
             j = space + i;
+			printf("space = %lu\n", space);
             while (str[j])
             {
                 str[k++] = str[j++];
@@ -40,4 +44,5 @@ void    ft_main_space(char *str)
     	}
 		i++;
     }
+	printf("str = %s\n", str);
 }
