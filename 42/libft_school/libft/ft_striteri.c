@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 15:44:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/16 07:30:41 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/16 07:01:33 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/16 08:44:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	c = (unsigned char)c;
-	return ((c == ' ') || (c > 7 && c < 14));
+	unsigned int i;
+
+	i = 0;
+	if (s)
+		while (*s)
+		{
+			(*f)(i, s);
+			i++;
+			s++;
+		}
 }

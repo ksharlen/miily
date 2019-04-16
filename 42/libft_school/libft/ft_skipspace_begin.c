@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_skipspace_begin.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 15:44:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/16 07:30:41 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/16 10:44:39 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/16 10:45:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+char	*ft_skipspace_begin(char *str)
 {
-	c = (unsigned char)c;
-	return ((c == ' ') || (c > 7 && c < 14));
+	while (*str == ' ')
+		str++;
+	return (str);
 }
