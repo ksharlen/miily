@@ -1,31 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 14:04:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/17 09:02:27 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/18 14:35:07 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/18 17:31:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+static size_t	ft_size(int n)
 {
-	size_t	i;
+	size_t size;
 
+	if (!n)
+		return (0);
+	size = 0;
+	while (n)
+	{
+		size++;
+		n /= 10;
+	}
+	return (size);
+}
+
+void	ft_putnbr(int n)
+{
+	int sign;
+	int array_number[10];
+	int i;
+	size_t size;
+
+	if (!n)
+		ft_putchar('0');
+	size = ft_size(n);
 	i = 0;
-	while (i < n && src[i] != '\0')
+	sign = 1;
+	if (n < 0)
 	{
-		dst[i] = src[i];
-		i++;
+		sign = -1;
+		ft_putchar('-');
 	}
-	while (i < n)
+	while (n)
 	{
-		dst[i] = '\0';
-		i++;
+		array_number[i++] = n % 10 * (sign);
+		n /= 10;
 	}
-	return (dst);
+	while (size)
+		ft_putchar(array_number[size --- 1] + '0');
 }
