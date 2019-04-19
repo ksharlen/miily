@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/18 17:27:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/04/19 11:56:57 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <stdio.h>
 
 # define MAXLONG 9223372036854775807
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_strlen(const char *str);
 char	*ft_strdup(const char *s);
@@ -74,5 +81,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void	ft_lstadd_end(t_list **begin_list, t_list *elem);
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 #endif
