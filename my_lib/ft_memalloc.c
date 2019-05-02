@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 13:58:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:37:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/15 12:24:21 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/18 10:28:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memalloc(size_t size)
 {
-	const unsigned char *num1;
-	const unsigned char *num2;
+	void *p_alloc;
 
-	num1 = s1;
-	num2 = s2;
-	while (n--)
+	p_alloc = NULL;
+	if (size)
 	{
-		if (*num1 != *num2)
-			return (*num1 - *num2);
-		num1++;
-		num2++;
+		p_alloc = malloc(size);
+		if (!p_alloc)
+			return (NULL);
 	}
-	return (0);
+	ft_bzero(p_alloc, size);
+	return (p_alloc);
 }

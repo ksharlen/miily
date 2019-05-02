@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 13:58:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:37:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/16 09:58:13 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/23 15:56:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	const unsigned char *num1;
-	const unsigned char *num2;
+	char	*p_dyn;
+	size_t	i;
 
-	num1 = s1;
-	num2 = s2;
-	while (n--)
+	p_dyn = NULL;
+	if (s)
 	{
-		if (*num1 != *num2)
-			return (*num1 - *num2);
-		num1++;
-		num2++;
+		i = 0;
+		p_dyn = ft_strnew(len);
+		if (!p_dyn)
+			return (NULL);
+		ft_bzero(p_dyn, len);
+		while (i < len)
+		{
+			p_dyn[i] = s[start];
+			i++;
+			start++;
+		}
 	}
-	return (0);
+	return (p_dyn);
 }

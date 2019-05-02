@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 13:58:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:37:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/15 15:35:04 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/30 09:19:01 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int							ft_atoi(const char *s)
 {
-	const unsigned char *num1;
-	const unsigned char *num2;
+	unsigned long long int	res;
+	int						sign;
 
-	num1 = s1;
-	num2 = s2;
-	while (n--)
-	{
-		if (*num1 != *num2)
-			return (*num1 - *num2);
-		num1++;
-		num2++;
-	}
-	return (0);
+	res = 0;
+	sign = 1;
+	while (ft_isspace(*s))
+		s++;
+	if (*s == '-' || *s == '+')
+		if (*(s++) == '-')
+			sign = -1;
+	while (ft_isdigit(*s) && res <= MAXLONG / 10)
+		res = res * 10 + (*(s++) - '0');
+	if (sign == -1 && (res > MAXLONG || ft_isdigit(*s)))
+		res = 0;
+	else if (res > MAXLONG || ft_isdigit(*s))
+		res = -1;
+	return (res * sign);
 }

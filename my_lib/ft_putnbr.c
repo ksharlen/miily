@@ -1,47 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 11:25:43 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:30:35 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/18 14:35:07 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/23 11:33:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_space(int n)
+static size_t	ft_size(int n)
 {
-	if (n == ' ' || n == '\t' || n == '\n')
-		return (1);
-	else
+	size_t size;
+
+	if (!n)
 		return (0);
+	size = 0;
+	while (n)
+	{
+		size++;
+		n /= 10;
+	}
+	return (size);
 }
 
-char		*ft_strtrim(char const *s)
+void			ft_putnbr(int n)
 {
-	int		len;
-	char	*p_dyn;
+	int		sign;
+	int		array_number[10];
+	int		i;
+	size_t	size;
 
-	p_dyn = NULL;
-	if (s)
+	if (!n)
+		ft_putchar('0');
+	size = ft_size(n);
+	i = 0;
+	sign = 1;
+	if (n < 0)
 	{
-		while ((ft_space(*s)))
-			s++;
-		len = ft_strlen(s);
-		if (!len)
-		{
-			p_dyn = ft_strnew(0);
-			return (!p_dyn ? NULL : p_dyn);
-		}
-		while (ft_space(s[len-- - 1]))
-			;
-		p_dyn = ft_strnew(len + 1);
-		if (!p_dyn)
-			return (NULL);
-		ft_strncpy(p_dyn, s, len + 1);
+		sign = -1;
+		ft_putchar('-');
 	}
-	return (p_dyn);
+	while (n)
+	{
+		array_number[i++] = n % 10 * (sign);
+		n /= 10;
+	}
+	while (size)
+		ft_putchar(array_number[size-- - 1] + '0');
 }
