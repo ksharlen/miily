@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 13:58:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:37:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/18 10:18:52 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/23 11:35:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_pow(int number, int level)
 {
-	const unsigned char *num1;
-	const unsigned char *num2;
+	int sum;
 
-	num1 = s1;
-	num2 = s2;
-	while (n--)
-	{
-		if (*num1 != *num2)
-			return (*num1 - *num2);
-		num1++;
-		num2++;
-	}
-	return (0);
+	if (level == 0)
+		return (1);
+	else if (number == 1)
+		return (1);
+	else if (number == 0)
+		return (0);
+	sum = 1;
+	while (level--)
+		sum *= number;
+	return (sum);
 }

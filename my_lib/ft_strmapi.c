@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 13:58:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:37:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/16 08:49:18 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/16 10:20:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	const unsigned char *num1;
-	const unsigned char *num2;
+	char			*p_dyn;
+	size_t			len;
+	unsigned int	i;
 
-	num1 = s1;
-	num2 = s2;
-	while (n--)
+	p_dyn = NULL;
+	if (s)
 	{
-		if (*num1 != *num2)
-			return (*num1 - *num2);
-		num1++;
-		num2++;
+		i = 0;
+		len = ft_strlen(s);
+		p_dyn = (char *)malloc((len + 1) * sizeof(char));
+		if ((s == NULL) || (p_dyn == NULL))
+			return (NULL);
+		ft_bzero(p_dyn, len + 1);
+		while (s[i])
+		{
+			p_dyn[i] = (*f)(i, s[i]);
+			i++;
+		}
 	}
-	return (0);
+	return (p_dyn);
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 13:58:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:37:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/04/15 13:57:51 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/04/21 16:03:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *num1;
-	const unsigned char *num2;
+	size_t	byte_shift;
+	void	*p_str;
+	short	flag_find;
 
-	num1 = s1;
-	num2 = s2;
-	while (n--)
+	flag_find = 0;
+	byte_shift = 0;
+	while (byte_shift < n)
 	{
-		if (*num1 != *num2)
-			return (*num1 - *num2);
-		num1++;
-		num2++;
+		if (*((unsigned char *)s + byte_shift) == (unsigned char)c)
+		{
+			p_str = ((unsigned char *)s + byte_shift);
+			byte_shift = n;
+			flag_find = 1;
+		}
+		else
+			++byte_shift;
 	}
-	return (0);
+	if (!flag_find)
+		return (NULL);
+	return (p_str);
 }
