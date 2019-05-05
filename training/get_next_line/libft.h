@@ -19,6 +19,7 @@
 # include <stdio.h>
 
 # define MAXLONG 9223372036854775807
+# define FD_MAX 7198
 
 typedef struct		s_list
 {
