@@ -26,19 +26,6 @@ static void		ft_free_mem(char **p_str, size_t size_free)
 	free(p_str);
 }
 
-static int		ft_strnlen(const char *str, int n)
-{
-	size_t len;
-
-	len = 0;
-	if (str)
-	{
-		while (*str != n && *str++)
-			len++;
-	}
-	return (len);
-}
-
 static void		ft_numbers_of_lines(char const *str, int n, size_t *sum)
 {
 	*sum = 0;
