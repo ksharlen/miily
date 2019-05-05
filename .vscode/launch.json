@@ -6,16 +6,16 @@
     "configurations": [
 
         {
-            "name": "Debugg",
+            "name": "testing",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/ksharlen/school21/my_git/training/temp/a.out",
-            "args": ["test.c"],
+            "program": "${workspaceFolder}/training/temp/main",
+            "args": ["test.c", "libft.a", "libft.h"],
             "stopAtEntry": false,
-            "cwd": "/home/ksharlen/school21/my_git/training/temp",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
-            "MIMode": "lldb",
+            "MIMode": "gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -23,6 +23,6 @@
                     "ignoreFailures": true
                 }
             ]
-        }
+        },
     ]
 }
