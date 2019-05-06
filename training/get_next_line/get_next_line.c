@@ -20,24 +20,31 @@ static void    ft_print(int *rep_fd, int size)
 //}
 static void     ft_read_write(int fd, t_list **beg, ssize_t index)
 {
-    char    buff[BUFF_SIZE + 1];
+    char    buf[BUFF_SIZE + 1];
     ssize_t byte_read;
     t_list  *tmp;
+    t_list  *begin_list
 
+    begin_list = (*beg);
     //printf("index = %ld\n", index);
-    byte_read = read(fd, buff, BUFF_SIZE);
-    buff[byte_read] = '\0';
+    byte_read = read(fd, buf, BUFF_SIZE);
+    buf[byte_read] = '\0';
+    // printf("buf = %s\n", buf);
+    // printf("index = %ld\n", index);
     if (index == -1)
     {
-        ft_lstadd_end(beg, ft_lstnew(buff, byte_read + 1));
-        printf("lst 1 = %s\n", (char *)(*beg)->content);
+        tmp = ft_lstnew(buf, byte_read + 1);
+        //printf("tmp->content = %s\n", (char *)tmp->content);
+        ft_lstadd_end(&begin_list, tmp);
+        //printf("lst 1 = %s\n", (char *)(*beg)->content);
     }
     else
     {
         tmp = ft_lstelem(*beg, index, ft_lstsize(*beg));
-        ft_lstreplace(&tmp, buff, ft_strlen(buff) + 1);
+        ft_lstreplace(&tmp, buf, ft_strlen(buf) + 1);
         //printf("lst = %s\n", (char *)tmp->content);
     }
+    *beg = begin_list;
 }
 
 int    get_next_line(const int fd, char **line)
@@ -49,7 +56,7 @@ int    get_next_line(const int fd, char **line)
     ssize_t         index;
     size_t          lst_size;
 
-    printf("fd = %d\n", fd);
+    //printf("fd = %d\n", fd);
     if (fd >= 0 && fd < FD_MAX)
     {
         //printf("fd = %d\n", fd);
@@ -60,7 +67,7 @@ int    get_next_line(const int fd, char **line)
             rep_fd[rep_fd[0] + 1] = fd;
             rep_fd[0] += 1;
         }
-        printf("fd = %d\n", fd);
+        //printf("fd = %d\n", fd);
         ft_read_write(fd, &beg, index);
         /***BEGIN TEST PART***/
         // size_t i;
@@ -73,15 +80,15 @@ int    get_next_line(const int fd, char **line)
         // }
         /***END TEST PART***/
 
-        // printf("size[0] = %d\n", rep_fd[0]);
-        // tmp = beg;
-        // printf("begin_list:\n");
-        // while (tmp)
-        // {
-        //     printf("1)%s\n", (char *)beg->content);
-        //     tmp = tmp->next;
-        // }
-        // printf("end_list.\n");
+        printf("size[0] = %d\n", rep_fd[0]);
+        tmp = beg;
+        printf("begin_list:\n");
+        while (tmp)
+        {
+            printf("1)%s\n", (char *)tmp->content);
+            tmp = tmp->next;
+        }
+        printf("end_list.\n");
 
 
         // printf("lst = %s\n", (char *)beg->content);
