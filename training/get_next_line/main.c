@@ -14,9 +14,10 @@ int     main(void)
     char *p;
 
     fd = open("Makefile", O_RDONLY);
+    fd1 = open("test", O_RDONLY);
     //printf("fd = %d\n", fd);
     get_next_line(fd, &p);
-    get_next_line(fd, &p);
+    get_next_line(fd1, &p);
     //printf("res = %d\n", res);
     // beg = NULL;
     // new = ft_lstnew("hello", ft_strlen("hello") + 1);
