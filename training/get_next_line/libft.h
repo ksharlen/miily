@@ -93,5 +93,6 @@ int					ft_revers(int n);
 void				ft_lstadd_end(t_list **begin_list, t_list *elem);
 int					get_next_line(const int fd, char **line);
 void				ft_lstfreeone(void *content, size_t content_size);
+t_list				*ft_lstelem(t_list **begin_list, size_t index);
 
 #endif
