@@ -17,6 +17,7 @@ int     main(void)
     fd1 = open("test", O_RDONLY);
     //printf("fd = %d\n", fd);
     get_next_line(fd, &p);
+    get_next_line(fd, &p);
     //get_next_line(fd, &p);
     //printf("res = %d\n", res);
     // beg = NULL;
