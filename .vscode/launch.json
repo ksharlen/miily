@@ -4,6 +4,14 @@
     // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "GNL MAC",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/training/get_next_line/get_next_line",
+            "processId": "${command:pickProcess}",
+            "MIMode": "lldb"
+        },
 
         {
             "name": "GNL",
