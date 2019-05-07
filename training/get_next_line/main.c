@@ -8,16 +8,15 @@ int     main(void)
     // t_list *beg;
     // t_list *new;
     // t_list *res;
-    int res;
     int fd;
-    int fd1;
-    char *p;
+    char *line;
 
-    fd = open("Makefile", O_RDONLY);
-    fd1 = open("test", O_RDONLY);
-    //printf("fd = %d\n", fd);
-    get_next_line(fd, &p);
-    get_next_line(fd, &p);
+    line = NULL;
+    fd = open("test", O_RDONLY);
+        //printf("fd = %d\n", fd);
+    get_next_line(fd, &line);
+    printf("line = %s\n", line);
+    //get_next_line(fd, &p);
     //get_next_line(fd, &p);
     //printf("res = %d\n", res);
     // beg = NULL;
