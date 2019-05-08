@@ -6,12 +6,10 @@
 
 int     main(void)
 {
-    char str1[10] = "hello";
-    char str2[5] = "jo";
+    char str[] = "123hello\nworld";
     char *p;
 
-    p = ft_strjoin(str1, str2);
-    printf("len = %ld\n", ft_strlen(p));
-    free(p);
+    p = ft_strnjoin(str, str + 9, 3, ft_strlen(str + 9));
+    printf("p = %s\n", p);
     return (0);
 }
