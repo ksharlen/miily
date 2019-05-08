@@ -1,17 +1,24 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
+
+static void     ft_test(t_list *elem)
+{
+    char *p1 = "joke";
+
+    elem->content = ft_strdup(p1);
+}
 
 int     main(void)
 {
-    void *test;
+    t_list *beg;
     char *p = "hello world";
+    //char *p1 = "joke";
+    t_list *tmp;
 
-    test = malloc((sizeof(char) * strlen(p) + 1) + sizeof(int));
-    (*(int *)test) = 24;
-    memcpy(test + 4, p, strlen(p) + 1);
-    printf("testInt = %d\ntestStr = %s\n", (*(int *)test), (char *)test + 4);
+    beg = NULL;
+    tmp = ft_lstnew(p, ft_strlen(p) + 1);
+    ft_lstadd_end(&beg, tmp);
+    printf("beg->content = %s\n", (char *)beg->content);
+    ft_test(tmp);
+    printf("beg->content = %s\n", (char *)beg->content);
     return (0);
 }

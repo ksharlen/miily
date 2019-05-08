@@ -3,19 +3,26 @@
 #include <sys/types.h>
 #include <fcntl.h>
 
-int     main(void)
+int     main(int argc, char **argv)
 {
     // t_list *beg;
     // t_list *new;
     // t_list *res;
     int fd;
     char *line;
+    int res;
 
     line = NULL;
     fd = open("test", O_RDONLY);
-        //printf("fd = %d\n", fd);
-    get_next_line(fd, &line);
-    printf("line = %s\n", line);
+    printf("fd = %d\n", fd);
+    res = get_next_line(fd, &line);
+    printf("line = %s res = %d\n", line, res);
+    res = get_next_line(fd, &line);
+    printf("line = %s res = %d\n", line, res);
+    res = get_next_line(fd, &line);
+    printf("line = %s res = %d\n", line, res);
+    res = get_next_line(fd, &line);
+    printf("line = %s res = %d\n", line, res);
     //get_next_line(fd, &p);
     //get_next_line(fd, &p);
     //printf("res = %d\n", res);
