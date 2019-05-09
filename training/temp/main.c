@@ -1,24 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/09 15:25:02 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/05/09 16:27:08 by ksharlen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-static void     ft_test(t_list *elem)
-{
-    char *p1 = "joke";
-
-    elem->content = ft_strdup(p1);
-}
 
 int     main(void)
 {
-    t_list *beg;
-    char *p = "hello world";
-    //char *p1 = "joke";
-    t_list *tmp;
+    int a = 0;
 
-    beg = NULL;
-    tmp = ft_lstnew(p, ft_strlen(p) + 1);
-    ft_lstadd_end(&beg, tmp);
-    printf("beg->content = %s\n", (char *)beg->content);
-    ft_test(tmp);
-    printf("beg->content = %s\n", (char *)beg->content);
+    printf("%d\n", (a++));
+    printf("%d\n", a);
     return (0);
 }

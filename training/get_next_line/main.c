@@ -5,41 +5,26 @@
 
 int     main(int argc, char **argv)
 {
-    // t_list *beg;
-    // t_list *new;
-    // t_list *res;
-    int fd;
-    char *line;
-    int res;
+    int     fd;
+    int     fd1;
+    int     ret;
+    int     ret1;
+    char    *line;
+    size_t  i;
 
-    line = NULL;
-    fd = open("test", O_RDONLY);
-    printf("fd = %d\n", fd);
-    res = get_next_line(fd, &line);
-    printf("line = %s res = %d\n", line, res);
-    res = get_next_line(fd, &line);
-    printf("line = %s res = %d\n", line, res);
-    res = get_next_line(fd, &line);
-    printf("line = %s res = %d\n", line, res);
-    res = get_next_line(fd, &line);
-    printf("line = %s res = %d\n", line, res);
-    //get_next_line(fd, &p);
-    //get_next_line(fd, &p);
-    //printf("res = %d\n", res);
-    // beg = NULL;
-    // new = ft_lstnew("hello", ft_strlen("hello") + 1);
-    // ft_lstadd_end(&beg, new);
-    // new = ft_lstnew("world", ft_strlen("world") + 1);
-    // ft_lstadd_end(&beg, new);
-    // new = ft_lstnew("how", ft_strlen("how") + 1);
-    // ft_lstadd_end(&beg, new);
-    // res = ft_lstelem(beg, 20, ft_lstsize(beg));
-    // printf("size = %lu\n", ft_lstsize(beg));
-    // if (!res)
-    //     printf("%s", (char *)res);
-    // else
-    // {
-    //     printf("%s\n", (char *)res->content);
-    // }
+    fd = open("serc", O_RDONLY);
+    i = 1;
+    while (i < 73)
+    {
+        get_next_line(fd, &line);
+        printf("%lu)    line = %s\n", i, line);
+        free(line);
+        i++;
+    }
+    // fd1 = open("serc", O_RDONLY);
+    // ret = get_next_line(fd, &line);
+    // printf("line fd = %s\nret = %d\n", line, ret);
+    // ret1 = get_next_line(fd1, &line);
+    // printf("line fd1 = %s\nret1 = %d\n", line, ret1);
     return (0);
 }
