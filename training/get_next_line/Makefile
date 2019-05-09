@@ -1,6 +1,6 @@
 NAME := get_next_line
 CC := gcc
-FLAGS := -g
+FLAGS := -g#-Wall -Werror -Wextra
 LIB := -L. -lft
 SOURCE := -o $(NAME)
 INCLUDE := -I.
