@@ -12,7 +12,7 @@ static t_list       *ft_find_fd_to_lst(t_list *beg, int fd)
     return (NULL);
 }
 
-static ssize_t         ft_line_fill(char **line, t_list *elem)
+static ssize_t      ft_line_fill(char **line, t_list *elem)
 {
     void            *tmp;
     char            *back_n;
@@ -52,6 +52,8 @@ static ssize_t      ft_read_write(t_list *elem)
         byte_read = read(*(int *)elem->content, buf, BUFF_SIZE);
         if (!byte_read)
             return (0);
+        if (byte_read == -1)
+            return (-1);
         tmp = elem->content;
         elem->content = ft_strnjoin(tmp, buf, elem->content_size, byte_read);
         if (!elem->content)
@@ -59,7 +61,7 @@ static ssize_t      ft_read_write(t_list *elem)
         elem->content_size += byte_read;
         ft_memdel(&tmp);
         ft_memdel(&buf);
-        return (byte_read < 0 ? -1 : byte_read);
+        return (byte_read);
     }
     return (-1);
 }
@@ -69,6 +71,7 @@ static int          ft_build_line(t_list *elem, char **line)
     char            *back_n;
     ssize_t         byte_read;
 
+    byte_read = -2;
     while (1)
     {
         if ((back_n = ft_strchr(elem->content + 4, '\n')))
@@ -87,7 +90,7 @@ static int          ft_build_line(t_list *elem, char **line)
         else
         {
             byte_read = ft_read_write(elem);
-            if (byte_read < 0)
+            if (byte_read == -1)
                 return (-1);
         }
     }
@@ -98,7 +101,7 @@ int                 get_next_line(const int fd, char **line)
     static t_list   *beg;
     t_list          *tmp;
 
-    if (fd >= 0 && fd < FD_MAX && BUFF_SIZE > 0 && line && (&fd))
+    if (fd >= 0 && fd < FD_MAX && BUFF_SIZE > 0 && line)
     {
         if (!(tmp = ft_find_fd_to_lst(beg, fd)))
         {

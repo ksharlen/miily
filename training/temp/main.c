@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 15:25:02 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/09 22:11:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/10 16:20:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int     main(void)
 {
-    int         fd;
-    char buf[100];
-    int     byte_read;
+    ssize_t byte_read;
+    char buf[50];
 
-    byte_read = read(42, buf, 100);
-    printf("byte_read = %d\n", byte_read);
+    byte_read = read(0, buf, 50);
+    buf[byte_read] = '\0';
+    printf("byte_read = %ld\n", byte_read);
     printf("buf = %s\n", buf);
     return (0);
 }
