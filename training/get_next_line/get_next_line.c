@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/11 16:31:21 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/05/12 23:02:13 by ksharlen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 static t_list       *ft_find_fd_to_lst(t_list *beg, int fd)
@@ -21,22 +33,35 @@ static ssize_t      ft_line_fill(char **line, t_list *elem)
     (*line) = ft_strsub(elem->content + 4, 0, ft_strnlen(elem->content + 4, '\n'));
     if (!(*line))
         return (-1);
-    (*line)[ft_strnlen(elem->content + 4, '\n')] = '\0';
+    //(*line)[ft_strnlen(elem->content + 4, '\n')] = '\0';
     tmp = elem->content;
-    if ((ft_strnlen(elem->content, '\n') + 1) == elem->content_size)
+    if ((ft_strnlen(elem->content + 4, '\n') + 1 + 4) == elem->content_size) //?тут изменил
     {
-        elem->content = ft_strsub(tmp, 0, 4);
+        //elem->content = ft_strsub(tmp, 0, 4);//?переделать strsub на memsub
+		elem->content = ft_memalloc(4);
+		memcpy(elem->content, tmp, 4);
         if (!(elem->content))
+        {
+            free(tmp);
             return (-1);
+        }
+        free(tmp);
     }
     else
     {
         elem->content_size = elem->content_size - (ft_strnlen(elem->content + 4, '\n') + 1);
         elem->content = ft_strnjoin(tmp, back_n + 1, 4, elem->content_size);
+//        ft_memdel(&tmp); //? я тут менял
         if (!(elem->content))
+        {
+            free(tmp);
             return (-1);
+        }
+//        free(tmp);
     }
     ft_memdel(&tmp);
+//    free(tmp);
+    //tmp = NULL;
     return (1);
 }
 
@@ -53,12 +78,15 @@ static ssize_t      ft_read_write(t_list *elem)
         if (!byte_read || byte_read == -1)
         {
             ft_memdel(&buf);
-            return (byte_read == -1 ? -1 : 0);
+            return (byte_read ? -1 : 0);
         }
         tmp = elem->content;
         elem->content = ft_strnjoin(tmp, buf, elem->content_size, byte_read);
         if (!elem->content)
+        {
+            ft_memdel(&buf);
             return (-1);
+        }
         elem->content_size += byte_read;
         ft_memdel(&tmp);
         ft_memdel(&buf);
@@ -71,6 +99,7 @@ static int          ft_build_line(t_list *elem, char **line)
 {
     char            *back_n;
     ssize_t         byte_read;
+    void            *tmp;
 
     byte_read = -2;
     while (1)
@@ -82,9 +111,20 @@ static int          ft_build_line(t_list *elem, char **line)
             if (elem->content_size > 4)
             {
                 (*line) = ft_strsub(elem->content + 4, 0, elem->content_size - 4);
+                if (!(*line))
+                    return (-1);
                 elem->content_size = 4;
-                free(elem->content);
-                return ((*line) ? 1 : -1);
+                tmp = elem->content;
+                elem->content = ft_strsub(tmp, 0, 4);
+                if (!elem->content)
+                    return (-1);
+                ft_memdel(&tmp);
+                return (1);
+                //ft_lstdelone(&elem, ft_lstfreeone);
+                //ft_memdel(&elem->content); //?тут под вопросом
+                //free(elem->content);
+
+                //return ((*line) ? 1 : -1);
             }
             return (0);
         }
