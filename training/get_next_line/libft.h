@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/08 15:03:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/13 15:10:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 # define MAXLONG 9223372036854775807
 # define FD_MAX 7198
-# define BUFF_SIZE 20
 
 typedef struct		s_list
 {
@@ -99,5 +98,7 @@ size_t				ft_lstsize(t_list *beg);
 ssize_t				ft_arrfind(int *arr, int data, size_t size);
 t_list				*ft_lstreplace(t_list **rep, void *content, size_t content_size);
 char    			*ft_strnjoin(const char *str1, const char *str2, size_t num_str1, size_t num_str2);
+void				*ft_memsub(const void *s, unsigned int start, size_t len);
+void				*ft_memnjoin(const void *s1, const void *s2, int num1, int num2);
 
 #endif
