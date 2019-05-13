@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 16:31:31 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/13 15:38:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/14 01:46:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 
 # define BUFF_SIZE 20
 
-int     get_next_line(int fd, char **line);
+int     get_next_line(const int fd, char **line);
 
 #endif
