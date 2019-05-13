@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 16:31:21 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/13 18:40:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/14 02:33:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ static t_list       *ft_find_fd_to_lst(t_list *beg, int fd)
         while (beg)
         {
             if ((*(int *)beg->content) == fd)
-                return (beg);
+            {
+				printf("test\n");
+				return (beg);
+			}
             beg = beg->next;
         }
     return (NULL);
 }
 
-static ssize_t      ft_line_fill(char **line, t_list *elem)
+static int      ft_line_fill(char **line, t_list *elem)
 {
     void            *tmp;
     char            *back_n;
@@ -34,78 +37,60 @@ static ssize_t      ft_line_fill(char **line, t_list *elem)
     (*line) = ft_strsub(elem->content + 4, 0, ft_strnlen(elem->content + 4, '\n'));
     if (!(*line))
         return (-1);
-    //(*line)[ft_strnlen(elem->content + 4, '\n')] = '\0';
     tmp = elem->content;
-//	printf("strnlen = %ld\n", ft_strnlen(elem->content + 4, '\n') + 1 + 4);
     if ((ft_strnlen(elem->content + 4, '\n') + 1) == elem->content_size - 4)
     {
-//		printf("fuck\n");
-        elem->content = ft_memsub(tmp, 0, 4); //?тут поменял
+		printf("123hahahahhahah i am here\n");
+        elem->content = ft_memsub(tmp, 0, 4);
 		elem->content_size = 4;
         if (!(elem->content))
         {
-            free(tmp);
+//            ft_memdel(&tmp); //?тут под вопросом
             return (-1);
         }
-//        free(tmp);
     }
     else
     {
-//		printf("before: content_size = %ld\n", elem->content_size);
         elem->content_size = (elem->content_size) - (ft_strnlen(elem->content + 4, '\n') + 1);
-//		printf("after: content_size = %ld\n", elem->content_size);
-//		printf("begin: elem->content = %s\n", (char *)elem->content + 4);
         elem->content = ft_memnjoin(tmp, back_n + 1, 4, elem->content_size - 4);
-//        ft_memdel(&tmp); //? я тут менял
         if (!(elem->content))
         {
-//            free(tmp);
-//			printf("error\n");
             return (-1);
         }
-//        free(tmp);
     }
-    ft_memdel(&tmp);
-//		printf("end: elem->content = %s\n", (char *)elem->content + 4);
-
-//    free(tmp);
-    //tmp = NULL;
+    ft_memdel(&tmp);//!Крашится именно тут!!!!!!!!!!!!!
     return (1);
 }
 
-static ssize_t      ft_read_write(t_list *elem)
+static int      ft_read_write(t_list *elem)
 {
-    ssize_t         byte_read;
+    int         	byte_read;
     char            *buf;
     void            *tmp;
 
 	tmp = NULL;
-//	printf("1\n");
     buf = ft_memalloc(BUFF_SIZE);
+	printf("32\n");
     if (buf)
     {
         byte_read = read(*(int *)elem->content, buf, BUFF_SIZE);
-//		printf("byte_read = %ld\n", byte_read);
         if (!byte_read || byte_read == -1)
         {
             ft_strdel(&buf);
             return (byte_read ? -1 : 0);
         }
         tmp = elem->content;
-//		printf("content_size = %ld\n", elem->content_size);
         elem->content = ft_memnjoin(tmp, buf, elem->content_size, byte_read);
-//		ft_memdel(&tmp);
         if (!elem->content)
         {
-//			ft_memdel(&tmp);
             ft_strdel(&buf);
             return (-1);
         }
         elem->content_size += byte_read;
-//		printf("elem->content_size = %ld\n", elem->content_size);
-//		printf("br: elem->content = %s\ncontent_size = %ld\n", (char *)elem->content + 4, elem->content_size);
         ft_memdel(&tmp);
         ft_strdel(&buf);
+//		printf("read: fd = %d		content = %s\n", *(int *)elem->content, (char *)elem->content + 4);
+//		printf("byte_read = %d\n", byte_read);
         return (byte_read);
     }
     return (-1);
@@ -114,10 +99,11 @@ static ssize_t      ft_read_write(t_list *elem)
 static int          ft_build_line(t_list *elem, char **line)
 {
     char            *back_n;
-    ssize_t         byte_read;
+    int		        byte_read;
     void            *tmp;
 
     byte_read = -2;
+	back_n = NULL;
     while (1)
     {
         if ((back_n = ft_strchr(elem->content + 4, '\n')))
@@ -131,16 +117,11 @@ static int          ft_build_line(t_list *elem, char **line)
                     return (-1);
                 elem->content_size = 4;
                 tmp = elem->content;
-                elem->content = ft_memsub(tmp, 0, 4);//?тут поменял
+                elem->content = ft_memsub(tmp, 0, 4);
                 if (!elem->content)
                     return (-1);
                 ft_memdel(&tmp);
                 return (1);
-                //ft_lstdelone(&elem, ft_lstfreeone);
-                //ft_memdel(&elem->content); //?тут под вопросом
-                //free(elem->content);
-
-                //return ((*line) ? 1 : -1);
             }
             return (0);
         }
@@ -153,6 +134,15 @@ static int          ft_build_line(t_list *elem, char **line)
     }
 }
 
+void	ft_print(t_list *beg)
+{
+	while (beg)
+	{
+		printf("fd = %d\n", *(int *)beg->content);
+		beg = beg->next;
+	}
+}
+
 int                 get_next_line(const int fd, char **line)
 {
     static t_list   *beg;
@@ -162,11 +152,14 @@ int                 get_next_line(const int fd, char **line)
     {
         if (!(tmp = ft_find_fd_to_lst(beg, fd)))
         {
+			printf("13\n");
             tmp = ft_lstnew(&fd, 4);
             if (!tmp)
                 return (-1);
             ft_lstadd_end(&beg, tmp);
         }
+//		ft_print(beg);
+//		printf("fd = %d		content = %d\n", *(int *)tmp->content, *((char *)tmp->content + 4));
         return (ft_build_line(tmp, line));
     }
     return (-1);
