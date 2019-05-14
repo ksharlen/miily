@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/14 17:57:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/15 01:32:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ ssize_t				ft_arrfind(int *arr, int data, size_t size);
 t_list				*ft_lstreplace(t_list **rep, void *content, size_t content_size);
 char    			*ft_strnjoin(const char *str1, const char *str2, size_t num_str1, size_t num_str2);
 void				*ft_memsub(const void *s, unsigned int start, size_t len);
-void				*ft_memnjoin(const void *s1, const void *s2, int num1, int num2);
+void				*ft_memnjoin(const void *s1, const void *s2, size_t num1, size_t num2);
 size_t				ft_memnlen(const void *s, int n, size_t size);
 
 #endif
