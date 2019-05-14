@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 16:31:21 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/14 01:46:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/14 03:41:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int      ft_line_fill(char **line, t_list *elem)
             return (-1);
         }
     }
-    ft_memdel(&tmp);//!Крашится именно тут!!!!!!!!!!!!!
+//    ft_memdel(&tmp);//!Крашится именно тут!!!!!!!!!!!!!
     return (1);
 }
 
