@@ -1,10 +1,19 @@
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <unistd.h>
+
+FILE	*fp;
 
 int		main(void)
 {
-	void *test;
+	int fd;
+	ssize_t ret;
+	char *line;
 
-	test = ft_memnjoin("hello", " world", 4, 5);
-	printf("test = %s\n", (char *)test);
+	fp = fopen("sum.c", O_RDONLY);
+	ret = getline(&line, 50, fd);
+
+	printf("line = %s	ret = %ld\n", line, ret);
 	return (0);
 }
