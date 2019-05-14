@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/14 17:57:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/15 01:49:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *big, const char *little, size_t len);
+char				*ft_strnstr(const char *big,
+	const char *little, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s, size_t n);
 int					ft_atoi(const char *nptr);
@@ -93,13 +94,17 @@ int					ft_revers(int n);
 void				ft_lstadd_end(t_list **begin_list, t_list *elem);
 int					get_next_line(const int fd, char **line);
 void				ft_lstfreeone(void *content, size_t content_size);
-t_list				*ft_lstelem(t_list *begin_list, size_t index, size_t lst_size);
+t_list				*ft_lstelem(t_list *begin_list,
+	size_t index, size_t lst_size);
 size_t				ft_lstsize(t_list *beg);
 ssize_t				ft_arrfind(int *arr, int data, size_t size);
-t_list				*ft_lstreplace(t_list **rep, void *content, size_t content_size);
-char    			*ft_strnjoin(const char *str1, const char *str2, size_t num_str1, size_t num_str2);
+t_list				*ft_lstreplace(t_list **rep, void *content,
+	size_t content_size);
+char				*ft_strnjoin(const char *str1, const char *str2,
+	size_t num_str1, size_t num_str2);
 void				*ft_memsub(const void *s, unsigned int start, size_t len);
-void				*ft_memnjoin(const void *s1, const void *s2, int num1, int num2);
+void				*ft_memnjoin(const void *s1, const void *s2,
+	size_t num1, size_t num2);
 size_t				ft_memnlen(const void *s, int n, size_t size);
 
 #endif
