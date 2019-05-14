@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/30 07:50:10 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/30 08:27:00 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/05/14 17:46:14 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/05/14 17:57:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "my_sorts.h"
+#include "libft.h"
 
-int		main(void)
+size_t	ft_memnlen(const void *s, int n, size_t size)
 {
-	int num[5] = { 7, 3, 8, 1, 10 };
+	size_t len;
+	size_t i;
 
-	ft_insert_sort(num, 5);
-	ft_print_num(num, 5);
-	return (0);
+	i = 0;
+	len = 0;
+	if (s)
+	{
+		while (i < size)
+		{
+			if (((unsigned char *)s)[i] == n)
+				return (len);
+			++len;
+			++i;
+		}
+	}
+	return (len);
 }
