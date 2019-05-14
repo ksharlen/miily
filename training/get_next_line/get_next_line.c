@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 16:31:21 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/14 02:33:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/14 14:42:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_list       *ft_find_fd_to_lst(t_list *beg, int fd)
         {
             if ((*(int *)beg->content) == fd)
             {
-				printf("test\n");
+//				printf("test\n");
 				return (beg);
 			}
             beg = beg->next;
@@ -40,7 +40,7 @@ static int      ft_line_fill(char **line, t_list *elem)
     tmp = elem->content;
     if ((ft_strnlen(elem->content + 4, '\n') + 1) == elem->content_size - 4)
     {
-		printf("123hahahahhahah i am here\n");
+//		printf("123hahahahhahah i am here\n");
         elem->content = ft_memsub(tmp, 0, 4);
 		elem->content_size = 4;
         if (!(elem->content))
@@ -70,7 +70,7 @@ static int      ft_read_write(t_list *elem)
 
 	tmp = NULL;
     buf = ft_memalloc(BUFF_SIZE);
-	printf("32\n");
+//	printf("32\n");
     if (buf)
     {
         byte_read = read(*(int *)elem->content, buf, BUFF_SIZE);
@@ -152,7 +152,7 @@ int                 get_next_line(const int fd, char **line)
     {
         if (!(tmp = ft_find_fd_to_lst(beg, fd)))
         {
-			printf("13\n");
+//			printf("13\n");
             tmp = ft_lstnew(&fd, 4);
             if (!tmp)
                 return (-1);
