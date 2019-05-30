@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/05/30 13:07:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/05/30 08:24:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ void				*ft_memsub(const void *s, unsigned int start, size_t len);
 void				*ft_memnjoin(const void *s1, const void *s2,
 	size_t num1, size_t num2);
 size_t				ft_memnlen(const void *s, int n, size_t size);
+int					get_next_line(const int fd, char **line);
 
 #endif
