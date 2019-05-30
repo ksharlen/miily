@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/05/29 08:18:38 by marvin           ###   ########.fr       */
+/*   Updated: 2019/05/30 09:50:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
 //?	h(short или unsigned short) l(long) ll(long long) hh(char или unsigned char).
-char	*ft_int_to_str(void *num, const char type) 
+char	*ft_int_to_str(void *num, const char type)
 {
 	char 	*all_str;
 	long	copy_num;
@@ -28,7 +28,7 @@ char	*ft_int_to_str(void *num, const char type)
 		copy_num /= 10;
 		++size_num;
 	}
-	all_str = ft_memalloc(size_num);
+	all_str = (char *)ft_memalloc(size_num);
 	while (size_num)
 	{
 		all_str[size_num-- - 1] = (num % 10 * (sign)) + '0';
