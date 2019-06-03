@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/03 14:46:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/03 16:46:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 static char			*ft_check_format(const char *format)
 {
 	char 			*str_form;
+	char			**str_size;
 	size_t			num_before_format;
 	char			*ret;
 
 	str_form = "acdefoxpns";
+	str_size = "ll", "hh", "h", "l";
 	ret = NULL;
 	num_before_format = 0;
 	while (!(ft_isalpha(*format++)) && (*format))
 		num_before_format++;
-	ret = (ft_memisstr(format, str_form) ? format + num_before_format : NULL);
+	ret = (ft_memisstr(format, str_form, ) ? format + num_before_format : NULL);
 	return (ret);
 }
 
