@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isstr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 07:55:50 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/03 07:38:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/03 12:00:00 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/03 12:04:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef union 			test
+int		ft_isstr(const char *str, const char *check_symbols)
 {
-	long long			ll;
-	unsigned long long	llu;
-	long				l;
-	unsigned long		lu;
-	int					d;
-	unsigned int		u;
-	short 				hd;
-	unsigned short		hhd;
-//	char				c;
-	unsigned char 		c;
-}						type;
-
-int		ft_printf(const char *format, ...);
-
-#endif
+	while (*str)
+	{
+		if (ft_ischar(check_symbols, *str))
+			return (1);
+		str++;
+	}
+	return (0);
+}

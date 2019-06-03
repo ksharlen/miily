@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memischar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 07:55:50 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/03 07:38:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/03 12:26:35 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/03 14:01:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef union 			test
+int		ft_memischar(const char *str, int n, size_t size)
 {
-	long long			ll;
-	unsigned long long	llu;
-	long				l;
-	unsigned long		lu;
-	int					d;
-	unsigned int		u;
-	short 				hd;
-	unsigned short		hhd;
-//	char				c;
-	unsigned char 		c;
-}						type;
-
-int		ft_printf(const char *format, ...);
-
-#endif
+	while (size-- && *str)
+		if (*str++ == n)
+			return (1);
+	return (0);
+}
