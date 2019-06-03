@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_ischar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 07:55:50 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/03 07:38:07 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/03 11:53:01 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/03 11:54:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include "libft/libft.h"
-
-typedef union 			test
+int		ft_ischar(const char *str, int c)
 {
-	long long			ll;
-	unsigned long long	llu;
-	long				l;
-	unsigned long		lu;
-	int					d;
-	unsigned int		u;
-	short 				hd;
-	unsigned short		hhd;
-//	char				c;
-	unsigned char 		c;
-}						type;
-
-int		ft_printf(const char *format, ...);
-
-#endif
+	while (*str)
+	{
+		if (*str == c)
+			return (1);
+		str++;
+	}
+	return (0);
+}
