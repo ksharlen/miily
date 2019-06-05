@@ -6,7 +6,7 @@ FLAGS := -g#-Wall -Werror -Wextra
 LIB := ./libft/libft.a
 SOURCE := -o $(NAME)
 INCLUDE := -I.
-MAIN := main.c ft_printf.c
+MAIN := main_ft_printf.c ft_printf.c
 
 $(NAME): all
 
