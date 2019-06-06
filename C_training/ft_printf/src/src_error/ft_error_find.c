@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_error_find.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/31 17:43:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/06 08:45:01 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/06 09:43:05 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/06 09:49:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <stdarg.h>
+#include "ft_printf.h"
 
-void	ft_error(char *param, int a)
+void	ft_error_find(const char *str, int line)
 {
-	printf("%s %d", param, a);
-}
-
-int		ft_size_num(const char *format)
-{
-	int		ret;
-
-	ret = 0;
-	while (ft_isdigit(*format++))
-		++ret;
-	return (ret);
-}
-
-int		main(void)
-{
-	int a;
-
-	a = -80;
-	printf("a = %d", (a >> 31) | (- a >> 31));
-	return (0);
+	printf("%s %d\n", str, line);
 }
