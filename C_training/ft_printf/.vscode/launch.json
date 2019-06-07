@@ -8,7 +8,7 @@
             "name": "FT_PRINTF",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/ft_printf/src/src_num_to_str/a.out",
+            "program": "${workspaceFolder}/src/src_num_to_str/a.out",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
