@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/07 15:45:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/07 17:29:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ char					*ft_h_format(const char *format);
 char					*ft_j_format(const char *format);
 char					*ft_z_format(const char *format);
 char					*ft_l_big_format(const char *format);
+char					*ft_num2binary(long int num);
 
 #endif
