@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/06 16:27:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/07 08:50:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ static char			*ft_detect_format_size(const char *format)//, size_t *shift_format
 		return (ft_l_format(format));
 	else if ((*format) == 'j' && !(ft_strchr(DOES_NOT_SUPPORT_INT_MAX, *(format + 1))))
 		return (ft_j_format(format + 1));
+	else if ((*format) == 'z' && !(ft_strchr(DOES_NOT_SUPPORT_SIZE_T, *(format + 1))))
+		return (ft_z_format(format + 1));
+	else if ((*format) == 'L' && !(ft_strchr(DOES_NOT_SUPPORT_L, *(format + 1))))
+		return (ft_l_big_format(format + 1));
 	else if (ft_memchr(TYPE, *format, ft_strlen(TYPE)))
 		return (ft_strsub(format, 0, 1));
 	return (NULL);
@@ -41,7 +45,7 @@ static char			*ft_check_format(const char *format)
 		format++;
 	}
 	test_format = ft_detect_format_size(format);//, &shift_format);
-	printf("test_format = %s\nnum_before_format = %ld\n", test_format, num_before_format);
+	printf("test_format = %s\n", test_format);
 	//exit(1);
 	return (ret);
 }
