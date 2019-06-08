@@ -84,6 +84,6 @@ int		main(void)
 	// ft_printf("%jG");
 	// ft_printf("%zG");
 	// ft_printf("%LG");
-	ft_printf("%123.20.50+6123hf world");
+	ft_printf("%1.10+.5ld");
 	return (0);
 }

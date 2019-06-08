@@ -22,6 +22,7 @@ static int		ft_size_num(const char *format)
 		++ret;
 		//++format;
 	}
+	//printf("ret = %d\n", ret);
 	return (ret);
 }
 
@@ -29,24 +30,18 @@ static int		ft_find_width_accuracy(const char *format)
 {
 	int			dot;
 
-	//printf("*format = %c\n", *format);
 	dot = 0;
-	//printf("*format = %c\n", *format);
-	//printf("*format = %c\n", *format);
 	if (*format == '.')
 	{
 		g_spec.accuracy = ft_atoi(format + 1);
-		//printf("format + 1 = %c\n", *(format + 1));
-		//printf("accurace_atoi = %d\n", g_spec.accuracy);
+		g_spec.accuracy = MOD_NUM(g_spec.accuracy);
 		dot = 1;
 	}
 	else
 	{
 		g_spec.width = ft_atoi(format);
-		//printf("width_atoi = %d\n", g_spec.width);
 	}
-	//printf("ft_size_num = %d\n", ft_size_num(format));
-	return (ft_size_num(format + dot));
+	return (ft_size_num(format + dot) + dot);
 }
 
 static int		ft_work_spec(const char *format)
@@ -55,7 +50,6 @@ static int		ft_work_spec(const char *format)
 	int			shift;
 	int			zero_shift;
 
-	//printf("*format = %c\n", *format);
 	while (!(ft_isalpha(*format)))
 	{
 		zero_shift = 1;
@@ -69,17 +63,11 @@ static int		ft_work_spec(const char *format)
 			g_spec.flags |= SPACE;
 		else if (*format == '0')
 			g_spec.flags |= ZERO;
-		else if (ft_isdigit(*format) || (*format == '.'))
+		else if (ft_isdigit(*format) || ((*format == '.')) && ft_isdigit(*(format + 1)))
 		{
-			//printf("format = %s\n", format);
-			shift = ft_find_width_accuracy(format);
-			//printf("shift = %d\n", shift);
-			//printf("format = %s\n", format);
-			format += shift;
+			format += ft_find_width_accuracy(format);
 			zero_shift = 0;
 		}
-		// else
-		// 	++format;
 		format += zero_shift;
 	}
 	return (1);

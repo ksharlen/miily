@@ -14,13 +14,15 @@
 #include <stdarg.h>
 #include <wchar.h>
 #include <unistd.h>
+#define MOD_NUM(a) (((a) < 0) ? -(a) : (a))
 
 int		main(void)
 {
 	int a = 5;
-	//printf("%hu", 25);
-	printf("sizeof = %lu\n", sizeof(unsigned short));
-	if (!a)
+	int b = -5;
 
+	MOD_NUM(a);
+	b = MOD_NUM(b);
+	printf("a = %d b = %d\n", a, b);
 	return (0);
 }
