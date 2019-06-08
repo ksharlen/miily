@@ -28,10 +28,11 @@
 # define DOES_NOT_SUPPORT_LONG_FLOAT "dioOxXunprkDUaA"
 # define DOES_NOT_SUPPORT_SIZE_T "feEgGaAnprk"
 # define DOES_NOT_SUPPORT_L "dioOxXunprkDU"
+# define MOD_NUM(x) (((x) > 0) ? (x) : -(x))
 
 typedef struct			s_spec
 {
-	short				flags;
+	int					flags;
 	int					width;
 	int					accuracy;
 	size_t				ret_printf;

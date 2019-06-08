@@ -54,6 +54,7 @@ char			*ft_work_to_format(const char *format, char *buf_printf, va_list form)
 {
 	char 		*p_format;
 	size_t		i;
+	char		*test_str;
 
 	i = 0;
 	p_format = NULL;
@@ -66,13 +67,14 @@ char			*ft_work_to_format(const char *format, char *buf_printf, va_list form)
 
 			ft_control_spec(format + 1);
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
+			test_str = ft_num2binary(g_spec.flags);
+			printf("g_spec.flags = %s\n", test_str);
 			printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
-			// printf("g_spec.shift_spec = %ld", g_spec.shift_spec);
-			//printf("p_format = %s\n", p_format);
 		}
 		else
 			buf_printf[i++] = *format++;
 	}
+	printf("buf = %s\n", buf_printf);
 	return (p_format);
 }
 
