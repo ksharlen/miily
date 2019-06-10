@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 17:43:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/07 08:54:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/07 14:41:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 #include <stdarg.h>
 #include <wchar.h>
 #include <unistd.h>
-
-
+#define MOD_NUM(a) (((a) < 0) ? -(a) : (a))
 
 int		main(void)
 {
-	float a = 5.32;
+	int a = 5;
+	int b = -5;
 
-	//printf("%hu", 25);
-	printf("sizeof = %lu\n", sizeof(unsigned short));
+	MOD_NUM(a);
+	b = MOD_NUM(b);
+	printf("a = %d b = %d\n", a, b);
 	return (0);
 }
