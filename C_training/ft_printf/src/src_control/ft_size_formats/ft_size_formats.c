@@ -20,6 +20,7 @@ char			*ft_l_format(const char *format)
 		{
 			if (ft_strchr(TYPE, *(++format)))
 			{
+				g_spec.mod = *format;
 				g_spec.shift_spec += 3;
 				printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
 				return (ft_memnjoin("ll", format, 2, 1));
@@ -28,6 +29,7 @@ char			*ft_l_format(const char *format)
 		else if (ft_strchr(TYPE, *format))
 		{
 			g_spec.shift_spec += 2;
+			g_spec.mod = *format;
 			return (ft_memnjoin("l", format, 1, 1));
 		}
 		else
@@ -44,6 +46,7 @@ char			*ft_h_format(const char *format)
 		{
 			if (ft_strchr(TYPE, *(++format)))
 			{
+				g_spec.mod = *format;
 				g_spec.shift_spec += 3;
 				return (ft_memnjoin("hh", format, 2, 1));
 			}
@@ -51,6 +54,7 @@ char			*ft_h_format(const char *format)
 		else if (ft_strchr(TYPE, *format))
 		{
 			g_spec.shift_spec += 2;
+			g_spec.mod = *format;
 			return (ft_memnjoin("h", format, 1, 1));
 		}
 		else
@@ -63,6 +67,7 @@ char		*ft_j_format(const char *format)
 {
 	if (ft_strchr(TYPE, *format))
 	{
+		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
 		return (ft_memnjoin("j", format, 1, 1));
 	}
@@ -73,6 +78,7 @@ char		*ft_z_format(const char *format)
 {
 	if (ft_strchr(TYPE, *format))
 	{
+		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
 		return (ft_memnjoin("z", format, 1, 1));
 	}
@@ -83,6 +89,7 @@ char		*ft_l_big_format(const char *format)
 {
 	if (ft_strchr(TYPE, *format))
 	{
+		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
 		return (ft_memnjoin("L", format, 1, 1));
 	}
