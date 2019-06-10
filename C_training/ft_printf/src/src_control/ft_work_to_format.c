@@ -26,6 +26,7 @@ static char			*ft_detect_format_size(const char *format)//, size_t *shift_format
 		return (ft_l_big_format(format + 1));
 	else if (ft_memchr(TYPE, *format, ft_strlen(TYPE)))
 	{
+		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
 		return (ft_strsub(format, 0, 1));
 	}
@@ -65,16 +66,23 @@ char			*ft_work_to_format(const char *format, char *buf_printf, va_list form)
 			p_format = ft_check_format(format + 1); //!Тут будет условие если формат не поддерживается.
 			//?Тут будут ф-ии для преобразования и определения точности и строки.
 
-			ft_control_spec(format + 1);
+			ft_control_spec(format + 1);//?записываем значения найденных спецификаторов
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
-			test_str = ft_num2binary(g_spec.flags);
-			printf("g_spec.flags = %s\n", test_str);
+			printf("format = %c\n", g_spec.mod);
+			ft_control_var(buf_printf, form, p_format);
+//			test_str = ft_num2binary(g_spec.flags);
+//			printf("g_spec.flags = %s\n", test_str);
 			printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
 		}
 		else
+		{
 			buf_printf[i++] = *format++;
+			++g_spec.size_write;
+		}
 	}
-	printf("buf = %s\n", buf_printf);
+//	write(1, buf_printf, g_spec.size_write);
+//	printf("size_write = %ld\n", g_spec.size_write);
+	//printf("buf = %s\nsize_write = %ld\n", buf_printf, g_spec.size_write);
 	return (p_format);
 }
 

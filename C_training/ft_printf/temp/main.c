@@ -14,15 +14,13 @@
 #include <stdarg.h>
 #include <wchar.h>
 #include <unistd.h>
-#define MOD_NUM(a) (((a) < 0) ? -(a) : (a))
+#define MOD_NUM(a) (a = (((a) < 0) ? -(a) : (a)))
 
 int		main(void)
 {
-	int a = 5;
-	int b = -5;
+	uintmax_t a;
 
-	MOD_NUM(a);
-	b = MOD_NUM(b);
-	printf("a = %d b = %d\n", a, b);
+	a = 16;
+	printf("a = %jx\n", a);
 	return (0);
 }
