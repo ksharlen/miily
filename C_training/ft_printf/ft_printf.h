@@ -15,7 +15,12 @@
 
 # include "libft/libft.h"
 # include <stdarg.h>
+# include <stdint.h>
+
 # define TYPE "dioOxXufeEgGaAnprkUD"
+# define NUM_INT "dDoOxXcCuUi"
+# define NUM_DOUBLE "feEgGaA"
+# define NUM_OTHER "nprk"
 # define SIZE_BUF_PRINTF 20
 # define ZERO	1
 # define PLUS	2
@@ -33,10 +38,13 @@
 typedef struct			s_spec
 {
 	int					flags;
+	int					mod;
 	int					width;
 	int					accuracy;
 	size_t				ret_printf;
 	size_t				shift_spec;
+	size_t				size_write;
+	int					paste;
 }						t_spec;
 
 extern	t_spec			g_spec;
@@ -52,5 +60,7 @@ char					*ft_j_format(const char *format);
 char					*ft_z_format(const char *format);
 char					*ft_l_big_format(const char *format);
 char					*ft_num2binary(long int num);
+void					ft_control_var(char *buf_printf, va_list format, char *type);
+long long int			ft_num_int(va_list form, char *type);
 
 #endif
