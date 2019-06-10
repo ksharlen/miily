@@ -19,6 +19,9 @@ int				ft_printf(const char *format, ...)
 	va_list 	form;
 	char		buf_printf[SIZE_BUF_PRINTF];
 
+	g_spec.size_write = 0;
+	g_spec.paste = 0;
+	ft_bzero(buf_printf, SIZE_BUF_PRINTF);
 	va_start(form, format);
 //	while (*format)
 //	{
