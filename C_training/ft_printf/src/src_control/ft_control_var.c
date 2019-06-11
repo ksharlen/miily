@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_var.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/11 08:40:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/11 09:56:47 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		ft_control_var(char *buf_printf, va_list format, char *type)
 
 	if (ft_strchr(NUM_INT, g_spec.mod))
 	{
-
+		ft_num_int()
 		//?Заходим в ф-ию определение длинны целых чисел
 		//?Или определяем полную точность формата
 	}

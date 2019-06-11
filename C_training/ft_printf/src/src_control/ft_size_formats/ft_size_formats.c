@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_size_formats.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/07 10:43:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/11 09:34:31 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char			*ft_l_format(const char *format)
 
 char			*ft_h_format(const char *format)
 {
-	if (!(ft_strchr(DOES_NOT_SUPPORT_SHORT, *(format + 1))))
+	if (!(ft_strchr(DOES_NOT_SUPPORT_SHORT, *(format + 1)))) //? mb fk delete?
 	{
-		if ((*(++format) == 'h') && (!(ft_strchr(DOES_NOT_SUPPORT_SHORT, *(format + 1)))))
+		if ((*(++format) == 'h') && (!(ft_strchr(DOES_NOT_SUPPORT_SHORT, *(format + 1)))))  //? need to think
 		{
 			if (ft_strchr(TYPE, *(++format)))
 			{
