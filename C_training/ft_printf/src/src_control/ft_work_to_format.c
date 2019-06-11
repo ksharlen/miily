@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/11 09:53:22 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/11 14:33:56 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ static char			*ft_check_format(const char *format)
 char			*ft_work_to_format(const char *format, char *buf_printf, va_list form)
 {
 	char 		*p_format;
-	size_t		i;
+//	size_t		i;
 	char		*test_str;
 
-	i = 0;
+//	i = 0;
 	p_format = NULL;
 	while (*format)
 	{
@@ -67,21 +67,22 @@ char			*ft_work_to_format(const char *format, char *buf_printf, va_list form)
 
 			ft_control_spec(format + 1);//?записываем значения найденных спецификаторов
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
-			printf("format = %c\n", g_spec.mod);
+			//printf("format = %c\n", g_spec.mod);
 			ft_control_var(buf_printf, form, p_format);
 //			test_str = ft_num2binary(g_spec.flags);
 //			printf("g_spec.flags = %s\n", test_str);
-			printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
+			//printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
 		}
 		else
 		{
-			buf_printf[i++] = *format++;
-			++g_spec.size_write;
+			buf_printf[g_spec.size_write++] = *format++;
+			//++g_spec.size_write;
 		}
 	}
 //	write(1, buf_printf, g_spec.size_write);
 //	printf("size_write = %ld\n", g_spec.size_write);
 	//printf("buf = %s\nsize_write = %ld\n", buf_printf, g_spec.size_write);
+	//printf("size_write = %ld\n", g_spec.index_buf);
 	return (p_format);
 }
 

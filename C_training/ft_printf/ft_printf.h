@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/11 08:35:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/11 14:18:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <stdint.h>
 
+# define BIN 2
 # define OCT 8
 # define DECIMAL 10
 # define HEX 16
@@ -48,6 +49,7 @@ typedef struct			s_spec
 	size_t				shift_spec;
 	size_t				size_write;
 	int					paste;
+	size_t				size_spec;
 }						t_spec;
 
 extern	t_spec			g_spec;
