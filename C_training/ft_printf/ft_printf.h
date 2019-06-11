@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/10 15:37:15 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/11 08:35:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdarg.h>
 # include <stdint.h>
 
+# define OCT 8
+# define DECIMAL 10
+# define HEX 16
 # define TYPE "dioOxXufeEgGaAnprkUD"
 # define NUM_INT "dDoOxXcCuUi"
 # define NUM_DOUBLE "feEgGaA"
@@ -60,8 +63,9 @@ char					*ft_j_format(const char *format);
 char					*ft_z_format(const char *format);
 char					*ft_l_big_format(const char *format);
 char					*ft_num2binary(long int num);
-char					*ft_num2hex_or_oct(long int num, int base);
+char					*ft_num2hex_or_oct(long long int num, int base);
 void					ft_control_var(char *buf_printf, va_list format, char *type);
 long long int			ft_num_int(va_list form, char *type);
+size_t					ft_base_depth(long long int num, int base);
 
 #endif

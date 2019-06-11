@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_base_depth.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/31 17:43:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/11 07:42:26 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/11 08:28:06 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/11 08:31:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <stdarg.h>
-#include <wchar.h>
-#include <unistd.h>
-#define MOD_NUM(a) (a = (((a) < 0) ? -(a) : (a)))
+#include "ft_printf.h"
 
-typedef vector<int> lnum;
-
-int		main(void)
+size_t			ft_base_depth(long long int num, int base)
 {
-	printf( "%.2020f\n", 3.005);
-  	printf( "%.2f\n", 33.005);
-	return (0);
+	size_t		depth;
+
+	depth = 1;
+	while (num /= base)
+		++depth;
+	return (depth);
 }

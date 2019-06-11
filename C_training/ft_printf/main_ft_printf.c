@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/07 17:23:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/11 08:36:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ int		main(void)
 	// ft_printf("%jG");
 	// ft_printf("%zG");
 	// ft_printf("%LG");
-	ft_printf("%d", 25);
+	ft_printf("%24.10d", 2);
 	return (0);
 }

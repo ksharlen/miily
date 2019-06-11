@@ -6,7 +6,7 @@
 /*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/07 17:19:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/11 07:08:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static int		ft_work_spec(const char *format)
 			g_spec.flags |= ZERO;
 		else if (*format == '*')
 			g_spec.paste = 1;
-		else if (ft_isdigit(*format) || ((*format == '.')) && ft_isdigit(*(format + 1)))
+		else if ((ft_isdigit(*format) || ((*format == '.'))) && ft_isdigit(*(format + 1)))
 		{
 			format += ft_find_width_accuracy(format);
 			zero_shift = 0;
