@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/11 14:18:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/12 20:28:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 # define DECIMAL 10
 # define HEX 16
 # define TYPE "dioOxXufeEgGaAnprkUD"
-# define NUM_INT "dDoOxXcCuUi"
+# define NUM_INT "dDoxXcCuUi"
+# define SIGNED_INT "dicCD"
+# define UNSIGNED_INT "uxXoU"
 # define NUM_DOUBLE "feEgGaA"
 # define NUM_OTHER "nprk"
 # define SIZE_BUF_PRINTF 20
@@ -50,24 +52,25 @@ typedef struct			s_spec
 	size_t				size_write;
 	int					paste;
 	size_t				size_spec;
+	char				*size_type;
 }						t_spec;
 
 extern	t_spec			g_spec;
 
 int						ft_printf(const char *format, ...);
 void					ft_error_find(const char *str, int line);
-char					*ft_work_to_format(const char *format, char *buf_printf, va_list form);
+int						ft_work_to_format(const char *format, char *buf_printf, va_list form);
 long					ft_control_format_int(va_list form, char *type);
 int						ft_control_spec(const char *format);
-char					*ft_l_format(const char *format);
-char					*ft_h_format(const char *format);
-char					*ft_j_format(const char *format);
-char					*ft_z_format(const char *format);
-char					*ft_l_big_format(const char *format);
-char					*ft_num2binary(long int num);
+int						ft_l_format(const char *format);
+int						ft_h_format(const char *format);
+int						ft_j_format(const char *format);
+int						ft_z_format(const char *format);
+int						ft_l_big_format(const char *format);
 char					*ft_num2hex_or_oct(long long int num, int base);
-void					ft_control_var(char *buf_printf, va_list format, char *type);
-long long int			ft_num_int(va_list form, char *type);
+char					*ft_int_to_str(long long int num);
+void					ft_control_var(char *buf_printf, va_list format);
+//void					*ft_num_int(va_list form);
 size_t					ft_base_depth(long long int num, int base);
 
 #endif

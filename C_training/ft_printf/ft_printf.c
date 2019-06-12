@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/11 14:34:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/12 21:09:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int				ft_printf(const char *format, ...)
 //	while (*format)
 //	{
 	ft_work_to_format(format, buf_printf, form);
+	printf("buf = %s\n", buf_printf);
+	printf("size_write = %ld\n", g_spec.size_spec + g_spec.size_write);
 	write(1, buf_printf, g_spec.size_spec + g_spec.size_write);
 
 		//printf("*format = %c\n", *format);
