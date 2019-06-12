@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/11 14:44:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:20:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ int		main(void)
 	//printf("hello %w %f\n", 10, 5.1);
 	//ft_printf("hello world %24.10d wow", 2);
 	//ft_printf("a = %x b = %x c = %x\n", 20, 15, 10);
-	printf("%#x", 1);
+	printf("%-3d", 12);
 	return (0);
 }
