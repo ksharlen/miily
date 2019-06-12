@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_size_formats.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/11 09:34:31 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/12 20:45:34 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char			*ft_l_format(const char *format)
+int			ft_l_format(const char *format)
 {
 	if (!(ft_strchr(DOES_NOT_SUPPORT_LONG, *(format + 1))))
 	{
@@ -22,23 +22,23 @@ char			*ft_l_format(const char *format)
 			{
 				g_spec.mod = *format;
 				g_spec.shift_spec += 3;
-				printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
-				return (ft_memnjoin("ll", format, 2, 1));
+				//printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
+				g_spec.size_type = "ll";
+				return (1);
 			}
 		}
 		else if (ft_strchr(TYPE, *format))
 		{
 			g_spec.shift_spec += 2;
 			g_spec.mod = *format;
-			return (ft_memnjoin("l", format, 1, 1));
+			g_spec.size_type = "l";
+			return (1);
 		}
-		else
-			return (NULL);
 	}
-	return (NULL);
+	return (0);
 }
 
-char			*ft_h_format(const char *format)
+int			ft_h_format(const char *format)
 {
 	if (!(ft_strchr(DOES_NOT_SUPPORT_SHORT, *(format + 1)))) //? mb fk delete?
 	{
@@ -48,50 +48,53 @@ char			*ft_h_format(const char *format)
 			{
 				g_spec.mod = *format;
 				g_spec.shift_spec += 3;
-				return (ft_memnjoin("hh", format, 2, 1));
+				g_spec.size_type = "hh";
+				return (1);
 			}
 		}
 		else if (ft_strchr(TYPE, *format))
 		{
 			g_spec.shift_spec += 2;
 			g_spec.mod = *format;
-			return (ft_memnjoin("h", format, 1, 1));
+			g_spec.size_type = "h";
+			return (1);
 		}
-		else
-			return (NULL);
 	}
-	return (NULL);
+	return (0);
 }
 
-char		*ft_j_format(const char *format)
+int			ft_j_format(const char *format)
 {
 	if (ft_strchr(TYPE, *format))
 	{
 		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
-		return (ft_memnjoin("j", format, 1, 1));
+		g_spec.size_type = "j";
+		return (1);
 	}
-	return (NULL);
+	return (0);
 }
 
-char		*ft_z_format(const char *format)
+int			ft_z_format(const char *format)
 {
 	if (ft_strchr(TYPE, *format))
 	{
 		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
-		return (ft_memnjoin("z", format, 1, 1));
+		g_spec.size_type = "z";
+		return (1);
 	}
-	return (NULL);
+	return (0);
 }
 
-char		*ft_l_big_format(const char *format)
+int			ft_l_big_format(const char *format)
 {
 	if (ft_strchr(TYPE, *format))
 	{
 		g_spec.mod = *format;
 		g_spec.shift_spec += 1;
-		return (ft_memnjoin("L", format, 1, 1));
+		g_spec.size_type = "L";
+		return (1);
 	}
-	return (NULL);
+	return (0);
 }
