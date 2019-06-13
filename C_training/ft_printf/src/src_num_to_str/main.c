@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 09:25:50 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/13 16:27:50 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/13 16:30:51 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	// intptr_t *ptr = "a";
 
 	g_spec.spec = 'X';
-	num = 0;
+	num = -9223372036854775808;
 	printf("%s\n", ft_int_to_str(num));
 	// printf("%hhX", num);
 	/*printf("%d\n", ptr);
