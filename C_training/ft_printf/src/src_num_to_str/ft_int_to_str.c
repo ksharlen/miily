@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 15:32:58 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/13 15:50:46 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ char	*ft_int_to_str(long long int num)
 	size_t	size_num;
 	short	sign;
 
-	g_spec.size_num = 0;
 	sign = num > 0 ? 1 : -1;
-	size_num = sing >= 0 ? 0 : 1;
+	size_num = sign > 0 ? 0 : 1;
 	copy_num = num;
 	while (copy_num)
 	{
@@ -31,13 +30,13 @@ char	*ft_int_to_str(long long int num)
 	}
 	g_spec.size_write += size_num;
 	g_spec.size_num = size_num;
-	all_str = (char *)ft_memalloc(size_num);
-	while (size_num)
+	if (!(all_str = (char *)ft_memalloc(size_num + 1)))
+		return (NULL);
+	all_str[size_num] = '\0';
+	while (size_num--)
 	{
-		all_str[size_num-- - 1] = (num % 10 * (sign)) + '0';
+		all_str[size_num] = num % 10 * sign + '0';
 		num /= 10;
-		if (size_num == 1 && sign < 0)
-			size_num = 0;
 	}
 	return (all_str);
 }
