@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 10:07:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 16:57:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,11 @@ void				ft_control_var(char *buf_printf, va_list format)
 			ret = ft_signed_format(format);
 			test_str = ft_int_to_str(ret);
 			test_str = ft_control_fwa(test_str);
+			//printf("buf_printf = %s\ntest_str = %s\n", buf_printf, test_str);
 			ft_strcat(buf_printf, test_str);
 			//printf("buf: %s\n", buf_printf);
 			//printf("size_buf = %ld\n", ft_strlen(buf_printf));
-			printf("size_write = %ld\n", g_spec.size_write);
+			//printf("size_write = %ld\n", g_spec.size_write);
 			g_spec.size_write += g_spec.size_spec;
 		}
 		//test_str = ft_num2hex_or_oct(ft_num_int(format), ft_define_num_sys());
