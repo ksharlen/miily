@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/13 15:50:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 16:57:08 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,33 @@ char            *ft_width(const char *str)
 
 	if (g_spec.accuracy < g_spec.width && g_spec.accuracy > g_spec.size_num)
 	{
-
+		g_spec.accuracy -= g_spec.size_num;
+		g_spec.width -= g_spec.accuracy + g_spec.size_num;
 	}
-	else if (g_spec.width <= g_spec.accuracy && g_spec.width > g_spec.size_num)
+	else if (g_spec.width <= g_spec.accuracy && g_spec.accuracy > g_spec.size_num)
 	{
-
+		g_spec.width = 0;
+		g_spec.accuracy -= g_spec.size_num;
+	}
+	else if (g_spec.width > g_spec.accuracy && g_spec.accuracy < g_spec.size_num)
+	{
+		g_spec.width -= g_spec.size_num;
+		g_spec.accuracy = 0;
 	}
 	else
 	{
+		//printf("test\n");
 		g_spec.accuracy = 0;
 		g_spec.width = 0;
 	}
+	size = g_spec.width + g_spec.accuracy + g_spec.size_num;
+	//printf("size = %ld\n", size);
+	//printf("g_spec.accuracy = %d\n", g_spec.accuracy);
+	ret = ft_strnew(size);
+	ft_memset(ret, ' ', g_spec.width);
+	ft_memset(ret + g_spec.width, '0', g_spec.accuracy);
+	ft_memcpy(ret + g_spec.width + g_spec.accuracy, str, ft_strlen(str));
+	g_spec.size_write += size;
 	//! if (g_spec.width > g_spec.size_num && g_spec.accuracy > g_spec.size_num)
 	// {
 	// 	if (g_spec.width > g_spec.accuracy)

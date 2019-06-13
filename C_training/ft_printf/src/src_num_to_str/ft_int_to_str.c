@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 16:31:20 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/13 17:05:24 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char			*ft_int_to_str(long long int num)
 		all_str[--size_num] = num % 10 * sign + '0';
 		num /= 10;
 	}
+	//printf("all_str = %s\n", all_str);
 	return (all_str);
 }
 
