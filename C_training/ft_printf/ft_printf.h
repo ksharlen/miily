@@ -76,5 +76,6 @@ char					*ft_width(const char *str);
 int						ft_l_big_format(const char *format);
 char					*ft_base_to_str(unsigned long long num, int base);
 char					*ft_int_to_str(long long int num);
+size_t					ft_base_depth(unsigned long long int num, int base);
 void					ft_control_var(char *buf_printf, va_list format);
 //void					*ft_num_int(va_list form);
