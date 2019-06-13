@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/06/03 14:41:19 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/06/13 07:11:42 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,3 +32,8 @@ re: fclean all
 
 $(OBJ): $(CFILES)
 	$(CC) $(FLAGS) -c $(CFILES) -I .
+
+copymac:
+	@cp libft.a libft.h ../C_training/ft_printf/libft
+	@cp libft.a libft.h ../C_training/ft_ls/libft
+	@echo "copy success!!!!"
