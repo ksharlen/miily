@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/13 14:20:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 15:50:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,21 @@
 char            *ft_width(const char *str)
 {
 	size_t 		size;
+	char 		*ret;
 
-	if (g_spec.width > g_spec.accuracy && g_spec.width > g_spec.size_num)
+	if (g_spec.accuracy < g_spec.width && g_spec.accuracy > g_spec.size_num)
 	{
-		g_spec.width -= g_spec.size_num;
-		g_spec.accuracy = 0;
+
 	}
-	else if (g_spec.accuracy >= g_spec.width && g_spec.accuracy > g_spec.size_num)
+	else if (g_spec.width <= g_spec.accuracy && g_spec.width > g_spec.size_num)
 	{
-		g_spec.width = 0;
-		g_spec.accuracy -= g_spec.size_num;
+
 	}
 	else
 	{
 		g_spec.accuracy = 0;
 		g_spec.width = 0;
 	}
-	size = g_spec.width + g_spec.accuracy;
 	//! if (g_spec.width > g_spec.size_num && g_spec.accuracy > g_spec.size_num)
 	// {
 	// 	if (g_spec.width > g_spec.accuracy)
@@ -114,6 +112,7 @@ char            *ft_width(const char *str)
     // //     }
     // // }
     // return (ret);
+	return (ret);
 }
 
 char            *ft_flags_hash(const char *str)
