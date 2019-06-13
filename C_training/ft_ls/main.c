@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 19:49:37 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/11 19:49:37 by marvin           ###   ########.fr       */
+/*   Updated: 2019/06/13 09:47:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
-static char **ft_str_sort(dirn)
-{
-	test()
-}
 
 static void			test(char *dirname)
 {
