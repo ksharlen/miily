@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/12 21:07:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 09:23:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ static unsigned long long int	ft_unsigned_format(va_list format)
 	else if (!(ft_strcmp(g_spec.size_type, "ll")))
 		ret = va_arg(format, unsigned long long int);
 	else if (!(ft_strcmp(g_spec.size_type, "h")))
-		ret = (short)va_arg(format, unsigned int);
+		ret = (unsigned short)va_arg(format, unsigned int);
 	else if (!(ft_strcmp(g_spec.size_type, "hh")))
-		ret = (char)va_arg(format, unsigned int);
+		ret = (unsigned char)va_arg(format, unsigned int);
 	else if (!(ft_strcmp(g_spec.size_type, "j")))
 		ret = va_arg(format, uintmax_t);
 	else if (!(ft_strcmp(g_spec.size_type, "z")))
@@ -59,20 +59,21 @@ static unsigned long long int	ft_unsigned_format(va_list format)
 	return (ret);
 }
 
-static int	ft_define_num_sys(void)
-{
-	int 	ret;
+//?Проверка на сейв
+// static int	ft_define_num_sys(void)
+// {
+// 	int 	ret;
 
-	if (g_spec.mod == 'x' || g_spec.mod == 'X')
-		ret = HEX;
-	else if (g_spec.mod == 'o' || g_spec.mod == 'O')
-		ret = OCT;
-	else if (g_spec.mod == 'b' || g_spec.mod == 'B')
-		ret = BIN;
-	else if (g_spec.mod == 'd' || g_spec.mod == 'i')
-		ret = DECIMAL;
-	return (ret);
-}
+// 	if (g_spec.mod == 'x' || g_spec.mod == 'X')
+// 		ret = HEX;
+// 	else if (g_spec.mod == 'o' || g_spec.mod == 'O')
+// 		ret = OCT;
+// 	else if (g_spec.mod == 'b' || g_spec.mod == 'B')
+// 		ret = BIN;
+// 	else if (g_spec.mod == 'd' || g_spec.mod == 'i')
+// 		ret = DECIMAL;
+// 	return (ret);
+// }
 
 void				ft_control_var(char *buf_printf, va_list format)
 {
@@ -80,17 +81,19 @@ void				ft_control_var(char *buf_printf, va_list format)
 	long long int 	ret;
 
 	ret = 0;
-	if (ft_strchr(NUM_INT, g_spec.mod))
+	if (ft_strchr(NUM_INT, g_spec.spec))
 	{
-		printf("g_spec.mod = %c\n", g_spec.mod);
-		printf("g_spec.size_type = %s\n", g_spec.size_type);
-		if (ft_strchr(SIGNED_INT, g_spec.mod))
+		//printf("g_spec.mod = %c\n", g_spec.mod);
+		//printf("g_spec.size_type = %s\n", g_spec.size_type);
+		if (ft_strchr(SIGNED_INT, g_spec.spec))
 		{
 			//printf("1\n");
 			ret = ft_signed_format(format);
 			test_str = ft_int_to_str(ret);
 			ft_strcat(buf_printf, test_str);
-			//printf("buf = %s\n", buf_printf);
+			//printf("buf: %s\n", buf_printf);
+			//printf("size_buf = %ld\n", ft_strlen(buf_printf));
+			printf("size_write = %ld\n", g_spec.size_write);
 			g_spec.size_write += g_spec.size_spec;
 		}
 		//test_str = ft_num2hex_or_oct(ft_num_int(format), ft_define_num_sys());

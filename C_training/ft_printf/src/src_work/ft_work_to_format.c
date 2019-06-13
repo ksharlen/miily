@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/12 20:15:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 09:25:11 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int			ft_detect_format_size(const char *format)//, size_t *shift_format)
 		return (ft_l_big_format(format + 1));
 	else if (ft_memchr(TYPE, *format, ft_strlen(TYPE)))
 	{
-		g_spec.mod = *format;
+		g_spec.spec = *format;
 		g_spec.shift_spec += 1;
 		g_spec.size_type = NULL;
 		return (1);
@@ -58,7 +58,7 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 	char		*test_str;
 
 //	i = 0;
-	while (*format)
+	while (*format && (g_spec.size_buf--))
 	{
 		if (*format == '%')
 		{
@@ -78,6 +78,10 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 			buf_printf[g_spec.size_write++] = *format++;
 			//++g_spec.size_write;
 		}
+	}
+	if (!g_spec.size_buf)
+	{
+		//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
 	}
 //	write(1, buf_printf, g_spec.size_write);
 //	printf("size_write = %ld\n", g_spec.size_write);

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/12 21:06:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 08:20:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ int		main(void)
 	//ft_printf("hello world %24.10d wow", 2);
 	//ft_printf("a = %x b = %x c = %x\n", 20, 15, 10);
 	//printf("% .5d", -10);
-	ft_printf("a = %ld\n", 45);
+	ft_printf("a = %d b = %d c = %d\n", 13, 14, 15);
 	return (0);
 }

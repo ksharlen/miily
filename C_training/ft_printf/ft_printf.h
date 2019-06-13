@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/12 20:28:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 09:22:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,16 @@
 typedef struct			s_spec
 {
 	int					flags;
-	int					mod;
+	int					spec;
 	int					width;
 	int					accuracy;
-	size_t				ret_printf;
+	int					ret_printf;
+	int					paste;
+	char				*size_type;
+	size_t				size_buf;
 	size_t				shift_spec;
 	size_t				size_write;
-	int					paste;
 	size_t				size_spec;
-	char				*size_type;
 }						t_spec;
 
 extern	t_spec			g_spec;

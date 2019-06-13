@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/12 20:29:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/13 07:17:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_int_to_str(long long int num)
 		copy_num /= 10;
 		++size_num;
 	}
+	g_spec.size_write += size_num;
 	all_str = (char *)ft_memalloc(size_num);
 	while (size_num)
 	{
