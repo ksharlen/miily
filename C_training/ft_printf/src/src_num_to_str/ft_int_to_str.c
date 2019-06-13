@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 15:50:46 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/13 15:55:59 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_int_to_str(long long int num)
 	if (!(all_str = (char *)ft_memalloc(size_num + 1)))
 		return (NULL);
 	all_str[size_num] = '\0';
-	while (size_num--)
+	while (num)
 	{
 		all_str[size_num] = num % 10 * sign + '0';
 		num /= 10;
