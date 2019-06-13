@@ -1,8 +1,0 @@
-{
-    "C_Cpp.errorSquiggles": "Disabled",
-    "files.associations": {
-		"*.c": "c",
-		"types.h": "c",
-		"serc": "c"
-	}
-}
