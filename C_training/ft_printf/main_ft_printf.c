@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 16:04:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:20:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,33 +90,35 @@ int		main(void)
 	//printf("% .5d", -10);
 	//ft_printf("%2d\n", a);
 	//ft_printf("%1.10d\n", 15);
-	// printf("test1\n");
-	// ft_printf("%6.10d\n", 1234);
-	// printf("%6.10d\n", 1234);
+	printf("------------test1-------------\n");
+	ft_printf("%6.10d\n", 1234);
+	printf("%6.10d\n", 1234);
 
-	// printf("test2\n");
-	// ft_printf("%3.2d\n", 1234);
-	// printf("%3.2d\n", 1234);
+	printf("------------test2-------------\n");
+	ft_printf("%3.2d\n", 1234);
+	printf("%3.2d\n", 1234);
 
-	// printf("test3\n");
-	// ft_printf("%2.4d\n", 1234);
-	// printf("%2.4d\n", 1234);
+	printf("------------test3-------------\n");
+	ft_printf("%2.4d\n", 1234);
+	printf("%2.4d\n", 1234);
 
-	// printf("test4\n");
-	// ft_printf("%10.5d\n", 1234);
-	// printf("%10.5d\n", 1234);
+	printf("------------test4-------------\n");
+	ft_printf("%10.5d\n", 1234);
+	printf("%10.5d\n", 1234);
 
-	// printf("test5\n");
-	// ft_printf("%10.3d\n", 1234);
-	// printf("%10.3d\n", 1234);
+	printf("------------test5-------------\n");
+	ft_printf("%10.3d\n", 1234);
+	printf("%10.3d\n", 1234);
 
-	// printf("test6\n");
-	// ft_printf("%3.10d\n", 1234);
-	// printf("%3.10d\n", 1234);
+	printf("------------test6-------------\n");
+	ft_printf("%3.10d\n", 1234);
+	printf("%3.10d\n", 1234);
 
+	printf("%010f", 5.1);
 	// printf("test7\n");
 	//ft_printf("%d\n", 0);
 	//ft_printf("a=%10d\nb=%d\n", 25, 123);
-	ft_printf("a = %10.20d\nb = %d\n", 25, 31);
+	// printf("a = %10.d\nb = %d\n", 25, 31);
+	// ft_printf("a = %20.d\nb = %d\n", 25, 31);
 	return (0);
 }
