@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 16:58:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 09:27:36 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int		main(void)
 	a = 123;
 	//ft_printf("%2d\n", a);
 	//ft_printf("%1.10d\n", 15);
-	ft_printf("%2.10d\n", 25);
-	printf("%2.10d\n", 25);
+	ft_printf("%x\n", 25);
+	printf("%x\n", 25);
 	return (0);
 }

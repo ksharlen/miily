@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_var.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 16:57:58 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 09:25:45 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,22 @@ void				ft_control_var(char *buf_printf, va_list format)
 		if (ft_strchr(SIGNED_INT, g_spec.spec))
 		{
 			//printf("1\n");
-			ret = ft_signed_format(format);
-			test_str = ft_int_to_str(ret);
+			ret = ft_signed_format(format); //? int2str
+			test_str = ft_int_to_str(ret); //? int2str
 			test_str = ft_control_fwa(test_str);
 			//printf("buf_printf = %s\ntest_str = %s\n", buf_printf, test_str);
 			ft_strcat(buf_printf, test_str);
 			//printf("buf: %s\n", buf_printf);
 			//printf("size_buf = %ld\n", ft_strlen(buf_printf));
 			//printf("size_write = %ld\n", g_spec.size_write);
+			g_spec.size_write += g_spec.size_spec;
+		}
+		else if (ft_strchr(UNSIGNED_INT, g_spec.spec))
+		{
+			ret = ft_unsigned_format(format);
+			test_str = ft_base_to_str(ret, 16); //? int2base
+			test_str = ft_control_fwa(test_str);
+			ft_strcat(buf_printf, test_str);
 			g_spec.size_write += g_spec.size_spec;
 		}
 		//test_str = ft_num2hex_or_oct(ft_num_int(format), ft_define_num_sys());

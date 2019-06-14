@@ -5,7 +5,6 @@ SRC_NUM_TO_STR := src_num_to_str/
 SRC_CHECK := src_check/
 SRC_ERROR := src_error/
 SRC_WORK := src_work/
-SRC_NUM_TO_STR := src_num_to_str/
 SRC_FORMAT := src_format/
 SRC_DEPTH_NUM :=src_depth_num/
 FT_SIZE_FORMATS := ft_size_formats/
