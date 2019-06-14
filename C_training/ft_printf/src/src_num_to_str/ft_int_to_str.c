@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/13 17:05:24 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/14 11:27:14 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static size_t	ft_size_num(long long int num)
 {
 	size_t		l;
 
+	// g_spec.accuracy == 0 && num == 0 ?
 	l = num > 0 ? 0 : 1;
 	while (num)
 	{
@@ -53,19 +54,3 @@ char			*ft_int_to_str(long long int num)
 	//printf("all_str = %s\n", all_str);
 	return (all_str);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char *str;
-
-// 	// str = ft_int_to_str(123123123123123);
-// 	// //printf("num = %ld", 123);
-// 	// printf("str = %s\n", str);
-// 	// printf("str = %ld", 123123123123123);
-// 	printf("long long = %ld\n", sizeof(long long));
-// 	printf("long = %ld\n", sizeof(long));
-// 	printf("%lld", 22222222222222222222211111);
-// 	//printf("long = %lu", sizeof(long));
-// 	//printf("int = %lu", sizeof(int));
-// 	return (0);
-// }
