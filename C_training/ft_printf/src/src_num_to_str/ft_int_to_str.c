@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 11:30:09 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/14 15:46:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ static size_t	ft_size_num(long long int num)
 {
 	size_t		l;
 
-	// g_spec.accuracy == 0 && num == 0 ?
 	l = num > 0 ? 0 : 1;
 	while (num)
 	{
 		l++;
 		num /= 10;
 	}
+	g_spec.size_num = l;
+//	g_spec.size_write += l;
 	return (l);
 }
 
@@ -34,8 +35,6 @@ char			*ft_int_to_str(long long int num)
 
 	sign = 1;
 	size_num = ft_size_num(num);
-	g_spec.size_write += size_num;
-	g_spec.size_num = size_num;
 	if (!(all_str = (char *)ft_memalloc(size_num + 1)))
 		return (NULL);
 	all_str[size_num] = '\0';
@@ -50,6 +49,5 @@ char			*ft_int_to_str(long long int num)
 		all_str[--size_num] = num % 10 * sign + '0';
 		num /= 10;
 	}
-	//printf("all_str = %s\n", all_str);
 	return (all_str);
 }

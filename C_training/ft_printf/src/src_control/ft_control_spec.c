@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_spec.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/11 09:45:26 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/14 16:02:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ static int		ft_find_width_accuracy(const char *format)
 
 static int		ft_work_spec(const char *format)
 {
-	g_spec.flags = 0;
 	int			zero_shift;
 
+	g_spec.flags = 0;
 	while (!(ft_isalpha(*format)))
 	{
 		zero_shift = 1;
@@ -77,6 +77,8 @@ static int		ft_work_spec(const char *format)
 
 int			ft_control_spec(const char *format)
 {
+	g_spec.accuracy = 0;
+	g_spec.width = 0;
 	ft_work_spec(format);
 	return (1);
 }
