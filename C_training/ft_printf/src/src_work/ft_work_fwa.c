@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/14 15:56:28 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:11:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ static void		ft_check_wa(void)
 		g_spec.width -= g_spec.accuracy;
 		g_spec.accuracy -= g_spec.size_num;
 	}
-	else if ((g_spec.accuracy > g_spec.width && g_spec.width > g_spec.size_num) || (g_spec.accuracy > g_spec.size_num && g_spec.size_num > g_spec.width))
+	else if ((g_spec.accuracy > g_spec.width &&
+	g_spec.width > g_spec.size_num) ||
+	(g_spec.accuracy > g_spec.size_num && g_spec.size_num > g_spec.width))
 	{
 		g_spec.accuracy -= g_spec.size_num;
 		g_spec.width = 0;
