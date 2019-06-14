@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 11:24:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 11:30:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,9 @@ int		main(void)
 	printf("test6\n");
 	ft_printf("%3.10d\n", 1234);
 	printf("%3.10d\n", 1234);
+
+	printf("test7\n");
+	printf("%.0d", 0);
+	ft_printf("%.0d", 0);
 	return (0);
 }
