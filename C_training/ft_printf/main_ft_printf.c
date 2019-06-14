@@ -6,7 +6,15 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/06/14 11:35:00 by cormund          ###   ########.fr       */
+=======
+<<<<<<< HEAD
+/*   Updated: 2019/06/14 11:36:55 by ksharlen         ###   ########.fr       */
+=======
+/*   Updated: 2019/06/14 11:30:21 by cormund          ###   ########.fr       */
+>>>>>>> 5df01c7bb81fabc97393d7bedabd84c6c4ce3011
+>>>>>>> 2314810e01acc7975e2f82c59b46c10de8aaf0f0
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +121,16 @@ int		main(void)
 	printf("%10.3d\n", 1234);
 
 	printf("test6\n");
+<<<<<<< HEAD
 	ft_printf("%3.0d\n", 0);
 	printf("%3.0d\n", 0);
+=======
+	ft_printf("%3.10d\n", 1234);
+	printf("%3.10d\n", 1234);
+
+	printf("test7\n");
+	//printf("%d\n", 0);
+	ft_printf("%d", 0);
+>>>>>>> 2314810e01acc7975e2f82c59b46c10de8aaf0f0
 	return (0);
 }
