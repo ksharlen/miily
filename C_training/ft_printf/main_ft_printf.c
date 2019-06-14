@@ -6,10 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 16:22:45 by cormund          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+/*   Updated: 2019/06/14 16:28:38 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,46 +90,35 @@ int		main(void)
 	//printf("% .5d", -10);
 	//ft_printf("%2d\n", a);
 	//ft_printf("%1.10d\n", 15);
-	// printf("test1\n");
+	// printf("------------test1-------------\n");
 	// ft_printf("%6.10d\n", 1234);
 	// printf("%6.10d\n", 1234);
 
-	// printf("test2\n");
+	// printf("------------test2-------------\n");
 	// ft_printf("%3.2d\n", 1234);
 	// printf("%3.2d\n", 1234);
 
-	// printf("test3\n");
+	// printf("------------test3-------------\n");
 	// ft_printf("%2.4d\n", 1234);
 	// printf("%2.4d\n", 1234);
 
-	// printf("test4\n");
+	// printf("------------test4-------------\n");
 	// ft_printf("%10.5d\n", 1234);
 	// printf("%10.5d\n", 1234);
 
-	// printf("test5\n");
+	// printf("------------test5-------------\n");
 	// ft_printf("%10.3d\n", 1234);
 	// printf("%10.3d\n", 1234);
 
-	// printf("test6\n");
-	// ft_printf("%3.0d\n", 0);
-	// printf("%3.0d\n", 0);
-	// printf("test6\n");
+	// printf("------------test6-------------\n");
 	// ft_printf("%3.10d\n", 1234);
 	// printf("%3.10d\n", 1234);
 
+	printf("%f", 5.1);
 	// printf("test7\n");
 	//ft_printf("%d\n", 0);
 	//ft_printf("a=%10d\nb=%d\n", 25, 123);
-	// ft_printf("a = %10.20d\nb = %d\n", 25, 31);
-
-	printf("test8\n");
-	ft_printf("ft_ %.1d\n", 0);
-	// ft_printf("a=%10d\nb=%d\n", 25, 123);
-	// ft_printf("a = %10.20d\nb = %d\n", 25, 31);
-	
-	printf("orig %.1d\n", 0);
-	// printf("a=%10d\nb=%d\n", 25, 123);
-	// printf("a = %10.20d\nb = %d\n", 25, 31);
-
+	// printf("a = %10.d\nb = %d\n", 25, 31);
+	// ft_printf("a = %20.d\nb = %d\n", 25, 31);
 	return (0);
 }
