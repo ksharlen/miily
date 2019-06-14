@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 11:30:09 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/14 11:37:40 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ static size_t	ft_size_num(long long int num)
 {
 	size_t		l;
 
-	// g_spec.accuracy == 0 && num == 0 ?
 	l = num > 0 ? 0 : 1;
+	l = g_spec.accuracy == 0 && num == 0 ? 0 : l;
 	while (num)
 	{
 		l++;
