@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/14 16:11:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:44:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ char            *ft_width(const char *str)
 {
 	char		*ret;
 	size_t		size;
+	char		fill;
 
+	fill = ' ';
 	if (g_spec.accuracy < g_spec.size_num && g_spec.width < g_spec.size_num)
 	{
 		g_spec.width = 0;
@@ -57,7 +59,7 @@ char            *ft_width(const char *str)
 		ft_check_wa();
 	size = g_spec.width + g_spec.accuracy + g_spec.size_num;
 	ret = ft_strnew(size);
-	ft_memset(ret, ' ', g_spec.width);
+	ft_memset(ret, fill, g_spec.width);
 	ft_memset(ret + g_spec.width, '0', g_spec.accuracy);
 	ft_memcpy(ret + g_spec.width + g_spec.accuracy, str, g_spec.size_num);
 	g_spec.size_write += size;//!Ошибка тут!!!
