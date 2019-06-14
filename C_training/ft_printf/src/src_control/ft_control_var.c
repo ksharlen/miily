@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_var.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 09:25:45 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/14 11:09:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,19 +83,12 @@ void				ft_control_var(char *buf_printf, va_list format)
 	ret = 0;
 	if (ft_strchr(NUM_INT, g_spec.spec))
 	{
-		//printf("g_spec.mod = %c\n", g_spec.mod);
-		//printf("g_spec.size_type = %s\n", g_spec.size_type);
 		if (ft_strchr(SIGNED_INT, g_spec.spec))
 		{
-			//printf("1\n");
 			ret = ft_signed_format(format); //? int2str
 			test_str = ft_int_to_str(ret); //? int2str
 			test_str = ft_control_fwa(test_str);
-			//printf("buf_printf = %s\ntest_str = %s\n", buf_printf, test_str);
 			ft_strcat(buf_printf, test_str);
-			//printf("buf: %s\n", buf_printf);
-			//printf("size_buf = %ld\n", ft_strlen(buf_printf));
-			//printf("size_write = %ld\n", g_spec.size_write);
 			g_spec.size_write += g_spec.size_spec;
 		}
 		else if (ft_strchr(UNSIGNED_INT, g_spec.spec))

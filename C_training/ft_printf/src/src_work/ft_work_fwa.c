@@ -6,128 +6,59 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/13 16:57:08 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 11:23:47 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char            *ft_width(const char *str)
+static void		ft_check_wa(void)
 {
-	size_t 		size;
-	char 		*ret;
-
-	if (g_spec.accuracy < g_spec.width && g_spec.accuracy > g_spec.size_num)
+	if (g_spec.width > g_spec.accuracy && g_spec.accuracy > g_spec.size_num)
+	{
+		g_spec.width -= g_spec.accuracy;
+		g_spec.accuracy -= g_spec.size_num;
+	}
+	else if (g_spec.accuracy > g_spec.width && g_spec.width > g_spec.size_num)
 	{
 		g_spec.accuracy -= g_spec.size_num;
-		g_spec.width -= g_spec.accuracy + g_spec.size_num;
-	}
-	else if (g_spec.width <= g_spec.accuracy && g_spec.accuracy > g_spec.size_num)
-	{
 		g_spec.width = 0;
-		g_spec.accuracy -= g_spec.size_num;
 	}
-	else if (g_spec.width > g_spec.accuracy && g_spec.accuracy < g_spec.size_num)
+	else if (g_spec.width > g_spec.size_num && g_spec.size_num > g_spec.accuracy)
 	{
 		g_spec.width -= g_spec.size_num;
 		g_spec.accuracy = 0;
 	}
-	else
+	else if (g_spec.accuracy > g_spec.size_num && g_spec.size_num > g_spec.width)
 	{
-		//printf("test\n");
-		g_spec.accuracy = 0;
+		g_spec.accuracy -= g_spec.size_num;
 		g_spec.width = 0;
 	}
+	else
+	{
+		g_spec.width = 0;
+		g_spec.accuracy = 0;
+	}
+}
+
+char            *ft_width(const char *str)
+{
+	char		*ret;
+	size_t		size;
+
+	if (g_spec.accuracy < g_spec.size_num && g_spec.width < g_spec.size_num)
+	{
+		g_spec.width = 0;
+		g_spec.accuracy = 0;
+	}
+	else
+		ft_check_wa();
 	size = g_spec.width + g_spec.accuracy + g_spec.size_num;
-	//printf("size = %ld\n", size);
-	//printf("g_spec.accuracy = %d\n", g_spec.accuracy);
 	ret = ft_strnew(size);
 	ft_memset(ret, ' ', g_spec.width);
 	ft_memset(ret + g_spec.width, '0', g_spec.accuracy);
 	ft_memcpy(ret + g_spec.width + g_spec.accuracy, str, ft_strlen(str));
 	g_spec.size_write += size;
-	//! if (g_spec.width > g_spec.size_num && g_spec.accuracy > g_spec.size_num)
-	// {
-	// 	if (g_spec.width > g_spec.accuracy)
-	// 	{
-	// 		g_spec.accuracy -= g_spec.size_num;
-	// 		g_spec.width -= g_spec.accuracy;
-	// 	}
-	// 	else if (g_spec.width <= g_spec.accuracy)
-	// 	{
-	// 		g_spec.width = 0;
-	// 		g_spec.accuracy -= g_spec.size_num;
-	// 	}
-	// }
-	// else if (g_spec.width <= g_spec.size_num && g_spec.accuracy > g_spec.size_num)
-	// {
-	// 	g_spec.width = 0;
-	// 	g_spec.accuracy -= g_spec.size_num;
-	// }
-	// else if (g_spec.width > g_spec.size_num && g_spec.accuracy <= g_spec.size_num)
-	// {
-	// 	g_spec.width -= g_spec.size_num;
-	// 	g_spec.accuracy = 0;
-	// }
-	// else
-	// {
-	// 	g_spec.width = 0;
-	// 	g_spec.accuracy = 0;
-	//! }
-    // char        *ret;
-    // size_t      size;
-    // size_t      accuracy;
-    // size_t      width;
-
-    // //ret = (char *)str;
-    // //size =
-    // //ret = ft_strnew(size);
-    // accuracy = 0;
-    // width = 0;
-    // //printf("g_spec.size_num = %ld\n", g_spec.size_num);
-    // size = g_spec.size_num;
-    // if (g_spec.width > g_spec.size_num && g_spec.accuracy > g_spec.size_num)
-    // {
-    //     if (g_spec.width <= g_spec.accuracy)
-    //     {
-    //         size = g_spec.accuracy;
-    //         accuracy = g_spec.accuracy - g_spec.size_num;
-    //     }
-    //     else if (g_spec.width > g_spec.accuracy)
-    //     {
-    //         size = g_spec.width;
-    //         accuracy = g_spec.accuracy - g_spec.size_num;
-    //         width = g_spec.width - g_spec.accuracy;
-    //         //printf("width = %ld\naccuracy = %ld\n", width, accuracy);
-    //         //printf("size = %ld\n", size);
-    //     }
-    // }
-    // else if (g_spec.width < g_spec.accuracy)
-    // {
-    //     g_spec.
-    // }
-    // ret = ft_strnew(size);
-    // ft_memset(ret, ' ', width);
-    // ft_memset(ret + width, '0', accuracy);
-    // //printf("ft_Strlen = %ld\n", ft_strlen(ret));
-    // ft_memcpy(ret + width + accuracy, str, g_spec.size_num);
-    // g_spec.size_write += g_spec.width;
-    // //printf("ret = %s\n", ret);
-    // //printf("ret = %s\n", ret);
-    // //ft_strcat(ret, str);
-    // //ft_memcpy(ret + (width + accuracy), str, ft_strlen(str));
-    // //printf("str = %s\n", str);
-    // // if (g_spec.width > g_spec.size_num)
-    // // {
-    // //     if (g_spec.width && (!((g_spec.flags & ZERO) == ZERO)))
-    // //     {
-    // //         ret = (char *)ft_strnew(g_spec.size_num + (g_spec.width - g_spec.size_num));
-    // //         ft_memset(ret, ' ', g_spec.width - g_spec.size_num);
-    // //         ft_strcat(ret, str);
-    // //         g_spec.size_write += g_spec.width;
-    // //     }
-    // // }
-    // return (ret);
 	return (ret);
 }
 
