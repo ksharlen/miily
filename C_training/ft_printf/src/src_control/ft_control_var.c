@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 11:09:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 15:06:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,14 +91,14 @@ void				ft_control_var(char *buf_printf, va_list format)
 			ft_strcat(buf_printf, test_str);
 			g_spec.size_write += g_spec.size_spec;
 		}
-		else if (ft_strchr(UNSIGNED_INT, g_spec.spec))
-		{
-			ret = ft_unsigned_format(format);
-			test_str = ft_base_to_str(ret, 16); //? int2base
-			test_str = ft_control_fwa(test_str);
-			ft_strcat(buf_printf, test_str);
-			g_spec.size_write += g_spec.size_spec;
-		}
+		// else if (ft_strchr(UNSIGNED_INT, g_spec.spec))
+		// {
+		// 	ret = ft_unsigned_format(format);
+		// 	test_str = ft_base_to_str(ret, 16); //? int2base
+		// 	test_str = ft_control_fwa(test_str);
+		// 	ft_strcat(buf_printf, test_str);
+		// 	g_spec.size_write += g_spec.size_spec;
+		// }
 		//test_str = ft_num2hex_or_oct(ft_num_int(format), ft_define_num_sys());
 		//!Тут будет ф-ия работы с шириной, флагами и точностью
 		//ft_strcat(buf_printf, test_str);

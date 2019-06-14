@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/13 15:38:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 16:06:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define UNSIGNED_INT "uxXoU"
 # define NUM_DOUBLE "feEgGaA"
 # define NUM_OTHER "nprk"
-# define SIZE_BUF_PRINTF 20
+# define SIZE_BUF_PRINTF 12000
 # define ZERO	1
 # define PLUS	2
 # define DEC	4
