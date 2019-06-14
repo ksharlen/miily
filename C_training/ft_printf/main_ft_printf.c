@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 09:27:36 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/14 11:24:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,28 @@ int		main(void)
 	a = 123;
 	//ft_printf("%2d\n", a);
 	//ft_printf("%1.10d\n", 15);
-	ft_printf("%x\n", 25);
-	printf("%x\n", 25);
+	printf("test1\n");
+	ft_printf("%6.10d\n", 1234);
+	printf("%6.10d\n", 1234);
+
+	printf("test2\n");
+	ft_printf("%3.2d\n", 1234);
+	printf("%3.2d\n", 1234);
+
+	printf("test3\n");
+	ft_printf("%2.4d\n", 1234);
+	printf("%2.4d\n", 1234);
+
+	printf("test4\n");
+	ft_printf("%10.5d\n", 1234);
+	printf("%10.5d\n", 1234);
+
+	printf("test5\n");
+	ft_printf("%10.3d\n", 1234);
+	printf("%10.3d\n", 1234);
+
+	printf("test6\n");
+	ft_printf("%3.10d\n", 1234);
+	printf("%3.10d\n", 1234);
 	return (0);
 }
