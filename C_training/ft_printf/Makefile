@@ -19,7 +19,6 @@ $(NAME): all
 
 all:
 	@$(CC) $(FLAGS) $(INCLUDE) $(MAIN) $(LIB) $(SOURCE)
-	./ft_printf
 
 clean:
 	@/bin/rm -f $(NAME)

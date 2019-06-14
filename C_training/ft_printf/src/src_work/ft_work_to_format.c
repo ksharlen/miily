@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/13 09:25:11 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/14 12:14:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,13 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 		{
 			ret_check_format = ft_check_format(format + 1); //!Тут будет условие если формат не поддерживается.
 			//?Тут будут ф-ии для преобразования и определения точности и строки.
-
 			ft_control_spec(format + 1);//?записываем значения найденных спецификаторов
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
-			//printf("format = %c\n", g_spec.mod);
+			//printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
 			ft_control_var(buf_printf, form);
-//			test_str = ft_num2binary(g_spec.flags);
-//			printf("g_spec.flags = %s\n", test_str);
-			//printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
 		}
 		else
-		{
 			buf_printf[g_spec.size_write++] = *format++;
-			//++g_spec.size_write;
-		}
 	}
 	if (!g_spec.size_buf)
 	{
