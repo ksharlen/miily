@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/14 16:06:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/17 15:40:42 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@
 # define SIZE_BUF_PRINTF 12000
 # define ZERO	1
 # define PLUS	2
-# define DEC	4
+# define DASH	4
 # define SPACE	8
 # define HASH	16
+# define DOT 	32
+# define DEC	64
 # define DOES_NOT_SUPPORT_LONG "nprkeEgGaAD"
 # define DOES_NOT_SUPPORT_SHORT "feEgGaAnprkD"
 # define DOES_NOT_SUPPORT_INT_MAX "feEgGaAnprkUDxXoOuUnprk"
