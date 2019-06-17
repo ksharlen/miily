@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/14 16:02:00 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/17 13:06:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static int		ft_find_width_accuracy(const char *format)
 	dot = 0;
 	if (*format == '.')
 	{
+		g_spec.flags |= DOT;
 		g_spec.accuracy = ft_atoi(format + 1);
 		//g_spec.accuracy = MOD_NUM(g_spec.accuracy);
 		dot = 1;

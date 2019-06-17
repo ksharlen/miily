@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 17:21:17 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/17 15:13:19 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,16 @@ int		main(void)
 	//ft_printf("a=%10d\nb=%d\n", 25, 123);
 	// printf("a = %10.d\nb = %d\n", 25, 31);
 	// ft_printf("a = %20.d\nb = %d\n", 25, 31);
+	// ft_printf("hello %+-15.10d world\n", 123);
+	// printf("hello %+-15.10d world\n", 123);
+	printf("--------test1.1----------\n");
+	printf("hiw are you? % -20.5d hmm?\nfine %-+15.5d\n", -321, 45);
+	ft_printf("hiw are you? % -20.5d hmm?\nfine %-+15.5d\n", -321, 45);
+	printf("--------test2.1----------\n");
+	printf("hello %15.10d world\na = %+10.5d\n", 123, 45);
+	ft_printf("hello %15.10d world\na = %+10.5d\n", 123, 45);
+//	printf("--------test3.1----------\n");
+//	printf("%+d\n", 0);
+//	ft_printf("%+d\n", 0);
 	return (0);
 }
