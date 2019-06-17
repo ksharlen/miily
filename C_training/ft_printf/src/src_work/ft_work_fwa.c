@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/17 16:49:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/17 20:24:34 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,33 @@ static int		ft_plus_space(const char *str)
 		return('-');
 }
 
-static char		*ft_create_str(size_t size, int sym, int dash, const char *str)
+static char		*ft_create_str(int val1, int val2, size_t size, const char *str)
 {
-	// char 		*ret;
-	// char 		*shift_ret;
+	char 		*ret;
+	char 		*shift_ret;
+	int			sym;
 
-	// if (!(ret = (char *)ft_memalloc(size)))
-	// 	exit(0);
-	// shift_ret = ret;
+	sym = ft_plus_space(str);
+	if (!(ret = (char *)ft_memalloc(size)))
+		exit(0);
+	shift_ret = ret;
+	if (val1 == -1 && val2 != -1)
+	{
+		*ret = sym;
+	}
+	else if (val2 == -1 && val1 != -1)
+	{
+
+	}
+	else if (va1 == -1 && val2 = -1)
+	{
+
+	}
+	else
+	{
+		
+	}
+	ft_memset(ret, sym)
 	// if (dash && sym != '0')
 	// {
 	// 	shift_ret[0] = sym;
@@ -52,31 +71,31 @@ static char		*ft_create_str(size_t size, int sym, int dash, const char *str)
 	// shift_ret += g_spec.accuracy - g_spec.size_num;
 	// ft_memcpy(shift_ret, str, g_spec.size_num);
 	// return (ret);
-	char		*ret;
-	char		*shift_ret;
-	int			sym_width;
-	size_t		s_sym;
-	int			shift_sym;
+	// char		*ret;
+	// char		*shift_ret;
+	// int			sym_width;
+	// size_t		s_sym;
+	// int			shift_sym;
 
-	s_sym = 0;
-	shift_sym = 0;
-	sym_width = ' ';
-	if (!(ret = (char *)ft_memalloc(size)))
-		exit(0);
-	shift_ret = ret;
-	if ((g_spec.flags & DASH) == DASH)
-	{
-		//ft_swap(&g_spec.width, &g_spec.accuracy);
-		//sym_width = '0';
-		//++shift_ret;
-		//s_sym = 0;
-		ft_memset(shift_ret++, sym, 1);
-		ft_memset(shift_ret, '0', g_spec.accuracy - g_spec.size_num);
-		ft_memcpy(shift_ret + (g_spec.accuracy - g_spec.size_num), str, g_spec.size_num);
-		ft_memset(shift_ret + g_spec.accuracy, ' ', g_spec.width - g_spec.accuracy);
-	}
-	ft_memset(shift_ret, ' ', g_spec.width);
-	ft_memset()
+	// s_sym = 0;
+	// shift_sym = 0;
+	// sym_width = ' ';
+	// if (!(ret = (char *)ft_memalloc(size)))
+	// 	exit(0);
+	// shift_ret = ret;
+	// if ((g_spec.flags & DASH) == DASH)
+	// {
+	// 	//ft_swap(&g_spec.width, &g_spec.accuracy);
+	// 	//sym_width = '0';
+	// 	//++shift_ret;
+	// 	//s_sym = 0;
+	// 	ft_memset(shift_ret++, sym, 1);
+	// 	ft_memset(shift_ret, '0', g_spec.accuracy - g_spec.size_num);
+	// 	ft_memcpy(shift_ret + (g_spec.accuracy - g_spec.size_num), str, g_spec.size_num);
+	// 	ft_memset(shift_ret + g_spec.accuracy, ' ', g_spec.width - g_spec.accuracy);
+	// }
+	// ft_memset(shift_ret, ' ', g_spec.width);
+	// ft_memset()
 }
 static char		*ft_check_wa(const char *str)
 {
