@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/18 16:41:17 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/18 16:59:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int		main(void)
 	// printf("%10.3d\n", 1234);
 
 	// printf("------------test6-------------\n");
-	ft_printf("%3.10d\n", 1234);
+	//ft_printf("%3.10d\n", 1234);
 	// printf("%3.10d\n", 1234);
 
 	//printf("%,*.d", 5, 4);
@@ -131,7 +131,7 @@ int		main(void)
 //	printf("--------test3.1----------\n");
 //	printf("%+d\n", 0);
 //	ft_printf("%+d\n", 0);
-	printf("%-10.5dw\n", 4);
-	ft_printf("%-10.5dw\n", 4);
+	printf("%+10.5dw\n", 123);
+	ft_printf("%+10.5dw\n", 123);
 	return (0);
 }
