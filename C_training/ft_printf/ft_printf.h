@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/14 16:06:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/18 12:21:24 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@
 # define SIZE_BUF_PRINTF 12000
 # define ZERO	1
 # define PLUS	2
-# define DEC	4
+# define DASH	4
 # define SPACE	8
 # define HASH	16
+# define DOT 	32
+# define DEC	64
 # define DOES_NOT_SUPPORT_LONG "nprkeEgGaAD"
 # define DOES_NOT_SUPPORT_SHORT "feEgGaAnprkD"
 # define DOES_NOT_SUPPORT_INT_MAX "feEgGaAnprkUDxXoOuUnprk"
@@ -72,9 +74,8 @@ char					*ft_width(const char *str);
 int						ft_l_big_format(const char *format);
 char					*ft_base_to_str(unsigned long long num, int base);
 char					*ft_int_to_str(long long int num);
-size_t					ft_base_depth(unsigned long long int num, int base);
 void					ft_control_var(char *buf_printf, va_list format);
-size_t					ft_base_depth(unsigned long long int num, int base);
+void					ft_base_depth(unsigned long long int num, int base);
 char					*ft_control_fwa(const char *str);
 
 #endif

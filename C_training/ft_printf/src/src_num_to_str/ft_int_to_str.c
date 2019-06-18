@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/14 16:08:19 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/18 09:33:57 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@ static size_t	ft_size_num(long long int num)
 {
 	size_t		l;
 
-	l = num > 0 ? 0 : 1;
-	l = g_spec.accuracy == 0 && num == 0 ? 0 : l;
-	while (num)
-	{
-		l++;
-		num /= 10;
-	}
+	// l = num == 0 ? 0 : 1;
+	l = g_spec.accuracy == 0 && num == 0 ? 0 : 1;
+	while (num /= 10)
+		++l;
+		// num /= 10;
 	g_spec.size_num = l;
-//	g_spec.size_write += l;
 	return (l);
 }
+
 
 char			*ft_int_to_str(long long int num)
 {
@@ -41,13 +39,12 @@ char			*ft_int_to_str(long long int num)
 	all_str[size_num] = '\0';
 	if (num < 0)
 	{
-		*all_str = '-';
+		g_spec.flags |= DEC;
 		sign = -1;
 	}
-	!num ? *all_str = '0' : 0;
-	while (num)
+	while (size_num--)
 	{
-		all_str[--size_num] = num % 10 * sign + '0';
+		all_str[size_num] = num % 10 * sign + '0';
 		num /= 10;
 	}
 	return (all_str);
