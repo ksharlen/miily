@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/17 20:24:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/18 14:24:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,24 @@ static char		*ft_create_str(int val1, int val2, size_t size, const char *str)
 	sym = ft_plus_space(str);
 	if (!(ret = (char *)ft_memalloc(size)))
 		exit(0);
-	shift_ret = ret;
-	if (val1 == -1 && val2 != -1)
-	{
-		*ret = sym;
-	}
-	else if (val2 == -1 && val1 != -1)
-	{
+	// shift_ret = ret;
+	// if (val1 == -1 && val2 != -1)
+	// {
+	// 	*ret = sym;
+	// }
+	// else if (val2 == -1 && val1 != -1)
+	// {
 
-	}
-	else if (va1 == -1 && val2 = -1)
-	{
+	// }
+	// else if (va1 == -1 && val2 = -1)
+	// {
 
-	}
-	else
-	{
-		
-	}
-	ft_memset(ret, sym)
+	// }
+	// else
+	// {
+
+	// }
+	// ft_memset(ret, sym)
 	// if (dash && sym != '0')
 	// {
 	// 	shift_ret[0] = sym;
@@ -96,6 +96,7 @@ static char		*ft_create_str(int val1, int val2, size_t size, const char *str)
 	// }
 	// ft_memset(shift_ret, ' ', g_spec.width);
 	// ft_memset()
+	return (NULL);
 }
 static char		*ft_check_wa(const char *str)
 {
@@ -108,10 +109,10 @@ static char		*ft_check_wa(const char *str)
 	if (g_spec.width > g_spec.accuracy && g_spec.accuracy > g_spec.size_num)
 	{
 		size = g_spec.width;
-		if ((g_spec.flags & DEC) == DEC)
-			ret = ft_create_str(size, sym, '-', str, ' ');
-		else
-			ret = ft_create_str(size, sym, 0, str, ' ');
+//		if ((g_spec.flags & DEC) == DEC)
+//			ret = ft_create_str(size, sym, '-', str, ' ');
+//		else
+	//		ret = ft_create_str(size, sym, 0, str, ' ');
 		g_spec.size_write += size;
 	}
 	return (ret);
