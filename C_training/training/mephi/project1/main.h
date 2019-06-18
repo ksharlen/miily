@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 00:29:54 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/17 12:50:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/18 10:14:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,10 @@ typedef struct		s_matrix
 	int				num_list;
 	t_line			*elem;
 }					t_matrix;
+
+void				ft_error(char *s);
+int					ft_get_int(int *one);
+int					ft_input_data(t_matrix *elem);
+void				ft_malloc(t_matrix *elem);
 
 #endif

@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 00:29:56 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/18 10:18:21 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/18 10:12:39 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/18 10:14:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-int					main(void)
+void	ft_malloc(t_matrix *elem)
 {
-	t_matrix 		elem;
-
-	ft_get_int(&elem.num_list); //?Значение всегда будет правильным
-	ft_malloc(&elem);
-	ft_input_data(&elem);
-	//printf("elem.num = %d\n", elem.num_list);
-	return (0);
+	elem->elem = (t_line *)malloc(sizeof(t_line) * elem->num_list);
+	if (!elem->elem)
+		ft_error(ERR_MEM);
 }
