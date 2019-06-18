@@ -6,15 +6,18 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 00:29:56 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/17 12:51:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/18 08:51:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-void test()
+void stdin_clean(void)
 {
-	while ((c = getchar()))
+	int c;
+
+	while ((c = getchar()) != EOF)
+		;
 }
 
 static void			ft_error(char *s)
@@ -40,7 +43,7 @@ static int			ft_get_int(int *one)
 	while (!ret_scanf || !(*one))
 	{
 		ret_scanf = scanf("%s", sc);
-		read(1, &sc[strlen(sc)], SIZE - strlen(sc - 1));
+		stdin_clean();
 		if (ret_scanf == -1)
 		{
 			perror(ERR_GET_INT);
