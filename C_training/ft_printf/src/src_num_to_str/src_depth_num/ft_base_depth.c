@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:28:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/18 18:35:49 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/18 20:23:37 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ void			ft_base_depth(unsigned long long int num, int base)
 	while (num /= base)
 		++depth;
 	g_spec.size_num = depth;
-	printf("depth = %d\n", depth);
 }
