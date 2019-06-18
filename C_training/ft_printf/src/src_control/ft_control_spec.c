@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/17 13:06:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/18 15:06:08 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int		ft_work_spec(const char *format)
 		else if (*format == '+')
 			g_spec.flags |= PLUS;
 		else if (*format == '-')
-			g_spec.flags |= DEC;
+			g_spec.flags |= DASH;
 		else if (*format == ' ')
 			g_spec.flags |= SPACE;
 		else if (*format == '0')

@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/18 09:33:57 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/18 16:41:37 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static size_t	ft_size_num(long long int num)
 	return (l);
 }
 
+//g_spec.flags |= DEC;
 
 char			*ft_int_to_str(long long int num)
 {
