@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/19 11:09:37 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 12:06:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void					ft_control_var(char *buf_printf, va_list format)
 			ret_u = ft_unsigned_format(format);
 			test_str = ft_base_to_str(ret_u, ft_define_num_sys());
 			ft_strcat(buf_printf, test_str);
-			printf("size_num = %ld\n", g_spec.size_num);
+			//printf("size_num = %ld\n", g_spec.size_num);
 			g_spec.size_write += g_spec.size_num;
 		}
 		// else if (ft_strchr(UNSIGNED_INT, g_spec.spec))

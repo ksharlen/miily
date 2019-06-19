@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/19 14:40:00 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/19 16:15:14 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,5 +215,40 @@ int		main(void)
 	printf("%0.d\n", -1);
 
 
+	printf("--------test4.1----------\n");
+	printf("%-+10.5d\n", 31);
+	ft_printf("%-+10.5d\n", 31);
+
+	printf("--------test4.2----------\n");
+	printf("%-+5.10d\n", 31);
+	ft_printf("%-+5.10d\n", 31);
+
+	printf("--------test4.3----------\n");
+	printf("%+10.5d\n", 31);
+	ft_printf("%+10.5d\n", 31);
+
+	printf("--------test4.4----------\n");
+	printf("%+5.10d\n", 31);
+	ft_printf("%+5.10d\n", 31);
+
+	printf("--------test4.5----------\n");
+	printf("%-+10.1dw\n", 31);
+	ft_printf("%-+10.1dw\n", 31);
+
+	printf("--------test4.6----------\n");
+	printf("%+10.1dw\n", 31);
+	ft_printf("%+10.1dw\n", 31);
+
+	printf("--------test4.7----------\n");
+	printf("% 5.10dw\n", 31);
+	ft_printf("% 5.10dw\n", 31);
+
+	printf("--------test4.8----------\n");
+	printf("%02.dw\n", 31);
+	ft_printf("%02.dw\n", 31);
+
+	printf("--------test4.8----------\n");
+	printf("% 10.dw\n", -31);
+	ft_printf("% 10.dw\n", -31);
 	return (0);
 }
