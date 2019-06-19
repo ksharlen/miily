@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_output.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 01:10:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 10:05:30 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/19 10:16:40 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/19 10:26:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+#include "main.h"
 
-int main(void)
+void		ft_print_matrix(t_matrix elem)
 {
-	char 	*str = "Введите значение: \n";
-	char 	*buf;
-	int		ret_scanf;
-	int		a;
+	int		index;
+	int		jindex;
 
-	ret_scanf = scanf("%d", &a);
-	printf("ret_scanf = %d\n", ret_scanf);
-	return (0);
+	index = 0;
+	printf("\n");
+	while (index < elem.num_list)
+	{
+		jindex = 0;
+		while (jindex < elem.elem[index].size_line)
+			printf("%d	", elem.elem[index].num[jindex++]);
+		printf("\n");
+		++index;
+	}
 }
