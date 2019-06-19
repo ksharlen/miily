@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 09:25:50 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/18 18:36:56 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/19 11:26:33 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ int					main(int ac, char **av)
 
 	//?test 3
 	g_spec.spec = 'x';
-	g_spec.flags |= HASH;
-	// g_spec.flags |= DOT;
-	g_spec.accuracy = 0;
+//	g_spec.flags |= HASH;
+	g_spec.flags |= DOT;
+//	g_spec.accuracy = 0;
 	num = 0;
 
 	printf("x = %s\n", ft_base_to_str(num, 16));
-	printf("    %#0x\n", num);
+	printf("    %#.x\n", num);
 
 	// printf("o = %s\n", ft_base_to_str(num, 8));
 	// printf("    %#o   t\n", num);
