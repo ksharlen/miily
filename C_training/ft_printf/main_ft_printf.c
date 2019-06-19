@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/19 11:42:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 16:12:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,40 @@ int		main(void)
 //	ft_printf("%+d\n", 0);
 	//ft_printf("%#llx\n", -143);
 	//printf("%#llx\n", -143);
-	ft_printf("%.x\n", 123);
-	printf("%.x\n", 123);
+	printf("--------test4.1----------\n");
+	printf("%-+10.5d\n", 31);
+	ft_printf("%-+10.5d\n", 31);
+
+	printf("--------test4.2----------\n");
+	printf("%-+5.10d\n", 31);
+	ft_printf("%-+5.10d\n", 31);
+
+	printf("--------test4.3----------\n");
+	printf("%+10.5d\n", 31);
+	ft_printf("%+10.5d\n", 31);
+
+	printf("--------test4.4----------\n");
+	printf("%+5.10d\n", 31);
+	ft_printf("%+5.10d\n", 31);
+
+	printf("--------test4.5----------\n");
+	printf("%-+10.1dw\n", 31);
+	ft_printf("%-+10.1dw\n", 31);
+
+	printf("--------test4.6----------\n");
+	printf("%+10.1dw\n", 31);
+	ft_printf("%+10.1dw\n", 31);
+
+	printf("--------test4.7----------\n");
+	printf("% 5.10dw\n", 31);
+	ft_printf("% 5.10dw\n", 31);
+
+	printf("--------test4.8----------\n");
+	printf("%02.dw\n", 31);
+	ft_printf("%02.dw\n", 31);
+
+	printf("--------test4.8----------\n");
+	printf("% 10.dw\n", -31);
+	ft_printf("% 10.dw\n", -31);
 	return (0);
 }
