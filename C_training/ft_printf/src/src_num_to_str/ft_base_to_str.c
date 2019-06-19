@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/18 17:42:33 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/19 11:08:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char					*ft_base_to_str(unsigned long long num, int base)
 
 	ft_base_depth(num, base);
 	len = g_spec.size_num;
+	//g_spec.size_write += g_spec.size_num;
 	if (g_spec.spec == 'p')
 	{
 		g_spec.spec = 'x';

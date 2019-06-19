@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:36:16 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/18 17:08:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 10:58:34 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char            *ft_control_fwa(const char *str)
 	// printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
 	// printf("flags = %d\n", g_spec.flags);
 	// printf("size_num = %ld\n", g_spec.size_num);
-	printf("size_w = %d\n", g_spec.accuracy - g_spec.size_num);
+	//printf("size_w = %d\n", g_spec.accuracy - g_spec.size_num);
 	if ((g_spec.width > g_spec.size_num) && (g_spec.accuracy > g_spec.size_num))
 	{
 		if (g_spec.width > g_spec.accuracy)
