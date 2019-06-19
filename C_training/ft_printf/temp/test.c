@@ -2,9 +2,6 @@
 
 int		main(void)
 {
-	if (ft_memisstr("yes", "", 3))
-		printf("true");
-	else
-		printf("false");
+	printf("%010.5d\n", 13);
 	return (0);
 }

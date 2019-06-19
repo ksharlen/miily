@@ -6,26 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:37:47 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/18 14:24:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 11:38:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int		ft_plus_space(const char *str)
-{
-	if (ft_atoi(str) >= 0)
-	{
-		if ((g_spec.flags & PLUS) == PLUS)
-			return ('+');
-		else if ((g_spec.flags & SPACE) == SPACE)
-			return (' ');
-		else
-			return (0);
-	}
-	else
-		return('-');
-}
 
 static char		*ft_create_str(int val1, int val2, size_t size, const char *str)
 {
@@ -33,7 +18,7 @@ static char		*ft_create_str(int val1, int val2, size_t size, const char *str)
 	char 		*shift_ret;
 	int			sym;
 
-	sym = ft_plus_space(str);
+	//sym = ft_plus_space(str);
 	if (!(ret = (char *)ft_memalloc(size)))
 		exit(0);
 	// shift_ret = ret;
@@ -104,7 +89,7 @@ static char		*ft_check_wa(const char *str)
 	size_t		size;
 	int			sym;
 
-	sym = ft_plus_space(str);
+	//sym = ft_plus_space(str);
 	ret = NULL;
 	if (g_spec.width > g_spec.accuracy && g_spec.accuracy > g_spec.size_num)
 	{
