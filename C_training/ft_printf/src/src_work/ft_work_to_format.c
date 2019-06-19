@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/14 12:14:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 16:27:44 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,9 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 //	printf("size_write = %ld\n", g_spec.size_write);
 	//printf("buf = %s\nsize_write = %ld\n", buf_printf, g_spec.size_write);
 	//printf("size_write = %ld\n", g_spec.index_buf);
+	printf("plus = %d\n", g_spec.flags & PLUS);
+	printf("width = %d\n", g_spec.width);
+	printf("acc = %d\n", g_spec.accuracy);
 	return (ret_check_format);
 }
 

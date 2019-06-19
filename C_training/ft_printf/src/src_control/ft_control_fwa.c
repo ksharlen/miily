@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:36:16 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 16:09:47 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 16:34:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static char		*ft_wz(int size_w, int size_a, const char *str, size_t size)
 	shift_ret = ret;
 	if (flag && str)
 	{
+		printf("tut2\n");
 		--size_w;
 		*(shift_ret + size_w) = flag;
 		shift_flag = 1;
@@ -152,7 +153,10 @@ char            *ft_control_fwa(const char *str)
 	{
 		size = g_spec.size_num;
 		if (ft_plus_space())
+		{
+			printf("tut\n");
 			ft_wz(1, 0, str, size + 1);
+		}
 		else
 			ft_wz(0, 0, str, size);
 	}
