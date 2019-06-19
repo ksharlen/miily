@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 08:36:16 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 10:58:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 11:37:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 static int		ft_plus_space(const char *str)
 {
+	if (g_spec.flags & DEC)
+		return ('-');
+	else if (g_spec.flags & PLUS)
+		return ('+');
+	else if (g_spec.flags & SPACE)
+		return (' ');
+	else
+		return (0);
 	// if (ft_atoi(str) >= 0)
 	// {
 	// 	if ((g_spec.flags & PLUS) == PLUS)
@@ -25,14 +33,6 @@ static int		ft_plus_space(const char *str)
 	// }
 	// else
 	// 	return('-');
-	if (g_spec.flags & DEC)
-		return ('-');
-	else if (g_spec.flags & PLUS)
-		return ('+');
-	else if (g_spec.flags & SPACE)
-		return (' ');
-	else
-		return (0);
 }
 
 static char		*ft_zw(int size_w, int size_a, const char *str, size_t size)
@@ -84,10 +84,6 @@ char            *ft_control_fwa(const char *str)
 {
 	size_t 		size;
 
-	// printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
-	// printf("flags = %d\n", g_spec.flags);
-	// printf("size_num = %ld\n", g_spec.size_num);
-	//printf("size_w = %d\n", g_spec.accuracy - g_spec.size_num);
 	if ((g_spec.width > g_spec.size_num) && (g_spec.accuracy > g_spec.size_num))
 	{
 		if (g_spec.width > g_spec.accuracy)
@@ -99,5 +95,12 @@ char            *ft_control_fwa(const char *str)
 		else
 			return (ft_wz(g_spec.width - g_spec.accuracy, g_spec.accuracy - g_spec.size_num, str, size));
 	}
+	// if (g_spec.accuracy > g_spec.size_num && g_spec.width > g_spec.size_num)
+	// {
+	// 	if (g_spec.width > g_spec.accuracy)
+	// 	{
+	// 		if (g_spec.flags)
+	// 	}
+	// }
 	return (NULL);
 }

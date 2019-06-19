@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/18 15:06:08 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 11:41:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,12 @@ static int		ft_find_width_accuracy(const char *format)
 	if (*format == '.')
 	{
 		g_spec.flags |= DOT;
-		g_spec.accuracy = ft_atoi(format + 1);
-		//g_spec.accuracy = MOD_NUM(g_spec.accuracy);
+		if (ft_isdigit(*(format + 1)))
+			g_spec.accuracy = ft_atoi(format + 1);
 		dot = 1;
 	}
 	else
-	{
 		g_spec.width = ft_atoi(format);
-	}
 	return (ft_size_num(format + dot) + dot);
 }
 
@@ -65,8 +63,9 @@ static int		ft_work_spec(const char *format)
 			g_spec.flags |= ZERO;
 		else if (*format == '*')
 			g_spec.paste = 1;
-		else if (ft_isdigit(*format) || ((*format == '.') && ft_isdigit(*(format + 1))))
+		else if (ft_isdigit(*format) || ((*format == '.')))
 		{
+			printf("1\n");
 			format += ft_find_width_accuracy(format);
 			zero_shift = 0;
 		}
