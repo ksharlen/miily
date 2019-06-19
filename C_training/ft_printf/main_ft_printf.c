@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/19 16:12:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/19 16:20:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,5 +168,9 @@ int		main(void)
 	printf("--------test4.8----------\n");
 	printf("% 10.dw\n", -31);
 	ft_printf("% 10.dw\n", -31);
+
+	printf("--------test4.8----------\n");
+	printf("%+10.hdw\n", 31);
+	ft_printf("%+10.hdw\n", 31);
 	return (0);
 }
