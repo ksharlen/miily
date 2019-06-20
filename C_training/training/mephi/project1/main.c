@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 00:29:56 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 10:20:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/20 23:03:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ int					main(void)
 {
 	t_matrix 		elem;
 
+	elem.num_list = 0;
+	elem.elem = NULL;
 	printf("Введите кол-во строк: \n");
 	ft_num_line(&elem.num_list);
 	elem.elem = (t_line *)ft_malloc(sizeof(t_line) * elem.num_list);
 	ft_input_data(&elem);
 	ft_print_matrix(elem);
-	//ft_input_data(&elem);
-	//printf("elem.num = %d\n", elem.num_list);
+	printf("\n");
+	ft_work(&elem);
+	ft_free_all(&elem);
 	return (0);
 }

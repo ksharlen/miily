@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 10:11:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 10:23:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/20 22:46:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			ft_error(char *s)
 int			ft_get_int(int *one)
 {
 	int				ret_scanf;
-	int				ret;
+//	int				ret;
 	int				num;
 
 	ret_scanf = 0;
@@ -46,7 +46,6 @@ int			ft_input_data(t_matrix *elem)
 {
 	int 	index;
 	int 	jindex;
-	int		ret_get_int;
 
 	index = 0;
 	while (index < elem->num_list)
@@ -71,8 +70,12 @@ void		ft_num_line(int *val)
 
 	do
 	{
-		//printf("Введите кол-во строк: \n");
 		ret_get_int = ft_get_int(val);
+		if (ret_get_int < 0)
+		{
+			ft_error(ERR_GET_INT);
+			exit(0);
+		}
 		if ((*val) < 1)
 			printf("вы ввели неверное значение, повторите попытку!!!\n");
 	}
@@ -85,8 +88,12 @@ void		ft_num_val(int *num_val)
 
 	do
 	{
-		//printf("Введите кол-во эелментов строки: \n");
 		ret_scanf = ft_get_int(num_val);
+		if (ret_scanf < 0)
+		{
+			ft_error(ERR_GET_INT);
+			exit(0);
+		}
 		if (!ret_scanf)
 			printf("Вы ввели неправильное значение\n");
 	}
