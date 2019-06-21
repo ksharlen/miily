@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/18 12:21:24 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/21 19:30:30 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,9 @@ char					*ft_width(const char *str);
 int						ft_l_big_format(const char *format);
 char					*ft_base_to_str(unsigned long long num, int base);
 char					*ft_int_to_str(long long int num);
+char					*ft_ptr_to_str(unsigned long long ptr);
 void					ft_control_var(char *buf_printf, va_list format);
-void					ft_base_depth(unsigned long long int num, int base);
+size_t					ft_base_depth(unsigned long long int num, int base);
 char					*ft_control_fwa(const char *str);
 
 #endif

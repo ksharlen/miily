@@ -6,5 +6,10 @@
 		{
 			"path": "/Users/cormund/git_clones/git_miiliy/C_training/ft_printf/src/src_num_to_str"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"ft_printf.h": "c"
+		}
+	}
 }

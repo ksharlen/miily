@@ -6,37 +6,51 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/19 16:09:28 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/21 19:00:13 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static char				*ft_size_work(char *str)
+{
+	if (g_spec.flags & DASH)
+		ft_memset(str + g_spec.size_num, ' ', g_spec.width - g_spec.size_num);
+	else
+	{
+		ft_memset(str, ' ', g_spec.width - g_spec.size_num);
+		str += g_spec.width - g_spec.size_num;
+	}
+	return (str);
+}
+
 char					*ft_base_to_str(unsigned long long num, int base)
 {
-	char				*hex;
+	char				*str;
+	char				*str_num;
 	size_t				len;
-	int					mod;
 	unsigned long long	cp_num;
+	size_t				size_str;
 
 	cp_num = num;
-	ft_base_depth(num, base);
-	len = g_spec.size_num;
-	if (g_spec.spec == 'p')
-	{
-		g_spec.spec = 'x';
-		g_spec.flags |= HASH;
-	}
-	if (!(hex = (char *)malloc((len + 1) * sizeof(char))))
+	len = ft_base_depth(num, base);
+	printf("len = %d\n", len);
+	printf("g_spec.width = %d\n", g_spec.width);
+	size_str = g_spec.width > len ? g_spec.width : len;
+	printf("size_num = %d\n", g_spec.size_num);
+	str = (char *)malloc((size_str + 1) * sizeof(char));
+	if (!(str_num = str))
 		return (NULL);
-	hex[len] = '\0';
+	str[size_str] = '\0';
+	if (g_spec.width > len)
+		str_num = ft_size_work(str);
 	while (len--)
 	{
-		mod = num % base;
-		hex[len] = (mod > 9 ? mod + g_spec.spec - 33 : mod + '0');
+		str_num[len] = (num % base > 9 ? num % base + g_spec.spec - 33 : num % base + '0');
 		num /= base;
 	}
 	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'x' || g_spec.spec == 'X'))
-		hex[1] = g_spec.spec;
-	return (hex);
+		str_num[1] = g_spec.spec;
+	g_spec.size_num = size_str;
+	return (str);
 }
