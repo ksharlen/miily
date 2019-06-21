@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 19:16:43 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/20 22:59:57 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/21 13:50:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@ static int		ft_check_num(int num)
 	MOD_NUM(num);
 	while (num)
 	{
-		if ((num % 10) >= ((num / 10) % 10))
-		{
-			num /= 10;
+		if ((num % 10) >= ((num /= 10) % 10))
 			continue;
-		}
 		else
 			return (0);
 	}
@@ -42,7 +39,7 @@ static int		ft_check_line(int *line, int size_line)
 	return (1);
 }
 
-int				ft_work(t_matrix *elem)
+void			ft_work(t_matrix *elem)
 {
 	size_t		index;
 
@@ -50,10 +47,8 @@ int				ft_work(t_matrix *elem)
 	while (index < elem->num_list)
 	{
 		if (ft_check_line(elem->elem[index].num, elem->elem[index].size_line))
-			ft_print_line(elem->elem[index].num, elem->elem[index].size_line);
+			ft_print_line(elem->elem[index++].num, elem->elem[index].size_line);
 		else
-			ft_free((void *)elem->elem[index].num);
-		++index;
+			ft_free_num(&elem->elem[index++].num);
 	}
-	return (0);
 }
