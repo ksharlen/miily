@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/21 15:24:51 by ksharlen          #+#    #+#              #
-#    Updated: 2019/06/21 17:48:11 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/06/21 19:48:02 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,3 +22,6 @@ all:
 
 ex:
 	$(EXECUTE) -cp $(CLASSES) main/Class_main
+
+jar:
+	jar cf hello.jar build/main/Class_main.class build/main/Create_form.class
