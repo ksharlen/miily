@@ -1,11 +1,14 @@
-public class Figure
+abstract class Figure
 {
-	public int area;
-	public int perimetr;
+	public abstract void show();
 
-	Figure()
+	public final void print()
 	{
-		area = -1;
-		perimetr = -1;
+		System.out.println("test_print");
+	}
+
+	public final void print(int a)
+	{
+		System.out.println("final print");
 	}
 }
