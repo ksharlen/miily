@@ -2,15 +2,14 @@ public class Main
 {
 	public static void main(String args[])
 	{
-		Figure myFigure = new Figure();
-		Square mySquare = new Square();
-		int area;
-		int perimetr;
+		int num[] = new int[10];
+		//Object test;
 
-		mySquare.setSides(4);
-		area = mySquare.findArea();
-		System.out.println("area = " + area);
-		perimetr = mySquare.sumSides(4, 4, 4, 4);
-		System.out.println("perimetr = " + perimetr);
+		num[0] = 10;
+		num[1] = 5;
+		num[2] = 55;
+		//test = num;
+		for (Object a : num)
+			System.out.println(a);
 	}
 }
