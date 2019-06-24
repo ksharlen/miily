@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/06/17 15:48:50 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/06/24 08:24:40 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,3 +46,7 @@ copylinux:
 copytraining:
 	@cp libft.a libft.h ../C_training/training/OS/libft/
 	@echo "copy success!!!!"
+
+copyproject2:
+	@cp libft.a libft.h ../C_training/training/C/mephi/project2/lib/
+	@echo "copy success!!!"

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/19 12:06:17 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 10:06:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void					ft_control_var(char *buf_printf, va_list format)
 	long long int 		ret_s;
 	unsigned long long	ret_u;
 
-	if (ft_strchr(NUM_INT, g_spec.spec))
+	if (ft_memchr(NUM_INT, g_spec.spec, 1))
 	{
 		if (ft_strchr(SIGNED_INT, g_spec.spec))
 		{
@@ -119,6 +119,8 @@ void					ft_control_var(char *buf_printf, va_list format)
 		// ?Заходим в ф-ию определение длинны целых чисел
 		// ?Или определяем полную точность формата
 	}
+	else
+		printf("hello world\n");
 	// else if (ft_strchr(NUM_DOUBLE, g_spec.spec))
 	// {
 	// 	//?Заходим в ф-ию определения длинны вещественных чисел
