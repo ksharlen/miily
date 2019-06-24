@@ -6,51 +6,51 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 10:03:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 17:10:40 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int			ft_detect_format_size(const char *format)//, size_t *shift_format)
+static void			ft_def_spec(const char *format)
 {
-	if ((*format) == 'h' && !(ft_strchr(DOES_NOT_SUPPORT_SHORT, *(format + 1))))
-		return (ft_h_format(format));
-	else if (*format == 'l' && !(ft_strchr(DOES_NOT_SUPPORT_LONG, *(format + 1))))
-		return (ft_l_format(format));
-	else if ((*format) == 'j' && !(ft_strchr(DOES_NOT_SUPPORT_INT_MAX, *(format + 1))))
-		return (ft_j_format(format + 1));
-	else if ((*format) == 'z' && !(ft_strchr(DOES_NOT_SUPPORT_SIZE_T, *(format + 1))))
-		return (ft_z_format(format + 1));
-	else if ((*format) == 'L' && !(ft_strchr(DOES_NOT_SUPPORT_L, *(format + 1))))
-		return (ft_l_big_format(format + 1));
-	else if (ft_memchr(TYPE, *format, ft_strlen(TYPE)))
+	if (ft_memchr(TYPE, *format, ft_strlen(TYPE)))
 	{
 		g_spec.spec = *format;
-		g_spec.shift_spec += 1;
-		g_spec.size_type = NULL;
-		return (1);
+		++g_spec.shift_spec;
 	}
 	else
-		;
-	return (0);
+		g_spec.spec = 0;
 }
 
-static int			ft_check_format(const char *format)
+static void			ft_detect_format_size(const char *format)//, size_t *shift_format)
+{
+	if ((*format) == 'h')
+		ft_h_format(format);
+	else if (*format == 'l')
+		ft_l_format(format);
+	else if ((*format) == 'j')
+		ft_j_format(format + 1);
+	else if ((*format) == 'z')
+		ft_z_format(format + 1);
+	else if ((*format) == 'L')
+		ft_l_big_format(format + 1);
+	ft_def_spec(format + g_spec.shift_spec);
+}
+
+static void			ft_check_format(const char *format)
 {
 	size_t			num_before_format;
-	int				ret;
 
-	ret = 0;
 	num_before_format = 0;
-	while (!(ft_isalpha(*format)) && (*format))
+	while (!(ft_isalpha(*format)) && (*format) &&
+		(ft_memchr(UNDEF_BEH, *format, !ft_strlen(UNDEF_BEH))))
 	{
 		num_before_format++;
 		format++;
 	}
 	g_spec.shift_spec = num_before_format;
-	ret = ft_detect_format_size(format);
-	return (ret);
+	ft_detect_format_size(format);
 }
 
 int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
@@ -62,10 +62,8 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 	{
 		if (*format == '%')
 		{
-			ret_check_format = ft_check_format(format + 1); //!Тут будет условие если формат не поддерживается.
-			ft_control_spec(format + 1);//?записываем значения найденных спецификаторов
-			printf("g_spec.spec = %c\n", g_spec.spec);
-			printf("g_spec.size_type = %s\n", g_spec.size_type);
+			ft_check_format(format + 1); //*Заполняем spec и size_type;
+			ft_control_spec(format + 1);//*Заполняем точность ширину флаги и проверяем совместимость модификатора и спецификатора
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
 			ft_control_var(buf_printf, form);
 		}
@@ -77,7 +75,7 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 		//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
 		//?тут будет вызываться ф-ия для выгрузки буфера
 	}
-	return (ret_check_format);
+	return (1);
 }
 
 //*Ф-ия будет возвращать кол-во выведенных байт.
