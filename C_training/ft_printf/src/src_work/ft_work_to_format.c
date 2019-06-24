@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 16:27:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 10:03:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ static int			ft_detect_format_size(const char *format)//, size_t *shift_format)
 		g_spec.size_type = NULL;
 		return (1);
 	}
+	else
+		;
 	return (0);
 }
 
@@ -54,19 +56,17 @@ static int			ft_check_format(const char *format)
 int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 {
 	int			ret_check_format;
-//	size_t		i;
 	char		*test_str;
 
-//	i = 0;
 	while (*format && (g_spec.size_buf--))
 	{
 		if (*format == '%')
 		{
 			ret_check_format = ft_check_format(format + 1); //!Тут будет условие если формат не поддерживается.
-			//?Тут будут ф-ии для преобразования и определения точности и строки.
 			ft_control_spec(format + 1);//?записываем значения найденных спецификаторов
+			printf("g_spec.spec = %c\n", g_spec.spec);
+			printf("g_spec.size_type = %s\n", g_spec.size_type);
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
-			//printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
 			ft_control_var(buf_printf, form);
 		}
 		else
@@ -75,14 +75,8 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 	if (!g_spec.size_buf)
 	{
 		//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
+		//?тут будет вызываться ф-ия для выгрузки буфера
 	}
-//	write(1, buf_printf, g_spec.size_write);
-//	printf("size_write = %ld\n", g_spec.size_write);
-	//printf("buf = %s\nsize_write = %ld\n", buf_printf, g_spec.size_write);
-	//printf("size_write = %ld\n", g_spec.index_buf);
-	printf("plus = %d\n", g_spec.flags & PLUS);
-	printf("width = %d\n", g_spec.width);
-	printf("acc = %d\n", g_spec.accuracy);
 	return (ret_check_format);
 }
 

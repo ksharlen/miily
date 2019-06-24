@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/19 12:06:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 09:58:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ static int		ft_size_num(const char *format)
 
 	ret = 0;
 	while (ft_isdigit(*format++))
-	{
 		++ret;
-		//++format;
-	}
-	//printf("ret = %d\n", ret);
 	return (ret);
 }
 
@@ -65,7 +61,6 @@ static int		ft_work_spec(const char *format)
 			g_spec.paste = 1;
 		else if (ft_isdigit(*format) || ((*format == '.')))
 		{
-			//printf("1\n");
 			format += ft_find_width_accuracy(format);
 			zero_shift = 0;
 		}

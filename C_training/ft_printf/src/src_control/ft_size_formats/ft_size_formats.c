@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/13 09:24:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 09:59:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int			ft_l_format(const char *format)
 			{
 				g_spec.spec = *format;
 				g_spec.shift_spec += 3;
-				//printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
 				g_spec.size_type = "ll";
 				return (1);
 			}

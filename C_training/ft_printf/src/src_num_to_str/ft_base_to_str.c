@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/21 19:00:13 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/24 09:24:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ char					*ft_base_to_str(unsigned long long num, int base)
 
 	cp_num = num;
 	len = ft_base_depth(num, base);
-	printf("len = %d\n", len);
-	printf("g_spec.width = %d\n", g_spec.width);
+	//printf("len = %ld\n", len);
+	//printf("g_spec.width = %d\n", g_spec.width);
 	size_str = g_spec.width > len ? g_spec.width : len;
-	printf("size_num = %d\n", g_spec.size_num);
+	//printf("size_num = %ld\n", g_spec.size_num);
 	str = (char *)malloc((size_str + 1) * sizeof(char));
 	if (!(str_num = str))
 		return (NULL);
