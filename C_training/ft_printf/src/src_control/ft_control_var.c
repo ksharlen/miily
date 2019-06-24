@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/24 15:11:47 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 21:04:52 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static int						ft_check_com(void)
 {
 	char 						*str;
 
+	printf("testing input\n");
 	str = g_spec.size_type;
 	printf("spec.spec = %c\n", g_spec.spec);
 	if (ft_memchr(TYPE, g_spec.spec, ft_strlen(TYPE)))
@@ -27,7 +28,7 @@ static int						ft_check_com(void)
 			return (1);
 		}
 		else if (((!ft_strcmp("h", str) || !ft_strcmp("hh", str)))
-			&& ft_memchr(SUPPORT_FLOAT, g_spec.spec, ft_strlen(SUPPORT_INT)))
+			&& ft_memchr(SUPPORT_INT, g_spec.spec, ft_strlen(SUPPORT_INT)))
 		{
 			printf("2\n");
 			return (1);
@@ -52,7 +53,7 @@ static int						ft_check_com(void)
 
 static long long int			ft_signed_format(va_list format)
 {
-	long long int		ret;
+	long long int				ret;
 
 	ret = 0;
 	if (!g_spec.size_type)
@@ -104,9 +105,9 @@ static unsigned long long int	ft_unsigned_format(va_list format)
 }
 
 //?Проверка на сейв
-static int	ft_define_num_sys(void)
+static int						ft_define_num_sys(void)
 {
-	int 	ret;
+	int 						ret;
 
 	if (g_spec.spec == 'x' || g_spec.spec == 'X' || g_spec.spec == 'p')
 		ret = HEX;
@@ -117,12 +118,12 @@ static int	ft_define_num_sys(void)
 	return (ret);
 }
 
-void					ft_control_var(char *buf_printf, va_list format)
+void							ft_control_var(char *buf_printf, va_list format)
 {
-	char 				*test_str;
-	long long int 		ret_s;
-	unsigned long long	ret_u;
-	int					ret_check_com;
+	char 						*test_str;
+	long long int 				ret_s;
+	unsigned long long			ret_u;
+	int							ret_check_com;
 
 	ret_check_com = ft_check_com();
 	if (ft_memchr(NUM_INT, g_spec.spec, 1) && ret_check_com)
@@ -143,8 +144,8 @@ void					ft_control_var(char *buf_printf, va_list format)
 			g_spec.size_write += g_spec.size_num;
 		}
 	}
-	else
-		printf("else\n");
+	else if (ft_memchr(NUM_DOUBLE, g_spec.spec, 1) && ret_check_com)
+		printf("double\n");
 	// else if (ft_strchr(NUM_DOUBLE, g_spec.spec))
 	// {
 	// 	//?Заходим в ф-ию определения длинны вещественных чисел

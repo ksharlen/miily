@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 17:10:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 21:10:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void			ft_check_format(const char *format)
 {
 	size_t			num_before_format;
 
+	//*Тут подумать как реализовать размер формата
 	num_before_format = 0;
 	while (!(ft_isalpha(*format)) && (*format) &&
 		(ft_memchr(UNDEF_BEH, *format, !ft_strlen(UNDEF_BEH))))
