@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/24 10:02:10 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 17:10:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -438,7 +438,18 @@ int		main(void)
 
 	// printf("%0+-#20.20w %d\n", 45);
 	// printf("%-10w hello world %010y    how are yoU?\n");
-	ft_printf("%lw\n", 5);
-	printf("%lw\n", 5);
+	// printf("%20zw %dhello\n", 10);
+	// ft_printf("%20zw %dhello\n", 10);
+
+	// printf("%d\n", 10);
+	// ft_printf("%d\n", 10);
+
+	// printf("%w hello world\n");
+	// ft_printf("%w hello world\n");
+
+	printf("%;d", 45);
+	ft_printf("%;d", 45);
+
+	// ft_printf("a = %ljwhd\n", 13);
 	return (0);
 }
