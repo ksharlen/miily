@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/24 11:22:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/24 20:54:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int				ft_printf(const char *format, ...)
 	//printf("g_spec.size_type = %s\n", g_spec.size_type);
 	//printf("g_spec.shift_spec = %ld\n", g_spec.shift_spec);
 	g_spec.ret_printf = write(1, buf_printf, g_spec.size_write);
+	printf("size_type = %s\n", g_spec.size_type);
 	return (g_spec.ret_printf);
 }
