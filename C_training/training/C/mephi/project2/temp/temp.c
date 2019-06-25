@@ -6,19 +6,16 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 08:27:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 09:22:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/25 12:01:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "project2.h"
+#include <stdlib.h>
 
 int		main(void)
 {
-	char 	line[SIZE_WORD];
-	int		ret_scanf;
+	char *str;
 
-	ft_bzero(line, SIZE_WORD);
-	scanf("%19000s", line);
-	printf("line = %s\n", line);
+	str = malloc(1);
 	return (0);
 }

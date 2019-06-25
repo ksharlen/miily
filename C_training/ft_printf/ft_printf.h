@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 21:00:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/25 14:29:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@
 # define DECIMAL 			10
 # define HEX 				16
 /*Flags */
-# define ZERO				1
-# define PLUS				2
-# define DASH				4
-# define SPACE				8
-# define HASH				16
-# define DOT 				32
+# define ZERO				1	/*HH */
+# define PLUS				2	/*H */
+# define DASH				4	/*L */
+# define SPACE				8	/*LL */
+# define HASH				16	/*J */
+# define DOT 				32	/*Z */
 # define DEC				64
 /*Exeptions */
 # define TYPE 				"dioOxXufeEgGaAnprkUD"
@@ -39,6 +39,7 @@
 # define NUM_DOUBLE 		"feEgGaA"
 # define NUM_OTHER 			"nprk"
 # define UNDEF_BEH			"!\"&()/\\<=>?@[]^_`{}|~"
+# define SIZE_MOD			"zjlh"
 
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
@@ -57,6 +58,7 @@ typedef struct				s_spec
 	size_t					size_write;
 	size_t					size_spec;
 	size_t					size_num;
+	unsigned int			mod;
 }							t_spec;
 
 extern	t_spec				g_spec;
