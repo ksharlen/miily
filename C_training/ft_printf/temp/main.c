@@ -6,9 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 15:55:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/25 17:10:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/25 20:51:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 # define ZERO				1	/*HH */
 # define PLUS				2	/*H */
@@ -23,7 +25,36 @@
 # define TYPE 				"dioOxXufeEgGaAnprkUD"
 # define FOR_MOD			""
 
-#include "libft.h"
+typedef struct		s_spec
+{
+	char			*size_type;
+}					t_spec;
+
+//t_spec				g_spec;
+
+static int		ft_mod(char *form, t_spec *g_spec)
+{
+	if (*form == 'l')
+	{
+		if (*(form + 1) == 'l')
+		{
+			g_spec->size_type = "ll";
+			return (2);
+		}
+		g_spec->size_type = "l";
+		return (1);
+	}
+	else if (*form == 'h')
+	{
+		if (*(form + 1) == 'h')
+		{
+			g_spec->size_type = "hh";
+			return (2);
+		}
+		g_spec->size_type = "h";
+		return (1);
+	}
+}
 
 static int		ft_ismy(char form)
 {
@@ -35,7 +66,6 @@ static int		ft_ismy(char form)
 	(form > 104 && form < 106) || (form > 106 && form < 108) ||
 	(form > 108 && form < 116) || (form > 116 && form < 122) || form > 122))
 	{
-//		printf("test\n");
 		return (1);
 	}
 	return (0);
@@ -51,25 +81,35 @@ static int		ft_true(char form)
 static int		ft_test(char *form)
 {
 	int sum;
+	int shift;
+	t_spec		g_spec;
 
+	g_spec.size_type = NULL;
+	shift = 0;
 	sum = 0;
 	while (!ft_ismy(*form) && *form)
 	{
-		//printf("test\n");
-		++sum;
-		++form;
+		if (ft_memchr(SIZE_MOD, *form, ft_strlen(SIZE_MOD)))
+		{
+			shift = ft_mod(form, &g_spec);
+			form += shift;
+			//printf("testing\n");
+			printf("g_spec_size_type = %s\n", g_spec.size_type);
+		}
+		else
+			++form;
 	}
-
-	return (sum);
+	printf("g_spec.size_type = %s\n", g_spec.size_type);
+	printf("shift = %d\n", shift);
+	return (*form);
 }
 
 int		main(void)
 {
-	char *str = "%2$.zjlh#'*+-.:;_ll2hh0dhow are yoU?";
-	int sum;
+	char *str = ".+hhlld";
 
-	sum = ft_test(str);
-	printf("sum = %d\n", sum);
-	printf(str, 45);
+	//g_spec.size_type = NULL;
+	ft_test(str);
+	//printf("")
 	return (0);
 }
