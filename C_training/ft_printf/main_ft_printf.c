@@ -6,7 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/06/24 17:17:34 by ksharlen         ###   ########.fr       */
+=======
+/*   Updated: 2019/06/24 20:57:07 by ksharlen         ###   ########.fr       */
+>>>>>>> cad42277e263ebbcbac9b48594aa3a4813a80311
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -447,8 +451,13 @@ int		main(void)
 	// printf("%w hello world\n");
 	// ft_printf("%w hello world\n");
 
+<<<<<<< HEAD
 	// printf("%;d", 45);
 	// ft_printf("%;d", 45);
+=======
+	printf("hello %hf how are yoU?\n", 45.1);
+	ft_printf("%hf\n", 45.1);
+>>>>>>> cad42277e263ebbcbac9b48594aa3a4813a80311
 
 	// ft_printf("a = %ljwhd\n", 13);
 
