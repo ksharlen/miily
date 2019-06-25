@@ -6,13 +6,10 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/06/24 17:17:34 by ksharlen         ###   ########.fr       */
-=======
-/*   Updated: 2019/06/24 20:57:07 by ksharlen         ###   ########.fr       */
->>>>>>> cad42277e263ebbcbac9b48594aa3a4813a80311
+/*   Updated: 2019/06/25 12:20:29 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 #include "ft_printf.h"
@@ -302,7 +299,7 @@ int		main(void)
 	// printf("------------test10-------------\n");
 	// ft_printf("|%03.0x|\n", 0);
 	// printf("|%03.0x|\n", 0);
-	
+
 	// printf("------------test11-------------\n");
 	// ft_printf("|%#5x|\n", 0);
 	// printf("|%#5x|\n", 0);
@@ -384,7 +381,7 @@ int		main(void)
 	// printf("------------test10-------------\n");
 	// ft_printf("|%03.0o|\n", 0);
 	// printf("|%03.0o|\n", 0);
-	
+
 	// printf("------------test11-------------\n");
 	// ft_printf("|%#5o|\n", 0);
 	// printf("|%#5o|\n", 0);
@@ -451,16 +448,6 @@ int		main(void)
 	// printf("%w hello world\n");
 	// ft_printf("%w hello world\n");
 
-<<<<<<< HEAD
-	// printf("%;d", 45);
-	// ft_printf("%;d", 45);
-=======
-	printf("hello %hf how are yoU?\n", 45.1);
-	ft_printf("%hf\n", 45.1);
->>>>>>> cad42277e263ebbcbac9b48594aa3a4813a80311
-
-	// ft_printf("a = %ljwhd\n", 13);
-
-	printf("%td", 1246);
+	printf("%ll.,d", 34);
 	return (0);
 }

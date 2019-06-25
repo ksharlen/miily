@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 10:42:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/25 14:26:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ static int		ft_find_width_accuracy(const char *format)
 	return (ft_size_num(format + dot) + dot);
 }
 
-static int		ft_work_spec(const char *format)
+static			ft_work_spec(const char *format)
 {
 	int			zero_shift;
 
 	g_spec.flags = 0;
-	while (!(ft_isalpha(*format)))
+	while (!(ft_isalpha(*format))) //?Поменять условие для размеров
 	{
 		zero_shift = 1;
 		if (*format == '#')
@@ -64,9 +64,10 @@ static int		ft_work_spec(const char *format)
 			format += ft_find_width_accuracy(format);
 			zero_shift = 0;
 		}
+		else
+			//?Вызов ф-ии которая будет проверять размер
 		format += zero_shift;
 	}
-	return (1);
 }
 
 
