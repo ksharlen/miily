@@ -1,15 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "/Users/cormund/git_clones/git_miiliy/C_training/ft_printf"
+			"path": "/Users/cormund/git_clones/git_mil/C_training/ft_printf"
 		},
 		{
-			"path": "/Users/cormund/git_clones/git_miiliy/C_training/ft_printf/src/src_num_to_str"
+			"path": "/Users/cormund/git_clones/git_mil/my_lib"
 		}
-	],
-	"settings": {
-		"files.associations": {
-			"ft_printf.h": "c"
-		}
-	}
+	]
 }
