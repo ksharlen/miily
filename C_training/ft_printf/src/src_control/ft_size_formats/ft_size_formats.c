@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 12:28:00 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:14:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		ft_h_format(const char *format)
 	return (shift_size);
 }
 
-int			ft_j_z_l_format(const char *format)
+int			ft_j_z_l_t_format(const char *format)
 {
 	int mod;
 
@@ -67,6 +67,8 @@ int			ft_j_z_l_format(const char *format)
 		mod = HASH;
 	else if (*format == 'L')
 		mod = DASH;
+	else if (*format == 't')
+		mod = DEC;
 	if (mod > g_spec.mod)
 		g_spec.mod = mod;
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 17:00:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:14:01 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ static int		ft_check_mod(const char *format)
 		ret = ft_l_format(format);
 	else if (*format == 'h')
 		ret = ft_h_format(format);
-	else if (*format == 'j' || *format == 'z' || *format == 'L')
-		ret = ft_j_z_l_format(format);
+	else if (*format == 'j' || *format == 'z' ||
+		*format == 'L' || *format == 't')
+		ret = ft_j_z_l_t_format(format);
 	else
 		ret = 1;
 	return (ret);
