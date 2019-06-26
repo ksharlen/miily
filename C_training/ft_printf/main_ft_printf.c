@@ -6,13 +6,15 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/26 17:02:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:11:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 
 #include "ft_printf.h"
+#include <stdint.h>
+#include <stddef.h>
 
 int		main(void)
 {
@@ -460,7 +462,10 @@ int		main(void)
 	//printf("%td\n", 45);
 	//ft_printf("%*.*d\n", 13, 25, 13);
 	//printf("%4.*dworld", -10, 13);
-	printf("%$d\n", 45);
-	printf("%2$d\n", 45, 45);
+	//printf("%$d\n", 45);
+	//printf("%2$d\n", 45, 45);
+	printf("intmax_t = %ld\n", sizeof(intmax_t));
+	printf("ptrdiff_t = %ld\n", sizeof(ptrdiff_t));
+	printf("size_t = %ld\n", sizeof(size_t));
 	return (0);
 }

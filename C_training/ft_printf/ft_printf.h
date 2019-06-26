@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 16:53:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:13:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define SPACE				8	/*LL */
 # define HASH				16	/*J */
 # define DOT 				32	/*Z */
-# define DEC				64
+# define DEC				64	/*T */
 # define STAR_ACC			128
 # define STAR_WITH			256
 /*Exeptions */
@@ -41,7 +41,7 @@
 # define NUM_DOUBLE 		"feEgGaA"
 # define NUM_OTHER 			"nprk"
 # define UNDEF_BEH			"!\"&()/\\<=>?@[]^_`{}|~"
-# define SIZE_MOD			"zjlh"
+# define SIZE_MOD			"zjlht"
 
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
@@ -71,7 +71,7 @@ int							ft_printf(const char *format, ...);
 
 int							ft_l_format(const char *format);
 int							ft_h_format(const char *format);
-int							ft_j_z_l_format(const char *format);
+int							ft_j_z_l_t_format(const char *format);
 
 char						*ft_base_to_str(unsigned long long num, int base);
 char						*ft_int_to_str(long long int num);
