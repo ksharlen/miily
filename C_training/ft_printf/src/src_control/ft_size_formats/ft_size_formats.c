@@ -6,54 +6,68 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 14:53:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 12:28:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_l_format(const char *format)
+int		ft_l_format(const char *format)
 {
-		if ((*(++format) == 'l'))
-		{
-				g_spec.shift_spec += 2;
-				g_spec.size_type = "ll";
-		}
-		else
-		{
-			g_spec.shift_spec += 1;
-			g_spec.size_type = "l";
-		}
+	int mod;
+	int shift_size;
+
+	shift_size = 0;
+	mod = 0;
+	if (*(format + 1) == 'l')
+	{
+		mod = SPACE;
+		shift_size = 2;
+	}
+	else
+	{
+		mod = DASH;
+		shift_size = 1;
+	}
+	if (mod > g_spec.mod)
+		g_spec.mod = mod;
+	return (shift_size);
 }
 
-void		ft_h_format(const char *format)
+int		ft_h_format(const char *format)
 {
-		if ((*(++format) == 'h'))
-		{
-				g_spec.shift_spec += 2;
-				g_spec.size_type = "hh";
-		}
-		else
-		{
-			g_spec.shift_spec += 1;
-			g_spec.size_type = "h";
-		}
+	int mod;
+	int shift_size;
+
+	shift_size = 0;
+	mod = 0;
+	if (*(format + 1) == 'h')
+	{
+		mod = SPACE;
+		shift_size = 2;
+	}
+	else
+	{
+		mod = DASH;
+		shift_size = 1;
+	}
+	if (mod > g_spec.mod)
+		g_spec.mod = mod;
+	return (shift_size);
 }
 
-void		ft_j_format(const char *format)
+int			ft_j_z_l_format(const char *format)
 {
-	g_spec.shift_spec += 1;
-	g_spec.size_type = "j";
-}
+	int mod;
 
-void		ft_z_format(const char *format)
-{
-	g_spec.shift_spec += 1;
-	g_spec.size_type = "z";
-}
-
-void		ft_l_big_format(const char *format)
-{
-	g_spec.shift_spec += 1;
-	g_spec.size_type = "L";
+	mod = 0;
+	if (*format == 'z')
+		mod = DOT;
+	else if (*format == 'j')
+		mod = HASH;
+	else if (*format == 'L')
+		mod = DASH;
+	if (mod > g_spec.mod)
+		g_spec.mod = mod;
+	return (1);
 }

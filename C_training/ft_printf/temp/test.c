@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 15:58:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/25 16:01:52 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 10:16:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	printf("%`d", 45);
+	printf("%hhlzjjjlllllthhhhzjzjzjjzzzd\n", 45);
 
 	return (0);
 }

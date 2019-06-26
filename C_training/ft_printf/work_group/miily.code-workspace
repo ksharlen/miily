@@ -12,5 +12,9 @@
 		{
 			"path": "/Users/ksharlen/git_clones/git_miily/C_training/training"
 		}
-	]
+	],
+	"settings": {
+		"liveshare.allowGuestTaskControl": true,
+		"liveshare.diagnosticLogging": true
+	}
 }
