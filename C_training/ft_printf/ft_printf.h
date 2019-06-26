@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/25 14:29:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 16:53:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define HASH				16	/*J */
 # define DOT 				32	/*Z */
 # define DEC				64
+# define STAR_ACC			128
+# define STAR_WITH			256
 /*Exeptions */
 # define TYPE 				"dioOxXufeEgGaAnprkUD"
 # define NUM_INT 			"dDoxXcCuUi"
@@ -43,6 +45,8 @@
 
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
+
+# define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 
 typedef struct				s_spec
 {
@@ -65,11 +69,9 @@ extern	t_spec				g_spec;
 
 int							ft_printf(const char *format, ...);
 
-void						ft_l_format(const char *format);
-void						ft_h_format(const char *format);
-void						ft_j_format(const char *format);
-void						ft_z_format(const char *format);
-void						ft_l_big_format(const char *format);
+int							ft_l_format(const char *format);
+int							ft_h_format(const char *format);
+int							ft_j_z_l_format(const char *format);
 
 char						*ft_base_to_str(unsigned long long num, int base);
 char						*ft_int_to_str(long long int num);
@@ -77,12 +79,15 @@ char						*ft_ptr_to_str(unsigned long long ptr);
 size_t						ft_base_depth(unsigned long long int num, int base);
 
 int							ft_work_to_format(const char *format, char *buf_printf, va_list form);
-int							ft_control_spec(const char *format);
+int							ft_control_spec(const char *format, va_list form);
 void						ft_control_var(char *buf_printf, va_list format);
 char						*ft_control_fwa(const char *str);
 
 long						ft_control_format_int(va_list form, char *type);
 char						*ft_width(const char *str);
 void						ft_error_find(const char *str, int line);
+int							ft_ismy(char form);
+
+int							ft_str_size_num(const char *format);
 
 #endif
