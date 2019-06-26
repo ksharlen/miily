@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 08:25:30 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/25 11:50:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 09:05:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft.h"
 
-# define SIZE_WORD 19000
+# define SIZE_WORD 5
 
 typedef struct		s_line
 {
@@ -31,5 +31,6 @@ void				ft_lstadd_line(t_line **beg, t_line *lstadd);
 void				ft_print_line(t_line *beg);
 void				ft_realloc(t_line *realloc, char *cat_line);
 void				ft_free_all(t_line **beg);
+void				ft_free_elem(t_line **elem);
 
 #endif
