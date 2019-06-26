@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 11:00:26 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/25 11:40:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 09:02:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void		ft_lstadd_line(t_line **beg, t_line *lstadd)
 {
 	t_line 	*ret;
 
-	if (*beg && beg)
+	if ((*beg) && beg)
 	{
 		ret = (*beg);
 		while (ret->next)
 			ret = ret->next;
 		ret->next = lstadd;
 	}
-	else if (!*beg && beg)
+	else if (beg)
 	{
 		*beg = lstadd;
 		lstadd->next = NULL;
