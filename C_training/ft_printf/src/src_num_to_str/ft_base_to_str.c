@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/24 09:24:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:55:47 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char				*ft_size_work(char *str)
+char					*ft_size_work(char *str)
 {
 	if (g_spec.flags & DASH)
 		ft_memset(str + g_spec.size_num, ' ', g_spec.width - g_spec.size_num);

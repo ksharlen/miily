@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 17:13:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 17:56:05 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ char						*ft_base_to_str(unsigned long long num, int base);
 char						*ft_int_to_str(long long int num);
 char						*ft_ptr_to_str(unsigned long long ptr);
 size_t						ft_base_depth(unsigned long long int num, int base);
+char						*ft_size_work(char *str);
 
 int							ft_work_to_format(const char *format, char *buf_printf, va_list form);
 int							ft_control_spec(const char *format, va_list form);
