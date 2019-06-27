@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 16:16:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 20:34:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 	int			ret_check_format;
 	char		*test_str;
 
-	while (*format && (g_spec.size_buf--))
+	while (*format)
 	{
 		if (*format == '%')
 		{
@@ -51,11 +51,11 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 		else
 			buf_printf[g_spec.size_write++] = *format++;
 	}
-	if (!g_spec.size_buf)
-	{
-		//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
-		//?тут будет вызываться ф-ия для выгрузки буфера
-	}
+	// if (!g_spec.size_buf)
+	// {
+	// 	//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
+	// 	//?тут будет вызываться ф-ия для выгрузки буфера
+	// }
 	return (1);
 }
 
