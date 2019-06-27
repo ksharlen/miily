@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 17:06:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 17:18:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 			ft_check_format(format + 1); //*Заполняем spec;
 			ft_control_spec(format + 1, form);//*Заполняем точность ширину флаги и проверяем совместимость модификатора и спецификатора
 			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
-			//ft_control_var(buf_printf, form);
+			ft_control_var(buf_printf, form);
 		}
 		else
 			buf_printf[g_spec.size_write++] = *format++;

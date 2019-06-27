@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/27 14:21:43 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/27 17:31:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char					*ft_base_to_str(unsigned long long num, int base)
 	size_t				size_str;
 
 	cp_num = num;
+	cp_num = num;
 	len = ft_base_depth(num, base);
 	size_str = g_spec.width > len ? g_spec.width : len;
 	str = (char *)ft_memalloc((size_str) * sizeof(char));
@@ -58,7 +59,11 @@ void					ft_base_to_str_with_buf(unsigned long long num, int base, char *buf)
 	unsigned long long	cp_num;
 	size_t				size_str;
 
-	cp_num = num;
+	if (g_spec.spec == 'p')
+	{
+			g_spec.spec = 'x';
+			g_spec.flags |= HASH;
+	}
 	len = ft_base_depth(num, base);
 	size_str = g_spec.width > len ? g_spec.width : len;
 	// str = ft_ret_buf(size_str);

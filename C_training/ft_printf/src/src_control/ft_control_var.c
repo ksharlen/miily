@@ -6,11 +6,27 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/27 17:09:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 19:38:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static char						*pull_string_arg(va_list format)
+{
+	char						*ret_str;
+	char						ret;
+
+	ret_str = NULL;
+	if (g_spec.spec == 's' || g_spec.spec == 'S')
+		ret_str = va_arg(format, char *);
+	else if (g_spec.spec == 'c' || g_spec.spec == 'C')
+	{
+		ret = (char)va_arg(format, int);
+		ret_str = &ret;
+	}
+	return (ret_str);
+}
 
 static long long int			pull_signed_int_arg(va_list format)
 {
@@ -74,7 +90,6 @@ static long double			pull_double_arg(va_list format)
 	return (ret);
 }
 
-//?Проверка на сейв
 static int						ft_define_num_sys(void)
 {
 	int 						ret;
@@ -87,6 +102,7 @@ static int						ft_define_num_sys(void)
 		ret = BIN;
 	return (ret);
 }
+//?Проверка на сейв
 
 void							ft_control_var(char *buf_printf, va_list format)
 {
@@ -96,26 +112,46 @@ void							ft_control_var(char *buf_printf, va_list format)
 	int							ret_check_com;
 
 	//ret_check_com = ft_check_com();
-	if (ft_memchr(NUM_INT, g_spec.spec, 1))
+	if (ft_check_int(NUM_INT, g_spec.spec))
 	{
-		if (ft_memchr(SIGNED_INT, g_spec.spec, 1))
+		if (ft_check_int(SIGNED_INT, g_spec.spec))
 		{
-			
+		//printf("here\n");
+			ret_s = pull_signed_int_arg(format);
+			test_str = ft_int_to_str(ret_s);
+			ft_strcat(buf_printf, test_str);
+			g_spec.size_write += g_spec.size_num;
 			// ret_s = ft_signed_format(format);
 			// test_str = ft_int_to_str(ret_s);
 			// test_str = ft_control_fwa(test_str);
 			// ft_strcat(buf_printf, test_str);
 			// g_spec.size_write += g_spec.size_spec;
 		}
-		else if (ft_strchr(UNSIGNED_INT, g_spec.spec))
+		else if (ft_check_int(UNSIGNED_INT, g_spec.spec))
 		{
+			ret_u = pull_signed_int_arg(format);
+			ft_base_to_str_with_buf(ret_u, ft_define_num_sys(), buf_printf);
+			//ft_strcat(buf_printf, test_str);
 			//ret_u = ft_unsigned_format(format);
 			//test_str = ft_base_to_str(ret_u, ft_define_num_sys());
-			ft_strcat(buf_printf, test_str);
 			g_spec.size_write += g_spec.size_num;
 		}
 	}
-	else if (ft_memchr(NUM_DOUBLE, g_spec.spec, 1) && ret_check_com)
+	else if (ft_check_int(NUM_DOUBLE, g_spec.spec))
+	{
+
+	}
+	else if (ft_check_int(NUM_STRING, g_spec.spec))
+	{
+		//printf("here\n");
+		test_str = pull_string_arg(format);
+		ft_str_to_str(buf_printf, test_str);
+	}
+	else if (ft_check_int(NUM_OTHER, g_spec.spec))
+	{
+		
+	}
+	else
 		;
 	//printf("double\n");
 	// else if (ft_strchr(NUM_DOUBLE, g_spec.spec))
