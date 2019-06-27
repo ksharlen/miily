@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 15:46:02 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 16:37:44 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 # define STAR_ACC			128 /*big L for double */
 # define STAR_WITH			256
 /*Exeptions */
-# define TYPE 				"dioOxXufeEgGaAnprkUD"
-# define NUM_INT 			"dDoxXcCuUi"
+# define TYPE 				"dioOxXufeEgGaAnprkUDsScC"
+# define NUM_INT 			"dDoxXuUi"
 # define NUM_DOUBLE 		"feEgGaA"
 # define NUM_STRING			"sc"
 # define NUM_OTHER 			"nprk"

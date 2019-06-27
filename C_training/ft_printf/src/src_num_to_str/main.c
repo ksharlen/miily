@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 09:25:50 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/19 16:11:20 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/27 16:28:57 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ int					main(int ac, char **av)
 	g_spec.accuracy = 0;
 	num = 0;
 
-	printf("x = %s\n", ft_base_to_str(num, 8));
-	printf("    %#o\n", num);
+	//printf("x = %s\n", ft_base_to_str(num, 8));
+	//printf("    %#o\n", num);
 
 	// printf("o = %s\n", ft_base_to_str(num, 8));
 	// printf("    %#o   t\n", num);

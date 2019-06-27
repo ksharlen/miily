@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_size_formats.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 15:36:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 16:37:29 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,7 @@ int		ft_h_format(const char *format)
 	else
 	{
 		if (ft_check_int(NUM_INT, g_spec.spec))
-			{
-				//printf("here\n");
 				mod = PLUS;
-			}
 		shift_size = 1;
 	}
 	if (mod > g_spec.mod)
