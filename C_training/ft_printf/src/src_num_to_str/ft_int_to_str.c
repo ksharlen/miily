@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/26 15:37:10 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/27 09:28:30 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static size_t		ft_size_num(long long int num)
 	num < 0 ? g_spec.flags ^= DEC : 0;
 	g_spec.flags & ZERO && g_spec.width > l && !(g_spec.flags & DOT) ?\
 	l = g_spec.width : 0;
-	g_spec.size_num = l;
 	return (l);
 }
 
@@ -50,6 +49,7 @@ char			*ft_int_to_str(long long int num)
 
 	sign = (num < 0 ? -1 : 1);
 	size_num = ft_size_num(num);
+	g_spec.size_num = size_num;
 	size_str = (size_num < g_spec.width ? g_spec.width : size_num);
 	str = ft_strnew(size_str);
 	if (!(str_cp = str))
@@ -61,7 +61,7 @@ char			*ft_int_to_str(long long int num)
 		str_cp[size_num] = num % 10 * sign + '0';
 		num /= 10;
 	}
-	if (g_spec.flags & SPACE || g_spec.flags & PLUS || sign == -1)
+	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
 		str_cp[0] = ft_chr_space_plus_dec();
 	g_spec.size_num = size_str;
 	return (str);
