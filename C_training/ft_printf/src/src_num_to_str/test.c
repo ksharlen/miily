@@ -3,10 +3,6 @@
 
 int		main(void)
 {
-//	wchar_t *s = "Привет мир";
-	char *str = "Привет мир";
-	char a = -20;
-
-	//printf("%s", str);
+	write(0, "test", 4);
 	return (0);
 }

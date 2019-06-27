@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 16:41:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 19:36:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,8 @@ int			ft_control_spec(const char *format, va_list form)
 	g_spec.flags = 0;
 	g_spec.mod = 0;
 	ft_work_spec(format, form);
-	ft_print_test(format);
+	//printf("g_spec.spec = %c\n", g_spec.spec);
+	//ft_print_test(format);
 	//exit(0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 16:37:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 18:09:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define TYPE 				"dioOxXufeEgGaAnprkUDsScC"
 # define NUM_INT 			"dDoxXuUi"
 # define NUM_DOUBLE 		"feEgGaA"
-# define NUM_STRING			"sc"
+# define NUM_STRING			"scSc"
 # define NUM_OTHER 			"nprk"
 # define SIGNED_INT 		"dicCD"
 # define UNSIGNED_INT 		"uxXoU"
@@ -93,5 +93,8 @@ int							ft_ismy(char form);
 
 int							ft_str_size_num(const char *format);
 int							ft_check_int(const char *def_str, const int sym);
+
+void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
+void						ft_str_to_str(char *buf, char *inbuf);
 
 #endif
