@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 17:14:01 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 13:02:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,21 @@ static void		ft_check_star(va_list form)
 
 static int		ft_check_mod(const char *format)
 {
+	//printf("one\n");
 	int ret;
 	//?Тут сделать првоерку на спецификатор числа
 	ret = 0;
 	if (*format == 'l')
+	{
+		//printf("i am here\n");
 		ret = ft_l_format(format);
+	}
 	else if (*format == 'h')
 		ret = ft_h_format(format);
-	else if (*format == 'j' || *format == 'z' ||
-		*format == 'L' || *format == 't')
-		ret = ft_j_z_l_t_format(format);
+	else if (*format == 'j' || *format == 'z' || *format == 't')
+		ret = ft_j_z_t_format(format);
+	else if (*format == 'L')
+		ret = ft_big_l(format);
 	else
 		ret = 1;
 	return (ret);
@@ -62,7 +67,7 @@ static int		ft_find_width_accuracy(const char *format, va_list form)
 	{
 		g_spec.width = ft_atoi(format);
 		shift = ft_str_size_num(format);
-		printf("shift_w = %d\n", shift);
+		//printf("shift_w = %d\n", shift);
 	}
 	else if (*format == '.' && *(format + 1) == '*')
 	{
@@ -74,7 +79,7 @@ static int		ft_find_width_accuracy(const char *format, va_list form)
 	{
 		g_spec.accuracy = ft_atoi(format + 1);
 		shift = ft_str_size_num(format + 1) + 1;
-		printf("shift_a = %d\n", shift);
+		//printf("shift_a = %d\n", shift);
 	}
 	return (shift);
 }
@@ -96,17 +101,14 @@ static void		ft_work_spec(const char *format, va_list form)
 			g_spec.flags |= SPACE;
 		else if (*format == '0')
 			g_spec.flags |= ZERO;
-		// else if (*format == '*')
-		// 	g_spec.flags |= STAR;
 		else if ((ft_isdigit(*format) || *format == '*') || ((*format == '.')))
-		{
-			//printf("testing\n");
 			zero_shift = ft_find_width_accuracy(format, form);
-			//printf("zero_shift = %d\n", zero_shift);
-		}
 		else
+		{
 			zero_shift = ft_check_mod(format);
-		printf("zero_shift = %d\n", zero_shift);
+		//	printf("mod = %d\n", g_spec.mod);
+		}
+		//printf("zero_shift = %d\n", zero_shift);
 		format += zero_shift;
 	}
 }
@@ -119,8 +121,11 @@ int			ft_control_spec(const char *format, va_list form)
 	g_spec.flags = 0;
 	g_spec.mod = 0;
 	ft_work_spec(format, form);
-	printf("g_spec.width = %d\n", g_spec.width);
-	printf("g_spec.accuracy = %d\n", g_spec.accuracy);
+	printf("mod = %d\n", g_spec.mod);
+	//printf("g_spec.width = %d\n", g_spec.width);
+	//printf("g_spec.accuracy = %d\n", g_spec.accuracy);
+	//printf("g_spec.mod = %u\n", g_spec.mod);
+	//printf("shift = %zu\n", g_spec.shift_spec);
 	exit(0);
 	return (1);
 }

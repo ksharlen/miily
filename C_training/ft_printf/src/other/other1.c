@@ -6,11 +6,24 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 14:28:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 14:35:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 13:02:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ft_check_int(const char *def_str, const int sym)
+{
+	if (ft_memchr(def_str, sym, ft_strlen(def_str)))
+	{
+		return (1);
+	}
+	else
+	{
+		//printf("2222\n");
+		return (0);
+	}
+}
 
 int		ft_str_size_num(const char *format)
 {

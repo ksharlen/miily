@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/26 20:35:35 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 13:53:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -467,6 +467,13 @@ int		main(void)
 	// printf("intmax_t = %ld\n", sizeof(intmax_t));
 	// printf("ptrdiff_t = %ld\n", sizeof(ptrdiff_t));
 	// printf("size_t = %ld\n", sizeof(size_t));
-	ft_printf("%d", 43);
+	//!ft_printf("%Lhhd", 23);
+	ft_printf("%hhO\n", 23);
+	printf("%hhO\n", 23.1);
+	//printf("\n");
+	//printf("%**.*d\n", 2, 14, 10, 3, 10);
+	//ft_printf("%**.*d\n", 2, 14, 10, 3, 10);
+	//printf("%", 43);
+
 	return (0);
 }
