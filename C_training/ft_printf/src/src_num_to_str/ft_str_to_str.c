@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 20:07:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 23:53:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,52 @@
 
 static void        ft_work_aw(void)
 {
-    if (g_spec.width > g_spec.size_num && g_spec.accuracy > g_spec.size_num)
-    {
-        if (g_spec.width > g_spec.accuracy)
-        {
-            g_spec.width -= g_spec.accuracy;
-            g_spec.accuracy -= g_spec.size_num;
-        }
-        else
-        {
-            g_spec.accuracy -= g_spec.size_num;
-            g_spec.width = 0;
-        }
-    }
-    else if (g_spec.accuracy > g_spec.size_num && g_spec.width <= g_spec.size_num)
-    {
-        g_spec.accuracy -= g_spec.size_num;
-        g_spec.width = 0;
-    }
-    else if (g_spec.width > g_spec.size_num && g_spec.accuracy <= g_spec.size_num)
-    {
-        g_spec.width -= g_spec.size_num;
-        g_spec.accuracy = 0;
-    }
+    // if (g_spec.width > g_spec.size_num && g_spec.accuracy > g_spec.size_num)
+    // {
+    //     if (g_spec.width > g_spec.accuracy)
+    //     {
+    //         g_spec.width -= g_spec.accuracy;
+    //         g_spec.accuracy -= g_spec.size_num;
+    //     }
+    //     else
+    //     {
+    //         g_spec.accuracy -= g_spec.size_num;
+    //         g_spec.width = 0;
+    //     }
+    // }
+    // else if (g_spec.accuracy > g_spec.size_num && g_spec.width <= g_spec.size_num)
+    // {
+    //     g_spec.accuracy -= g_spec.size_num;
+    //     g_spec.width = 0;
+    // }
+    // else if (g_spec.width > g_spec.size_num && g_spec.accuracy <= g_spec.size_num)
+    // {
+    //     g_spec.width -= g_spec.size_num;
+    //     g_spec.accuracy = 0;
+    // }
+	if (g_spec.width > g_spec.accuracy && g_spec.accuracy > g_spec.size_num)
+	{
+		g_spec.width -= g_spec.accuracy;
+		g_spec.accuracy -= g_spec.size_num;
+	}
+	else if ((g_spec.accuracy > g_spec.width &&
+		g_spec.width > g_spec.size_num) || (g_spec.accuracy >
+		g_spec.size_num && g_spec.size_num > g_spec.width))
+	{
+		g_spec.width = 0;
+		g_spec.accuracy -= g_spec.size_num;
+	}
+	else if (g_spec.width > g_spec.size_num &&
+		g_spec.size_num > g_spec.accuracy)
+	{
+		g_spec.width -= g_spec.size_num;
+		g_spec.accuracy = 0;
+	}
+	else
+	{
+		g_spec.width = 0;
+		g_spec.accuracy = 0;
+	}
 }
 
 void        ft_push_str_aw(int num1, int num2, char *buf)
