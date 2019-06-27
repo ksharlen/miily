@@ -7,6 +7,6 @@ int		main(void)
 	char *str = "Привет мир";
 	char a = -20;
 
-	printf("%s", str);
+	//printf("%s", str);
 	return (0);
 }

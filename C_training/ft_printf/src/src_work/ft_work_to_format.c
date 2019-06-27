@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 15:27:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 17:06:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void			ft_def_spec(char format)
 static void			ft_check_format(const char *format)
 {
 	g_spec.shift_spec = 0;
+	g_spec.spec = 0;
 	while (!ft_ismy(*format) && *format)
 	{
 		++g_spec.shift_spec;

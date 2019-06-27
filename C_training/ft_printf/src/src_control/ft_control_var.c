@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_var.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/27 12:51:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 17:09:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,12 @@ void							ft_control_var(char *buf_printf, va_list format)
 	{
 		if (ft_memchr(SIGNED_INT, g_spec.spec, 1))
 		{
+			
 			// ret_s = ft_signed_format(format);
 			// test_str = ft_int_to_str(ret_s);
 			// test_str = ft_control_fwa(test_str);
 			// ft_strcat(buf_printf, test_str);
 			// g_spec.size_write += g_spec.size_spec;
-			
 		}
 		else if (ft_strchr(UNSIGNED_INT, g_spec.spec))
 		{
@@ -116,7 +116,8 @@ void							ft_control_var(char *buf_printf, va_list format)
 		}
 	}
 	else if (ft_memchr(NUM_DOUBLE, g_spec.spec, 1) && ret_check_com)
-		printf("double\n");
+		;
+	//printf("double\n");
 	// else if (ft_strchr(NUM_DOUBLE, g_spec.spec))
 	// {
 	// 	//?Заходим в ф-ию определения длинны вещественных чисел

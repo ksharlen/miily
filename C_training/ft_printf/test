@@ -1,495 +1,462 @@
-format d
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = l
+string:	"ld"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
 =============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
+string:	"lld"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
 =============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"hd"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = hh
+string:	"hhd"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	hh
 =============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = j
+string:	"jd"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	j
 =============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = z
+string:	"zd"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	z
 =============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"Ld"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-format i
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = l
+string:	"li"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
 =============================
-size_type = (null)
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
+string:	"lli"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
 =============================
-size_type = (null)
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"hi"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = hh
+string:	"hhi"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	hh
 =============================
-size_type = (null)
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = j
+string:	"ji"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	j
 =============================
-size_type = (null)
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = z
+string:	"zi"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	z
 =============================
-size_type = (null)
-spec = i	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"Li"
+spec 	=	i		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-format o
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = l
+string:	"lo"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
 =============================
-size_type = (null)
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
+string:	"llo"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
 =============================
-size_type = (null)
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"ho"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = hh
+string:	"hho"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	hh
 =============================
-size_type = (null)
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = j
+string:	"jo"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	j
 =============================
-size_type = (null)
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = z
+string:	"zo"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	z
 =============================
-size_type = (null)
-format x
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = l
+string:	"lx"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
 =============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
+string:	"llx"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
 =============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"hx"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = hh
+string:	"hhx"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	hh
 =============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = j
+string:	"jx"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	j
 =============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = z
+string:	"zx"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	z
 =============================
-size_type = (null)
-format u
-spec = u	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = l
+string:	"lu"
+spec 	=	u		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
 =============================
-size_type = (null)
-spec = u	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
+string:	"llu"
+spec 	=	u		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
 =============================
-size_type = (null)
-spec = u	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"hu"
+spec 	=	u		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-spec = u	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = hh
+string:	"hhu"
+spec 	=	u		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	hh
 =============================
-size_type = (null)
-spec = u	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = j
+string:	"ju"
+spec 	=	u		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	j
 =============================
-size_type = (null)
-spec = u	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = z
+string:	"zu"
+spec 	=	u		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	z
 =============================
-size_type = (null)
-format f
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"lf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"llf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"hf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"hhf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"jf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"zf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = f	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = L
+string:	"Lf"
+spec 	=	f		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	L
 =============================
-size_type = (null)
-format g
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"lg"
+spec 	=	g		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"llg"
+spec 	=	g		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"hg"
+spec 	=	g		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (hello world  wowa =  b =  c = 
+string:	"hhg"
+spec 	=	g		accuracy =	0		width		=	0
+hello world  wowa =  b =  c = 
 
 
 
 
 
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"jg"
+spec 	=	g		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"zg"
+spec 	=	g		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"Lg"
+spec 	=	g		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	L
+=============================
+string:	"lG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"llG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hhG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"jG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"zG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"LG"
+spec 	=	G		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	L
+=============================
+string:	"24.10d wow"
+spec 	=	d		accuracy =	10		width		=	24
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"x b = %x c = %x
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"x c = %x
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"x
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"2d
+"
+spec 	=	d		accuracy =	0		width		=	2
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"1.10d
+"
+spec 	=	d		accuracy =	10		width		=	1
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"6.10d
+"
+spec 	=	d		accuracy =	10		width		=	6
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"3.2d
+"
+spec 	=	d		accuracy =	2		width		=	3
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"2.4d
+"
+spec 	=	d		accuracy =	4		width		=	2
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"10.5d
+"
+spec 	=	d		accuracy =	5		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	
 
 
 
-
-null)
-spec = g	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = L
-=============================
-size_type = (null)
-format G
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = G	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = L
-=============================
-size_type = (null)
-hello w 5.100000
-spec = d	accuracy = 10	width = 24
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
--00010spec = d	accuracy = 0	width = 2
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = d	accuracy = 10	width = 1
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-------------test1-------------
-spec = d	accuracy = 10	width = 6
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-0000001234
-------------test2-------------
-spec = d	accuracy = 2	width = 3
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-1234
-------------test3-------------
-spec = d	accuracy = 4	width = 2
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-1234
-------------test4-------------
-spec = d	accuracy = 5	width = 10
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-     01234
-------------test5-------------
-spec = d	accuracy = 3	width = 10
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-      1234
-------------test6-------------
-spec = d	accuracy = 10	width = 3
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-0000001234
-    4test7
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-siza=
+a=
 b=
 a = 
 b = 
@@ -505,170 +472,175 @@ a =
 
 
 
+(null)
+=============================
+string:	"10.3d
+"
+spec 	=	d		accuracy =	3		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"3.10d
+"
+spec 	=	d		accuracy =	10		width		=	3
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"10d
+b=%d
+"
+spec 	=	d		accuracy =	0		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"20.d
+b = %d
+"
+spec 	=	d		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"+-15.10d world
+"
+spec 	=	d		accuracy =	10		width		=	15
+ZERO 	=	0		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	" -20.5d hmm?
+fine %-+15.5d
+"
+spec 	=	d		accuracy =	5		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	1		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"-+15.5d
+"
+spec 	=	d		accuracy =	5		width		=	15
+ZERO 	=	0		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"15.10d world
+a = %+10.5d
+"
+spec 	=	d		accuracy =	10		width		=	15
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"+10.5d
+"
+spec 	=	d		accuracy =	5		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"+d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"#llx
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
+=============================
+string:	"#x
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"#.10d
+"
+spec 	=	d		accuracy =	10		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"3###---.2d
+"
+spec 	=	d		accuracy =	2		width		=	3
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"--+++--10.40d
+"
+spec 	=	d		accuracy =	40		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"##....4..4lld
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
+=============================
+string:	"0d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+===
 
 
 
-e_type = (null)
-spec = d	accuracy = 0	width = 10
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-a =         25
-b = 31
-spec = d	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = d	accuracy = 10	width = 15
-ZERO = 0	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-hello +0000000123     world
---------test1.1----------
-hiw are you? -00321               hmm?
-fine +00045         
-spec = d	accuracy = 5	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 1	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = d	accuracy = 5	width = 15
-ZERO = 0	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
---------test2.1----------
-hello      0000000123 world
-a =     +00045
-spec = d	accuracy = 10	width = 15
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = d	accuracy = 5	width = 10
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
---------test3.1----------
-+0
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
-=============================
-size_type = (null)
-0xffffff71
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-00000
-------------test1-------------
-spec = d	accuracy = 10	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-0000001234
-------------test2-------------
-spec = d	accuracy = 2	width = 3
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-1234
-------------test3-------------
-spec = d	accuracy = 40	width = 10
-ZERO = 0	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-+0000000000000000000000000000000000001234
-------------test4-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
-=============================
-size_type = (null)
-1234
-------------test5-------------
-spec = d	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-1234
-------------test6-------------
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-1234
-------------test7-------------
-spec = d	accuracy = 10	width = 10
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-0000001234
-------------test8-------------
-spec = d	accuracy = 10	width = 10
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	
 
 
 
@@ -686,171 +658,170 @@ SPACE = 0
 
 w
 w
-HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+==========================
+string:	".0d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-0000001234
-------------test9-------------
-spec = d	accuracy = 40	width = 10
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#010.10d
+"
+spec 	=	d		accuracy =	10		width		=	10
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-+0000000000000000000000000000000000001234
-------------test10-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"-10.10d
+"
+spec 	=	d		accuracy =	10		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-+1234
-------------test11-------------
-spec = d	accuracy = 10	width = 20
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"+++10.40d
+"
+spec 	=	d		accuracy =	40		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-          0000001234
-------------test12-------------
-spec = d	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	";+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-0
-------------test13-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"020.10d
+"
+spec 	=	d		accuracy =	10		width		=	20
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-+0000
-------------test14-------------
-spec = d	accuracy = 0	width = 20
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-                    
-------------test15-------------
-spec = d	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-
-------------test16-------------
-spec = d	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"020.0d
+"
+spec 	=	d		accuracy =	0		width		=	20
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
--1
-------------test17-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"0.d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
--0001
-------------test18-------------
-spec = d	accuracy = 0	width = 20
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-                  -1
-------------test19-------------
-spec = d	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	";+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
--1
---------test4.1----------
-+00031    
-spec = d	accuracy = 5	width = 10
-ZERO = 0	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"020.0d
+"
+spec 	=	d		accuracy =	0		width		=	20
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.2----------
-+0000000031
-spec = d	accuracy = 10	width = 5
-ZERO = 0	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0.d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.3----------
-    +00031
-spec = d	accuracy = 5	width = 10
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"-+10.5d
+"
+spec 	=	d		accuracy =	5		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.4----------
-+0000000031
-spec = d	accuracy = 10	width = 5
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"-+5.10d
+"
+spec 	=	d		accuracy =	10		width		=	5
+ZERO 	=	0		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.5----------
-+31       w
-spec = d	accuracy = 1	width = 10
-ZERO = 0	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"+10.5d
+"
+spec 	=	d		accuracy =	5		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.6----------
-       +31w
-spec = d	accuracy = 1	width = 10
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"+5.10d
+"
+spec 	=	d		accuracy =	10		width		=	5
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.7----------
- 0000000031w
-spec = d	accuracy = 10	width = 5
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 1	HASH = 0	DOT = 1
-DEC = 0	STw
+string:	"-+10.1dw
+"
+spec 	=	d		accuracy =	1		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"+10.1dw
+"
+spec 	=	d		accuracy =	1		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	" 5.10dw
+"
+spew
 w
 w
 w
@@ -868,353 +839,353 @@ w
 ||
 
 ||
-AR_ACC = 0	STAR_WITH = 0
-type = (null)
+||
+||
+c 	=	d		accuracy =	10		width		=	5
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	1		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.8----------
-31w
-spec = d	accuracy = 0	width = 2
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"02.dw
+"
+spec 	=	d		accuracy =	0		width		=	2
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.8----------
-       -31w
-spec = d	accuracy = 0	width = 10
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 1	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	" 10.dw
+"
+spec 	=	d		accuracy =	0		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	1		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
---------test4.8----------
-       +31w
-spec = d	accuracy = 0	width = 10
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"+10.hdw
+"
+spec 	=	d		accuracy =	0		width		=	10
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-------------test1-------------
-spec = x	accuracy = 0	width = 20
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"020x|
+"
+spec 	=	x		accuracy =	0		width		=	20
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|000000000000000004d2|
-------------test2-------------
-spec = x	accuracy = 20	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#0.20x|
+"
+spec 	=	x		accuracy =	20		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0x000000000000000004d2|
-------------test3-------------
-spec = x	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0.0x|
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|4d2|
-------------test4-------------
-spec = x	accuracy = 4	width = 20
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"20.4x|
+"
+spec 	=	x		accuracy =	4		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|                04d2|
-------------test5-------------
-spec = x	accuracy = 5	width = 4
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"4.5x|
+"
+spec 	=	x		accuracy =	5		width		=	4
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|004d2|
-------------test6-------------
-spec = x	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"-20x|
+"
+spec 	=	x		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|4d2                 |
-------------test7-------------
-spec = x	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0x|
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test8-------------
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#x|
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test9-------------
-spec = x	accuracy = 1	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	".1x|
+"
+spec 	=	x		accuracy =	1		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test10-------------
-spec = x	accuracy = 0	width = 3
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"03.0x|
+"
+spec 	=	x		accuracy =	0		width		=	3
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|   |
-------------test11-------------
-spec = x	accuracy = 0	width = 5
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#5x|
+"
+spec 	=	x		accuracy =	0		width		=	5
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|    0|
-------------test12-------------
-spec = x	accuracy = 0	width = 10
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#-10x|
+"
+spec 	=	x		accuracy =	0		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0         |
-------------test13-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-+0000
-------------test14-------------
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"x|
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test15-------------
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-==============||
+string:	"#x|
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"#-20.10x|
+"
+spec 	=	x		accuracy =	10		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	";+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+S
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
 ||
 
 ||
 ||
 ||
-||
-||
-||
-||
-||
-||
-||
-||
-||
-||
-||
-||
-===============
-size_type = (null)
-|0|
-------------test16-------------
-spec = x	accuracy = 10	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+PACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-|0000000000          |
-------------test17-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
+string:	"#.x|
+"
+spec 	=	x		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
--0001
-------------test18-------------
-spec = x	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#-20x|
+"
+spec 	=	x		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0x4d2|
-------------test19-------------
-spec = x	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#20x|
+"
+spec 	=	x		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0x1                 |
-------------test20-------------
-spec = x	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"020o|
+"
+spec 	=	o		accuracy =	0		width		=	20
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|                 0x1|
-------------test1-------------
-spec = o	accuracy = 0	width = 20
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#020o|
+"
+spec 	=	o		accuracy =	0		width		=	20
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|00000000000000002322|
-------------test2-------------
-spec = o	accuracy = 0	width = 20
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0.0o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|00000000000000002322|
-------------test3-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"20.4o|
+"
+spec 	=	o		accuracy =	4		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|2322|
-------------test4-------------
-spec = o	accuracy = 4	width = 20
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"4.5o|
+"
+spec 	=	o		accuracy =	5		width		=	4
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|                2322|
-------------test5-------------
-spec = o	accuracy = 5	width = 4
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"-20o|
+"
+spec 	=	o		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|02322|
-------------test6-------------
-spec = o	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"0o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|2322                |
-------------test7-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test8-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	".1o|
+"
+spec 	=	o		accuracy =	1		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test9-------------
-spec = o	accuracy = 1	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"03.0o|
+"
+spec 	=	o		accuracy =	0		width		=	3
+ZERO 	=	1		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|0|
-------------test10-------------
-spec = o	accuracy = 0	width = 3
-ZERO = 1	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#5o|
+"
+spec 	=	o		accuracy =	0		width		=	5
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|   |
-------------test11-------------
-spec = o	accuracy = 0	width = 5
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"#-10o|
+"
+spec 	=	o		accuracy =	0		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
 =============================
-size_type = (null)
-|    0|
-------------test12-------------
-spec = o	accuracy = 0	width = 10
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
+string:	"+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	h
 =============================
-size_type = (null)
-|0         |
-------------test13-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
-||
-||
-||
-
+string:	"o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"#o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"-20.10o|
+"
+spec 	=	o		accuracy =	10		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	";+..4..4hd
+"
+spec 	=	d		accuracy =	4		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+ty
 ||
 ||
 ||
@@ -1228,206 +1199,405 @@ w hello world
 $
 
 
-=============================
-size_type = (null)
-+0000
-------------test14-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|0|
-------------test15-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|0|
-------------test16-------------
-spec = o	accuracy = 10	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|0000000000          |
-------------test17-------------
-spec = d	accuracy = 4	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = h
-=============================
-size_type = (null)
--0001
-------------test18-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|02322|
-------------test19-------------
-spec = o	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|1                   |
-------------test20-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|0|
-------------test21-------------
-spec = o	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|                    |
-------------test22-------------
-spec = o	accuracy = 0	width = 10
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 1	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-|         0|
-------------test23-------------
-spec = o	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-||
-00003EEB3D          
-spec = X	accuracy = 10	width = 20
-ZERO = 1	PLUS = 1	DASH = 1
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-w                    45
-w          hello world 000000000y    how are yoU?
-                   w 10hello
-spec =  	accuracy = 0	width = 20
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-10
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-w hello world
-spec =  	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-34spec =  	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = d	accuracy = 10	width = 0
-ZERO = 1	PLUS = 1	DASH = 1
-SPACE = 1	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = ll
-=============================
-size_type = (null)
-   00000000050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000327171HHd
-spec =  	accuracy = 20	width = 20
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-0004245
-spec = d	accuracy = 25	width = 13
-ZERO = 0
 
 
-	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 1	STAR_WITH = 1
-type = (null)
-=============================
-size_type = (null)
-  13world$d
-45
-intmax_t = 8
-ptrdiff_t = 8
-size_t = 8
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = hh
-=============================
-size_type = (null)
-spec = O	accuracy = 0	width = 0
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-spec = d	accuracy = 0	width = 0
-ZERO = 0	PLUS = 1	DASH = 0
-SPACE = 1	HASH = 0	DOT = 0
-DEC = 0	STAR_ACC = 0	STAR_WITH = 0
-type = (null)
-=============================
-size_type = (null)
-3221400
 
-    0000000003
-spec = d	accuracy = 10	width = 14
-ZERO = 0	PLUS = 0	DASH = 0
-SPACE = 0	HASH = 0	DOT = 1
-DEC = 0	STAR_ACC = 1	STAR_WITH = 1
-type = (null)
+
+pe 	=	h
 =============================
-size_type = (null)
+string:	"#.o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"-20o|
+"
+spec 	=	o		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"#.o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"-20.0o|
+"
+spec 	=	o		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"#10.o|
+"
+spec 	=	o		accuracy =	0		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		1		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	".o|
+"
+spec 	=	o		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"-+020.10X
+"
+spec 	=	X		accuracy =	10		width		=	20
+ZERO 	=	1		PLUS =		1		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"20zw %dhello
+"
+spec 	=	 		accuracy =	0		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"dhello
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"d
+"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"w hello world
+"
+spec 	=	 		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"$
+"
+spec 	=	 		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	";:+hh-;h: h0.10.10 lld
+"
+spec 	=	d		accuracy =	10		width		=	0
+ZERO 	=	1		PLUS =		1		DASH		=	1
+SPACE 	=	1		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	ll
+=============================
+string:	"20.20
+"
+spec 	=	 		accuracy =	20		width		=	20
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"*.*d
+"
+spec 	=	d		accuracy =	25		width		=	13
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	1		STAR_WITH	=	1
+type 	=	(null)
+=============================
+string:	"Lhhd"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	hh
+=============================
+string:	"hhO
+"
+spec 	=	O		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	" +d"
+spec 	=	d		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		1		DASH		=	0
+SPACE 	=	1		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"**.*d
+"
+spec 	=	d		accuracy =	10		width		=	14
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	1		STAR_WITH	=	1
+type 	=	(null)
+=============================
+string:	"*.*d
+"
+spec 	=	d		accuracy =	20		width		=	10
+ZERO 	=	0		PLUS =		0		DASH		=	1
+SPACE 	=	0		HASH =		0		DOT			=	1
+DEC 	=	0		STAR_ACC =	1		STAR_WITH	=	1
+type 	=	(null)
+=============================
+string:	"c"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hhc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"lc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
+=============================
+string:	"llc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"jc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"zc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"Lc"
+spec 	=	c		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"s"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hs"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hhs"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"ls"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	l
+=============================
+string:	"lls"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"js"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"zs"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"Ls"
+spec 	=	s		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"S"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hhS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"lS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"llS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"LS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"jS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"zS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"LS"
+spec 	=	S		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"C"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"hhC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"lC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"llC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"LC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"jC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"zC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================
+string:	"LC"
+spec 	=	C		accuracy =	0		width		=	0
+ZERO 	=	0		PLUS =		0		DASH		=	0
+SPACE 	=	0		HASH =		0		DOT			=	0
+DEC 	=	0		STAR_ACC =	0		STAR_WITH	=	0
+type 	=	(null)
+=============================

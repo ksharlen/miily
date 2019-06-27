@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_spec.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 15:32:57 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 16:41:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,23 +104,20 @@ static void		ft_work_spec(const char *format, va_list form)
 		else if ((ft_isdigit(*format) || *format == '*') || ((*format == '.')))
 			zero_shift = ft_find_width_accuracy(format, form);
 		else
-		{
 			zero_shift = ft_check_mod(format);
-		//	printf("mod = %d\n", g_spec.mod);
-		}
-		//printf("zero_shift = %d\n", zero_shift);
 		format += zero_shift;
 	}
 }
 
-static void	ft_print_test()
+static void	ft_print_test(const char *form)
 {
 	char *type = NULL;
 
-	printf("spec = %c	accuracy = %d	width = %d\n", g_spec.spec, g_spec.accuracy, g_spec.width);
-	printf("ZERO = %d	PLUS = %d	DASH = %d\n", (g_spec.flags & ZERO) && 1, (g_spec.flags & PLUS) && 1, (g_spec.flags & DASH) && 1);
-	printf("SPACE = %d	HASH = %d	DOT = %d\n", g_spec.flags & SPACE && 1, g_spec.flags & HASH && 1, g_spec.flags & DOT && 1);
-	printf("DEC = %d	STAR_ACC = %d	STAR_WITH = %d\n", g_spec.flags & DEC && 1, g_spec.flags & STAR_ACC && 1, g_spec.flags & STAR_WITH && 1);
+	printf("string:	\"%s\"\n", form);
+	printf("spec 	=	%c		accuracy =	%d		width		=	%d\n", g_spec.spec, g_spec.accuracy, g_spec.width);
+	printf("ZERO 	=	%d		PLUS =		%d		DASH		=	%d\n", (g_spec.flags & ZERO) && 1, (g_spec.flags & PLUS) && 1, (g_spec.flags & DASH) && 1);
+	printf("SPACE 	=	%d		HASH =		%d		DOT			=	%d\n", g_spec.flags & SPACE && 1, g_spec.flags & HASH && 1, g_spec.flags & DOT && 1);
+	printf("DEC 	=	%d		STAR_ACC =	%d		STAR_WITH	=	%d\n", g_spec.flags & DEC && 1, g_spec.flags & STAR_ACC && 1, g_spec.flags & STAR_WITH && 1);
 
 	if (g_spec.mod & ZERO)
 		type = "hh";
@@ -138,7 +135,7 @@ static void	ft_print_test()
 		type = "z";
 	else if (g_spec.mod & DEC)
 		type = "t";
-	printf("type = %s\n", type);
+	printf("type 	=	%s\n", type);
 	printf("=============================\n");
 }
 
@@ -149,7 +146,7 @@ int			ft_control_spec(const char *format, va_list form)
 	g_spec.flags = 0;
 	g_spec.mod = 0;
 	ft_work_spec(format, form);
-	ft_print_test();
+	ft_print_test(format);
 	//exit(0);
 	return (1);
 }

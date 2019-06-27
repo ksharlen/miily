@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 15:55:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 11:21:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 16:29:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,13 @@ static int		ft_test(char *form)
 			shift = ft_mod(form, &g_spec);
 			form += shift;
 			//printf("testing\n");
-			printf("g_spec_size_type = %s\n", g_spec.size_type);
+			//printf("g_spec_size_type = %s\n", g_spec.size_type);
 		}
 		else
 			++form;
 	}
-	printf("g_spec.size_type = %s\n", g_spec.size_type);
-	printf("shift = %d\n", shift);
+	//printf("g_spec.size_type = %s\n", g_spec.size_type);
+	//printf("shift = %d\n", shift);
 	return (*form);
 }
 
