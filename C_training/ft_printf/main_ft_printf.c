@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/26 17:11:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/26 20:35:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -464,8 +464,9 @@ int		main(void)
 	//printf("%4.*dworld", -10, 13);
 	//printf("%$d\n", 45);
 	//printf("%2$d\n", 45, 45);
-	printf("intmax_t = %ld\n", sizeof(intmax_t));
-	printf("ptrdiff_t = %ld\n", sizeof(ptrdiff_t));
-	printf("size_t = %ld\n", sizeof(size_t));
+	// printf("intmax_t = %ld\n", sizeof(intmax_t));
+	// printf("ptrdiff_t = %ld\n", sizeof(ptrdiff_t));
+	// printf("size_t = %ld\n", sizeof(size_t));
+	ft_printf("%d", 43);
 	return (0);
 }
