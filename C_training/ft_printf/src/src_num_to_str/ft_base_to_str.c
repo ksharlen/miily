@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/06/26 17:55:47 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/27 14:21:43 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char					*ft_size_work(char *str)
 	}
 	return (str);
 }
-
+// ? подумать над управляющей функ-й для d, x, o
 char					*ft_base_to_str(unsigned long long num, int base)
 {
 	char				*str;
@@ -34,14 +34,10 @@ char					*ft_base_to_str(unsigned long long num, int base)
 
 	cp_num = num;
 	len = ft_base_depth(num, base);
-	//printf("len = %ld\n", len);
-	//printf("g_spec.width = %d\n", g_spec.width);
 	size_str = g_spec.width > len ? g_spec.width : len;
-	//printf("size_num = %ld\n", g_spec.size_num);
-	str = (char *)malloc((size_str + 1) * sizeof(char));
+	str = (char *)ft_memalloc((size_str) * sizeof(char));
 	if (!(str_num = str))
 		return (NULL);
-	str[size_str] = '\0';
 	if (g_spec.width > len)
 		str_num = ft_size_work(str);
 	while (len--)
@@ -53,4 +49,27 @@ char					*ft_base_to_str(unsigned long long num, int base)
 		str_num[1] = g_spec.spec;
 	g_spec.size_num = size_str;
 	return (str);
+}
+
+void					ft_base_to_str_with_buf(unsigned long long num, int base, char *buf)
+{
+	char				*str_num;
+	size_t				len;
+	unsigned long long	cp_num;
+	size_t				size_str;
+
+	cp_num = num;
+	len = ft_base_depth(num, base);
+	size_str = g_spec.width > len ? g_spec.width : len;
+	// str = ft_ret_buf(size_str);
+	if (g_spec.width > len)
+		str_num = ft_size_work(buf);
+	while (len--)
+	{
+		str_num[len] = (num % base > 9 ? num % base + g_spec.spec - 33 : num % base + '0');
+		num /= base;
+	}
+	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'x' || g_spec.spec == 'X'))
+		str_num[1] = g_spec.spec;
+	g_spec.size_num = size_str;
 }
