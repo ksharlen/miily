@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 13:01:41 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 15:36:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,16 @@ int		ft_h_format(const char *format)
 	if (*(format + 1) == 'h')
 	{
 		if (ft_check_int(NUM_INT, g_spec.spec))
-			mod = SPACE;
+			mod = ZERO;
 		shift_size = 2;
 	}
 	else
 	{
 		if (ft_check_int(NUM_INT, g_spec.spec))
-			mod = DASH;
+			{
+				//printf("here\n");
+				mod = PLUS;
+			}
 		shift_size = 1;
 	}
 	if (mod > g_spec.mod)
