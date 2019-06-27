@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 13:02:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 15:10:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ static int		ft_find_width_accuracy(const char *format, va_list form)
 	{
 		g_spec.width = ft_atoi(format);
 		shift = ft_str_size_num(format);
-		//printf("shift_w = %d\n", shift);
 	}
 	else if (*format == '.' && *(format + 1) == '*')
 	{
 		g_spec.flags |= STAR_ACC;
+		g_spec.flags |= DOT;
 		ft_check_star(form);
 		shift = 2;
 	}
@@ -79,7 +79,7 @@ static int		ft_find_width_accuracy(const char *format, va_list form)
 	{
 		g_spec.accuracy = ft_atoi(format + 1);
 		shift = ft_str_size_num(format + 1) + 1;
-		//printf("shift_a = %d\n", shift);
+		g_spec.flags |= DOT;
 	}
 	return (shift);
 }
@@ -113,6 +113,31 @@ static void		ft_work_spec(const char *format, va_list form)
 	}
 }
 
+static void	ft_print_test()
+{
+	char *type = NULL;
+
+	printf("spec = %c	accuracy = %d	width = %d\n", g_spec.spec, g_spec.accuracy, g_spec.width);
+	printf("ZERO = %d	PLUS = %d	DASH = %d\n", (g_spec.flags & ZERO) && 1, (g_spec.flags & PLUS) && 1, (g_spec.flags & DASH) && 1);
+	printf("SPACE = %d	HASH = %d	DOT = %d\n", g_spec.flags & SPACE && 1, g_spec.flags & HASH && 1, g_spec.flags & DOT && 1);
+	printf("DEC = %d	STAR_ACC = %d	STAR_WITH = %d\n", g_spec.flags & DEC && 1, g_spec.flags & STAR_ACC && 1, g_spec.flags & STAR_WITH && 1);
+
+	if (g_spec.mod & PLUS)
+		type = "H";
+	else if (g_spec.mod & DASH && ft_check_int(NUM_DOUBLE, g_spec.spec))
+		type = "L";
+	else if (g_spec.mod & DASH)
+		type = "l";
+	else if (g_spec.mod & SPACE)
+		type = "ll";
+	else if (g_spec.mod & HASH)
+		type = "j";
+	else if (g_spec.mod & DOT)
+		type = "z";
+	else if (g_spec.mod & DEC)
+		type = "t";
+	printf("type = %s\n", type);
+}
 
 int			ft_control_spec(const char *format, va_list form)
 {
@@ -121,11 +146,7 @@ int			ft_control_spec(const char *format, va_list form)
 	g_spec.flags = 0;
 	g_spec.mod = 0;
 	ft_work_spec(format, form);
-	printf("mod = %d\n", g_spec.mod);
-	//printf("g_spec.width = %d\n", g_spec.width);
-	//printf("g_spec.accuracy = %d\n", g_spec.accuracy);
-	//printf("g_spec.mod = %u\n", g_spec.mod);
-	//printf("shift = %zu\n", g_spec.shift_spec);
+	ft_print_test();
 	exit(0);
 	return (1);
 }
