@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 08:25:30 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/26 09:05:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 09:02:52 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_line
 }					t_line;
 
 # define			ERR_MEM "memory does not allocated!!!\n"
+# define			SCANF_FAIL(x, y) printf("%s\n%s\n", (x), (y))
 
 t_line				*ft_line_create(char *line);
 void				ft_error(char *err);
@@ -32,5 +33,6 @@ void				ft_print_line(t_line *beg);
 void				ft_realloc(t_line *realloc, char *cat_line);
 void				ft_free_all(t_line **beg);
 void				ft_free_elem(t_line **elem);
+void				ft_set_line(t_line **beg, char *buf);
 
 #endif

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_process_line.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/24 08:26:17 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 09:02:36 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/27 09:06:29 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/27 09:42:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "project2.h"
 
-int main(void)
+static int	ft_write_line(t_line **beg, char *buf)
 {
-	char		buf[SIZE_WORD];
-	int			ret_scanf;
-	t_line		*beg;
-	t_line		*val;
+	while ()
+	{
+		ft_set_line(buf);
+		
+	}
+}
 
-	ft_set_line(&beg, buf);
-	return (0);
+void		ft_process_line(t_line **beg, char *buf)
+{
+	
 }
