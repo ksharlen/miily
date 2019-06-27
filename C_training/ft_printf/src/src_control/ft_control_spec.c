@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 15:10:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/27 15:32:57 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,8 +122,10 @@ static void	ft_print_test()
 	printf("SPACE = %d	HASH = %d	DOT = %d\n", g_spec.flags & SPACE && 1, g_spec.flags & HASH && 1, g_spec.flags & DOT && 1);
 	printf("DEC = %d	STAR_ACC = %d	STAR_WITH = %d\n", g_spec.flags & DEC && 1, g_spec.flags & STAR_ACC && 1, g_spec.flags & STAR_WITH && 1);
 
-	if (g_spec.mod & PLUS)
-		type = "H";
+	if (g_spec.mod & ZERO)
+		type = "hh";
+	else if (g_spec.mod & PLUS)
+		type = "h";
 	else if (g_spec.mod & DASH && ft_check_int(NUM_DOUBLE, g_spec.spec))
 		type = "L";
 	else if (g_spec.mod & DASH)
@@ -137,6 +139,7 @@ static void	ft_print_test()
 	else if (g_spec.mod & DEC)
 		type = "t";
 	printf("type = %s\n", type);
+	printf("=============================\n");
 }
 
 int			ft_control_spec(const char *format, va_list form)
@@ -147,6 +150,6 @@ int			ft_control_spec(const char *format, va_list form)
 	g_spec.mod = 0;
 	ft_work_spec(format, form);
 	ft_print_test();
-	exit(0);
+	//exit(0);
 	return (1);
 }
