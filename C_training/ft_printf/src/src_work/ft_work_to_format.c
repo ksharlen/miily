@@ -6,14 +6,18 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 17:14:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 19:18:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void			ft_def_spec(char format)
+static void		ft_define_spec(const char *format_string)
 {
+	char 		format;
+
+	format_string += g_spec.shift_spec;
+	format = *format_string;
 	if (ft_memchr(TYPE, format, ft_strlen(TYPE)))
 	{
 		g_spec.spec = format;
@@ -23,7 +27,7 @@ static void			ft_def_spec(char format)
 		g_spec.spec = 0;
 }
 
-static void			ft_check_format(const char *format)
+static void		ft_count_sym_to_spec(const char *format)
 {
 	g_spec.shift_spec = 0;
 	g_spec.spec = 0;
@@ -32,19 +36,23 @@ static void			ft_check_format(const char *format)
 		++g_spec.shift_spec;
 		format++;
 	}
-	ft_def_spec(*format);
 }
 
-void					ft_work_to_format(const char *format, char *buf_printf, va_list form)
+void			ft_work_to_format(const char *format,
+	char *buf_printf, va_list form)
 {
+	int			skip_percent;
+
+	skip_percent = 1;
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			ft_check_format(format + 1); //*Заполняем spec;
-			ft_control_spec(format + 1, form);//*Заполняем точность ширину флаги и проверяем совместимость модификатора и спецификатора
-			format += g_spec.shift_spec + 1; //!где 1 это % //Это будет в конце условия
+			ft_count_sym_to_spec(format + skip_percent);
+			ft_define_spec(format + skip_percent);
+			ft_work_spec_form(format + skip_percent, form);
 			ft_control_var(buf_printf, form);
+			format += g_spec.shift_spec + skip_percent;
 		}
 		else
 			buf_printf[g_spec.size_write++] = *format++;
