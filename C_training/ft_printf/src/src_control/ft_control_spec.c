@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 12:10:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 17:15:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,11 @@ static void		ft_check_star(va_list form)
 
 static int		ft_check_mod(const char *format)
 {
-	//printf("one\n");
 	int ret;
 	//?Тут сделать првоерку на спецификатор числа
 	ret = 0;
 	if (*format == 'l')
-	{
-		//printf("i am here\n");
 		ret = ft_l_format(format);
-	}
 	else if (*format == 'h')
 		ret = ft_h_format(format);
 	else if (*format == 'j' || *format == 'z' || *format == 't')
@@ -70,8 +66,7 @@ static int		ft_find_width_accuracy(const char *format, va_list form)
 	}
 	else if (*format == '.' && *(format + 1) == '*')
 	{
-		g_spec.flags |= STAR_ACC;
-		g_spec.flags |= DOT;
+		(g_spec.flags |= STAR_ACC) && (g_spec.flags |= DOT);
 		ft_check_star(form);
 		shift = 2;
 	}
