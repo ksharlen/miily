@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 13:10:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 17:57:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,15 @@
 typedef struct				s_spec
 {
 	int						flags;
-	int						spec;
 	int						width;
 	int						accuracy;
+	unsigned int			mod;
+	int						spec;
 	int						ret_printf;
-	int						paste;
-	char					*size_type;
 	size_t					size_buf;
 	size_t					shift_spec;
 	size_t					size_write;
-	size_t					size_spec;
 	size_t					size_num;
-	unsigned int			mod;
 }							t_spec;
 
 extern	t_spec				g_spec;
@@ -82,7 +79,7 @@ char						*ft_ptr_to_str(unsigned long long ptr);
 size_t						ft_base_depth(unsigned long long int num, int base);
 char						*ft_size_work(char *str);
 
-int							ft_work_to_format(const char *format, char *buf_printf, va_list form);
+void						ft_work_to_format(const char *format, char *buf_printf, va_list form);
 int							ft_control_spec(const char *format, va_list form);
 void						ft_control_var(char *buf_printf, va_list format);
 char						*ft_control_fwa(const char *str);
@@ -99,5 +96,8 @@ void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
 void						ft_str_to_str(char *buf, char *inbuf);
 void						ft_print_test(const char *form);
 void						ft_char_to_str(char *buf, char *sym);
+
+void						__TEST__return_printf(int flag);
+void						__TEST__check_ft_ismy(int flag);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 17:18:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 17:14:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,8 @@ static void			ft_check_format(const char *format)
 	ft_def_spec(*format);
 }
 
-int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
+void					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 {
-	int			ret_check_format;
-	char		*test_str;
-
 	while (*format)
 	{
 		if (*format == '%')
@@ -57,7 +54,4 @@ int					ft_work_to_format(const char *format, char *buf_printf, va_list form)
 	// 	//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
 	// 	//?тут будет вызываться ф-ия для выгрузки буфера
 	// }
-	return (1);
 }
-
-//*Ф-ия будет возвращать кол-во выведенных байт.

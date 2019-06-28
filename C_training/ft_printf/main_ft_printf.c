@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/28 13:26:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 17:57:14 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -578,6 +578,12 @@ int		main(void)
 	// printf("\n");
 	// printf("%5.7s", "hello world");
 	// printf("\n");
+
+	// printf("======TEST7======\n");
+	// ft_printf("%13.4s", "hello world");
+	// printf("\n");
+	// printf("%13.4s", "hello world");
+	// printf("\n");
 //!TEST_STRING_END
 
 	//printf("a = %d\nstring = %s\n", 14, "work to fork");
@@ -596,5 +602,28 @@ int		main(void)
 	//printf("%-102cw\n", 'a');
 	//ft_printf("%-102cw\n", 'a');
 //!TEST_CHAR_END
+	//printf("======TEST8======\n");
+	//ft_printf("a = %10.5d\nb = %13d\nchar = %-2chow\n string: %-13.4s\n", 14, 29, 'w', "hello world");
+	//printf("a = %10.5d\nb = %13d\nchar = %-2chow\n string: %-13.4s\n", 14, 29, 'w', "hello world");
+	//ft_printf("string:\n%s\nchar = %c\n", "hello world", 'w');
+	//printf("string:\n%s\nchar = %c\n", "hello world", 'w');
+
+//	ft_printf("string:\n%s\na = %10.5d\nchar = %c\n", "hello world", 45, 'w');
+	//printf("string:\n%s\na = %10.5d\nchar = %c\n", "hello world", 45, 'w');
+	//ft_printf("a = %10.5d\nb = %13d\nchar = %c\n", 14, 29, 'w');
+	//ft_printf("a = %10.5d\nchar = %c\n" string: %-13.4s\n", 14, 29, 'w'", "hello world");
+	//ft_printf("a = %d\nb = %c\n", 34, 'w');
+	//ft_printf("char = %13c\n", 'w');
+
+	//ft_printf("a = %c\nb = %c\nc = %10-c\nstring = %-023c\n", 'a', 'w', 'j', 'e');
+	//printf("a = %c\nb = %c\nc = %10-c\nstring = %-023c\n", 'a', 'w', 'j', 'e');
+
+//!UNIT_TESTS_BEGIN
+	printf("UNIT_TESTS_BEGIN\n");
+	__TEST__return_printf(0);
+	printf("UNIT_TESTS_END\n");
+
+	__TEST__check_ft_ismy(0);
+//!UNIT_TESTS_END
 	return (0);
 }
