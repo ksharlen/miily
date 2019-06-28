@@ -14,7 +14,7 @@ FLAGS := -g#-Wall -Werror -Wextra
 LIB := ./libft/libft.a
 SOURCE := -o $(NAME)
 INCLUDE := -I.
-MAIN := main_ft_printf.c ft_printf.c $(SRC)$(SRC_WORK)ft_work_to_format.c $(SRC)$(SRC_ERROR)ft_error_find.c $(SRC)$(SRC_CONTROL)$(FT_SIZE_FORMATS)ft_size_formats.c $(SRC)$(SRC_CONTROL)ft_control_spec.c $(SRC)$(SRC_CONTROL)ft_control_var.c $(SRC)$(SRC_NUM_TO_STR)ft_base_to_str.c $(SRC)$(SRC_NUM_TO_STR)ft_int_to_str.c $(SRC)$(SRC_NUM_TO_STR)$(SRC_DEPTH_NUM)ft_base_depth.c $(SRC)$(SRC_CONTROL)ft_control_fwa.c $(SRC)$(SRC_WORK)ft_work_fwa.c $(SRC)$(SRC_OTHER)other1.c $(SRC)$(SRC_NUM_TO_STR)ft_str_to_str.c
+MAIN := main_ft_printf.c ft_printf.c $(SRC)$(SRC_WORK)ft_work_to_format.c $(SRC)$(SRC_ERROR)ft_error_find.c $(SRC)$(SRC_CONTROL)$(FT_SIZE_FORMATS)ft_size_formats.c $(SRC)$(SRC_CONTROL)ft_control_spec.c $(SRC)$(SRC_CONTROL)ft_control_var.c $(SRC)$(SRC_NUM_TO_STR)ft_base_to_str.c $(SRC)$(SRC_NUM_TO_STR)ft_int_to_str.c $(SRC)$(SRC_NUM_TO_STR)$(SRC_DEPTH_NUM)ft_base_depth.c $(SRC)$(SRC_CONTROL)ft_control_fwa.c $(SRC)$(SRC_WORK)ft_work_fwa.c $(SRC)$(SRC_OTHER)other1.c $(SRC)$(SRC_NUM_TO_STR)ft_str_to_str.c $(SRC)$(SRC_NUM_TO_STR)ft_char_to_str.c
 
 $(NAME): all
 

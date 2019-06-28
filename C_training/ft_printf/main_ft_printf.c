@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/27 23:54:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 13:26:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -540,6 +540,61 @@ int		main(void)
 
 	//ft_printf("%020.18s", "hello world");
 	//printf("%020.10s", "hello");
-	ft_printf("%20.10s", "hello world\n");
+	//ft_printf("%20.10s", "hello world\n");
+	//printf("%11.5s", "hello world"); //?size_num = 11;
+//!TEST_STRING_BEGING
+	// printf("======TEST1======\n");
+	// ft_printf("%20.13s", "hello world"); //?size_num = 11;
+	// printf("\n");
+	// printf("%20.13s", "hello world");
+	// printf("\n");
+
+	// printf("======TEST2======\n");
+	// ft_printf("%13.20s", "hello world");
+	// printf("\n");
+	// printf("%13.20s", "hello world");
+	// printf("\n");
+
+	// printf("======TEST3======\n");
+	// ft_printf("%11.20s", "hello world");
+	// printf("\n");
+	// printf("%11.20s", "hello world");
+	// printf("\n");
+
+	// printf("======TEST4======\n");
+	// ft_printf("%15.5s", "hello world");
+	// printf("\n");
+	// printf("%15.5s", "hello world");
+	// printf("\n");
+
+	// printf("======TEST5======\n");
+	// ft_printf("%11.5s", "hello world");
+	// printf("\n");
+	// printf("%11.5s", "hello world");
+	// printf("\n");
+
+	// printf("======TEST6======\n");
+	// ft_printf("%5.7s", "hello world");
+	// printf("\n");
+	// printf("%5.7s", "hello world");
+	// printf("\n");
+//!TEST_STRING_END
+
+	//printf("a = %d\nstring = %s\n", 14, "work to fork");
+	//ft_printf("a = %d\nstring = %s\n", 14, "work to fork");
+
+	//ft_printf("%s\n", "test");
+
+	//ft_printf("%.s", "hello world");
+	//printf("%.s", "hello world");
+	//printf("%.s\n", "hello world");
+	//ft_printf("size_write = %d\n", g_spec.size_write);
+
+//!TEST_CHAR_BEGIN
+
+	//ft_printf("%c", 'a');
+	//printf("%-102cw\n", 'a');
+	//ft_printf("%-102cw\n", 'a');
+//!TEST_CHAR_END
 	return (0);
 }
