@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 17:57:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 19:26:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ extern	t_spec				g_spec;
 
 int							ft_printf(const char *format, ...);
 
-int							ft_l_format(const char *format);
-int							ft_h_format(const char *format);
-int							ft_j_z_t_format(const char *format);
-int							ft_big_l(const char *format);
+int							ft_l_format(const int next_symbal);
+int							ft_h_format(const int next_symbal);
+int							ft_j_z_t_format(const int check_mod);
+int							ft_big_l(const int check_mod);
 
 char						*ft_base_to_str(unsigned long long num, int base);
 char						*ft_int_to_str(long long int num);
@@ -80,7 +80,7 @@ size_t						ft_base_depth(unsigned long long int num, int base);
 char						*ft_size_work(char *str);
 
 void						ft_work_to_format(const char *format, char *buf_printf, va_list form);
-int							ft_control_spec(const char *format, va_list form);
+void						ft_work_spec_form(const char *format, va_list form);
 void						ft_control_var(char *buf_printf, va_list format);
 char						*ft_control_fwa(const char *str);
 
@@ -90,12 +90,13 @@ void						ft_error_find(const char *str, int line);
 int							ft_ismy(char form);
 
 int							ft_str_size_num(const char *format);
-int							ft_check_int(const char *def_str, const int sym);
+int							ft_check_the_entry(const char *def_str, const int sym);
 
 void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
 void						ft_str_to_str(char *buf, char *inbuf);
 void						ft_print_test(const char *form);
 void						ft_char_to_str(char *buf, char *sym);
+void						ft_select_num_sys()
 
 void						__TEST__return_printf(int flag);
 void						__TEST__check_ft_ismy(int flag);

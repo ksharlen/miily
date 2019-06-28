@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_select_num_sys.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/25 15:58:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 19:31:30 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/28 19:25:14 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/06/28 19:27:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int main(void)
+void	ft_select_num_sys()
 {
-	//printf("%zD", 123213123);
-	char buf[10];
-	char n;
-	char *str;
-
-	str = &n;
-	n = '4';
-//	buf[0] = n;
-	write(0, str, 1);
-	return (0);
+	
 }

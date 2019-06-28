@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 14:28:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 12:13:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 18:41:18 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_check_int(const char *def_str, const int sym)
+int		ft_check_the_entry(const char *def_str, const int sym)
 {
 	if (ft_memchr(def_str, sym, ft_strlen(def_str)))
 		return (1);
@@ -61,7 +61,7 @@ void	ft_print_test(const char *form)
 		type = "hh";
 	else if (g_spec.mod & PLUS)
 		type = "h";
-	else if (g_spec.mod & DASH && ft_check_int(NUM_DOUBLE, g_spec.spec))
+	else if (g_spec.mod & DASH && ft_check_the_entry(NUM_DOUBLE, g_spec.spec))
 		type = "L";
 	else if (g_spec.mod & DASH)
 		type = "l";
