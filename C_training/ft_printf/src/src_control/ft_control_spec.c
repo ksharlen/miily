@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_spec.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:17:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 19:36:45 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 12:10:18 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,36 +107,6 @@ static void		ft_work_spec(const char *format, va_list form)
 			zero_shift = ft_check_mod(format);
 		format += zero_shift;
 	}
-}
-
-static void	ft_print_test(const char *form)
-{
-	char *type = NULL;
-
-	printf("string:	\"%s\"\n", form);
-	printf("spec 	=	%c		accuracy =	%d		width		=	%d\n", g_spec.spec, g_spec.accuracy, g_spec.width);
-	printf("ZERO 	=	%d		PLUS =		%d		DASH		=	%d\n", (g_spec.flags & ZERO) && 1, (g_spec.flags & PLUS) && 1, (g_spec.flags & DASH) && 1);
-	printf("SPACE 	=	%d		HASH =		%d		DOT			=	%d\n", g_spec.flags & SPACE && 1, g_spec.flags & HASH && 1, g_spec.flags & DOT && 1);
-	printf("DEC 	=	%d		STAR_ACC =	%d		STAR_WITH	=	%d\n", g_spec.flags & DEC && 1, g_spec.flags & STAR_ACC && 1, g_spec.flags & STAR_WITH && 1);
-
-	if (g_spec.mod & ZERO)
-		type = "hh";
-	else if (g_spec.mod & PLUS)
-		type = "h";
-	else if (g_spec.mod & DASH && ft_check_int(NUM_DOUBLE, g_spec.spec))
-		type = "L";
-	else if (g_spec.mod & DASH)
-		type = "l";
-	else if (g_spec.mod & SPACE)
-		type = "ll";
-	else if (g_spec.mod & HASH)
-		type = "j";
-	else if (g_spec.mod & DOT)
-		type = "z";
-	else if (g_spec.mod & DEC)
-		type = "t";
-	printf("type 	=	%s\n", type);
-	printf("=============================\n");
 }
 
 int			ft_control_spec(const char *format, va_list form)

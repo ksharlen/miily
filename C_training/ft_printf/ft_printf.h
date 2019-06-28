@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/27 23:26:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 13:10:20 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,7 @@ int							ft_check_int(const char *def_str, const int sym);
 
 void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
 void						ft_str_to_str(char *buf, char *inbuf);
+void						ft_print_test(const char *form);
+void						ft_char_to_str(char *buf, char *sym);
 
 #endif

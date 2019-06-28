@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_control_var.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/27 19:38:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/28 13:08:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,21 +111,14 @@ void							ft_control_var(char *buf_printf, va_list format)
 	unsigned long long			ret_u;
 	int							ret_check_com;
 
-	//ret_check_com = ft_check_com();
 	if (ft_check_int(NUM_INT, g_spec.spec))
 	{
 		if (ft_check_int(SIGNED_INT, g_spec.spec))
 		{
-		//printf("here\n");
 			ret_s = pull_signed_int_arg(format);
 			test_str = ft_int_to_str(ret_s);
 			ft_strcat(buf_printf, test_str);
 			g_spec.size_write += g_spec.size_num;
-			// ret_s = ft_signed_format(format);
-			// test_str = ft_int_to_str(ret_s);
-			// test_str = ft_control_fwa(test_str);
-			// ft_strcat(buf_printf, test_str);
-			// g_spec.size_write += g_spec.size_spec;
 		}
 		else if (ft_check_int(UNSIGNED_INT, g_spec.spec))
 		{
@@ -141,11 +134,12 @@ void							ft_control_var(char *buf_printf, va_list format)
 	{
 
 	}
+	else if (g_spec.spec == 'c')
+		ft_char_to_str(buf_printf, pull_string_arg(format));
 	else if (ft_check_int(NUM_STRING, g_spec.spec))
 	{
-		//printf("here\n");
-		test_str = pull_string_arg(format);
-		ft_str_to_str(buf_printf, test_str);
+		//test_str = pull_string_arg(format);
+		ft_str_to_str(buf_printf, pull_string_arg(format));
 	}
 	else if (ft_check_int(NUM_OTHER, g_spec.spec))
 	{
