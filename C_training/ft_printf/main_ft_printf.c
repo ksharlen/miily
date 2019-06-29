@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/28 18:33:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 11:21:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -628,7 +628,8 @@ int		main(void)
 	//printf("a = %+013d\nb = %10c\nstring: %20.4s\n", 13, 'o', "hello world");
 	//ft_printf("a = %+013d\nb = %10c\nstring: %20.4s\n", 13, 'o', "hello world");
 
-	printf("%*.*d\n", 20, 5, 16);
-	ft_printf("%*.*d\n", 20, 5, 16);
+	// printf("%*.*d\n", 20, 5, 16);
+	// ft_printf("%*.*d\n", 20, 5, 16);
+	ft_printf("sym = %c\n", 'w');
 	return (0);
 }
