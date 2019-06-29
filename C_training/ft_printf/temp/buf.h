@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:30:51 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 22:52:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 10:09:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 #include "libft.h"
 
-#define SIZE_BUF 5
+#define SIZE_BUF 100
+#define WRITE_BUF NULL
 
 char	*ft_work_buf(char *inbuf, int size_inbuf);
-void	ft_write_from_buf(const char *buf);
+void	ft_write_from_buf_and_clean(char *buf);
 
 typedef struct		s_buf
 {
