@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/28 19:30:01 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 11:20:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ static int					ft_define_num_sys(void)
 }
 //?Проверка на сейв
 
-void						ft_control_var(char *buf_printf, va_list format)
+void						ft_control_var(va_list format)
 {
 	char 					*test_str;
 	long long int 			ret_s;
@@ -117,13 +117,14 @@ void						ft_control_var(char *buf_printf, va_list format)
 		{
 			ret_s = pull_signed_int_arg(format);
 			test_str = ft_int_to_str(ret_s);
-			ft_strcat(buf_printf, test_str);
+			ft_work_buf(test_str, g_spec.size_num);
+			//ft_strcat(buf_printf, test_str);
 			g_spec.size_write += g_spec.size_num;
 		}
 		else if (ft_check_the_entry(UNSIGNED_INT, g_spec.spec))
 		{
 			ret_u = pull_signed_int_arg(format);
-			ft_base_to_str_with_buf(ret_u, ft_define_num_sys(), buf_printf);
+			//ft_base_to_str_with_buf(ret_u, ft_define_num_sys(), buf_printf);
 			g_spec.size_write += g_spec.size_num;
 		}
 	}
@@ -132,11 +133,11 @@ void						ft_control_var(char *buf_printf, va_list format)
 
 	}
 	else if (g_spec.spec == 'c')
-		ft_char_to_str(buf_printf, pull_string_arg(format));
+		ft_char_to_str(pull_string_arg(format));
 	else if (ft_check_the_entry(NUM_STRING, g_spec.spec))
 	{
 		//test_str = pull_string_arg(format);
-		ft_str_to_str(buf_printf, pull_string_arg(format));
+		ft_str_to_str(pull_string_arg(format));
 	}
 	else if (ft_check_the_entry(NUM_OTHER, g_spec.spec))
 	{

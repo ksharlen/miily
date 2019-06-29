@@ -6,33 +6,43 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 16:04:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 11:23:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void ft_push_wa(char *buf, int sym)
+static void ft_push_wa(char *sym)
 {
+	char *buf;
+
 	if (g_spec.width > 1)
 	{
 		if (g_spec.flags & DASH)
 		{
-			buf[g_spec.size_write++] = sym;
-			ft_memset(buf + g_spec.size_write, ' ', g_spec.width - 1);
+			buf = ft_work_buf(sym, 1);
+			//buf[g_spec.size_write++] = sym;
+			ft_memset(buf, ' ', g_spec.width - 1);
+			g_spec.size_write += (g_spec.width - 1);
 		}
 		else
 		{
-			ft_memset(buf + g_spec.size_write, ' ', g_spec.width - 1);
-			buf[g_spec.size_write + g_spec.width - 1] = sym;
+			buf = ft_work_buf(GET_POINT, 0);
+			ft_memset(buf, ' ', g_spec.width - 1);
+			g_spec.size_write += (g_spec.width - 1);
+			ft_work_buf(sym, 1);
+			//buf[g_spec.size_write + g_spec.width - 1] = sym;
 		}
-		g_spec.size_write += g_spec.width;
+		//g_spec.size_write += g_spec.width;
 	}
 	else
-		buf[g_spec.size_write++] = sym;
+		ft_work_buf(sym, 1);
 }
 
-void	ft_char_to_str(char *buf, char *sym)
+void	ft_char_to_str(char *sym)
 {
-	ft_push_wa(buf, *sym);
+	//printf("char to str = %c\n", *sym);
+	ft_write_buf_and_clean(WRITE_BUF);
+	exit(0);
+	ft_push_wa(sym);
 }

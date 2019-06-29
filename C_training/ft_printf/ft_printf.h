@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 19:26:50 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 11:15:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF_PRINTF 	12000
+# define SIZE_BUF			12000
+# define WRITE_BUF			NULL
+# define GET_POINT			NULL
 /*SysNum */
 # define BIN 				2
 # define OCT 				8
@@ -58,9 +60,9 @@ typedef struct				s_spec
 	unsigned int			mod;
 	int						spec;
 	int						ret_printf;
-	size_t					size_buf;
+	int						size_buf;
+	int						size_write;
 	size_t					shift_spec;
-	size_t					size_write;
 	size_t					size_num;
 }							t_spec;
 
@@ -79,9 +81,9 @@ char						*ft_ptr_to_str(unsigned long long ptr);
 size_t						ft_base_depth(unsigned long long int num, int base);
 char						*ft_size_work(char *str);
 
-void						ft_work_to_format(const char *format, char *buf_printf, va_list form);
+void						ft_work_to_format(const char *format, va_list form);
 void						ft_work_spec_form(const char *format, va_list form);
-void						ft_control_var(char *buf_printf, va_list format);
+void						ft_control_var(va_list format);
 char						*ft_control_fwa(const char *str);
 
 long						ft_control_format_int(va_list form, char *type);
@@ -93,10 +95,12 @@ int							ft_str_size_num(const char *format);
 int							ft_check_the_entry(const char *def_str, const int sym);
 
 void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
-void						ft_str_to_str(char *buf, char *inbuf);
+void						ft_str_to_str(char *inbuf);
 void						ft_print_test(const char *form);
-void						ft_char_to_str(char *buf, char *sym);
-void						ft_select_num_sys()
+void						ft_char_to_str(char *sym);
+void						ft_select_num_sys(void);
+char						*ft_work_buf(const char *inbuf, int size_inbuf);
+void						ft_write_buf_and_clean(char *buf);
 
 void						__TEST__return_printf(int flag);
 void						__TEST__check_ft_ismy(int flag);

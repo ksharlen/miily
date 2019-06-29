@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 19:18:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 10:41:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ static void		ft_count_sym_to_spec(const char *format)
 	}
 }
 
-void			ft_work_to_format(const char *format,
-	char *buf_printf, va_list form)
+void			ft_work_to_format(const char *format, va_list form)
 {
 	int			skip_percent;
 
@@ -51,11 +50,14 @@ void			ft_work_to_format(const char *format,
 			ft_count_sym_to_spec(format + skip_percent);
 			ft_define_spec(format + skip_percent);
 			ft_work_spec_form(format + skip_percent, form);
-			ft_control_var(buf_printf, form);
+			ft_control_var(form);
 			format += g_spec.shift_spec + skip_percent;
 		}
 		else
-			buf_printf[g_spec.size_write++] = *format++;
+		{
+			ft_work_buf(format, 1);
+			format++;
+		}
 	}
 	// if (!g_spec.size_buf)
 	// {
