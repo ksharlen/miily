@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 16:55:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 17:58:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 10:31:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ void		__TEST__return_printf(int flag)
 	if (flag)
 	{
 		str = "a = %d\nb = %c\nstring: %s\n";
-		ret_ft_printf = ft_printf(str, 13, 'w', "hello world");
-		ret_printf = printf(str, 13, 'w', "hello world");
+		ret_ft_printf = ft_printf("test for sym: %-20c\n", 'w');
+		ret_printf = printf("test for sym: %-20c\n", 'w');
+		//printf("ret_ft_printf = %d\nret_printf = %d\n", ret_ft_printf, ret_printf);
 		assert(ret_ft_printf && ret_printf);
+		//printf("test faild\n");
 		printf("test SUCCESS!!!\n");
 	}
 }
