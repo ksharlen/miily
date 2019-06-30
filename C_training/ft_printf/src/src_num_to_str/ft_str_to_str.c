@@ -6,11 +6,16 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 11:33:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 12:29:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static char		*ft_get_va_arg(va_list format)
+{
+	return (va_arg(format, char *));
+}
 
 static void       ft_work_aw(void)
 {
@@ -66,8 +71,11 @@ static void		ft_push_wa(char *inbuf)
 	}
 }
 
-void			ft_str_to_str(char *inbuf)
+void			ft_str_to_str(va_list format)
 {
+	char *inbuf;
+
+	inbuf = ft_get_va_arg(format);
 	if (inbuf)
 	{
 		g_spec.size_num = ft_strlen(inbuf);

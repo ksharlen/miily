@@ -6,11 +6,16 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 10:57:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 12:27:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static char		ft_get_va_arg(va_list format)
+{
+	return ((char)va_arg(format, int));
+}
 
 static void ft_push_buf_sa(char sym)
 {
@@ -50,10 +55,10 @@ static void ft_push_buf(char sym)
 		ft_work_buf(&sym, 1);
 }
 
-void	ft_char_to_str(char *sym)
+void	ft_char_to_str(va_list format)
 {
-	if (sym)
-		ft_push_buf(*sym);
-	else
-		return ;
+	char sym;
+
+	sym = ft_get_va_arg(format);
+	ft_push_buf(sym);
 }

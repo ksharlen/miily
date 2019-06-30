@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/29 23:43:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 15:36:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ char						*ft_size_work(char *str);
 
 void						ft_work_to_format(const char *format, va_list form);
 void						ft_work_spec_form(const char *format, va_list form);
-void						ft_control_var(va_list format);
 char						*ft_control_fwa(const char *str);
 
 long						ft_control_format_int(va_list form, char *type);
@@ -95,12 +94,14 @@ int							ft_str_size_num(const char *format);
 int							ft_check_the_entry(const char *def_str, const int sym);
 
 void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
-void						ft_str_to_str(char *inbuf);
+void						ft_str_to_str(va_list format);
 void						ft_print_test(const char *form);
-void						ft_char_to_str(char *sym);
-void						ft_select_num_sys(void);
+void						ft_char_to_str(va_list format);
+void						ft_select_num_sys(va_list format);
 char						*ft_work_buf(const char *inbuf, int size_inbuf);
 void						ft_write_buf_and_clean(char *buf);
+void						ft_other_spec(va_list format);
+void						ft_double_to_str(va_list format);
 
 void						__TEST__return_printf(int flag);
 void						__TEST__check_ft_ismy(int flag);

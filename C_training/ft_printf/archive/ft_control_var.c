@@ -1,18 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error_find.c                                    :+:      :+:    :+:   */
+/*   ft_control_var.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/06 09:43:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/06 09:49:00 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
+/*   Updated: 2019/06/30 15:33:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_error_find(const char *str, int line)
-{
-	printf("%s %d\n", str, line);
-}
