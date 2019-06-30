@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/29 10:41:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 15:34:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ static void		ft_count_sym_to_spec(const char *format)
 	}
 }
 
+static void		ft_control_var(va_list format)
+{
+	if (ft_check_the_entry(NUM_INT, g_spec.spec))
+		ft_select_num_sys(format);
+	else if (ft_check_the_entry(NUM_STRING, g_spec.spec))
+	{
+		if (g_spec.spec == 'c' || g_spec.spec == 'C')
+			ft_char_to_str(format);
+		else if (g_spec.spec == 's' || g_spec.spec == 'S')
+			ft_str_to_str(format);
+	}
+	else if (ft_check_the_entry(NUM_DOUBLE, g_spec.spec))
+		ft_double_to_str(format);
+	else if (ft_check_the_entry(NUM_OTHER, g_spec.spec))
+		ft_other_spec(format);
+}
+
 void			ft_work_to_format(const char *format, va_list form)
 {
 	int			skip_percent;
@@ -59,9 +76,4 @@ void			ft_work_to_format(const char *format, va_list form)
 			format++;
 		}
 	}
-	// if (!g_spec.size_buf)
-	// {
-	// 	//?если буфер переполнился, то выводим содержимое и обнуляем буфер для следующей информации.
-	// 	//?тут будет вызываться ф-ия для выгрузки буфера
-	// }
 }

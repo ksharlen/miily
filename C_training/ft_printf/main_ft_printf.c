@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/30 11:44:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 15:23:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -534,47 +534,55 @@ int		main(void)
 	//ft_printf("%20.10s", "hello world\n");
 	//printf("%11.5s", "hello world"); //?size_num = 11;
 //!TEST_STRING_BEGING
-	// printf("======TEST1======\n");
+	// printf("***************************\n");
+	// printf("********TEST_STRING********\n");
+	// printf("***************************\n");
+
+	// printf("===========TEST1===========\n");
 	// ft_printf("%20.13s", "hello world"); //?size_num = 11;
 	// printf("\n");
 	// printf("%20.13s", "hello world");
 	// printf("\n");
 
-	// printf("======TEST2======\n");
+	// printf("===========TEST2===========\n");
 	// ft_printf("%13.20s", "hello world");
 	// printf("\n");
 	// printf("%13.20s", "hello world");
 	// printf("\n");
 
-	// printf("======TEST3======\n");
+	// printf("===========TEST3===========\n");
 	// ft_printf("%11.20s", "hello world");
 	// printf("\n");
 	// printf("%11.20s", "hello world");
 	// printf("\n");
 
-	// printf("======TEST4======\n");
+	// printf("===========TEST4===========\n");
 	// ft_printf("%15.5s", "hello world");
 	// printf("\n");
 	// printf("%15.5s", "hello world");
 	// printf("\n");
 
-	// printf("======TEST5======\n");
+	// printf("===========TEST5===========\n");
 	// ft_printf("%11.5s", "hello world");
 	// printf("\n");
 	// printf("%11.5s", "hello world");
 	// printf("\n");
 
-	// printf("======TEST6======\n");
+	// printf("===========TEST6===========\n");
 	// ft_printf("%5.7s", "hello world");
 	// printf("\n");
 	// printf("%5.7s", "hello world");
 	// printf("\n");
 
-	// printf("======TEST7======\n");
+	// printf("===========TEST7===========\n");
 	// ft_printf("%13.4s", "hello world");
 	// printf("\n");
 	// printf("%13.4s", "hello world");
 	// printf("\n");
+
+	// printf("===========TEST8===========\n");
+	// ft_printf("test_string: %20.sw\n", "one two tree");
+	// printf("test_string: %20.sw\n", "one two tree");
 //!TEST_STRING_END
 
 	//printf("a = %d\nstring = %s\n", 14, "work to fork");
@@ -588,10 +596,20 @@ int		main(void)
 	//ft_printf("size_write = %d\n", g_spec.size_write);
 
 //!TEST_CHAR_BEGIN
+	// printf("***************************\n");
+	// printf("********TEST_CHAR**********\n");
+	// printf("***************************\n");
 
-	//ft_printf("%c", 'a');
-	//printf("%-102cw\n", 'a');
-	//ft_printf("%-102cw\n", 'a');
+	// printf("===========TEST1===========\n");
+	// printf("%-102cw\n", 'a');
+	// ft_printf("%-102cw\n", 'a');
+
+	// printf("===========TEST2===========\n");
+	// printf("%c\n", 'c');
+	// ft_printf("%c\n", 'c');
+
+	// printf("===========TEST4===========\n");
+	// printf("")
 //!TEST_CHAR_END
 	//printf("======TEST8======\n");
 	//ft_printf("a = %10.5d\nb = %13d\nchar = %-2chow\n string: %-13.4s\n", 14, 29, 'w', "hello world");
@@ -621,7 +639,6 @@ int		main(void)
 
 	// printf("%*.*d\n", 20, 5, 16);
 	// ft_printf("%*.*d\n", 20, 5, 16);
-	int ret;
 
 	//ret = ft_printf("test string %s\n", "this is test string");
 	//ft_printf("%20chow are you?\n", 'a');
@@ -633,15 +650,59 @@ int		main(void)
 	//ft_printf("helo world %-20sfine and you?\n", "how are you?");
 	//ft_printf("symbal = %010c\nstrind: %0shello\n", 'w', "test_string");
 	//printf("symbal = %010c\nstrind: %0shello\n", 'w', "test_string");
-	int a;
-	int *n;
-
-	n = &a;
 	//printf("hello%n\n", n);
 	//printf("n = %d\n", *n);
-	printf("hello %n\n", n);
-	printf("n = %d\n", *n);
-	ft_printf("hello %n\n", n);
-	printf("n = %d\n", *n);
+	// printf("hello %n\n", n);
+	// printf("n = %d\n", *n);
+	// ft_printf("hello %n\n", n);
+	// printf("n = %d\n", *n);
+	// ft_printf("test char: %20c\n", 'w');
+	// printf("test char: %20c\n", 'w');
+	//printf("testing %m");
+	#include <errno.h>
+
+//!TEST_N_BEGIN
+	// char a;
+	// char *p_a;
+
+	// short a;
+	// short *p_a;
+
+	// int a;
+	// int *p_a;
+
+	// long int a;
+	// long int *p_a;
+
+	// long long int a;
+	// long long int *p_a;
+
+	// intmax_t a;
+	// intmax_t *p_a;
+
+	// ssize_t a;
+	// ssize_t *p_a;
+
+	// ptrdiff_t a;
+	// ptrdiff_t *p_a;
+	//p_a = &a;
+	//ft_printf("hello world %ln\n", p_a);
+	//printf("p_a = %ld\n", a);
+//!TEST_N_END
+
+	//extern char *strerror;
+	//printf("%s\n", strerror(errno));
+	//printf("%10m\n");
+	//ft_printf("hello world%10n\n", n);
+	//printf("size = %d\n", *n);
+	//printf("%10.2m");
+	// ft_printf("test string %n how are you?\n", n);
+	// printf("n = %d\n", *n);
+
+	// printf("test string %n how are you?\n", n);
+	// printf("n = %d\n", *n);
+
+	//ft_printf("%whow are you?\n", 43);
+	//printf("%whow are you?\n", 43);
 	return (0);
 }

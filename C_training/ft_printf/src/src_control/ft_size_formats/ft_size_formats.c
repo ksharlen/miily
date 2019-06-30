@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 18:52:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 15:13:01 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ int		ft_l_format(const int next_symbal)
 	mod = 0;
 	if (next_symbal == 'l')
 	{
-		if (ft_check_the_entry(NUM_INT, g_spec.spec))
+		if (ft_check_the_entry(NUM_INT, g_spec.spec) || ft_check_the_entry(NUM_OTHER, g_spec.spec))
 			mod = SPACE;
 		shift_size = 2;
 	}
 	else
 	{
 		if (ft_check_the_entry(NUM_INT, g_spec.spec) ||
-			ft_check_the_entry(NUM_STRING, g_spec.spec))
+			ft_check_the_entry(NUM_STRING, g_spec.spec) ||
+			ft_check_the_entry(NUM_OTHER, g_spec.spec))
 			mod = DASH;
 		shift_size = 1;
 	}
@@ -46,7 +47,8 @@ int		ft_h_format(const int next_symbal)
 	mod = 0;
 	if (next_symbal == 'h')
 	{
-		if (ft_check_the_entry(NUM_INT, g_spec.spec))
+		if (ft_check_the_entry(NUM_INT, g_spec.spec) ||
+			ft_check_the_entry(NUM_OTHER, g_spec.spec))
 			mod = ZERO;
 		shift_size = 2;
 	}

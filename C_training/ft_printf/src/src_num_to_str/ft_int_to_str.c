@@ -3,14 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   ft_int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/27 09:28:30 by cormund          ###   ########.fr       */
+/*   Updated: 2019/06/30 16:03:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static char check_flags(void)
+{
+	char flag;
+
+	if (g_spec.flags & DEC)
+		flag = '-';
+	else if (g_spec.flags & PLUS)
+		flag = '+';
+	else if (g_spec.flags & SPACE)
+		flag = ' ';
+	return (flag);
+}
+
+static void work_to_width(void)
+{
+	char flag;
+	char *buf;
+
+	if (g_spec.width > g_spec.size_num)
+	{
+		if (g_spec.flags & ZERO)
+		{
+			flag = check_flags();
+			buf = ft_work_buf(&flag, 1);
+			ft_memset(buf, '0', g_spec.width - g_spec.size_num);
+		}
+		else
+		{
+			
+		}
+	}
+}
+
+static void work_to_acc(void)
+{
+	char flag;
+	char *buf;
+
+	flag = check_flags(void);
+	buf = ft_work_buf(&flag, 1);
+	//!DASH нету, точность есть
+	if (g_spec.accuracy > g_spec.size_num)
+	{
+		ft_memset(buf, '0', g_spec.accuracy - g_spec.size_num);
+		g_spec.size_write += (g_spec.accuracy - g_spec.size_num);
+		g_spec.size_buf -= (g_spec.accuracy - g_spec.size_num);
+	}
+	else
+		g_spec.accuracy = 0;
+}
+
+static void test_need_delete(void)
+{
+	if (g_spec.falgs & DOT)
+	{
+		if (g_spec.flags & DASH)
+		{
+			
+		}
+		else
+			work_to_acc();
+	}
+	else
+	{
+		ft_work_to_width();
+	}
+}
 
 static char			ft_chr_space_plus_dec()
 {
