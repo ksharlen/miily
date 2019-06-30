@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/29 11:21:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 11:44:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -516,17 +516,8 @@ int		main(void)
 	// ft_printf("%jC");
 	// ft_printf("%zC");
 	// ft_printf("%LC");
-	int a;
-	int *p;
-
-	a = 5;
-	p = &a;
 	//ft_printf("a = %x\n", 16);
 	//ft_printf("%c", 'c');
-	char n;
-	n = 'w';
-	char *str = "hello world";
-	char *str1 = "symbal = ";
 	//ft_printf("%s %s %c\n", str, str1, n);
 	//ft_printf("a = %d b = %d c = %d\n", 13, 14, 25);
 	//printf("%20.4s", "hello world");
@@ -630,6 +621,27 @@ int		main(void)
 
 	// printf("%*.*d\n", 20, 5, 16);
 	// ft_printf("%*.*d\n", 20, 5, 16);
-	ft_printf("sym = %c\n", 'w');
+	int ret;
+
+	//ret = ft_printf("test string %s\n", "this is test string");
+	//ft_printf("%20chow are you?\n", 'a');
+
+	//char *test;
+
+	//test = NULL;
+	//write(1, test, 5);
+	//ft_printf("helo world %-20sfine and you?\n", "how are you?");
+	//ft_printf("symbal = %010c\nstrind: %0shello\n", 'w', "test_string");
+	//printf("symbal = %010c\nstrind: %0shello\n", 'w', "test_string");
+	int a;
+	int *n;
+
+	n = &a;
+	//printf("hello%n\n", n);
+	//printf("n = %d\n", *n);
+	printf("hello %n\n", n);
+	printf("n = %d\n", *n);
+	ft_printf("hello %n\n", n);
+	printf("n = %d\n", *n);
 	return (0);
 }

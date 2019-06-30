@@ -6,11 +6,20 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 09:47:04 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/29 11:20:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/30 11:43:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int					*pull_n_arg(va_list format)
+{
+	int						*ret;
+
+	ret = va_arg(format, int *);
+
+	return (ret);
+}
 
 static char					*pull_string_arg(va_list format)
 {
@@ -111,6 +120,13 @@ void						ft_control_var(va_list format)
 	unsigned long long		ret_u;
 	int						ret_check_com;
 
+	if (g_spec.spec == 'n')
+	{
+		int *n;
+
+		n = pull_n_arg(format);
+		*n = g_spec.ret_printf + g_spec.size_write;
+	}
 	if (ft_check_the_entry(NUM_INT, g_spec.spec))
 	{
 		if (ft_check_the_entry(SIGNED_INT, g_spec.spec))
@@ -124,7 +140,6 @@ void						ft_control_var(va_list format)
 		else if (ft_check_the_entry(UNSIGNED_INT, g_spec.spec))
 		{
 			ret_u = pull_signed_int_arg(format);
-			//ft_base_to_str_with_buf(ret_u, ft_define_num_sys(), buf_printf);
 			g_spec.size_write += g_spec.size_num;
 		}
 	}
@@ -136,7 +151,6 @@ void						ft_control_var(va_list format)
 		ft_char_to_str(pull_string_arg(format));
 	else if (ft_check_the_entry(NUM_STRING, g_spec.spec))
 	{
-		//test_str = pull_string_arg(format);
 		ft_str_to_str(pull_string_arg(format));
 	}
 	else if (ft_check_the_entry(NUM_OTHER, g_spec.spec))

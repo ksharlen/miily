@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:32:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/29 10:20:00 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/06/29 23:56:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ static char		*ft_push_buf(char *inbuf, int size_inbuf, char *buf)
 {
 	char		*ret_buf;
 
-	ret_buf = buf;
+	ret_buf = (buf + g_buf.size_write);
 	if (size_inbuf > 0 && inbuf)
 	{
 		ft_memcpy(buf + g_buf.size_write, inbuf, size_inbuf);
 		g_buf.size_buf -= size_inbuf;
 		g_buf.size_write += size_inbuf;
-		ret_buf += g_buf.size_write;
+		ret_buf = buf + g_buf.size_write;
 	}
 	return (ret_buf);
 }
