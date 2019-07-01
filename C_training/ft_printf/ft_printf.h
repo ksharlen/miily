@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 15:36:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 11:35:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			12000
+# define SIZE_BUF			1
 # define WRITE_BUF			NULL
 # define GET_POINT			NULL
 /*SysNum */
@@ -76,7 +76,7 @@ int							ft_j_z_t_format(const int check_mod);
 int							ft_big_l(const int check_mod);
 
 char						*ft_base_to_str(unsigned long long num, int base);
-char						*ft_int_to_str(long long int num);
+void						ft_int_to_str(long long int num);
 char						*ft_ptr_to_str(unsigned long long ptr);
 size_t						ft_base_depth(unsigned long long int num, int base);
 char						*ft_size_work(char *str);

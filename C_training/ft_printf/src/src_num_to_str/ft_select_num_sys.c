@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_num_sys.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 15:23:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 11:26:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,12 @@ void	ft_select_num_sys(va_list format)
 	if (ft_check_the_entry(SIGNED_INT, g_spec.spec))
 	{
 		s_val = pull_signed_int_arg(format);
+		ft_int_to_str(s_val);
+		//!base(10)
 	}
 	else if (ft_check_the_entry(UNSIGNED_INT, g_spec.spec))
 	{
 		u_val = pull_unsigned_int_arg(format);
+		//!base(16 || 8 || 2)
 	}
 }
