@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   other1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 14:28:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/28 18:41:18 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 11:21:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,22 @@ int		ft_ismy(char form)
 	}
 	return (0);
 }
+
+// void		ft_memset_buf(int sym, int size)
+// {
+// 	char 	*buf;
+// 	int 	ret_check_loc;
+
+// 	buf = ft_work_buf(GET_POINT, 0);
+// 	ret_check_loc = ft_check_loc(size);
+// 	if (ret_check_loc == 1)
+// 		ft_write_buf_and_clean(NULL);
+// 	else if (ret_check_loc == -1)
+// 		g_spec.ret_printf += write(1, ft_memset(buf, sym, size), size);
+// 	ft_memset(buf, sym, size);
+// 	g_spec.size_write += size;
+// 	g_spec.size_buf -= size;
+// }
 
 void	ft_print_test(const char *form)
 {

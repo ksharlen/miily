@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/06/29 10:29:02 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 11:20:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int				ft_printf(const char *format, ...)
 	va_start(form, format);
 	ft_work_to_format(format, form);
 	ft_write_buf_and_clean(WRITE_BUF);
+	va_end(form);
 	return (g_spec.ret_printf);
 }

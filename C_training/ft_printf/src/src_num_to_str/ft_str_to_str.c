@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 12:29:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 09:17:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static char		*ft_get_va_arg(va_list format)
 
 static void       ft_work_aw(void)
 {
-	if (g_spec.size_num  <= g_spec.accuracy && g_spec.accuracy <
-	g_spec.width || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
+	if ((g_spec.size_num  <= g_spec.accuracy && g_spec.accuracy <
+	g_spec.width ) || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
 	g_spec.width))
 		g_spec.width -= g_spec.size_num;
-	else if ((g_spec.width >= g_spec.size_num && g_spec.size_num >
-		g_spec.accuracy || (g_spec.size_num >= g_spec.width &&
+	else if (((g_spec.width >= g_spec.size_num && g_spec.size_num >
+		g_spec.accuracy) || (g_spec.size_num >= g_spec.width &&
 		g_spec.width > g_spec.accuracy)))
 	{
 		if (g_spec.flags & DOT)
@@ -48,7 +48,7 @@ static void       ft_work_aw(void)
 
 static void		ft_push_wa(char *inbuf)
 {
-	int sym;
+	int 		sym;
 	char		*buf;
 
 	sym = ' ';
@@ -64,7 +64,7 @@ static void		ft_push_wa(char *inbuf)
 		buf = ft_work_buf(GET_POINT, 0);
 		if (g_spec.flags & ZERO)
 			sym = '0';
-		ft_memset(buf, sym, g_spec.width);
+		ft_memset(buf, sym, g_spec.width);//!переполнение буфера подумать
 		g_spec.size_write += g_spec.width;
 		g_spec.size_buf -= g_spec.width;
 		ft_work_buf(inbuf, g_spec.size_num);

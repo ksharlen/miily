@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 15:34:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 09:29:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void		ft_define_spec(const char *format_string)
 
 	format_string += g_spec.shift_spec;
 	format = *format_string;
-	if (ft_memchr(TYPE, format, ft_strlen(TYPE)))
+	if (ft_check_the_entry(TYPE, format))
 	{
 		g_spec.spec = format;
 		++g_spec.shift_spec;
@@ -34,7 +34,7 @@ static void		ft_count_sym_to_spec(const char *format)
 	while (!ft_ismy(*format) && *format)
 	{
 		++g_spec.shift_spec;
-		format++;
+		++format;
 	}
 }
 
