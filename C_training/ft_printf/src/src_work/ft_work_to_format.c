@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 09:29:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 17:24:52 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void			ft_work_to_format(const char *format, va_list form)
 			ft_control_var(form);
 			format += g_spec.shift_spec + skip_percent;
 		}
+		else if (*format == '{')
+			ft_color_format(format + 1);
 		else
 		{
 			ft_work_buf(format, 1);
