@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   other1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/26 14:28:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 11:21:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 17:24:07 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,19 @@ void	ft_print_test(const char *form)
 		type = "t";
 	printf("type 	=	%s\n", type);
 	printf("=============================\n");
+}
+
+int					ft_mem_rec_cmp_for_color(char *str1, char *str2, size_t n)
+{
+	unsigned char	*s1;
+	unsigned char	*s2;
+
+	s1 = (unsigned char *)str1;
+	s2 = (unsigned char *)str2;
+	while (n-- && ft_tolower(*s1) == *s2)
+	{
+		++s1;
+		++s2;
+	}
+	return (ft_tolower(*s1) - *s2);
 }

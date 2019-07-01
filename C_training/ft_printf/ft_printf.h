@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 13:37:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 17:21:03 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ void						ft_write_buf_and_clean(char *buf);
 void						ft_other_spec(va_list format);
 void						ft_double_to_str(va_list format);
 void						ft_base_to_str(unsigned long long int num);
+
+int							ft_mem_rec_cmp_for_color(char *str1, char *str2, size_t n);
 
 void						__TEST__return_printf(int flag);
 void						__TEST__check_ft_ismy(int flag);
