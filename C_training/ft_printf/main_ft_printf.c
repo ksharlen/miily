@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/07/01 17:06:58 by ksharlen         ###   ########.fr       */
+=======
+/*   Updated: 2019/07/01 17:25:29 by cormund          ###   ########.fr       */
+>>>>>>> edba76ec5fa2f7b2cb5ec47595f7296583c511e2
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -261,7 +265,11 @@ int		main(void)
 	// printf("%+10.hdw\n", 31);
 	// ft_printf("%+10.hdw\n", 31);
 
+<<<<<<< HEAD
 	// // //!  tests for spec "x/X"
+=======
+	// !  tests for spec "x/X"
+>>>>>>> edba76ec5fa2f7b2cb5ec47595f7296583c511e2
 
 	// printf("------------test1-------------\n");
 	// ft_printf("|%020x|\n", 1234);
@@ -636,11 +644,11 @@ int		main(void)
 	//printf("a = %c\nb = %c\nc = %10-c\nstring = %-023c\n", 'a', 'w', 'j', 'e');
 
 //!UNIT_TESTS_BEGIN
-	printf("UNIT_TESTS_BEGIN\n");
-	__TEST__return_printf(0);
-	printf("UNIT_TESTS_END\n");
+	// printf("UNIT_TESTS_BEGIN\n");
+	// __TEST__return_printf(0);
+	// printf("UNIT_TESTS_END\n");
 
-	__TEST__check_ft_ismy(0);
+	// __TEST__check_ft_ismy(0);
 //!UNIT_TESTS_END
 	//printf("a = %+013d\nb = %10c\nstring: %20.4s\n", 13, 'o', "hello world");
 	//ft_printf("a = %+013d\nb = %10c\nstring: %20.4s\n", 13, 'o', "hello world");
@@ -727,16 +735,20 @@ int		main(void)
 
 	//ft_printf("%d %d\n", 192, 31);
 
-	// ft_printf("%#5.4o\n", 4);
-	// printf("%#5.4o\n", 4);
+	// printf("===========TEST for o ===========\n");
+	// ft_printf("%5.3o\n", 4);
+	// printf("%5.3o\n", 4);
 
-	//printf("\x1b[31mtesting %d", 13);
+	// printf("===========TEST for x ===========\n");
+	// ft_printf("%#.10x\n", 1);
+	// printf("%#.10x\n", 1);
 
-	//printf("tes\033[1mtting\n");
-	//ft_printf("tes{red:syq}ting");
+	// 	printf("===========TESTs for b ===========\n");
+	// ft_printf("|%20b|\n", 1);
+	// printf("|%20o|\n", 1);
 
-	//printf("hello\tworld\vhow are\v you?\nfine");
-	//printf("\033[30;1m testing");
-	printf("\033[;32;4mtesting\n");
+	// printf("%.1f", 1234567890123456789012345678901234567890.4);
+
+	printf("mem+rec = %d\n", ft_mem_rec_cmp_for_color("red", "red", 3));
 	return (0);
 }
