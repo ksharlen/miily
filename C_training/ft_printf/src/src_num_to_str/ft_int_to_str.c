@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/01 11:38:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 13:20:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,41 +111,37 @@ static size_t		ft_size_num(long long int num)
 	return (l);
 }
 
-static				ft_
+//static				ft_
 
 void				ft_int_to_str(long long int num)
 {
-	char 		*str;
 	char		*str_cp;
 	size_t		size_num;
 	short		sign;
 	size_t		size_str;
 	char		*buf;
-	char 		temp;
 
 	sign = (num < 0 ? -1 : 1);
 	size_num = ft_size_num(num);
 	g_spec.size_num = size_num;
 	size_str = (size_num < g_spec.width ? g_spec.width : size_num);
-	// if (g_spec.width > size_num)
-	// 	str_cp = ft_size_work(str);
-	if (g_spec.size_buf < size_num && SIZE_BUF > size_num)
+	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
 	{
 		ft_write_buf_and_clean(WRITE_BUF);
 		buf = ft_work_buf(GET_POINT, 0);
 	}
-	else if (SIZE_BUF < size_num)
+	else if (SIZE_BUF < size_str)
 	{
-		buf = ft_strnew(size_str);
-		if (!(str_cp = buf))
+		buf = ft_memalloc(size_str);
+		if (!buf)
 			exit(0);
 	}
 	else
 		buf = ft_work_buf(GET_POINT, 0);
+	str_cp = buf;
+	//printf("width = %d\n", g_spec.width);
 	if (g_spec.width > size_num)
 		str_cp = ft_size_work(buf);
-	else
-		str_cp = buf;
 	while (size_num--)
 	{
 		str_cp[size_num] = num % 10 * sign + '0';
@@ -155,7 +151,11 @@ void				ft_int_to_str(long long int num)
 	}
 	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
 		str_cp[0] = ft_chr_space_plus_dec();
-	//ft_write_buf_and_clean(NULL);
-	//printf("buf = %s\n", buf);
-	g_spec.size_num = size_str;
+	if (SIZE_BUF < size_str)
+	{
+		ft_write_buf_and_clean(WRITE_BUF);
+		write(1, buf, size_str);
+		ft_strdel(&buf);
+	}
+	//g_spec.size_num = size_str;
 }

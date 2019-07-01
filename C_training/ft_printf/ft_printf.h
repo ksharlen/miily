@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 11:35:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 13:37:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			1
+# define SIZE_BUF			12000
 # define WRITE_BUF			NULL
 # define GET_POINT			NULL
 /*SysNum */
 # define BIN 				2
 # define OCT 				8
-# define DECIMAL 			10
 # define HEX 				16
 /*Flags */
 # define ZERO				1	/*HH */
@@ -37,13 +36,13 @@
 # define STAR_ACC			128 /*big L for double */
 # define STAR_WITH			256
 /*Exeptions */
-# define TYPE 				"dioOxXufeEgGaAnprkUDsScC"
-# define NUM_INT 			"dDoxXuUi"
+# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbB"
+# define NUM_INT 			"dDoxXuUibB"
 # define NUM_DOUBLE 		"feEgGaA"
 # define NUM_STRING			"scSc"
 # define NUM_OTHER 			"nprk"
 # define SIGNED_INT 		"dicCD"
-# define UNSIGNED_INT 		"uxXoU"
+# define UNSIGNED_INT 		"uxXoUbB"
 # define UNDEF_BEH			"!\"&()/\\<=>?@[]^_`{}|~"
 # define SIZE_MOD			"zjlht"
 
@@ -75,7 +74,7 @@ int							ft_h_format(const int next_symbal);
 int							ft_j_z_t_format(const int check_mod);
 int							ft_big_l(const int check_mod);
 
-char						*ft_base_to_str(unsigned long long num, int base);
+//void						ft_base_to_str(unsigned long long num, int base);
 void						ft_int_to_str(long long int num);
 char						*ft_ptr_to_str(unsigned long long ptr);
 size_t						ft_base_depth(unsigned long long int num, int base);
@@ -93,7 +92,6 @@ int							ft_ismy(char form);
 int							ft_str_size_num(const char *format);
 int							ft_check_the_entry(const char *def_str, const int sym);
 
-void						ft_base_to_str_with_buf(unsigned long long num, int base, char *buf);
 void						ft_str_to_str(va_list format);
 void						ft_print_test(const char *form);
 void						ft_char_to_str(va_list format);
@@ -102,6 +100,7 @@ char						*ft_work_buf(const char *inbuf, int size_inbuf);
 void						ft_write_buf_and_clean(char *buf);
 void						ft_other_spec(va_list format);
 void						ft_double_to_str(va_list format);
+void						ft_base_to_str(unsigned long long int num);
 
 void						__TEST__return_printf(int flag);
 void						__TEST__check_ft_ismy(int flag);
