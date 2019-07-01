@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 13:37:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 16:24:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@
 # define UNSIGNED_INT 		"uxXoUbB"
 # define UNDEF_BEH			"!\"&()/\\<=>?@[]^_`{}|~"
 # define SIZE_MOD			"zjlht"
+# define COLOR				"brgypw"
+# define COLOR_F			"gih"
 
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
