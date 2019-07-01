@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/01 13:44:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 15:34:14 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,125 +143,125 @@ int		main(void)
 
 	// //!  tests for spec "d"
 
-	printf("------------test1-------------\n");
-	ft_printf("%#.10d\n", 1234);
-	printf("%#.10d\n", 1234);
+	// printf("------------test1-------------\n");
+	// ft_printf("%#.10d\n", 1234);
+	// printf("%#.10d\n", 1234);
 
-	printf("------------test2-------------\n");
-	ft_printf("%3###---.2d\n", 1234);
-	printf("%3###---.2d\n", 1234);
+	// printf("------------test2-------------\n");
+	// ft_printf("%3###---.2d\n", 1234);
+	// printf("%3###---.2d\n", 1234);
 
-	printf("------------test3-------------\n");
-	ft_printf("%--+++--10.40d\n", 1234);
-	printf("%--+++--10.40d\n", 1234);
+	// printf("------------test3-------------\n");
+	// ft_printf("%--+++--10.40d\n", 1234);
+	// printf("%--+++--10.40d\n", 1234);
 
-	printf("------------test4-------------\n");
-	ft_printf("%##....4..4lld\n", 1234);
-	printf("%##....4..4lld\n", 1234);
+	// printf("------------test4-------------\n");
+	// ft_printf("%##....4..4lld\n", 1234);
+	// printf("%##....4..4lld\n", 1234);
 
-	printf("------------test5-------------\n");
-	ft_printf("%0d\n", 1234);
-	printf("%0d\n", 1234);
+	// printf("------------test5-------------\n");
+	// ft_printf("%0d\n", 1234);
+	// printf("%0d\n", 1234);
 
-	printf("------------test6-------------\n");
-	ft_printf("%.0d\n", 1234);
-	printf("%.0d\n", 1234);
+	// printf("------------test6-------------\n");
+	// ft_printf("%.0d\n", 1234);
+	// printf("%.0d\n", 1234);
 
-	printf("------------test7-------------\n");
-	ft_printf("%#010.10d\n", 1234);
-	printf("%#010.10d\n", 1234);
+	// printf("------------test7-------------\n");
+	// ft_printf("%#010.10d\n", 1234);
+	// printf("%#010.10d\n", 1234);
 
-	printf("------------test8-------------\n");
-	ft_printf("%-10.10d\n", 1234);
-	printf("%-10.10d\n", 1234);
+	// printf("------------test8-------------\n");
+	// ft_printf("%-10.10d\n", 1234);
+	// printf("%-10.10d\n", 1234);
 
-	printf("------------test9-------------\n");
-	ft_printf("%+++10.40d\n", 1234);
-	printf("%+++10.40d\n", 1234);
+	// printf("------------test9-------------\n");
+	// ft_printf("%+++10.40d\n", 1234);
+	// printf("%+++10.40d\n", 1234);
 
-	// //!не обрабатывается @
-	printf("------------test10-------------\n");
-	ft_printf("%;+..4..4hd\n", 1234);
-	printf("%;+..4..4hd\n", 1234);
+	// // //!не обрабатывается @
+	// printf("------------test10-------------\n");
+	// ft_printf("%;+..4..4hd\n", 1234);
+	// printf("%;+..4..4hd\n", 1234);
 
-	printf("------------test11-------------\n");
-	ft_printf("%020.10d\n", 1234);
-	printf("%020.10d\n", 1234);
+	// printf("------------test11-------------\n");
+	// ft_printf("%020.10d\n", 1234);
+	// printf("%020.10d\n", 1234);
 
-	printf("------------test12-------------\n");
-	ft_printf("%0d\n", 0);
-	printf("%0d\n", 0);
+	// printf("------------test12-------------\n");
+	// ft_printf("%0d\n", 0);
+	// printf("%0d\n", 0);
 
-	printf("------------test13-------------\n");
-	ft_printf("%+..4..4hd\n", 0);
-	printf("%+..4..4hd\n", 0);
+	// printf("------------test13-------------\n");
+	// ft_printf("%+..4..4hd\n", 0);
+	// printf("%+..4..4hd\n", 0);
 
-	printf("------------test14-------------\n");
-	ft_printf("|%020.0d|\n", 0);
-	printf("|%020.0d|\n", 0);
+	// printf("------------test14-------------\n");
+	// ft_printf("|%020.0d|\n", 0);
+	// printf("|%020.0d|\n", 0);
 
-	printf("------------test15-------------\n");
-	ft_printf("|%0.d|\n", 0);
-	printf("|%0.d|\n", 0);
+	// printf("------------test15-------------\n");
+	// ft_printf("|%0.d|\n", 0);
+	// printf("|%0.d|\n", 0);
 
-	printf("------------test16-------------\n");
-	ft_printf("%0d\n", -1);
-	printf("%0d\n", -1);
+	// printf("------------test16-------------\n");
+	// ft_printf("%0d\n", -1);
+	// printf("%0d\n", -1);
 
-	printf("------------test17-------------\n");
-	ft_printf("%;+..4..4hd\n", -1);
-	printf("%;+..4..4hd\n", -1);
+	// printf("------------test17-------------\n");
+	// ft_printf("%;+..4..4hd\n", -1);
+	// printf("%;+..4..4hd\n", -1);
 
-	printf("------------test18-------------\n");
-	ft_printf("%020.0d\n", -1);
-	printf("%020.0d\n", -1);
+	// printf("------------test18-------------\n");
+	// ft_printf("%020.0d\n", -1);
+	// printf("%020.0d\n", -1);
 
-	printf("------------test19-------------\n");
-	ft_printf("%0.d\n", -1);
-	printf("%0.d\n", -1);
+	// printf("------------test19-------------\n");
+	// ft_printf("%0.d\n", -1);
+	// printf("%0.d\n", -1);
 
 
-	printf("--------test4.1----------\n");
-	printf("%-+10.5d\n", 31);
-	ft_printf("%-+10.5d\n", 31);
+	// printf("--------test4.1----------\n");
+	// printf("%-+10.5d\n", 31);
+	// ft_printf("%-+10.5d\n", 31);
 
-	printf("--------test4.2----------\n");
-	printf("%-+5.10d\n", 31);
-	ft_printf("%-+5.10d\n", 31);
+	// printf("--------test4.2----------\n");
+	// printf("%-+5.10d\n", 31);
+	// ft_printf("%-+5.10d\n", 31);
 
-	printf("--------test4.3----------\n");
-	printf("%+10.5d\n", 31);
-	ft_printf("%+10.5d\n", 31);
+	// printf("--------test4.3----------\n");
+	// printf("%+10.5d\n", 31);
+	// ft_printf("%+10.5d\n", 31);
 
-	printf("--------test4.4----------\n");
-	printf("%+5.10d\n", 31);
-	ft_printf("%+5.10d\n", 31);
+	// printf("--------test4.4----------\n");
+	// printf("%+5.10d\n", 31);
+	// ft_printf("%+5.10d\n", 31);
 
-	printf("--------test4.5----------\n");
-	printf("%-+10.1dw\n", 31);
-	ft_printf("%-+10.1dw\n", 31);
+	// printf("--------test4.5----------\n");
+	// printf("%-+10.1dw\n", 31);
+	// ft_printf("%-+10.1dw\n", 31);
 
-	printf("--------test4.6----------\n");
-	printf("%+10.1dw\n", 31);
-	ft_printf("%+10.1dw\n", 31);
+	// printf("--------test4.6----------\n");
+	// printf("%+10.1dw\n", 31);
+	// ft_printf("%+10.1dw\n", 31);
 
-	printf("--------test4.7----------\n");
-	printf("% 5.10dw\n", 31);
-	ft_printf("% 5.10dw\n", 31);
+	// printf("--------test4.7----------\n");
+	// printf("% 5.10dw\n", 31);
+	// ft_printf("% 5.10dw\n", 31);
 
-	printf("--------test4.8----------\n");
-	printf("%02.dw\n", 31);
-	ft_printf("%02.dw\n", 31);
+	// printf("--------test4.8----------\n");
+	// printf("%02.dw\n", 31);
+	// ft_printf("%02.dw\n", 31);
 
-	printf("--------test4.8----------\n");
-	printf("% 10.dw\n", -31);
-	ft_printf("% 10.dw\n", -31);
+	// printf("--------test4.8----------\n");
+	// printf("% 10.dw\n", -31);
+	// ft_printf("% 10.dw\n", -31);
 
-	printf("--------test4.8----------\n");
-	printf("%+10.hdw\n", 31);
-	ft_printf("%+10.hdw\n", 31);
+	// printf("--------test4.8----------\n");
+	// printf("%+10.hdw\n", 31);
+	// ft_printf("%+10.hdw\n", 31);
 
-	// //!  tests for spec "x/X"
+	// !  tests for spec "x/X"
 
 	printf("------------test1-------------\n");
 	ft_printf("|%020x|\n", 1234);
@@ -437,8 +437,8 @@ int		main(void)
 	ft_printf("|%.o|\n", 0);
 	printf("|%.o|\n", 0);
 
-	printf("%-+020.10X\n", 4123453);
-	ft_printf("%-+020.10X\n", 4123453);
+	// printf("%-+020.10X\n", 4123453);
+	// ft_printf("%-+020.10X\n", 4123453);
 
 	// //printf("%0+-#20.20w %d\n", 45);
 	// //printf("%-10w hello world %010y    how are yoU?\n");
@@ -727,8 +727,16 @@ int		main(void)
 
 	//ft_printf("%d %d\n", 192, 31);
 
-	ft_printf("%#5.4o\n", 4);
-	printf("%#5.4o\n", 4);
+	// printf("===========TEST for o ===========\n");
+	// ft_printf("%5.3o\n", 4);
+	// printf("%5.3o\n", 4);
 
+	// printf("===========TEST for x ===========\n");
+	// ft_printf("%#.10x\n", 1);
+	// printf("%#.10x\n", 1);
+
+		printf("===========TESTs for b ===========\n");
+	ft_printf("|%20b|\n", 1);
+	printf("|%20o|\n", 1);
 	return (0);
 }
