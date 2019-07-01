@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_depth.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:28:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/24 09:41:15 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/01 13:45:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ size_t					ft_base_depth(unsigned long long int num, int base)
 	depth = g_spec.flags & DOT && !g_spec.accuracy && !num ? 0 : depth;
 	//Есть хеш ии система 8 ии 0 ии флаг точка есть;
 	g_spec.flags & HASH && base == 8 && !num && g_spec.flags & DOT ? ++depth : 0;
-	printf("deth = %ld\n", depth);
 	return (g_spec.size_num = depth);
 }
