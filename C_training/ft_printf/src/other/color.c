@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 16:04:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/02 15:16:45 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/02 16:02:29 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int			ft_color_format(const char *string)
 	if ((color = ft_check_color(string)))
 	{
 		len = ft_strnlen(string, '}') + 1;
-		printf("len = %ld\n", len);
 		ft_push_buf_and_clean_string(color, ft_strlen(color));
 		return (len + 2);
 	}
