@@ -6,7 +6,11 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 16:04:59 by ksharlen          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/07/01 17:29:43 by ksharlen         ###   ########.fr       */
+=======
+/*   Updated: 2019/07/02 16:02:29 by ksharlen         ###   ########.fr       */
+>>>>>>> 68ed878699aa461c4405741323b0a3689cf4aa62
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +97,7 @@ void        ft_color_format(const char *string)
 {
     char *shift_str;
 
+<<<<<<< HEAD
     while (ft_skipspace(*string) && *string)
         string++;
     if (*string == '/')
@@ -104,3 +109,40 @@ void        ft_color_format(const char *string)
     else
         return ;
 }
+=======
+	if ((color = ft_check_color(string)))
+	{
+		len = ft_strnlen(string, '}') + 1;
+		ft_push_buf_and_clean_string(color, ft_strlen(color));
+		return (len + 2);
+	}
+	else
+		return (0);
+	// char	*color;
+	// char	*format;
+	// int		shift;
+	// char	*str;
+
+	// if ((color = ft_check_color(string)))
+	// {
+	// 	printf("string = %s\n", string);
+	// 	printf("color = %s\n", color);
+	// 	printf("len = %ld\n", ft_strlen(color));
+	// 	printf("string + len = %s\n", (string + ft_strlen(color)));
+	// 	if ((*(string + ft_strlen(color))) == ':')
+	// 	{
+	// 		printf("test");
+	// 		if ((format = ft_check_format(string + ft_strlen(color) + 1)))
+	// 		{
+	// 			if (*(string + ft_strlen(color) + ft_strlen(format) + 1) == '}')
+	// 			{
+	// 				str = ft_strjoin(color, format);
+	// 				ft_push_buf_and_clean_string(str, ft_strlen(str));
+	// 				shift = ft_strlen(str) + 2;
+	// 			}
+	// 		}
+	// 	}
+	// 			//printf("test\n");
+	// }
+}
+>>>>>>> 68ed878699aa461c4405741323b0a3689cf4aa62

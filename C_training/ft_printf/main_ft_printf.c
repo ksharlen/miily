@@ -7,10 +7,14 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*   Updated: 2019/07/01 17:06:58 by ksharlen         ###   ########.fr       */
 =======
 /*   Updated: 2019/07/01 17:25:29 by cormund          ###   ########.fr       */
 >>>>>>> edba76ec5fa2f7b2cb5ec47595f7296583c511e2
+=======
+/*   Updated: 2019/07/02 15:59:26 by ksharlen         ###   ########.fr       */
+>>>>>>> 68ed878699aa461c4405741323b0a3689cf4aa62
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -749,6 +753,32 @@ int		main(void)
 
 	// printf("%.1f", 1234567890123456789012345678901234567890.4);
 
+<<<<<<< HEAD
 	printf("mem+rec = %d\n", ft_mem_rec_cmp_for_color("red", "red", 3));
+=======
+	//printf("mem+rec = %d\n", ft_mem_rec_cmp_for_color("red", "red", 3));
+	//ft_printf("hello world\n");
+	//ft_printf("{/red:greasy}hello world");
+	// char str[100] = "hello world";
+	// char str2 = "[;32";
+	// char str1[100] = "\e";
+
+	// ft_strcpy(str, "\e");
+	// ft_strcat(str, "[;32m");
+	// printf("str = %d\n", *(str + 1));
+	//ft_strcat(str, "hello world");
+	//printf(str);
+	//printf("\e[;32mtetsing\n");
+	//printf(str);
+	//ft_printf("{/red:greasy}");
+	//str = ft_strjoin("[32;3m", "hello world");
+	//printf(str);
+	//printf("\033[;32;4mtesting";
+
+	//ft_printf("{/red}");
+	ft_printf("hello {/blu}world ho{/red}w are you?");
+	//printf("%m");
+	//printf("wowowowowowo");
+>>>>>>> 68ed878699aa461c4405741323b0a3689cf4aa62
 	return (0);
 }
