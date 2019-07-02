@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/02 16:14:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/02 17:32:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -763,8 +763,14 @@ int		main(void)
 	//printf("\033[;32;4mtesting";
 
 	//ft_printf("{/red}");
-	ft_printf("hello {how are you?}world ho{/red}w are you?");
+	//ft_printf("%%hello world");
 	//printf("%m");
 	//printf("wowowowowowo");
-	return (0);
+	//printf("%%d\n", 34);
+	//ft_printf("%%d tessting\n", 23);
+	//printf("%w testing\n");
+	//ft_printf("%w testing\n");
+
+	printf("%%%%dello wolrd\na = %d\n", 123, 32);
+	ft_printf("%%%%dello world\na = %d\n", 123, 32);
 }
