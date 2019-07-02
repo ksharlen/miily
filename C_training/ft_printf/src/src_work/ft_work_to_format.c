@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 11:42:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 17:24:52 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/07/02 16:15:35 by cormund           #+#    #+#             */
+/*   Updated: 2019/07/02 16:17:03 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		ft_define_spec(const char *format_string)
 {
-	char 		format;
+	char		format;
 
 	format_string += g_spec.shift_spec;
 	format = *format_string;
@@ -61,7 +61,6 @@ void			ft_work_to_format(const char *format, va_list form)
 
 	skip_percent = 1;
 	while (*format)
-	{
 		if (*format == '%')
 		{
 			ft_count_sym_to_spec(format + skip_percent);
@@ -74,8 +73,13 @@ void			ft_work_to_format(const char *format, va_list form)
 			ft_color_format(format + 1);
 		else
 		{
-			ft_work_buf(format, 1);
-			format++;
+			if (*format == '{' && *(format + 1) == '/' &&
+				(g_spec.shift_spec = ft_color_format(format + 2)) > 2)
+				format += g_spec.shift_spec;
+			else
+			{
+				ft_work_buf(format, 1);
+				format++;
+			}
 		}
-	}
 }
