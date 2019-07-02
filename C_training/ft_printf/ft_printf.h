@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/02 15:01:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/02 16:25:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,8 @@ void						ft_base_to_str(unsigned long long int num);
 int							ft_color_format(const char *string);
 
 int							ft_mem_rec_cmp_for_color(char *str1, char *str2, size_t n);
+
+//testing
 
 void						__TEST__return_printf(int flag);
 void						__TEST__check_ft_ismy(int flag);
