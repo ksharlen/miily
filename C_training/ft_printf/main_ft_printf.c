@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/07/01 17:06:58 by ksharlen         ###   ########.fr       */
-=======
-/*   Updated: 2019/07/01 17:25:29 by cormund          ###   ########.fr       */
->>>>>>> edba76ec5fa2f7b2cb5ec47595f7296583c511e2
+/*   Updated: 2019/07/02 15:23:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 
 
@@ -265,11 +262,8 @@ int		main(void)
 	// printf("%+10.hdw\n", 31);
 	// ft_printf("%+10.hdw\n", 31);
 
-<<<<<<< HEAD
 	// // //!  tests for spec "x/X"
-=======
 	// !  tests for spec "x/X"
->>>>>>> edba76ec5fa2f7b2cb5ec47595f7296583c511e2
 
 	// printf("------------test1-------------\n");
 	// ft_printf("|%020x|\n", 1234);
@@ -749,6 +743,28 @@ int		main(void)
 
 	// printf("%.1f", 1234567890123456789012345678901234567890.4);
 
-	printf("mem+rec = %d\n", ft_mem_rec_cmp_for_color("red", "red", 3));
+	//printf("mem+rec = %d\n", ft_mem_rec_cmp_for_color("red", "red", 3));
+	//ft_printf("hello world\n");
+	//ft_printf("{/red:greasy}hello world");
+	// char str[100] = "hello world";
+	// char str2 = "[;32";
+	// char str1[100] = "\e";
+
+	// ft_strcpy(str, "\e");
+	// ft_strcat(str, "[;32m");
+	// printf("str = %d\n", *(str + 1));
+	//ft_strcat(str, "hello world");
+	//printf(str);
+	//printf("\e[;32mtetsing\n");
+	//printf(str);
+	//ft_printf("{/red:greasy}");
+	//str = ft_strjoin("[32;3m", "hello world");
+	//printf(str);
+	//printf("\033[;32;4mtesting";
+
+	//ft_printf("{/red}");
+	ft_printf("hello worl{/red}{/gay}d how {/gay}are you?");
+	ft_printf("wwwwwww\n");
+	printf("%m");
 	return (0);
 }
