@@ -6,7 +6,7 @@
 /*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/02 16:13:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/02 17:29:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,25 +55,35 @@ static void		ft_control_var(va_list format)
 		ft_other_spec(format);
 }
 
-void			ft_work_to_format(const char *format, va_list form)
+static void			call_fun_format(const char *format, va_list form)
 {
 	int			skip_percent;
 
 	skip_percent = 1;
+	ft_count_sym_to_spec(format + skip_percent);
+	ft_define_spec(format + skip_percent);
+	ft_work_spec_form(format + skip_percent, form);
+	ft_control_var(form);
+}
+
+void			ft_work_to_format(const char *format, va_list form)
+{
 	while (*format)
-		if (*format == '%')
+		if (*format == '%' && *(format + 1) != '%')
 		{
-			ft_count_sym_to_spec(format + skip_percent);
-			ft_define_spec(format + skip_percent);
-			ft_work_spec_form(format + skip_percent, form);
-			ft_control_var(form);
-			format += g_spec.shift_spec + skip_percent;
+			call_fun_format(format, form);
+			format += g_spec.shift_spec + 1;
 		}
 		else
 		{
 			if (*format == '{' && *(format + 1) == '/' &&
 				(g_spec.shift_spec = ft_color_format(format + 2)) > 2)
 				format += g_spec.shift_spec;
+			else if (*format == '%')
+			{
+				ft_work_buf(format, 1);
+				format += 2;
+			}
 			else
 			{
 				ft_work_buf(format, 1);
