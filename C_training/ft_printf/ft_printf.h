@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 12:43:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 16:52:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,12 @@
 /*
 **Exeptions
 */
-# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbB"
+# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
 
 # define NUM_INT 			"dDoxXuUibB"
 # define NUM_DOUBLE 		"feEgGaA"
 # define NUM_STRING			"scSc"
-# define NUM_OTHER 			"nprk"
+# define NUM_OTHER 			"nprkvr"
 
 # define SIGNED_INT 		"dicCD"
 # define UNSIGNED_INT 		"uxXoUbB"
@@ -111,6 +111,7 @@ typedef struct				s_spec
 	int						size_write;
 	size_t					shift_spec;
 	size_t					size_num;
+	int						fd;
 }							t_spec;
 
 extern	t_spec				g_spec;
@@ -145,7 +146,9 @@ void						ft_other_spec(va_list format);
 void						ft_double_to_str(va_list format);
 void						ft_base_to_str(unsigned long long int num);
 int							ft_color_format(const char *string);
+void						invisible_sym(va_list format);
 
+void						write_to_file(va_list format);
 int							ft_mem_rec_cmp_for_color(char *str1,
 char *str2, size_t n);
 
