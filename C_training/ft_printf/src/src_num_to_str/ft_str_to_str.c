@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/02 12:19:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 12:25:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char		*ft_get_va_arg(va_list format)
+static char			*ft_get_va_arg(va_list format)
 {
 	return (va_arg(format, char *));
 }
 
-static void       ft_work_aw(void)
+static void			ft_work_aw(void)
 {
-	if ((g_spec.size_num  <= g_spec.accuracy && g_spec.accuracy <
-	g_spec.width ) || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
+	if ((g_spec.size_num <= g_spec.accuracy && g_spec.accuracy <
+	g_spec.width) || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
 	g_spec.width))
 		g_spec.width -= g_spec.size_num;
 	else if (((g_spec.width >= g_spec.size_num && g_spec.size_num >
@@ -46,10 +46,10 @@ static void       ft_work_aw(void)
 	}
 }
 
-static void		ft_push_wa(char *inbuf)
+static void			ft_push_wa(char *inbuf)
 {
-	int 		sym;
-	char		*buf;
+	int				sym;
+	char			*buf;
 
 	sym = ' ';
 	if (g_spec.flags & DASH && g_spec.width > 0)
@@ -71,9 +71,9 @@ static void		ft_push_wa(char *inbuf)
 	}
 }
 
-void			ft_str_to_str(va_list format)
+void				ft_str_to_str(va_list format)
 {
-	char *inbuf;
+	char			*inbuf;
 
 	inbuf = ft_get_va_arg(format);
 	if (inbuf)
