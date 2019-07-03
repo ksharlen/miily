@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_size_formats.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 09:34:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 09:16:19 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		ft_h_format(const int next_symbal)
 	else
 	{
 		if (ft_check_the_entry(NUM_INT, g_spec.spec))
-				mod = PLUS;
+			mod = PLUS;
 		shift_size = 1;
 	}
 	if (mod > g_spec.mod)
@@ -64,7 +64,7 @@ int		ft_h_format(const int next_symbal)
 	return (shift_size);
 }
 
-int			ft_j_z_t_format(const int check_mod)
+int		ft_j_z_t_format(const int check_mod)
 {
 	int mod;
 
@@ -83,7 +83,7 @@ int			ft_j_z_t_format(const int check_mod)
 	return (1);
 }
 
-int			ft_big_l(const int check_mod)
+int		ft_big_l(const int check_mod)
 {
 	if (ft_check_the_entry(NUM_DOUBLE, g_spec.spec))
 		g_spec.mod = DASH;

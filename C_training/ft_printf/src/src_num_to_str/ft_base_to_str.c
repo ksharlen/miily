@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/03 08:25:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 09:18:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char					*ft_size_work(char *str)
 	g_spec.size_buf -= g_spec.width - g_spec.size_num;
 	return (str);
 }
+
+static void					push_num_to_str()
 
 static void					ft_work_base(unsigned long long num, int base)
 {
@@ -54,7 +56,7 @@ static void					ft_work_base(unsigned long long num, int base)
 		buf = ft_work_buf(GET_POINT, 0);
 	str_cp = buf;
 	if (g_spec.width > size_num)
-		str_cp = ft_size_work(buf);
+		str_cp = ft_size_work(buf); //!до сюда
 	while (size_num--)
 	{
 		str_cp[size_num] = (num % base > 9 ? num % base + g_spec.spec - 33 : num % base + '0');

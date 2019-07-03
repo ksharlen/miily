@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   buf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 19:32:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 08:52:05 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/07/03 08:55:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void		ft_write_big_data(const char **inbuf, int *size_inbuf)
 char			*ft_work_buf(const char *inbuf, int size_inbuf)
 {
 	static char buf[SIZE_BUF];
-	char 		*ret_buf;
+	char		*ret_buf;
 	int			ret_check_loc;
 	const char	*p_inbuf;
 
