@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/03 12:18:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 15:40:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ unsigned long long int num, size_t size_str, int base)
 static void		write_and_free_malloc(char *buf, size_t size_str)
 {
 	ft_write_buf_and_clean(WRITE_BUF);
-	g_spec.ret_printf += write(1, buf, size_str);
+	g_spec.ret_printf += write(g_spec.fd, buf, size_str);
 	ft_strdel(&buf);
 }
 
