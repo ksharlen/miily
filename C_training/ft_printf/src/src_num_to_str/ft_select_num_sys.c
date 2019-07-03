@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_select_num_sys.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 13:31:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 12:22:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ static unsigned long long	pull_unsigned_int_arg(va_list format)
 	return (ret);
 }
 
-void	ft_select_num_sys(va_list format)
+void						ft_select_num_sys(va_list format)
 {
-	long long int s_val;
-	unsigned long long int u_val;
+	long long int			s_val;
+	unsigned long long int	u_val;
 
 	if (ft_check_the_entry(SIGNED_INT, g_spec.spec))
 	{

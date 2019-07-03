@@ -6,15 +6,15 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 13:10:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 15:10:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 12:26:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void			*ft_get_va_arg(va_list format)
+static void		*ft_get_va_arg(va_list format)
 {
-	void *n;
+	void		*n;
 
 	if (g_spec.mod == DASH)
 		n = va_arg(format, long int *);
@@ -32,13 +32,11 @@ static void			*ft_get_va_arg(va_list format)
 		n = va_arg(format, ptrdiff_t *);
 	else
 		n = va_arg(format, int *);
-
 	return (n);
 }
 
-static void	ft_push_n_format(void **p_n)
+static void		ft_push_n_format(void **p_n)
 {
-
 	if (g_spec.mod == DASH)
 		**((long int **)p_n) = g_spec.size_write + g_spec.ret_printf;
 	else if (g_spec.mod == ZERO)
@@ -57,9 +55,9 @@ static void	ft_push_n_format(void **p_n)
 		**((int **)p_n) = g_spec.size_write + g_spec.ret_printf;
 }
 
-void	ft_other_spec(va_list format)
+void			ft_other_spec(va_list format)
 {
-	void *n;
+	void		*n;
 
 	if (g_spec.spec == 'n')
 	{

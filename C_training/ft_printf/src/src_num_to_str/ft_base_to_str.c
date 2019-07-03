@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/03 10:12:32 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 12:18:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char					*ft_size_work(char *str, size_t size_num)
+char			*ft_size_work(char *str, size_t size_num)
 {
 	if (g_spec.flags & DASH)
 	{
@@ -28,38 +28,42 @@ char					*ft_size_work(char *str, size_t size_num)
 	return (str);
 }
 
-static void					push_num_to_str(char *buf, unsigned long long int num, size_t size_str, int base)
+static void		push_num_to_str(char *buf,
+unsigned long long int num, size_t size_str, int base)
 {
-	int cp_num;
-	size_t size_num;
+	int						cp_num;
+	size_t					size_num;
 
 	size_num = ft_base_depth(num, base);
 	cp_num = num;
 	while (size_num--)
 	{
-		buf[size_num] = (num % base > 9 ? num % base + g_spec.spec - 33 : num % base + '0');
+		buf[size_num] = (num % base > 9 ? num %
+		base + g_spec.spec - 33 : num % base + '0');
 		num /= base;
 		g_spec.size_write++;
 		g_spec.size_buf--;
 	}
-	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'x' || g_spec.spec == 'X'))
+	if (g_spec.flags & HASH && cp_num &&
+	(g_spec.spec == 'x' || g_spec.spec == 'X'))
 		buf[1] = g_spec.spec;
-	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'b' || g_spec.spec == 'B'))
+	if (g_spec.flags & HASH && cp_num &&
+	(g_spec.spec == 'b' || g_spec.spec == 'B'))
 		buf[0] = g_spec.spec;
 }
 
-static void					write_and_free_malloc(char *buf, size_t size_str)
+static void		write_and_free_malloc(char *buf, size_t size_str)
 {
 	ft_write_buf_and_clean(WRITE_BUF);
 	g_spec.ret_printf += write(1, buf, size_str);
 	ft_strdel(&buf);
 }
 
-static void					ft_work_base(unsigned long long num, int base)
+static void		ft_work_base(unsigned long long num, int base)
 {
-	char				*buf;
-	size_t				size_num;
-	size_t				size_str;
+	char		*buf;
+	size_t		size_num;
+	size_t		size_str;
 
 	size_num = ft_base_depth(num, base);
 	size_str = g_spec.width > size_num ? g_spec.width : size_num;
@@ -84,7 +88,7 @@ static void					ft_work_base(unsigned long long num, int base)
 
 void			ft_base_to_str(unsigned long long int num)
 {
-	int base;
+	int			base;
 
 	base = 0;
 	if (g_spec.spec == 'x' || g_spec.spec == 'X')
