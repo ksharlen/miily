@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/03 08:41:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 17:02:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -726,6 +726,18 @@ int		main(void)
 	// assert(ret_printf[0] && ret_printf[1]);
 	// printf("ret_printf = %d\n", ret_printf[0]);
 
+	int fd;
 
+	// fd = open("testing", O_WRONLY);
+	// //printf("fd = %d\n", fd);
+	// //ft_printf("hello %v word how are you?\n", fd);
+	// ft_printf("ёу %vпривет {/red} миир как у тебя дела, я ебанутый потому что я общаюсь с миром\n", fd);
+	// close(fd);
+
+	int sq;
+	sq = 0;
+	//ft_printf("%r\n", 'w');
+	while (sq < 33)
+		ft_printf("%d) %r\n", sq, sq++);
 	return (0);
 }

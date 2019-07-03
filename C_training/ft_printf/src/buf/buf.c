@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 08:55:31 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 15:39:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			ft_write_buf_and_clean(char *buf)
 		ft_work_buf(NULL, SIZE_BUF - g_spec.size_write + 1);
 	else if (g_spec.size_write > 0)
 	{
-		g_spec.ret_printf += write(1, buf, g_spec.size_write);
+		g_spec.ret_printf += write(g_spec.fd, buf, g_spec.size_write);
 		ft_bzero(buf, SIZE_BUF);
 		g_spec.size_write = 0;
 		g_spec.size_buf = SIZE_BUF;
@@ -54,12 +54,12 @@ static void		ft_write_big_data(const char **inbuf, int *size_inbuf)
 {
 	while (*size_inbuf > 0 && *inbuf)
 	{
-		g_spec.ret_printf += write(1, *inbuf, SIZE_BUF);
+		g_spec.ret_printf += write(g_spec.fd, *inbuf, SIZE_BUF);
 		*size_inbuf -= SIZE_BUF;
 		*inbuf += SIZE_BUF;
 		if (*size_inbuf < SIZE_BUF && *size_inbuf > 0)
 		{
-			g_spec.ret_printf += write(1, *inbuf, *size_inbuf);
+			g_spec.ret_printf += write(g_spec.fd, *inbuf, *size_inbuf);
 			*size_inbuf = 0;
 			*inbuf = NULL;
 		}
