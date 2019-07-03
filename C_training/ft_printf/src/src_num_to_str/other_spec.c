@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 13:10:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 12:26:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 16:51:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,32 @@ static void		ft_push_n_format(void **p_n)
 		**((int **)p_n) = g_spec.size_write + g_spec.ret_printf;
 }
 
+static void ft_n_format(va_list format)
+{
+	void 		*n;
+
+	n = ft_get_va_arg(format);
+	ft_push_n_format(&n);
+}
+
 void			ft_other_spec(va_list format)
 {
 	void		*n;
 
 	if (g_spec.spec == 'n')
-	{
-		n = ft_get_va_arg(format);
-		ft_push_n_format(&n);
-	}
+		ft_n_format(format);
+	else if (g_spec.spec == 'v')
+		write_to_file(format);
+	else if (g_spec.spec == 'r')
+		invisible_sym(format);
+}
+
+void        write_to_file(va_list format)
+{
+    int fd;
+
+    fd = va_arg(format, int);
+	printf("fd1 = %d\n", fd);
+    if (fd > 0)
+        g_spec.fd = fd;
 }
