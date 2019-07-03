@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/01 11:20:48 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 08:10:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_spec 			g_spec;
 int				ft_printf(const char *format, ...)
 {
 	va_list 	form;
+	int			ret;
 
 	g_spec.size_write = 0;
 	g_spec.size_buf = SIZE_BUF;
@@ -24,5 +25,7 @@ int				ft_printf(const char *format, ...)
 	ft_work_to_format(format, form);
 	ft_write_buf_and_clean(WRITE_BUF);
 	va_end(form);
-	return (g_spec.ret_printf);
+	ret = g_spec.ret_printf;
+	g_spec.ret_printf = 0;
+	return (ret);
 }

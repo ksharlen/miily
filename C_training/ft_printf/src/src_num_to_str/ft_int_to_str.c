@@ -3,87 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/01 13:20:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 08:43:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// static char check_flags(void)
-// {
-// 	char flag;
-
-// 	if (g_spec.flags & DEC)
-// 		flag = '-';
-// 	else if (g_spec.flags & PLUS)
-// 		flag = '+';
-// 	else if (g_spec.flags & SPACE)
-// 		flag = ' ';
-// 	return (flag);
-// }
-
-// static void work_to_width(void)
-// {
-// 	char flag;
-// 	char *buf;
-
-// 	if (g_spec.width > g_spec.size_num)
-// 	{
-// 		if (g_spec.flags & ZERO)
-// 		{
-// 			flag = check_flags();
-// 			buf = ft_work_buf(&flag, 1);
-// 			ft_memset(buf, '0', g_spec.width - g_spec.size_num);
-// 		}
-// 		else
-// 		{
-			
-// 		}
-// 	}
-// }
-
-// static void work_to_acc(void)
-// {
-// 	char flag;
-// 	char *buf;
-
-// 	flag = check_flags();
-// 	buf = ft_work_buf(&flag, 1);
-// 	//!DASH нету, точность есть
-// 	if (g_spec.accuracy > g_spec.size_num)
-// 	{
-// 		ft_memset(buf, '0', g_spec.accuracy - g_spec.size_num);
-// 		g_spec.size_write += (g_spec.accuracy - g_spec.size_num);
-// 		g_spec.size_buf -= (g_spec.accuracy - g_spec.size_num);
-// 	}
-// 	else
-// 		g_spec.accuracy = 0;
-// }
-
-// static void test_need_delete(void)
-// {
-// 	if (g_spec.flags & DOT)
-// 	{
-// 		if (g_spec.flags & DASH)
-// 		{
-			
-// 		}
-// 		else
-// 			work_to_acc();
-// 	}
-// 	else
-// 	{
-// 		work_to_width();
-// 	}
-// }
-
-// void		ft_int_to_str(va_list format)
-// {
-	
-// }
 
 static char			ft_chr_space_plus_dec()
 {
@@ -111,8 +38,6 @@ static size_t		ft_size_num(long long int num)
 	return (l);
 }
 
-//static				ft_
-
 void				ft_int_to_str(long long int num)
 {
 	char		*str_cp;
@@ -139,7 +64,6 @@ void				ft_int_to_str(long long int num)
 	else
 		buf = ft_work_buf(GET_POINT, 0);
 	str_cp = buf;
-	//printf("width = %d\n", g_spec.width);
 	if (g_spec.width > size_num)
 		str_cp = ft_size_work(buf);
 	while (size_num--)
@@ -154,8 +78,7 @@ void				ft_int_to_str(long long int num)
 	if (SIZE_BUF < size_str)
 	{
 		ft_write_buf_and_clean(WRITE_BUF);
-		write(1, buf, size_str);
+		g_spec.ret_printf += write(1, buf, size_str);
 		ft_strdel(&buf);
 	}
-	//g_spec.size_num = size_str;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_base_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/01 13:41:56 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 08:25:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,19 +69,15 @@ static void					ft_work_base(unsigned long long num, int base)
 	if (SIZE_BUF < size_str)
 	{
 		ft_write_buf_and_clean(WRITE_BUF);
-		write(1, buf, size_str);
+		g_spec.ret_printf += write(1, buf, size_str);
 		ft_strdel(&buf);
 	}
-	//g_spec.size_num = size_str;
 }
-
-//!Рассмотреть О большое
 
 void			ft_base_to_str(unsigned long long int num)
 {
 	int base;
 
-	printf("test\n");
 	base = 0;
 	if (g_spec.spec == 'x' || g_spec.spec == 'X')
 		base = HEX;
