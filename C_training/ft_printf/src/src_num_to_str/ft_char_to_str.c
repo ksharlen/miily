@@ -6,20 +6,20 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 12:27:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 12:21:40 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char		ft_get_va_arg(va_list format)
+static char	ft_get_va_arg(va_list format)
 {
 	return ((char)va_arg(format, int));
 }
 
-static void ft_push_buf_sa(char sym)
+static void	ft_push_buf_sa(char sym)
 {
-	char *buf;
+	char	*buf;
 
 	buf = ft_work_buf(&sym, 1);
 	ft_memset(buf, ' ', g_spec.width - 1);
@@ -27,10 +27,10 @@ static void ft_push_buf_sa(char sym)
 	g_spec.size_buf -= (g_spec.width - 1);
 }
 
-static void ft_push_buf_as(char sym)
+static void	ft_push_buf_as(char sym)
 {
-	char *buf;
-	char for_zero;
+	char	*buf;
+	char	for_zero;
 
 	for_zero = ' ';
 	if (g_spec.flags & ZERO)
@@ -42,7 +42,7 @@ static void ft_push_buf_as(char sym)
 	ft_work_buf(&sym, 1);
 }
 
-static void ft_push_buf(char sym)
+static void	ft_push_buf(char sym)
 {
 	if (g_spec.width > 1)
 	{
@@ -55,9 +55,9 @@ static void ft_push_buf(char sym)
 		ft_work_buf(&sym, 1);
 }
 
-void	ft_char_to_str(va_list format)
+void		ft_char_to_str(va_list format)
 {
-	char sym;
+	char	sym;
 
 	sym = ft_get_va_arg(format);
 	ft_push_buf(sym);
