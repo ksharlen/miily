@@ -6,39 +6,61 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/03 09:18:23 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 10:12:32 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char					*ft_size_work(char *str)
+char					*ft_size_work(char *str, size_t size_num)
 {
 	if (g_spec.flags & DASH)
 	{
-		ft_memset(str + g_spec.size_num, ' ', g_spec.width - g_spec.size_num);
+		ft_memset(str + size_num, ' ', g_spec.width - size_num);
 	}
 	else
 	{
-		ft_memset(str, ' ', g_spec.width - g_spec.size_num);
-		str += g_spec.width - g_spec.size_num;
+		ft_memset(str, ' ', g_spec.width - size_num);
+		str += g_spec.width - size_num;
 	}
-	g_spec.size_write += g_spec.width - g_spec.size_num;
-	g_spec.size_buf -= g_spec.width - g_spec.size_num;
+	g_spec.size_write += g_spec.width - size_num;
+	g_spec.size_buf -= g_spec.width - size_num;
 	return (str);
 }
 
-static void					push_num_to_str()
+static void					push_num_to_str(char *buf, unsigned long long int num, size_t size_str, int base)
+{
+	int cp_num;
+	size_t size_num;
+
+	size_num = ft_base_depth(num, base);
+	cp_num = num;
+	while (size_num--)
+	{
+		buf[size_num] = (num % base > 9 ? num % base + g_spec.spec - 33 : num % base + '0');
+		num /= base;
+		g_spec.size_write++;
+		g_spec.size_buf--;
+	}
+	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'x' || g_spec.spec == 'X'))
+		buf[1] = g_spec.spec;
+	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'b' || g_spec.spec == 'B'))
+		buf[0] = g_spec.spec;
+}
+
+static void					write_and_free_malloc(char *buf, size_t size_str)
+{
+	ft_write_buf_and_clean(WRITE_BUF);
+	g_spec.ret_printf += write(1, buf, size_str);
+	ft_strdel(&buf);
+}
 
 static void					ft_work_base(unsigned long long num, int base)
 {
 	char				*buf;
-	char				*str_cp;
 	size_t				size_num;
-	unsigned long long	cp_num;
 	size_t				size_str;
 
-	cp_num = num;
 	size_num = ft_base_depth(num, base);
 	size_str = g_spec.width > size_num ? g_spec.width : size_num;
 	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
@@ -54,26 +76,10 @@ static void					ft_work_base(unsigned long long num, int base)
 	}
 	else
 		buf = ft_work_buf(GET_POINT, 0);
-	str_cp = buf;
-	if (g_spec.width > size_num)
-		str_cp = ft_size_work(buf); //!до сюда
-	while (size_num--)
-	{
-		str_cp[size_num] = (num % base > 9 ? num % base + g_spec.spec - 33 : num % base + '0');
-		num /= base;
-		g_spec.size_write++;
-		g_spec.size_buf--;
-	}
-	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'x' || g_spec.spec == 'X'))
-		str_cp[1] = g_spec.spec;
-	if (g_spec.flags & HASH && cp_num && (g_spec.spec == 'b' || g_spec.spec == 'B'))
-		str_cp[0] = g_spec.spec;
+	push_num_to_str(g_spec.width > size_num ?\
+		ft_size_work(buf, size_num) : buf, num, size_str, base);
 	if (SIZE_BUF < size_str)
-	{
-		ft_write_buf_and_clean(WRITE_BUF);
-		g_spec.ret_printf += write(1, buf, size_str);
-		ft_strdel(&buf);
-	}
+		write_and_free_malloc(buf, size_str);
 }
 
 void			ft_base_to_str(unsigned long long int num)

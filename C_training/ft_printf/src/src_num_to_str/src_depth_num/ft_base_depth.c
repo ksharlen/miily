@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:28:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 08:25:10 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 10:08:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ size_t					ft_base_depth(unsigned long long int num, int base)
 	g_spec.width > depth ? g_spec.width : depth;
 	depth = g_spec.flags & DOT && !g_spec.accuracy && !num ? 0 : depth;
 	g_spec.flags & HASH && base == 8 && !num && g_spec.flags & DOT && !g_spec.accuracy ? ++depth : 0;
-	return (g_spec.size_num = depth);
+	return (depth);
 }
