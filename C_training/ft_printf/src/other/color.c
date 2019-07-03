@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/01 16:04:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/02 16:02:29 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/07/03 08:57:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int     ft_check_end(const char *string)
+static int		ft_check_end(const char *string)
 {
 	if (*string == ':')
 		return (1);
@@ -40,7 +40,7 @@ static char		*ft_check_format(const char *string)
 
 static char		*ft_check_color(const char *string)
 {
-	char        *color;
+	char		*color;
 
 	color = ft_memalloc(11);
 	if (!ft_memcmp(string, "black", 5) && *(string + 5) == '}')
@@ -64,7 +64,7 @@ static char		*ft_check_color(const char *string)
 	return (ft_strdup(color));
 }
 
-static void	ft_push_buf_and_clean_string(char *str_clean, int size_str)
+static void		ft_push_buf_and_clean_string(char *str_clean, int size_str)
 {
 	char *str;
 
@@ -74,11 +74,11 @@ static void	ft_push_buf_and_clean_string(char *str_clean, int size_str)
 	ft_strdel(&str_clean);
 }
 
-int			ft_color_format(const char *string)
+int				ft_color_format(const char *string)
 {
-	char 	*color;
-	int		shift;
-	int		len;
+	char		*color;
+	int			shift;
+	int			len;
 
 	if ((color = ft_check_color(string)))
 	{
@@ -88,30 +88,4 @@ int			ft_color_format(const char *string)
 	}
 	else
 		return (0);
-	// char	*color;
-	// char	*format;
-	// int		shift;
-	// char	*str;
-
-	// if ((color = ft_check_color(string)))
-	// {
-	// 	printf("string = %s\n", string);
-	// 	printf("color = %s\n", color);
-	// 	printf("len = %ld\n", ft_strlen(color));
-	// 	printf("string + len = %s\n", (string + ft_strlen(color)));
-	// 	if ((*(string + ft_strlen(color))) == ':')
-	// 	{
-	// 		printf("test");
-	// 		if ((format = ft_check_format(string + ft_strlen(color) + 1)))
-	// 		{
-	// 			if (*(string + ft_strlen(color) + ft_strlen(format) + 1) == '}')
-	// 			{
-	// 				str = ft_strjoin(color, format);
-	// 				ft_push_buf_and_clean_string(str, ft_strlen(str));
-	// 				shift = ft_strlen(str) + 2;
-	// 			}
-	// 		}
-	// 	}
-	// 			//printf("test\n");
-	// }
 }
