@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/02 17:29:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/03 08:18:01 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void		ft_control_var(va_list format)
 		ft_other_spec(format);
 }
 
-static void			call_fun_format(const char *format, va_list form)
+static void		call_fun_format(const char *format, va_list form)
 {
 	int			skip_percent;
 
@@ -78,7 +78,8 @@ void			ft_work_to_format(const char *format, va_list form)
 		{
 			if (*format == '{' && *(format + 1) == '/' &&
 				(g_spec.shift_spec = ft_color_format(format + 2)) > 2)
-				format += g_spec.shift_spec;
+				(format += g_spec.shift_spec) &&
+				(g_spec.ret_printf -= g_spec.shift_spec);
 			else if (*format == '%')
 			{
 				ft_work_buf(format, 1);
