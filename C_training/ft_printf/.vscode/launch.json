@@ -53,6 +53,18 @@
             "environment": [],
             "externalConsole": true,
             "MIMode": "lldb"
-        }
+		},
+		{
+            "name": "tests",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/a.out",
+            "args": ["9999999999999999999."],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb"
+		}
     ]
 }
