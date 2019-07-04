@@ -6,7 +6,7 @@
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 12:42:38 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/03 13:41:13 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,20 @@ typedef struct				s_uni
 	}						bits;
 }							t_uni;
 
+typedef struct				s_long
+{
+	int						*nbr;
+	int						len;
+}							t_long;
+
+
 int bin_power(int t, int k) // возведение t в степень k
 {
 	int res = 1;
 	while (k)
 	{
 		if (k & 1)
-    	res *= t;
+    		res *= t;
 		t *= t;
 		k >>= 1;
     }
@@ -47,6 +54,20 @@ static long double			pull_double_arg(va_list format)
 		ret = va_arg(format, double);
 	return (ret);
 }
+
+// static void					test(t_uni realis)
+// {
+// 	int						i;
+
+// 	i = 64;
+// 	while (i >= 0)
+// 	{
+// 		if (realis.bits.mantissa & (1L << i))
+// 		{
+// 			(realis.bits.exh - 16383) >= 0 ? bin_power()
+// 		}
+// 	}
+// }
 
 void						ft_double_to_str(va_list format)
 {
