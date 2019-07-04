@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_double_to_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 13:41:13 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/04 17:54:06 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-typedef struct				s_uni
+typedef union				s_uni
 {
 	long double				num;
 	struct
@@ -30,18 +30,18 @@ typedef struct				s_long
 }							t_long;
 
 
-int bin_power(int t, int k) // возведение t в степень k
-{
-	int res = 1;
-	while (k)
-	{
-		if (k & 1)
-    		res *= t;
-		t *= t;
-		k >>= 1;
-    }
-  return res;
-}
+// int bin_power(int t, int k) // возведение t в степень k
+// {
+// 	int res = 1;
+// 	while (k)
+// 	{
+// 		if (k & 1)
+//     		res *= t;
+// 		t *= t;
+// 		k >>= 1;
+//     }
+//   return res;
+// }
 
 static long double			pull_double_arg(va_list format)
 {
@@ -55,7 +55,7 @@ static long double			pull_double_arg(va_list format)
 	return (ret);
 }
 
-// static void					test(t_uni realis)
+// static void					test1(t_uni realis)
 // {
 // 	int						i;
 
@@ -69,9 +69,21 @@ static long double			pull_double_arg(va_list format)
 // 	}
 // }
 
+void						test(t_uni u)
+{
+	printf("num = %Lf\n", u.num);
+	printf("exh = %d\n", u.bits.exh - 16383);
+	printf("sign = %d\n", u.bits.sign);
+	printf("mantissa = %lu\n", u.bits.mantissa);
+	int i = 64;
+	while (i--)
+		printf("%lu", u.bits.mantissa >> i & 1);
+}
+
 void						ft_double_to_str(va_list format)
 {
 	t_uni					val;
 
 	val.num = pull_double_arg(format);
+	test(val);
 }
