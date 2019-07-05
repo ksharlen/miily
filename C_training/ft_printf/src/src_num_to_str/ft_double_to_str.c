@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/04 17:54:06 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/05 19:05:51 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,21 +69,22 @@ static long double			pull_double_arg(va_list format)
 // 	}
 // }
 
-void						test(t_uni u)
+void						test(t_uni *u)
 {
-	printf("num = %Lf\n", u.num);
-	printf("exh = %d\n", u.bits.exh - 16383);
-	printf("sign = %d\n", u.bits.sign);
-	printf("mantissa = %lu\n", u.bits.mantissa);
+	printf("num = %Lf\n", u->num);
+	u->bits.exh -= 16383;
+	printf("exh = %d\n", u->bits.exh);
+	printf("sign = %d\n", u->bits.sign);
 	int i = 64;
 	while (i--)
-		printf("%lu", u.bits.mantissa >> i & 1);
+		printf("%lu", u->bits.mantissa >> i & 1);
 }
 
 void						ft_double_to_str(va_list format)
 {
 	t_uni					val;
 
+	printf("5 / 3 = %d\n", 200 / 28);
 	val.num = pull_double_arg(format);
-	test(val);
+	test(&val);
 }

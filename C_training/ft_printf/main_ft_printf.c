@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/04 17:50:12 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/05 16:07:59 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -680,7 +680,6 @@ int		main(void)
 	// ft_printf("|%20b|\n", 1);
 	// printf("|%20o|\n", 1);
 
-	ft_printf("%f", 0.5);
 
 	//printf("mem+rec = %d\n", ft_mem_rec_cmp_for_color("red", "red", 3));
 	//ft_printf("hello world\n");
@@ -740,5 +739,6 @@ int		main(void)
 	// //ft_printf("%r\n", 'w');
 	// while (sq < 33)
 	// 	ft_printf("%d) %r\n", sq, sq++);
+	ft_printf("%f", 3.14);
 	return (0);
 }
