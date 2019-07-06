@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/03 16:14:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 10:06:07 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int				ft_printf(const char *format, ...)
 	//printf("fd = %d\n", g_spec.fd);
 	//printf("spec = %c\n", g_spec.spec);
 	g_spec.fd = 1;
+	printf("spec = %c\n", g_spec.spec);
 	return (ret);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 14:22:43 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/06 10:32:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ static void		ft_define_spec(const char *format_string)
 
 	format_string += g_spec.shift_spec;
 	format = *format_string;
-	if (ft_check_the_entry(TYPE, format))
-	{
+	// if (ft_check_the_entry(TYPE, format))
+	// {
 		g_spec.spec = format;
 		++g_spec.shift_spec;
-	}
-	else
-		g_spec.spec = 0;
+		printf("spec = %c\n", g_spec.spec);
+	// }
+	// else
+		//g_spec.spec = 0;
 }
 
 static void		ft_count_sym_to_spec(const char *format)
@@ -53,6 +54,8 @@ static void		ft_control_var(va_list format)
 		ft_double_to_str(format);
 	else if (ft_check_the_entry(NUM_OTHER, g_spec.spec))
 		ft_other_spec(format);
+	else
+		not_spec();
 }
 
 static void		call_fun_format(const char *format, va_list form)
@@ -69,7 +72,7 @@ static void		call_fun_format(const char *format, va_list form)
 void			ft_work_to_format(const char *format, va_list form)
 {
 	while (*format)
-		if (*format == '%' && *(format + 1) != '%')
+		if (*format == '%')
 		{
 			call_fun_format(format, form);
 			format += g_spec.shift_spec + 1;

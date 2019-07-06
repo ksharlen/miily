@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 16:52:53 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 10:33:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ typedef struct				s_spec
 	int						width;
 	int						accuracy;
 	unsigned int			mod;
-	int						spec;
+	char					spec;
 	int						ret_printf;
 	int						size_buf;
 	int						size_write;
@@ -128,6 +128,7 @@ char						*ft_ptr_to_str(unsigned long long ptr);
 void						ft_str_to_str(va_list format);
 size_t						ft_base_depth(unsigned long long int num, int base);
 void						ft_char_to_str(va_list format);
+void						not_spec(void);
 
 char						*ft_size_work(char *str, size_t size_num);
 void						ft_work_to_format(const char *format, va_list form);
