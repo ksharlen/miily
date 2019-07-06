@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 10:32:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 10:55:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,8 @@ static void		ft_define_spec(const char *format_string)
 
 	format_string += g_spec.shift_spec;
 	format = *format_string;
-	// if (ft_check_the_entry(TYPE, format))
-	// {
-		g_spec.spec = format;
-		++g_spec.shift_spec;
-		printf("spec = %c\n", g_spec.spec);
-	// }
-	// else
-		//g_spec.spec = 0;
+	g_spec.spec = format;
+	++g_spec.shift_spec;
 }
 
 static void		ft_count_sym_to_spec(const char *format)
@@ -72,6 +66,7 @@ static void		call_fun_format(const char *format, va_list form)
 void			ft_work_to_format(const char *format, va_list form)
 {
 	while (*format)
+	{
 		if (*format == '%')
 		{
 			call_fun_format(format, form);
@@ -83,15 +78,11 @@ void			ft_work_to_format(const char *format, va_list form)
 				(g_spec.shift_spec = ft_color_format(format + 2)) > 2)
 				(format += g_spec.shift_spec) &&
 				(g_spec.ret_printf -= g_spec.shift_spec);
-			else if (*format == '%')
-			{
-				ft_work_buf(format, 1);
-				format += 2;
-			}
 			else
 			{
 				ft_work_buf(format, 1);
 				format++;
 			}
 		}
+	}
 }

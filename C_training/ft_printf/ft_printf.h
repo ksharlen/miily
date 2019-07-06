@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 10:33:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 13:18:29 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			1
+# define SIZE_BUF			5
 # define WRITE_BUF			NULL
-# define GET_POINT			NULL
+# define GET_POINT			WRITE_BUF
 
 /*
 **sysNum
@@ -152,9 +152,17 @@ void						invisible_sym(va_list format);
 void						write_to_file(va_list format);
 int							ft_mem_rec_cmp_for_color(char *str1,
 char *str2, size_t n);
+void						ft_memset_buf(int sym, int size);
+int							ft_check_loc_buf(int size);
 
 void						ft_print_test(const char *form);
 
+void						test_d(void);
+void						test_o(void);
+void						test_x(void);
+void						test_s(void);
+void						test_b(void);
+void						test_other(void);
 /*
 **void						__TEST__return_printf(int flag);
 **void						__TEST__check_ft_ismy(int flag);

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 09:57:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 10:44:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 11:02:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,18 @@ static void		put_width(void)
 	if (g_spec.flags & DASH)
 	{
 		buf = ft_work_buf(&g_spec.spec, 1);
-		ft_memset(buf, sym, g_spec.width);
-		g_spec.size_write += (g_spec.width);
-		g_spec.size_buf -= (g_spec.width);
+		ft_memset_buf(sym, g_spec.width);
+		// ft_memset(buf, sym, g_spec.width);
+		// g_spec.size_write += (g_spec.width);
+		// g_spec.size_buf -= (g_spec.width);
 	}
 	else
 	{
 		buf = ft_work_buf(GET_POINT, 0);
-		ft_memset(buf, sym, g_spec.width);
-		g_spec.size_write += (g_spec.width);
-		g_spec.size_buf -= (g_spec.width);
+		ft_memset_buf(sym, g_spec.width);
+		// ft_memset(buf, sym, g_spec.width);
+		// g_spec.size_write += (g_spec.width);
+		// g_spec.size_buf -= (g_spec.width);
 		ft_work_buf(&g_spec.spec, 1);
 	}
 }
