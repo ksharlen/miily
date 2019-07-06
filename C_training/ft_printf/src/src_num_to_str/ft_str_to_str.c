@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 12:25:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 12:08:34 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,20 @@ static void			ft_push_wa(char *inbuf)
 	if (g_spec.flags & DASH && g_spec.width > 0)
 	{
 		buf = ft_work_buf(inbuf, g_spec.size_num);
-		ft_memset(buf, ' ', g_spec.width);
-		g_spec.size_write += g_spec.width;
-		g_spec.size_buf -= g_spec.width;
+		ft_memset_buf(sym, g_spec.width);
+		// ft_memset(buf, ' ', g_spec.width);
+		// g_spec.size_write += g_spec.width;
+		// g_spec.size_buf -= g_spec.width;
 	}
 	else
 	{
 		buf = ft_work_buf(GET_POINT, 0);
 		if (g_spec.flags & ZERO)
 			sym = '0';
-		ft_memset(buf, sym, g_spec.width);//!переполнение буфера подумать
-		g_spec.size_write += g_spec.width;
-		g_spec.size_buf -= g_spec.width;
+		// ft_memset(buf, sym, g_spec.width);//!переполнение буфера подумать
+		// g_spec.size_write += g_spec.width;
+		// g_spec.size_buf -= g_spec.width;
+		ft_memset_buf(sym, g_spec.width);
 		ft_work_buf(inbuf, g_spec.size_num);
 	}
 }

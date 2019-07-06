@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 15:39:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 11:00:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	int		ft_check_loc_buf(int size)
+int		ft_check_loc_buf(int size)
 {
 	if (SIZE_BUF < size)
 		return (-1);

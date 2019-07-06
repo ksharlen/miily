@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   buf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:32:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 11:04:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/06 10:58:09 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void		ft_memset_buf(int sym, int size)
 		ft_write_buf_and_clean(NULL);
 	else if (ret_check_loc == -1)
 	{
+		ft_write_buf_and_clean(NULL);
 		g_buf.ret_write += write(1, ft_memset(buf, sym, size), size);
-		printf("1\n");
 	}
 	ft_memset(buf, sym, size);
 	g_buf.size_write += size;
