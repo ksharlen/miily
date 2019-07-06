@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/05 16:07:59 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/06 10:44:35 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,8 +236,8 @@ int		main(void)
 	// printf("------------test29-------------\n");
 	// assert(ft_printf("%+10.hdw\n", 31) && printf("%+10.hdw\n", 31));
 
-	// // // //!  tests for spec "x/X"
-	// // !  tests for spec "x/X"
+	// // //!  tests for spec "x/X"
+	// !  tests for spec "x/X"
 
 	// printf("*******************************\n");
 	// printf("************X_FORMAT***********\n");
@@ -303,7 +303,7 @@ int		main(void)
 	// printf("------------test20-------------\n");
 	// assert(ft_printf("|%#20x|\n", 1) && printf("|%#20x|\n", 1));
 
-	// //! tests for spes "o"
+	//! tests for spes "o"
 
 	// printf("*******************************\n");
 	// printf("************O_FORMAT***********\n");
@@ -708,7 +708,7 @@ int		main(void)
 	//ft_printf("%%d tessting\n", 23);
 	//printf("%w testing\n");
 	//ft_printf("%w testing\n");
-	int ret_printf[3];
+	// int ret_printf[3];
 
 	// printf("%%%%dello wolrd\na = %d\n", 123, 32);
 	// ft_printf("%%%%dello world\na = %d\n", 123, 32);
@@ -726,7 +726,7 @@ int		main(void)
 	// assert(ret_printf[0] && ret_printf[1]);
 	// printf("ret_printf = %d\n", ret_printf[0]);
 
-	int fd;
+	// int fd;
 
 	// fd = open("testing", O_WRONLY);
 	// //printf("fd = %d\n", fd);
@@ -739,6 +739,7 @@ int		main(void)
 	// //ft_printf("%r\n", 'w');
 	// while (sq < 33)
 	// 	ft_printf("%d) %r\n", sq, sq++);
-	ft_printf("%f", 3.14);
+	// ft_printf("%f", 3.14);
+	ft_printf("%-20%hello world\n");
 	return (0);
 }
