@@ -21,17 +21,28 @@ t_data	get_data(unsigned long long int num_data, t_data data)
 	(data.days = (num_data % 100)) && (num_data /= 100);
 	(data.months = (num_data % 100)) && (num_data /= 100);
 	data.years = num_data;
-	print_data(data);
+	//print_data(data);
 	return (data);
 }
 
 static	t_data work_data(t_data data)
 {
-	if (data.min > 59)
-	{
-		
-	}
+	int		day_in_month;
 
+	if (data.min > 59)
+		(data.hours += (data.min / 60)) && (data.min %= 60);
+	if (data.hours > 23)
+		(data.days += (data.hours / 24)) && (data.hours %= 24);
+	if (data.months > 12)
+		(data.years += (data.months / 12)) && (data.months %= 12);
+	if (!data.months)
+		(data.months = 1);
+	day_in_month = get_quan_days(data.months);
+	if (!day_in_month)
+		day_in_month = get_leap(data.years);
+	if (data.days > day_in_month)
+		(data.months += (data.days / day_in_month)) && (data.days %= day_in_month);
+	print_data(data);
 	return (data);
 }
 
@@ -48,4 +59,5 @@ void	data_to_str(unsigned long long int num_data) //va_list format
 	//num_data = get_va_arg(format);
 	data = get_data(num_data, data);
 	data = work_data(data);
+	//print_data(data);
 }
