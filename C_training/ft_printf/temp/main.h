@@ -4,7 +4,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include "libft.h"
 
 typedef struct	s_data
 {

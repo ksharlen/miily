@@ -1,4 +1,5 @@
 #include "main.h"
+#include "../ft_printf.h"
 
 // static void	get_va_arg(va_list format)
 // {
@@ -34,9 +35,7 @@ static	t_data work_data(t_data data)
 	if (data.hours > 23)
 		(data.days += (data.hours / 24)) && (data.hours %= 24);
 	if (data.months > 12)
-		(data.years += (data.months / 12)) && (data.months %= 12);
-	if (!data.months)
-		(data.months = 1);
+		(data.years += (data.months / 12)) && (data.months = (data.months % 12) + 1);
 	day_in_month = get_quan_days(data.months);
 	if (!day_in_month)
 		day_in_month = get_leap(data.years);
@@ -48,7 +47,47 @@ static	t_data work_data(t_data data)
 
 static void	push_buf(t_data data)
 {
-	//ft_work_buf(...);
+	size_t len;
+	char *str;
+	char *temp;
+
+	if (data.years > 0)
+	{
+		str = ft_itoa(data.years);
+		len = ft_strlen(str);
+		ft_work_buf(str, len);
+		ft_work_buf("-", 1);
+		ft_strdel(&str);
+	}
+	if (data.months < 10)
+		ft_work_buf("0", 1);
+		str = ft_itoa(data.months);
+		len = ft_strlen(str);
+		ft_work_buf(str, len);
+		ft_work_buf("-", 1);
+		ft_strdel(&str);
+	if (data.days < 10)
+		ft_work_buf("0", 1);
+		str = ft_itoa(data.days);
+		len = ft_strlen(str);
+		ft_work_buf(str, len);
+		//ft_work_buf("-", 1);
+		ft_work_buf("T", 1);
+		ft_strdel(&str);
+	if (data.hours < 10)
+		ft_work_buf("0", 1);
+		str = ft_itoa(data.hours);
+		len = ft_strlen(str);
+		ft_work_buf(str, len);
+		ft_work_buf(":", 1);
+		ft_strdel(&str);
+	if (data.min < 10)
+		ft_work_buf("0", 1);
+		str = ft_itoa(data.min);
+		len = ft_strlen(str);
+		ft_work_buf(str, len);
+		ft_work_buf(":", 1);
+		ft_strdel(&str);
 }
 
 void	data_to_str(unsigned long long int num_data) //va_list format
@@ -59,5 +98,6 @@ void	data_to_str(unsigned long long int num_data) //va_list format
 	//num_data = get_va_arg(format);
 	data = get_data(num_data, data);
 	data = work_data(data);
+	push_buf(data);
 	//print_data(data);
 }
