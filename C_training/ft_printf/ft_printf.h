@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 13:18:29 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/08 10:22:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ void						ft_double_to_str(va_list format);
 void						ft_base_to_str(unsigned long long int num);
 int							ft_color_format(const char *string);
 void						invisible_sym(va_list format);
+void						write_and_free_malloc(char *buf, size_t size_str);
 
 void						write_to_file(va_list format);
 int							ft_mem_rec_cmp_for_color(char *str1,

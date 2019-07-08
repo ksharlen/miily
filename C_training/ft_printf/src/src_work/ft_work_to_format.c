@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 10:55:21 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/08 08:34:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void		ft_define_spec(const char *format_string)
 	format = *format_string;
 	g_spec.spec = format;
 	++g_spec.shift_spec;
+	//printf("spec = %c\n", g_spec.spec);
 }
 
 static void		ft_count_sym_to_spec(const char *format)
