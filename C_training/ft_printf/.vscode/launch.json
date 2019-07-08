@@ -5,66 +5,16 @@
     "version": "0.2.0",
     "configurations": [
 		{
-			"name": "(gdb) Launch",
-			"type": "cppdbg",
-			"request": "launch",
-			"program": "${workspaceFolder}/temp/a.out",
-			"args": ["main.c, buf.c, buf.h"],
-			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}",
-			"environment": [],
-			"externalConsole": true,
-			"MIMode": "gdb",
-			"setupCommands": [
-				{
-					"description": "Enable pretty-printing for gdb",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
-				}
-			]
-		},
-		{
-			"name": "printf_linux",
+			"name": "ft_printf",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/ft_printf",
-			"args": [],
+			"args": ["main_ft_printf.c"],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],
-			"externalConsole": true,
-			"MIMode": "gdb",
-			"setupCommands": [
-				{
-					"description": "Enable pretty-printing for gdb",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
-				}
-			]
-		},
-        {
-            "name": "FT_PRINTF",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/ft_printf",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "lldb"
-		},
-		{
-            "name": "tests",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/tests/a.out",
-            "args": ["9999999999999999999."],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "lldb"
+			"externalConsole": false,
+			"MIMode": "lldb"
 		}
     ]
 }

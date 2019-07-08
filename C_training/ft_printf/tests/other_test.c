@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 12:43:54 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 13:27:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/08 10:32:58 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	test_other(void)
 	assert(ft_printf("%3.10d\n", 1234) == printf("%3.10d\n", 1234));
 
 	printf("------------test7-------------\n");
-	assert(ft_printf("a = %20.d\nb = %d\n", 25, 31) == printf("a = %10.d\nb = %d\n", 25, 31));
+	assert(ft_printf("a = %20.d\nb = %d\n", 25, 31) == printf("a = %20.d\nb = %d\n", 25, 31));
 
 	printf("------------test8-------------\n");
 	assert(ft_printf("hello %+-15.10d world\n", 123) == printf("hello %+-15.10d world\n", 123));
