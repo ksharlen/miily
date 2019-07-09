@@ -6,6 +6,7 @@
 // 	return (va_arg(format, unsigned long long int));
 // }
 
+
 static void print_data(t_data data)
 {
 	printf("min: %d\n", data.min);
@@ -45,49 +46,39 @@ static	t_data work_data(t_data data)
 	return (data);
 }
 
-static void	push_buf(t_data data)
+static	void push_buf(int data)
 {
 	size_t len;
-	char *str;
-	char *temp;
+	char	*str;
 
-	if (data.years > 0)
-	{
-		str = ft_itoa(data.years);
-		len = ft_strlen(str);
-		ft_work_buf(str, len);
+	str = ft_itoa(data);
+	len = ft_strlen(str);
+	ft_work_buf(str, len);
+	ft_strdel(&str);
+}
+
+static void	work_buf(t_data data)
+{
+	if (data.years < 10)
+		ft_work_buf("0", 1);
+		push_buf(data.years);
 		ft_work_buf("-", 1);
-		ft_strdel(&str);
-	}
 	if (data.months < 10)
 		ft_work_buf("0", 1);
-		str = ft_itoa(data.months);
-		len = ft_strlen(str);
-		ft_work_buf(str, len);
+		push_buf(data.months);
 		ft_work_buf("-", 1);
-		ft_strdel(&str);
 	if (data.days < 10)
 		ft_work_buf("0", 1);
-		str = ft_itoa(data.days);
-		len = ft_strlen(str);
-		ft_work_buf(str, len);
-		//ft_work_buf("-", 1);
+		push_buf(data.days);
 		ft_work_buf("T", 1);
-		ft_strdel(&str);
 	if (data.hours < 10)
 		ft_work_buf("0", 1);
-		str = ft_itoa(data.hours);
-		len = ft_strlen(str);
-		ft_work_buf(str, len);
+		push_buf(data.hours);
 		ft_work_buf(":", 1);
-		ft_strdel(&str);
 	if (data.min < 10)
 		ft_work_buf("0", 1);
-		str = ft_itoa(data.min);
-		len = ft_strlen(str);
-		ft_work_buf(str, len);
-		ft_work_buf(":", 1);
-		ft_strdel(&str);
+		push_buf(data.min);
+	ft_write_buf_and_clean(WRITE_BUF);
 }
 
 void	data_to_str(unsigned long long int num_data) //va_list format
@@ -98,6 +89,6 @@ void	data_to_str(unsigned long long int num_data) //va_list format
 	//num_data = get_va_arg(format);
 	data = get_data(num_data, data);
 	data = work_data(data);
-	push_buf(data);
+	work_buf(data);
 	//print_data(data);
 }

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/08 10:22:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/09 09:30:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			5
+# define SIZE_BUF			100
 # define WRITE_BUF			NULL
 # define GET_POINT			WRITE_BUF
 
