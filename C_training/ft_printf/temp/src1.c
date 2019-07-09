@@ -1,5 +1,11 @@
 #include "main.h"
 
+void	push_buf_sym_time(int num, char sym)
+{
+	if (num < 10)
+		ft_work_buf(&sym, 1);
+}
+
 int		get_leap(int years)
 {
 	int day_in_month;
@@ -22,6 +28,8 @@ int		get_quan_days(int month)
 		return (31);
 	else if (month == 4 || month == 6 || month == 9 || month == 11)
 		return (30);
+	else if (month == 2)
+		return (28);
 	else
 		return (0);
 }
