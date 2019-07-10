@@ -65,7 +65,7 @@ static void	work_buf(t_date date)
 	ft_write_buf_and_clean(WRITE_BUF);
 }
 
-void	date_to_str(unsigned long long int num_date) //va_list format
+void	date_to_str(void) //va_list format
 {
 	t_date	date;
 
