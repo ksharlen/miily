@@ -1,5 +1,25 @@
 #include "main.h"
 
+void	check_ovf_to_time(int *num, int *num1, int ovf, int check)
+{
+	if (*num > check)
+	{
+		*num1 += *num / ovf;
+		*num %= ovf;
+	}
+}
+
+void	check_ovf_to_date(int *num, int *num1, int ovf, int check)
+{
+	if (*num > check)
+	{
+		if (!((*num) % check))
+			*num = *num + 1;
+		*num1 += *num / ovf;
+		*num %= ovf;
+	}
+}
+
 void	push_buf_sym_time(int num, char sym)
 {
 	if (num < 10)

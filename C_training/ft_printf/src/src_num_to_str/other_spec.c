@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 13:10:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 16:51:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 17:41:23 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void        write_to_file(va_list format)
     int fd;
 
     fd = va_arg(format, int);
-	printf("fd1 = %d\n", fd);
+	//printf("fd1 = %d\n", fd);
     if (fd > 0)
         g_spec.fd = fd;
 }
