@@ -21,4 +21,4 @@ int		main(void)
 }
 
 //gcc -I ../ main.c src1.c src.c ../src/buf/buf.c libft.a
-//gcc -I ../ main.c src1.c src.c ../src/buf/buf.c ../src/buf/work_buf_by_hand.c libft.a 
+//gcc -I ../ main.c src1.c src.c ../src/buf/buf.c ../src/buf/work_buf_by_hand.c libft.a q
