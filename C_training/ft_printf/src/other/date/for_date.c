@@ -1,4 +1,4 @@
-#include "main.h"
+#include "ft_printf.h"
 
 void	check_ovf_to_time(int *num, int *num1, int ovf, int check)
 {

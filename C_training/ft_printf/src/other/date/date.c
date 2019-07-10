@@ -1,9 +1,4 @@
-#include "main.h"
-
-static void	get_va_arg(va_list format)
-{
-	return (va_arg(format, unsigned long long int));
-}
+#include "ft_printf.h"
 
 t_date	get_date(unsigned long long int num_date, t_date date)
 {
@@ -65,9 +60,10 @@ static void	work_buf(t_date date)
 	ft_write_buf_and_clean(WRITE_BUF);
 }
 
-void	date_to_str(void) //va_list format
+void	date_to_str(va_list format) //va_list format
 {
 	t_date	date;
+	unsigned long long int num_date;
 
 	num_date = va_arg(format, unsigned long long int);
 	date = get_date(num_date, date);

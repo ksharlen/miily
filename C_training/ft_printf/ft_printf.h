@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 18:26:17 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 19:07:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@
 /*
 **Exeptions
 */
-# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
+//# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
 
-# define NUM_INT 			"dDoxXuUibB"
-# define NUM_DOUBLE 		"feEgGaA"
-# define NUM_STRING			"scSc"
-# define NUM_OTHER 			"nprkvr"
+# define NUM_INT 			"dDoOxXuUibB"
+# define NUM_DOUBLE 		"fFeEgGaA"
+# define NUM_STRING			"scSC" //!Проверить тут
+# define NUM_OTHER 			"nprkv"
 
 # define SIGNED_INT 		"dicCD"
 # define UNSIGNED_INT 		"uxXoUbB"
@@ -193,7 +193,7 @@ int							ft_check_loc_buf(int size);
 
 void						ft_print_test(const char *form);
 
-void						date_to_str(void);
+void						date_to_str(va_list);
 int							get_quan_days(int month, int years);
 int							get_leap(int years);
 void						push_buf_sym_time(int num, char sym);
