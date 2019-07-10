@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 09:54:04 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 11:59:37 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_isspace(int c);
-int					ft_pow(int n, int level);
+ssize_t				ft_pow(int n, int level);
 int					ft_revers(int n);
 void				ft_lstadd_end(t_list **begin_list, t_list *elem);
 int					get_next_line(const int fd, char **line);
@@ -113,6 +113,6 @@ int					ft_memischar(const char *str, int n, size_t size);
 int					ft_memisstr(const char *str,
 	const char *chek_format, size_t size);
 void				ft_swap(int *a, int *b);
-// size_t				ft_size_num(int a);
+size_t				ft_size_num(int a);
 
 #endif

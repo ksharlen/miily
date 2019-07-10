@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 13:44:02 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/10 10:53:23 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 12:41:15 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,28 @@
 # define TWOPOWTWENTYEIGHT  268435456
 # define FIVEPOWTWENTEEN    244140625
 
-typedef union				s_uni
-{
-	long double				num;
-	struct
-	{
-		unsigned long		mantissa:64;
-		short int			exp:15;
-		unsigned int		sign:1;
-	}						bits;
-}							t_uni;
+// typedef union				s_uni
+// {
+// 	long double				num;
+// 	struct
+// 	{
+// 		unsigned long		mantissa:64;
+// 		short int			exp:15;
+// 		unsigned int		sign:1;
+// 	}						bits;
+// }							t_uni;
 
-typedef struct				s_long
-{
-	unsigned int			*nbr_int;
-    unsigned int	        *nbr_fract;
-    unsigned int	        *nbr_tmp;
-	int						len_int;
-    int                     len_fract;
-    int                     len_tmp;
-}							t_long;
+// typedef struct				s_long
+// {
+// 	unsigned int			*nbr_int;
+//     unsigned int	        *nbr_fract;
+//     unsigned int	        *nbr_tmp;
+// 	int						len_int;
+//     int                     len_fract;
+//     int                     len_tmp;
+// }							t_long;
 
-unsigned int    bin_power(int t, int k) // возведение t в степень k
+unsigned int     ft_b_pow(int t, int k)
 {
 	unsigned int res = 1;
 	while (k)
@@ -99,8 +99,8 @@ void                addition_and_normalization(t_long *res, unsigned int *nbr, i
         nbr[i] %= 10;
          ++i;
     }
-    if (i > *len)
-        *len = i;
+    if (i + 1 > *len)
+        *len = i + 1;
 }
 
 void            long_arithmetic_power(short int exponenta, t_long *res)
@@ -113,14 +113,14 @@ void            long_arithmetic_power(short int exponenta, t_long *res)
         exponenta -= 28;
     }
     if (exponenta > 0)
-        multiplication_and_normalization(res, bin_power(2, exponenta), res->len_tmp);
+        multiplication_and_normalization(res, ft_b_pow(2, exponenta), res->len_tmp);
     while (exponenta <= -12)
     {
         multiplication_and_normalization(res, FIVEPOWTWENTEEN, res->len_tmp);
         exponenta += 12;
     }
     if (exponenta < 0)
-        multiplication_and_normalization(res, bin_power(5, CHECK_MOD(exponenta)), res->len_tmp);
+        multiplication_and_normalization(res, ft_b_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
 }
 
 void            long_arithmetic(t_uni *real_num, t_long *res)
@@ -147,16 +147,13 @@ void            malloc_long(t_uni *real_num, t_long *res)
     int         i;
     short int   exp;
 
-    i = 64;
     exp = real_num->bits.exp;
     res->len_int = (exp > 0 ? exp / 3 + 2 : 1);
-    res->len_fract = 6;
+    i = 64;
     while (i-- && !(real_num->bits.mantissa >> (63 - i) & 1))
         ;
     exp -= i;
-    if (exp < -6)
-        res->len_fract = NUM_MOD(exp);
-    printf("bit = %hd\n", exp);
+    res->len_fract = (exp < -6 ? NUM_MOD(exp) : 6);
     res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
     res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
     res->nbr_tmp = (unsigned int *)malloc(sizeof(int) * res->len_tmp);
@@ -173,16 +170,17 @@ int             main(int ac, char **av)
     t_uni       real_num;
     t_long      res;
 
-    real_num.num = 0.333333333333333314829616256247390992939472198486328125;
+    real_num.num = 121.123;
     // real_num.num = LDBL_MAX;
     real_num.bits.exp -= 16383;
     malloc_long(&real_num, &res);
-    // printf("len = %d\n", res.len_fract);
+    printf("len = %d\n", res.len_int);
     long_arithmetic(&real_num, &res);
-    // while (res.len_int--)
-    //     printf("%u", res.nbr_int[res.len_int]);
+    printf("len = %d\n", res.len_int);
+    while (res.len_int--)
+        printf("%u", res.nbr_int[res.len_int]);
     while (res.len_fract--)
         printf("%u", res.nbr_fract[res.len_fract]);
-    printf("\n%f\n", 0.299999);
+    // printf("\n%Lf\n", LDBL_MAX);
     return (0);
 }

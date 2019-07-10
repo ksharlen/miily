@@ -3,27 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 10:18:52 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/04/23 11:35:30 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 11:53:25 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_pow(int number, int level)
+ssize_t		ft_pow(int number, int level)
 {
-	int sum;
+	ssize_t	res;
 
-	if (level == 0)
-		return (1);
-	else if (number == 1)
-		return (1);
-	else if (number == 0)
-		return (0);
-	sum = 1;
-	while (level--)
-		sum *= number;
-	return (sum);
+	res = 1;
+	while (level)
+	{
+		if (level & 1)
+    		res *= number;
+		number *= number;
+		level >>= 1;
+	}
+	return (res);
 }
