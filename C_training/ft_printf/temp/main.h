@@ -6,18 +6,19 @@
 # include <string.h>
 # include "../ft_printf.h"
 
-typedef struct	s_data
+typedef struct	s_date
 {
 	int			min;
 	int			hours;
 	int			days;
 	int			months;
 	int			years;
-}				t_data;
+}				t_date;
 
-void	data_to_str(unsigned long long int num_data);
-int		get_quan_days(int month);
+void	date_to_str(unsigned long long int num_date);
+int		get_quan_days(int month, int years);
 int		get_leap(int years);
 void	push_buf_sym_time(int num, char sym);
+t_date	get_date(unsigned long long int num_date, t_date date);
 
 #endif
