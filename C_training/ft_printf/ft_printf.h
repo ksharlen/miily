@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 09:36:23 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 12:18:12 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,27 @@
 
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
+
+typedef union				s_uni
+{
+	long double				num;
+	struct
+	{
+		unsigned long		mantissa:64;
+		short int			exp:15;
+		unsigned int		sign:1;
+	}						bits;
+}							t_uni;
+
+typedef struct				s_long
+{
+	unsigned int			*nbr_int;
+    unsigned int			*nbr_fract;
+    unsigned int			*nbr_tmp;
+	int						len_int;
+    int						len_fract;
+    int						len_tmp;
+}							t_long;
 
 typedef struct				s_spec
 {
