@@ -16,10 +16,14 @@ static void print_data(t_date data)
 
 t_date	get_date(unsigned long long int num_date, t_date date)
 {
-	(date.min = (num_date % 100)) && (num_date /= 100);
-	(date.hours = (num_date % 100)) && (num_date /= 100);
-	(date.days = (num_date % 100)) && (num_date /= 100);
-	(date.months = (num_date % 100)) && (num_date /= 100);
+	date.min = (num_date % 100);
+	num_date /= 100;
+	date.hours = (num_date % 100);
+	num_date /= 100;
+	date.days = (num_date % 100);
+	num_date /= 100;
+	date.months = (num_date % 100);
+	num_date /= 100;
 	date.years = num_date;
 	return (date);
 }
@@ -27,25 +31,64 @@ t_date	get_date(unsigned long long int num_date, t_date date)
 static	t_date work_data(t_date date)
 {
 	int		day_in_month;
+	int		temp;
 
+	//Проверяем минуты
 	if (date.min > 59)
 	{
 		date.hours += date.min / 60;
 		date.min %= 60;
 	}
+	//Проверяем часы
 	if (date.hours > 23)
 	{
 		date.days += date.hours / 24;
 		date.hours %= 24;
 	}
+	//Проверяем месяцы
 	if (date.months > 12)
 	{
+		if (!(date.months % 12))
+			date.months++;
 		date.years += date.months / 12;
 		date.months %= 12;
 	}
+	//Вытаскиваем кол-во дней в месяце
 	day_in_month = get_quan_days(date.months, date.years);
 	printf("day_in_month = %d\n", day_in_month);
 	print_data(date);
+	printf("=========\n");
+	//Проверяем дни
+	if (date.days > day_in_month)
+	{
+		if (!(date.days % day_in_month))
+			++date.days;
+		date.months += date.days / day_in_month;
+		date.days %= day_in_month;
+	}
+	//Опять проверим на переполнение месяца
+	if (date.months > 12)
+	{
+		if (!(date.months % 12))
+			date.months++;
+		date.years += date.months / 12;
+		date.months %= 12;
+	}
+	//Получаем опять день
+	day_in_month = get_quan_days(date.months, date.years);
+	//Опять проверяем дни на ovf
+	printf("day_in_month = %d\n", day_in_month);
+	print_data(date);
+	if (date.days > day_in_month)
+	{
+		if (!(date.days % day_in_month))
+			++date.days;
+		date.months += date.days / day_in_month;
+		date.days %= day_in_month;
+	}
+	// printf("day_in_month = %d\n", day_in_month);
+	// print_data(date);
+
 	// if (data.min > 59)
 	// {
 	// 	data.hours += (data.min / 60);

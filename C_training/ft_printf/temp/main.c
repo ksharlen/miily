@@ -15,7 +15,7 @@ int		main(void)
 	g_spec.size_write = 0;
 	g_spec.size_buf = SIZE_BUF;
 	//date_to_str(199590856490);
-	date_to_str(1202000000);
+	date_to_str(301612922324);
 	//len = ft_size_num(124123);
 	//printf("len = %ld\n", len);
 	return (0);
