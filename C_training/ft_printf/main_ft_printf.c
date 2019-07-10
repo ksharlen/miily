@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/10 09:36:08 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 10:40:59 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(void)
 	int ret_ft;
 	int ret;
 
-	ft_printf("%f/n", 0.1);
+	ft_printf("%f/n", 0.275);
 	// printf("|%+f|\n", 1.1);
 	// printf("|%f|\n", 1.0);
 	// printf("|%.0f|\n", 1.10);

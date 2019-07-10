@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 13:44:02 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/10 09:40:54 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 10:53:23 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "../ft_printf.h"
 
 # define TWOPOWTWENTYEIGHT  268435456
-# define FIVEPOWTWENTEEN    2197265625
+# define FIVEPOWTWENTEEN    244140625
 
 typedef union				s_uni
 {
@@ -107,7 +107,6 @@ void            long_arithmetic_power(short int exponenta, t_long *res)
 {
     res->nbr_tmp[0] = 1;
     res->len_tmp = (exponenta >= 0 ? 1 : CHECK_MOD(exponenta));
-    printf("exponenta = %hd\n", exponenta);
     while (exponenta >= 28)
     {
         multiplication_and_normalization(res, TWOPOWTWENTYEIGHT, res->len_tmp);
@@ -117,9 +116,7 @@ void            long_arithmetic_power(short int exponenta, t_long *res)
         multiplication_and_normalization(res, bin_power(2, exponenta), res->len_tmp);
     while (exponenta <= -12)
     {
-        printf("len_befor = %d\n", res->len_tmp);
         multiplication_and_normalization(res, FIVEPOWTWENTEEN, res->len_tmp);
-        printf("len_after = %d\n", res->len_tmp);
         exponenta += 12;
     }
     if (exponenta < 0)
@@ -138,7 +135,7 @@ void            long_arithmetic(t_uni *real_num, t_long *res)
         {
 	        long_arithmetic_power(real_num->bits.exp, res);
             real_num->bits.exp >= 0 ? addition_and_normalization(res, res->nbr_int, &res->len_int) :\
-            addition_and_normalization(res, res->nbr_fract + (res->len_fract - res->len_tmp), &res->len_fract);
+            addition_and_normalization(res, res->nbr_fract + (res->len_fract - res->len_tmp), &res->len_tmp);
             ft_bzero(res->nbr_tmp, sizeof(int) * res->len_tmp);
         }
         --real_num->bits.exp;
@@ -159,6 +156,7 @@ void            malloc_long(t_uni *real_num, t_long *res)
     exp -= i;
     if (exp < -6)
         res->len_fract = NUM_MOD(exp);
+    printf("bit = %hd\n", exp);
     res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
     res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
     res->nbr_tmp = (unsigned int *)malloc(sizeof(int) * res->len_tmp);
@@ -175,16 +173,16 @@ int             main(int ac, char **av)
     t_uni       real_num;
     t_long      res;
 
-    real_num.num = 0.1;
+    real_num.num = 0.333333333333333314829616256247390992939472198486328125;
     // real_num.num = LDBL_MAX;
     real_num.bits.exp -= 16383;
     malloc_long(&real_num, &res);
-    printf("\n len = %d\n", res.len_fract);
+    // printf("len = %d\n", res.len_fract);
     long_arithmetic(&real_num, &res);
     // while (res.len_int--)
     //     printf("%u", res.nbr_int[res.len_int]);
     while (res.len_fract--)
         printf("%u", res.nbr_fract[res.len_fract]);
-    // printf("\n%f\n", 14.1);
+    printf("\n%f\n", 0.299999);
     return (0);
 }
