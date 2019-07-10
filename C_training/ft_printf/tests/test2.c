@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 13:44:02 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/10 09:33:29 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 09:40:54 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,8 +157,7 @@ void            malloc_long(t_uni *real_num, t_long *res)
     while (i-- && !(real_num->bits.mantissa >> (63 - i) & 1))
         ;
     exp -= i;
-    if (exp < 0 && NUM_MOD(exp) > 6)
-    printf("exp = %hd\n", exp);
+    if (exp < -6)
         res->len_fract = NUM_MOD(exp);
     res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
     res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
