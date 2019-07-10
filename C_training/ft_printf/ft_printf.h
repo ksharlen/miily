@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 13:18:29 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 09:32:56 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@
 # define SUPPORT_FLOAT 		"feEgGaAF"
 
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
+# define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
 
 typedef struct				s_spec
 {
