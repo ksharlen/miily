@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 09:32:56 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 09:36:23 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			5
+# define SIZE_BUF			100
 # define WRITE_BUF			NULL
 # define GET_POINT			WRITE_BUF
 
@@ -149,6 +149,7 @@ void						ft_double_to_str(va_list format);
 void						ft_base_to_str(unsigned long long int num);
 int							ft_color_format(const char *string);
 void						invisible_sym(va_list format);
+void						write_and_free_malloc(char *buf, size_t size_str);
 
 void						write_to_file(va_list format);
 int							ft_mem_rec_cmp_for_color(char *str1,

@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/10 09:06:03 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 09:36:08 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 
 int		main(void)
 {
-	// test_s();
-	// test_o();
-	// test_x();
-	// test_d();
-	//test_other();
+	test_s();
+	test_o();
+	test_x();
+	test_d();
+	test_other();
 
 	int ret_ft;
 	int ret;

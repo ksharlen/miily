@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/17 15:49:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/09 09:53:29 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,6 @@ int					ft_memischar(const char *str, int n, size_t size);
 int					ft_memisstr(const char *str,
 	const char *chek_format, size_t size);
 void				ft_swap(int *a, int *b);
+size_t				ft_size_num(int a);
 
 #endif

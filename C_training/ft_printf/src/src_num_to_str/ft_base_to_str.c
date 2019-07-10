@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/06 12:37:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/08 10:38:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,10 @@
 char			*ft_size_work(char *str, size_t size_num)
 {
 	if (g_spec.flags & DASH)
-	{
 		ft_memset(str + size_num, ' ', g_spec.width - size_num);
-		// g_spec.size_write += g_spec.width - size_num;
-		// g_spec.size_buf -= g_spec.width - size_num;
-	}
 	else
 	{
 		ft_memset(str, ' ', g_spec.width - size_num);
-		// g_spec.size_write += g_spec.width - size_num;
-		// g_spec.size_buf -= g_spec.width - size_num;
 		str += g_spec.width - size_num;
 	}
 	g_spec.size_write += g_spec.width - size_num;
@@ -56,8 +50,10 @@ unsigned long long int num, size_t size_str, int base)
 		buf[0] = g_spec.spec;
 }
 
-static void		write_and_free_malloc(char *buf, size_t size_str)
+void		write_and_free_malloc(char *buf, size_t size_str)
 {
+	g_spec.size_write -= size_str;
+	g_spec.size_buf += size_str;
 	ft_write_buf_and_clean(WRITE_BUF);
 	g_spec.ret_printf += write(g_spec.fd, buf, size_str);
 	ft_strdel(&buf);

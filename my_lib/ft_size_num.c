@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_size_num.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/08 08:30:13 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/07/09 09:52:40 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/07/09 12:09:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-t_spec			g_spec;
-
-int				ft_printf(const char *format, ...)
+size_t	ft_size_num(int a)
 {
-	va_list		form;
-	int			ret;
+	size_t len;
 
-	g_spec.fd = 1;
-	g_spec.size_write = 0;
-	g_spec.size_buf = SIZE_BUF;
-	va_start(form, format);
-	ft_work_to_format(format, form);
-	ft_write_buf_and_clean(WRITE_BUF);
-	va_end(form);
-	ret = g_spec.ret_printf;
-	g_spec.ret_printf = 0;
-	g_spec.fd = 1;
-	g_spec.spec = 0;
-	return (ret);
+	len = 0;
+	if (a == 0)
+		len = 1;
+	while (a)
+	{
+		++len;
+		a /= 10;
+	}
+	return (len);
 }

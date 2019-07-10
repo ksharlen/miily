@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/03 15:41:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/08 10:33:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,6 @@ long long int num, size_t size_str)
 	}
 	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
 		buf[0] = ft_chr_space_plus_dec();
-}
-
-static void			write_and_free_malloc(char *buf, size_t size_str)
-{
-	ft_write_buf_and_clean(WRITE_BUF);
-	g_spec.ret_printf += write(g_spec.fd, buf, size_str);
-	ft_strdel(&buf);
 }
 
 void				ft_int_to_str(long long int num)

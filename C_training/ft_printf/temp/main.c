@@ -1,29 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/28 19:32:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 11:04:08 by ksharlen         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "main.h"
+#include "ft_printf.h"
 
-#include "buf.h"
+t_spec	g_spec;
 
-int			main(void)
+
+
+int		main(void)
 {
-	char *buf;
-	char *str;
+	char *testing;
+	size_t	len;
+	unsigned long long int a;
 
-	str = "hello world how are you?\nFine and you?\nMe tooo ahahahahaha\n";
-	g_buf.size_write = 0;
-	g_buf.size_buf = SIZE_BUF;
-	g_buf.ret_write = 0;
-
-	ft_work_buf("hello world\n", ft_strlen("hello world"));
-	ft_memset_buf('0', 13);
-	ft_write_buf_and_clean(NULL);
+	a = 972502291532;
+	g_spec.size_write = 0;
+	g_spec.size_buf = SIZE_BUF;
+	data_to_str(201601601331);
+	//len = ft_size_num(124123);
+	//printf("len = %ld\n", len);
 	return (0);
 }
+
+//gcc -I ../ main.c src1.c src.c ../src/buf/buf.c libft.a
+//gcc -I ../ main.c src1.c src.c ../src/buf/buf.c ../src/buf/work_buf_by_hand.c libft.a 
