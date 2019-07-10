@@ -6,9 +6,10 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 18:20:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 18:26:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -96,6 +97,9 @@
 
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
+
+# define TWOPOWTWENTYEIGHT	268435456
+# define FIVEPOWTWENTEEN	244140625
 
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 13:44:02 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/10 13:06:28 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 18:24:26 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,14 @@ void                addition_and_normalization(t_long *res, unsigned int *nbr, i
             }
         ++i;
     }
-    while (res->nbr_int[i] /    10)
+    while (nbr[i] / 10)
     {
         nbr[i + 1] += nbr[i] / 10;
         nbr[i] %= 10;
          ++i;
     }
-    if (i + 1 > *len)
-        *len = i + 1;
+    if (i > *len)
+        *len = i;
 }
 
 void            long_arithmetic_power(short int exponenta, t_long *res)

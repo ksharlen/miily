@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/08 10:33:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 18:22:09 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char			ft_chr_space_plus_dec(void)
 	return (' ');
 }
 
-static size_t		ft_size_num(long long int num)
+static size_t		ft_size_num_for_int(long long int num)
 {
 	size_t			l;
 	long long int	num_cp;
@@ -44,7 +44,7 @@ long long int num, size_t size_str)
 	short	sign;
 	size_t	size_num;
 
-	size_num = ft_size_num(num);
+	size_num = ft_size_num_for_int(num);
 	sign = ((num < 0) ? -1 : 1);
 	while (size_num--)
 	{
@@ -63,7 +63,7 @@ void				ft_int_to_str(long long int num)
 	size_t		size_str;
 	char		*buf;
 
-	size_num = ft_size_num(num);
+	size_num = ft_size_num_for_int(num);
 	size_str = (size_num < g_spec.width ? g_spec.width : size_num);
 	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
 	{
