@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 12:18:12 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 13:13:20 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@
 
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
+
+# define TWOPOWTWENTYEIGHT	268435456
+# define FIVEPOWTWENTEEN	244140625
 
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)

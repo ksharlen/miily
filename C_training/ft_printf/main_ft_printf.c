@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/10 10:40:59 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 18:15:39 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@
 #include <stddef.h>
 #include <assert.h>
 #include <wchar.h>
+#include <float.h>
 
 int		main(void)
 {
-	test_s();
-	test_o();
-	test_x();
-	test_d();
-	test_other();
+	// test_s();
+	// test_o();
+	// test_x();
+	// test_d();
+	// test_other();
 
 	int ret_ft;
 	int ret;
-
-	ft_printf("%f/n", 0.275);
+//LDBL_MAX
+	ft_printf("%f\n", 0.0);
+	printf("\n\n%f", 0.0);
 	// printf("|%+f|\n", 1.1);
 	// printf("|%f|\n", 1.0);
 	// printf("|%.0f|\n", 1.10);
