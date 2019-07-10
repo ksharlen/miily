@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 13:10:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 18:19:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/10 18:30:38 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void			ft_other_spec(va_list format)
 		write_to_file(format);
 	else if (g_spec.spec == 'r')
 		invisible_sym(format);
-	else if (g_spec == 'k')
-		date_to_str(void);
+	else if (g_spec.spec == 'k')
+		date_to_str(format);
 }
 
 void        write_to_file(va_list format)
