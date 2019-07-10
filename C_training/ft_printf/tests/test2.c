@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 13:44:02 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/10 12:41:15 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 13:06:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,7 @@ int             main(int ac, char **av)
     t_uni       real_num;
     t_long      res;
 
-    real_num.num = 121.123;
+    real_num.num = 1.123;
     // real_num.num = LDBL_MAX;
     real_num.bits.exp -= 16383;
     malloc_long(&real_num, &res);
@@ -179,8 +179,8 @@ int             main(int ac, char **av)
     printf("len = %d\n", res.len_int);
     while (res.len_int--)
         printf("%u", res.nbr_int[res.len_int]);
-    while (res.len_fract--)
-        printf("%u", res.nbr_fract[res.len_fract]);
+    // while (res.len_fract--)
+    //     printf("%u", res.nbr_fract[res.len_fract]);
     // printf("\n%Lf\n", LDBL_MAX);
     return (0);
 }
