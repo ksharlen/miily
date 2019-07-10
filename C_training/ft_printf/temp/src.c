@@ -31,102 +31,61 @@ t_date	get_date(unsigned long long int num_date, t_date date)
 static	t_date work_data(t_date date)
 {
 	int		day_in_month;
-	int		temp;
 
 	//Проверяем минуты
-	if (date.min > 59)
-	{
-		date.hours += date.min / 60;
-		date.min %= 60;
-	}
+	// if (date.min > 59)
+	// {
+	// 	date.hours += date.min / 60;
+	// 	date.min %= 60;
+	// }
+	check_ovf_to_time(&date.min, &date.hours, 60, 59);
 	//Проверяем часы
-	if (date.hours > 23)
-	{
-		date.days += date.hours / 24;
-		date.hours %= 24;
-	}
+	// if (date.hours > 23)
+	// {
+	// 	date.days += date.hours / 24;
+	// 	date.hours %= 24;
+	// }
+	check_ovf_to_time(&date.hours, &date.days, 24, 23);
 	//Проверяем месяцы
-	if (date.months > 12)
-	{
-		if (!(date.months % 12))
-			date.months++;
-		date.years += date.months / 12;
-		date.months %= 12;
-	}
+	// if (date.months > 12)
+	// {
+	// 	if (!(date.months % 12))
+	// 		date.months++;
+	// 	date.years += date.months / 12;
+	// 	date.months %= 12;
+	// }
+	check_ovf_to_date(&date.months, &date.years, 12, 12);
 	//Вытаскиваем кол-во дней в месяце
 	day_in_month = get_quan_days(date.months, date.years);
-	printf("day_in_month = %d\n", day_in_month);
-	print_data(date);
-	printf("=========\n");
 	//Проверяем дни
-	if (date.days > day_in_month)
-	{
-		if (!(date.days % day_in_month))
-			++date.days;
-		date.months += date.days / day_in_month;
-		date.days %= day_in_month;
-	}
+	// if (date.days > day_in_month)
+	// {
+	// 	if (!(date.days % day_in_month))
+	// 		++date.days;
+	// 	date.months += date.days / day_in_month;
+	// 	date.days %= day_in_month;
+	// }
+	check_ovf_to_date(&date.days, &date.months, day_in_month, day_in_month);
 	//Опять проверим на переполнение месяца
-	if (date.months > 12)
-	{
-		if (!(date.months % 12))
-			date.months++;
-		date.years += date.months / 12;
-		date.months %= 12;
-	}
+	// if (date.months > 12)
+	// {
+	// 	if (!(date.months % 12))
+	// 		date.months++;
+	// 	date.years += date.months / 12;
+	// 	date.months %= 12;
+	// }
+	check_ovf_to_date(&date.months, &date.years, 12, 12);
 	//Получаем опять день
 	day_in_month = get_quan_days(date.months, date.years);
 	//Опять проверяем дни на ovf
-	printf("day_in_month = %d\n", day_in_month);
-	print_data(date);
-	if (date.days > day_in_month)
-	{
-		if (!(date.days % day_in_month))
-			++date.days;
-		date.months += date.days / day_in_month;
-		date.days %= day_in_month;
-	}
-	// printf("day_in_month = %d\n", day_in_month);
-	// print_data(date);
-
-	// if (data.min > 59)
+	// if (date.days > day_in_month)
 	// {
-	// 	data.hours += (data.min / 60);
-	// 	data.min %= 60;
+	// 	if (!(date.days % day_in_month))
+	// 		++date.days;
+	// 	date.months += date.days / day_in_month;
+	// 	date.days %= day_in_month;
 	// }
-	// if (data.hours > 23)
-	// {
-	// 	data.days += (data.hours / 24);
-	// 	data.hours %= 24;
-	// }
-	// if (data.months > 12)
-	// {
-	// 	data.years += (data.months / 12);
-	// 	data.months = (data.months % 12) + 1;
-	// }
-	// day_in_month = get_quan_days(data.months);
-	// if (!day_in_month || day_in_month == 28)
-	// 	day_in_month = get_leap(data.years);
-
-	// if (data.days > day_in_month)
-	// {
-	// 	data.months += (data.days / day_in_month);
-	// 	data.days %= day_in_month;
-	// }
-
-	// if (data.months > 12)
-	// {
-	// 	data.years += (data.months / 12);
-	// 	data.months = (data.months % 12);
-	// }
-	// if (data.months == 2)
-	// {
-	// 	if (((day_in_month = get_leap(data.years))))
-	// 		;
-	// 	else
-	// 		day_in_month = get_quan_days(data.months);
-	// 	(data.months += (data.days / day_in_month)) && (data.days %= day_in_month);
-	// }
+	check_ovf_to_date(&date.days, &date.months, day_in_month, day_in_month);
 	return (date);
 }
 
