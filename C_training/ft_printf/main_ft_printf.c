@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/10 18:15:39 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/10 19:02:57 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int		main(void)
 	int ret_ft;
 	int ret;
 //LDBL_MAX
-	ft_printf("%f\n", 0.0);
-	printf("\n\n%f", 0.0);
+	ft_printf("%Lf\n", LDBL_MAX);
+	printf("\n%f", -0.0);
 	// printf("|%+f|\n", 1.1);
 	// printf("|%f|\n", 1.0);
 	// printf("|%.0f|\n", 1.10);
