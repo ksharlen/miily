@@ -6,39 +6,26 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 19:15:37 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/12 18:25:07 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void						test(t_uni *u)
-{
-	printf("exh = %d\n", u->bits.exp);
-	printf("sign = %d\n", u->bits.sign);
+// void						test(t_uni *u)
+// {
+// 	printf("exh = %d\n", u->bits.exp);
+// 	printf("sign = %d\n", u->bits.sign);
 
-	int i = 64;
-	while (i--)
-	{
-		printf("%lu", u->bits.mantissa >> i & 1);
-	}
-	printf("\n");
-}
+// 	int i = 64;
+// 	while (i--)
+// 	{
+// 		printf("%lu", u->bits.mantissa >> i & 1);
+// 	}
+// 	printf("\n");
+// }
 
-ssize_t						ft_b_pow(int t, int k)
-{
-	ssize_t					res;
-
-	res = 1;
-	while (k)
-	{
-		if (k & 1)
-    		res *= t;
-		t *= t;
-		k >>= 1;
-    }
-	return (res);
-}
+//! блок динной арифметики
 
 void						multiplication_and_normalization(t_long *res, unsigned int multiplier, int len)
 {
@@ -97,7 +84,7 @@ void						addition_and_normalization(t_long *res, unsigned int *nbr, int *len)
 
 void						long_arithmetic_power(short int exponenta, t_long *res)
 {
-	res->nbr_tmp[0] = (unsigned int)1;
+	res->nbr_tmp[0] = 1;
 	res->len_tmp = (exponenta >= 0 ? 1 : CHECK_MOD(exponenta));
 	while (exponenta >= 28)
 	{
@@ -105,14 +92,14 @@ void						long_arithmetic_power(short int exponenta, t_long *res)
 		exponenta -= 28;
 	}
 	if (exponenta > 0)
-		multiplication_and_normalization(res, ft_b_pow(2, exponenta), res->len_tmp);
+		multiplication_and_normalization(res, ft_pow(2, exponenta), res->len_tmp);
 	while (exponenta <= -12)
 	{
 		multiplication_and_normalization(res, FIVE_POW_TWENTEEN, res->len_tmp);
 		exponenta += 12;
 	}
 	if (exponenta < 0)
-		multiplication_and_normalization(res, ft_b_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
+		multiplication_and_normalization(res, ft_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
 }
 
 void            			long_arithmetic(t_uni *real_num, t_long *res)
@@ -147,7 +134,7 @@ void						malloc_long(t_uni *real_num, t_long *res)
 	while (i-- && !(real_num->bits.mantissa >> (63 - i) & 1))
 		;
 	exp -= i;
-	res->len_fract = (exp < -6 && i != -1 ? NUM_MOD(exp) : 6); //! -1 (может привести к ошибке)
+	res->len_fract = (exp < -6 ? NUM_MOD(exp) : 6);
 	res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
 	res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
 	res->nbr_tmp = (unsigned int *)malloc(sizeof(int) * res->len_tmp);
@@ -158,6 +145,79 @@ void						malloc_long(t_uni *real_num, t_long *res)
 	ft_bzero(res->nbr_tmp, sizeof(int) * res->len_tmp);
 	ft_bzero(res->nbr_fract, sizeof(int) * (res->len_fract + 1));
 }
+//! конец блока длинной арифметики
+
+// !блок функций для spec f_F
+static int					banker_rounding(t_long *res, int i)
+{
+	if (res->nbr_fract[i] > 5 || res->nbr_fract[i + 1] & 1 || (i + 1 == res->len_fract && res->nbr_int[0] & 1))
+		return (1);
+	while (i--)
+	{
+		if (res->nbr_fract[i])
+			return (1);
+	}
+	return (0);
+}
+
+static int					rounding_number(t_long *res, int len)
+{
+	int						i;
+
+	i = res->len_fract - len - 1;
+	if (res->nbr_fract[i] >= 5 && banker_rounding(res, i) && (res->nbr_fract[++i] += 1))
+		while(res->nbr_fract[i] == 10 && i != res->len_fract)
+		{
+			res->nbr_fract[i] = 0;
+			res->nbr_fract[++i] += 1;
+		}
+	i = 0;
+	if (res->nbr_fract[res->len_fract] && (res->nbr_int[i] += 1))
+		while (res->nbr_int[i] == 10 && i != res->len_int)
+		{
+			res->nbr_int[i] = 0;
+			res->nbr_int[++i] += 1;
+		}
+	if (res->nbr_int[res->len_int])
+	{
+		++res->len_int;
+		return (1);
+	}
+	return (0);
+}
+
+
+
+char						*ft_size_work_for_long(char *str, size_t size_num)
+{
+	if (g_spec.flags & DASH)
+		ft_memset(str + size_num, ' ', g_spec.width - size_num);
+	else if (!(g_spec.flags & ZERO))
+	{
+		ft_memset(str, ' ', g_spec.width - size_num);
+		str += g_spec.width - size_num;
+	}
+	return (str);
+}
+
+static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num)
+{
+	size_str -= size_num;
+	if ((g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC) && size_num--)
+		*buf++ = ft_chr_space_plus_dec();
+	if (!(g_spec.flags & DASH) && g_spec.flags & ZERO)
+		while (size_str--)
+			*buf++ = '0';
+	while (res->len_int-- && (size_num-- > 0))
+		*buf++ = res->nbr_int[res->len_int] + '0';
+	if (size_num-- > 0)
+		*buf++ = '.';
+	while (res->len_fract-- && (size_num-- > 0))
+		*buf++ = res->nbr_fract[res->len_fract] + '0';
+	while (size_num-- > 0)
+		*buf++ = '0';
+}
+// !конец блока функций для spec f_F
 
 static long double			pull_double_arg(va_list format)
 {
@@ -171,20 +231,88 @@ static long double			pull_double_arg(va_list format)
 	return (ret);
 }
 
+static void					nan_infinity(t_uni *real_num)
+{
+	// if (real_num->bits.mantissa << 1)
+	// {
+	// 	if (g_spec.spec > 90)
+	// 		fun_for_string(nan);
+	// 	else
+	// 		fun_for_string(NAN);
+	// }
+	// else
+	// {
+	// 	if (g_spec.spec > 90)
+	// 		fun_for_string(inf);
+	// 	else
+	// 		fun_for_string(INF);
+	// }
+}
+
+size_t						size_num_for_long(t_long *res)
+{
+	size_t					l;
+
+	if (g_spec.spec == 'f' || g_spec.spec == 'F')
+	{
+		l = res->len_int + (g_spec.flags & DOT ? g_spec.accuracy : 6);
+		l += rounding_number(res, l - res->len_int);
+	}
+	else
+	{
+		l = (g_spec.flags & DOT ? g_spec.accuracy + 1 : 7);
+		/* code */
+	}
+	if (g_spec.flags & HASH || !(g_spec.flags & DOT) ||\
+	g_spec.flags & DOT && g_spec.accuracy)
+		++l;
+	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
+		++l;
+	return (l);
+}
+
+//! ниже немного переписал наше с тобой творение - получилось короче + добавил size_write и size_buf в нужное место
+char						*check_buf(ssize_t size_str)
+{
+	char					*buf;
+
+	if (SIZE_BUF >= size_str)
+	{
+		if (g_spec.size_buf < size_str)
+			ft_write_buf_and_clean(WRITE_BUF);
+		buf = ft_work_buf(GET_POINT, 0);
+		g_spec.size_write += size_str;
+		g_spec.size_buf -= size_str;
+	}
+	else if (!(buf = ft_memalloc(size_str)))
+		exit(0);
+	return (buf);
+}
+
 void						ft_double_to_str(va_list format)
 {
-	t_uni       			real_num;
+	t_uni					real_num;
 	t_long					res;
+	char					*buf;
+	size_t					size_num;
+	size_t					size_str;
 
 	real_num.num = pull_double_arg(format);
 	real_num.bits.exp -= 16383;
-	// test(&real_num);
-	malloc_long(&real_num, &res);
-	long_arithmetic(&real_num, &res);
-	printf("len = %d\n", res.len_int);
-    while (res.len_int--)
-        printf("%u", res.nbr_int[res.len_int]);
-	printf(".");
-	while (res.len_fract--)
-        printf("%u", res.nbr_fract[res.len_fract]);
+	if (real_num.bits.sign)
+		g_spec.flags |= DEC;
+	if (real_num.bits.exp != -16384)
+	{
+		malloc_long(&real_num, &res);
+		long_arithmetic(&real_num, &res);
+		size_num = size_num_for_long(&res);
+		size_str = g_spec.width > size_num ? g_spec.width : size_num;
+		buf = check_buf(size_str);
+		push_num_to_str(g_spec.width > size_num ?\
+			ft_size_work_for_long(buf, size_num) : buf, &res, size_str, size_num);
+		if (SIZE_BUF < size_str)
+			write_and_free_malloc(buf, size_str);
+	}
+	// else
+		// nan_infinity(&real_num);
 }

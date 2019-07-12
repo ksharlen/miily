@@ -6,13 +6,13 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/10 18:22:09 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/11 15:10:21 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char			ft_chr_space_plus_dec(void)
+char				ft_chr_space_plus_dec(void)
 {
 	if (g_spec.flags & DEC)
 		return ('-');
@@ -39,12 +39,10 @@ static size_t		ft_size_num_for_int(long long int num)
 }
 
 static void			push_num_to_str(char *buf,
-long long int num, size_t size_str)
+long long int num, size_t size_str, size_t size_num)
 {
 	short	sign;
-	size_t	size_num;
 
-	size_num = ft_size_num_for_int(num);
 	sign = ((num < 0) ? -1 : 1);
 	while (size_num--)
 	{
@@ -79,7 +77,7 @@ void				ft_int_to_str(long long int num)
 	else
 		buf = ft_work_buf(GET_POINT, 0);
 	push_num_to_str(g_spec.width > size_num ?
-		ft_size_work(buf, size_num) : buf, num, size_str);
+		ft_size_work(buf, size_num) : buf, num, size_str, size_num);
 	if (SIZE_BUF < size_str)
 		write_and_free_malloc(buf, size_str);
 }
