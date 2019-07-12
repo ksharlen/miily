@@ -6,9 +6,10 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 19:04:07 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/11 10:11:40 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -78,12 +79,12 @@
 /*
 **Exeptions
 */
-# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
+//# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
 
-# define NUM_INT 			"dDoxXuUibB"
-# define NUM_DOUBLE 		"feEgGaA"
-# define NUM_STRING			"scSc"
-# define NUM_OTHER 			"nprkvr"
+# define NUM_INT 			"dDoOxXuUibB"
+# define NUM_DOUBLE 		"fFeEgGaA"
+# define NUM_STRING			"scSC" //!Проверить тут
+# define NUM_OTHER 			"nprkv"
 
 # define SIGNED_INT 		"dicCD"
 # define UNSIGNED_INT 		"uxXoUbB"
@@ -102,6 +103,15 @@
 
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
+
+typedef struct				s_date
+{
+	int						min;
+	int						hours;
+	int						days;
+	int						months;
+	int						years;
+}							t_date;
 
 typedef union				s_uni
 {
@@ -182,6 +192,14 @@ void						ft_memset_buf(int sym, int size);
 int							ft_check_loc_buf(int size);
 
 void						ft_print_test(const char *form);
+
+void						date_to_str(va_list);
+int							get_quan_days(int month, int years);
+int							get_leap(int years);
+void						push_buf_sym_time(int num, char sym);
+t_date						get_date(unsigned long long int num_date, t_date date);
+void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
+void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
 
 void						test_d(void);
 void						test_o(void);
