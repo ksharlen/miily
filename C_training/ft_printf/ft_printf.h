@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 19:07:10 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/12 09:43:15 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,11 @@
 # define SUPPORT_INT 		"diouxXn"
 # define SUPPORT_FLOAT 		"feEgGaAF"
 
-# define TWOPOWTWENTYEIGHT	268435456
-# define FIVEPOWTWENTEEN	244140625
+# define TWO_POW_TWENTY_EIGHT	268435456
+# define FIVE_POW_TWENTEEN	244140625
 
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
-# define CHECK_MOD(x)			((x) > 0) ? (x) : -(x)
+# define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
 
 typedef struct				s_date
 {
@@ -163,6 +163,7 @@ char						*ft_ptr_to_str(unsigned long long ptr);
 void						ft_str_to_str(va_list format);
 size_t						ft_base_depth(unsigned long long int num, int base);
 void						ft_char_to_str(va_list format);
+char						ft_chr_space_plus_dec(void);
 void						not_spec(void);
 
 char						*ft_size_work(char *str, size_t size_num);
@@ -206,6 +207,7 @@ void						test_o(void);
 void						test_x(void);
 void						test_s(void);
 void						test_b(void);
+void						test_f(void);
 void						test_other(void);
 /*
 **void						__TEST__return_printf(int flag);
