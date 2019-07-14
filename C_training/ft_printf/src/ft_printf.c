@@ -6,13 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/14 14:02:56 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:31:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-#warning "haha"
 
 t_spec			g_spec;
 

@@ -14,7 +14,7 @@ t_date	get_date(unsigned long long int num_date, t_date date)
 	return (date);
 }
 
-static	t_date work_data(t_date date)
+static	t_date work_date(t_date date)
 {
 	int		day_in_month;
 
@@ -42,7 +42,7 @@ static	void push_buf(int date, char sym)
 	ft_strdel(&str);
 }
 
-static void	work_buf(t_date date)
+static void	work_iso(t_date date)
 {
 	int iso_years;
 
@@ -67,6 +67,6 @@ void	date_to_str(va_list format) //va_list format
 
 	num_date = va_arg(format, unsigned long long int);
 	date = get_date(num_date, date);
-	date = work_data(date);
-	work_buf(date);
+	date = work_date(date);
+	work_iso(date);
 }

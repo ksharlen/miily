@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void		ft_define_spec(const char *format_string)
+static void		define_spec(const char *format_string)
 {
 	char		format;
 
@@ -20,10 +20,9 @@ static void		ft_define_spec(const char *format_string)
 	format = *format_string;
 	g_spec.spec = format;
 	++g_spec.shift_spec;
-	//printf("spec = %c\n", g_spec.spec);
 }
 
-static void		ft_count_sym_to_spec(const char *format)
+static void		count_sym_to_spec(const char *format)
 {
 	g_spec.shift_spec = 0;
 	g_spec.spec = 0;
@@ -34,7 +33,7 @@ static void		ft_count_sym_to_spec(const char *format)
 	}
 }
 
-static void		ft_control_var(va_list format)
+static void		control_var(va_list format)
 {
 	if (check_the_entry(NUM_INT, g_spec.spec))
 		select_num_sys(format);
@@ -58,10 +57,10 @@ static void		call_fun_format(const char *format, va_list form)
 	int			skip_percent;
 
 	skip_percent = 1;
-	ft_count_sym_to_spec(format + skip_percent);
-	ft_define_spec(format + skip_percent);
-	ft_work_spec_form(format + skip_percent, form);
-	ft_control_var(form);
+	count_sym_to_spec(format + skip_percent);
+	define_spec(format + skip_percent);
+	work_spec_form(format + skip_percent, form);
+	control_var(form);
 }
 
 void			work_to_format(const char *format, va_list form)
@@ -77,8 +76,10 @@ void			work_to_format(const char *format, va_list form)
 		{
 			if (*format == '{' && *(format + 1) == '/' &&
 				(g_spec.shift_spec = color_format(format + 2)) > 2)
-				(format += g_spec.shift_spec) &&
-				(g_spec.ret_printf -= g_spec.shift_spec);
+			{
+				format += g_spec.shift_spec;
+				g_spec.ret_printf -= g_spec.shift_spec;
+			}
 			else
 			{
 				work_buf(format, 1);
