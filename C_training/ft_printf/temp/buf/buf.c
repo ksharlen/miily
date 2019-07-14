@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:32:28 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 10:58:09 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_buf			g_buf;
 
-static	int		ft_check_loc_buf(int size)
+static	int		check_loc_buf(int size)
 {
 	if (SIZE_BUF < size)
 		return (-1);
@@ -24,10 +24,10 @@ static	int		ft_check_loc_buf(int size)
 		return (0);
 }
 
-void			ft_write_buf_and_clean(char *buf)
+void			write_buf_and_clean(char *buf)
 {
 	if (!buf)
-		ft_work_buf(NULL, SIZE_BUF - g_buf.size_write + 1);
+		work_buf(NULL, SIZE_BUF - g_buf.size_write + 1);
 	else if (g_buf.size_write > 0)
 	{
 		g_buf.ret_write += write(1, buf, g_buf.size_write);
@@ -68,18 +68,18 @@ static void		ft_write_big_data(char **inbuf, int *size_inbuf)
 	}
 }
 
-void		ft_memset_buf(int sym, int size)
+void		memset_buf(int sym, int size)
 {
 	char 	*buf;
 	int 	ret_check_loc;
 
-	buf = ft_work_buf(NULL, 0);
-	ret_check_loc = ft_check_loc_buf(size);
+	buf = work_buf(NULL, 0);
+	ret_check_loc = check_loc_buf(size);
 	if (ret_check_loc == 1)
-		ft_write_buf_and_clean(NULL);
+		write_buf_and_clean(NULL);
 	else if (ret_check_loc == -1)
 	{
-		ft_write_buf_and_clean(NULL);
+		write_buf_and_clean(NULL);
 		g_buf.ret_write += write(1, ft_memset(buf, sym, size), size);
 	}
 	ft_memset(buf, sym, size);
@@ -87,7 +87,7 @@ void		ft_memset_buf(int sym, int size)
 	g_buf.size_buf -= size;
 }
 
-char			*ft_work_buf(char *inbuf, int size_inbuf)
+char			*work_buf(char *inbuf, int size_inbuf)
 {
 	static char buf[SIZE_BUF];
 	char 		*ret_buf;
@@ -95,16 +95,16 @@ char			*ft_work_buf(char *inbuf, int size_inbuf)
 	char		*p_inbuf;
 
 	p_inbuf = inbuf;
-	ret_check_loc = ft_check_loc_buf(size_inbuf);
+	ret_check_loc = check_loc_buf(size_inbuf);
 	ret_buf = buf;
 	if (ret_check_loc == 1)
 	{
-		ft_write_buf_and_clean(buf);
+		write_buf_and_clean(buf);
 		ret_buf = (buf + g_buf.size_write);
 	}
 	else if (ret_check_loc == -1)
 	{
-		ft_write_buf_and_clean(buf);
+		write_buf_and_clean(buf);
 		ft_write_big_data(&p_inbuf, &size_inbuf);
 	}
 	ret_buf = ft_push_buf(p_inbuf, size_inbuf, buf);

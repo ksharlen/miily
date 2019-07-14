@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int_to_str.c                                    :+:      :+:    :+:   */
+/*   int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char				ft_chr_space_plus_dec(void)
+char				chr_space_plus_dec(void)
 {
 	if (g_spec.flags & DEC)
 		return ('-');
@@ -52,10 +52,10 @@ long long int num, size_t size_str, size_t size_num)
 		g_spec.size_buf--;
 	}
 	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
-		buf[0] = ft_chr_space_plus_dec();
+		buf[0] = chr_space_plus_dec();
 }
 
-void				ft_int_to_str(long long int num)
+void				int_to_str(long long int num)
 {
 	size_t		size_num;
 	size_t		size_str;
@@ -65,8 +65,8 @@ void				ft_int_to_str(long long int num)
 	size_str = (size_num < g_spec.width ? g_spec.width : size_num);
 	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
 	{
-		ft_write_buf_and_clean(WRITE_BUF);
-		buf = ft_work_buf(GET_POINT, 0);
+		write_buf_and_clean(WRITE_BUF);
+		buf = work_buf(GET_POINT, 0);
 	}
 	else if (SIZE_BUF < size_str)
 	{
@@ -75,9 +75,9 @@ void				ft_int_to_str(long long int num)
 			exit(0);
 	}
 	else
-		buf = ft_work_buf(GET_POINT, 0);
+		buf = work_buf(GET_POINT, 0);
 	push_num_to_str(g_spec.width > size_num ?
-		ft_size_work(buf, size_num) : buf, num, size_str, size_num);
+		size_work(buf, size_num) : buf, num, size_str, size_num);
 	if (SIZE_BUF < size_str)
 		write_and_free_malloc(buf, size_str);
 }

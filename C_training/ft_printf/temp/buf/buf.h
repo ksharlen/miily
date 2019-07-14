@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   buf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:30:51 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 11:05:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 #define SIZE_BUF 100
 #define WRITE_BUF NULL
 
-char	*ft_work_buf(char *inbuf, int size_inbuf);
-void	ft_write_buf_and_clean(char *buf);
-void	ft_memset_buf(int sym, int size);
+char	*work_buf(char *inbuf, int size_inbuf);
+void	write_buf_and_clean(char *buf);
+void	memset_buf(int sym, int size);
 
 typedef struct		s_buf
 {

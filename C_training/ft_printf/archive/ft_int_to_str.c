@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int_to_str.c                                    :+:      :+:    :+:   */
+/*   int_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cormund <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,7 +27,7 @@ static size_t	ft_size_num(long long int num)
 
 //g_spec.flags |= DEC;
 
-char			*ft_int_to_str(long long int num)
+char			*int_to_str(long long int num)
 {
 	char 		*all_str;
 	size_t		size_num;

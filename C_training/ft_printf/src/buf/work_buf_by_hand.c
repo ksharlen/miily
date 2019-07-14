@@ -6,24 +6,24 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 11:12:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_memset_buf(int sym, int size)
+void		memset_buf(int sym, int size)
 {
 	char 	*buf;
 	int 	ret_check_loc;
 
-	buf = ft_work_buf(NULL, 0);
-	ret_check_loc = ft_check_loc_buf(size);
+	buf = work_buf(NULL, 0);
+	ret_check_loc = check_loc_buf(size);
 	if (ret_check_loc == 1)
-		ft_write_buf_and_clean(NULL);
+		write_buf_and_clean(NULL);
 	else if (ret_check_loc == -1)
 	{
-		ft_write_buf_and_clean(NULL);
+		write_buf_and_clean(NULL);
 		g_spec.ret_printf += write(g_spec.fd, ft_memset(buf, sym, size), size);
 	}
 	else

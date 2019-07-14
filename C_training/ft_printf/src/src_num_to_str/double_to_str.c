@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_double_to_str.c                                 :+:      :+:    :+:   */
+/*   double_to_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/12 18:25:07 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/14 14:02:56 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ static int					rounding_number(t_long *res, int len)
 
 
 
-char						*ft_size_work_for_long(char *str, size_t size_num)
+char						*size_work_for_long(char *str, size_t size_num)
 {
 	if (g_spec.flags & DASH)
 		ft_memset(str + size_num, ' ', g_spec.width - size_num);
@@ -204,7 +204,7 @@ static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t
 {
 	size_str -= size_num;
 	if ((g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC) && size_num--)
-		*buf++ = ft_chr_space_plus_dec();
+		*buf++ = chr_space_plus_dec();
 	if (!(g_spec.flags & DASH) && g_spec.flags & ZERO)
 		while (size_str--)
 			*buf++ = '0';
@@ -279,8 +279,8 @@ char						*check_buf(ssize_t size_str)
 	if (SIZE_BUF >= size_str)
 	{
 		if (g_spec.size_buf < size_str)
-			ft_write_buf_and_clean(WRITE_BUF);
-		buf = ft_work_buf(GET_POINT, 0);
+			write_buf_and_clean(WRITE_BUF);
+		buf = work_buf(GET_POINT, 0);
 		g_spec.size_write += size_str;
 		g_spec.size_buf -= size_str;
 	}
@@ -289,7 +289,7 @@ char						*check_buf(ssize_t size_str)
 	return (buf);
 }
 
-void						ft_double_to_str(va_list format)
+void						double_to_str(va_list format)
 {
 	t_uni					real_num;
 	t_long					res;
@@ -309,7 +309,7 @@ void						ft_double_to_str(va_list format)
 		size_str = g_spec.width > size_num ? g_spec.width : size_num;
 		buf = check_buf(size_str);
 		push_num_to_str(g_spec.width > size_num ?\
-			ft_size_work_for_long(buf, size_num) : buf, &res, size_str, size_num);
+			size_work_for_long(buf, size_num) : buf, &res, size_str, size_num);
 		if (SIZE_BUF < size_str)
 			write_and_free_malloc(buf, size_str);
 	}

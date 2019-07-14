@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <<marvin@42.fr>>                  +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:32:45 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/01 11:04:08 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:21 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int			main(void)
 	g_buf.size_buf = SIZE_BUF;
 	g_buf.ret_write = 0;
 
-	ft_work_buf("hello world\n", ft_strlen("hello world"));
-	ft_memset_buf('0', 13);
-	ft_write_buf_and_clean(NULL);
+	work_buf("hello world\n", ft_strlen("hello world"));
+	memset_buf('0', 13);
+	write_buf_and_clean(NULL);
 	return (0);
 }

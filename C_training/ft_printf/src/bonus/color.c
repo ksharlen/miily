@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 16:10:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:03:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ static void		ft_push_buf_and_clean_string(char *str_clean, int size_str)
 	char *str;
 
 	str = "\e[";
-	ft_work_buf("\e[", 2);
-	ft_work_buf(str_clean, size_str);
+	work_buf("\e[", 2);
+	work_buf(str_clean, size_str);
 	ft_strdel(&str_clean);
 }
 
-int				ft_color_format(const char *string)
+int				color_format(const char *string)
 {
 	char		*color;
 	int			shift;

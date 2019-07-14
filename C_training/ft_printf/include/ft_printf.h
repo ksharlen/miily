@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/12 09:43:15 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,44 +153,44 @@ extern	t_spec				g_spec;
 
 int							ft_printf(const char *format, ...);
 
-int							ft_l_format(const int next_symbal);
-int							ft_h_format(const int next_symbal);
-int							ft_j_z_t_format(const int check_mod);
-int							ft_big_l(const int check_mod);
+int							l_format(const int next_symbal);
+int							h_format(const int next_symbal);
+int							j_z_t_format(const int check_mod);
+int							big_l(const int check_mod);
 
-void						ft_int_to_str(long long int num);
-char						*ft_ptr_to_str(unsigned long long ptr);
-void						ft_str_to_str(va_list format);
-size_t						ft_base_depth(unsigned long long int num, int base);
-void						ft_char_to_str(va_list format);
-char						ft_chr_space_plus_dec(void);
+void						int_to_str(long long int num);
+char						*ptr_to_str(unsigned long long ptr);
+void						str_to_str(va_list format);
+size_t						base_depth(unsigned long long int num, int base);
+void						char_to_str(va_list format);
+char						chr_space_plus_dec(void);
 void						not_spec(void);
 
-char						*ft_size_work(char *str, size_t size_num);
-void						ft_work_to_format(const char *format, va_list form);
-void						ft_work_spec_form(const char *format, va_list form);
+char						*size_work(char *str, size_t size_num);
+void						work_to_format(const char *format, va_list form);
+void						work_spec_form(const char *format, va_list form);
 
-int							ft_ismy(char form);
+int							ismy(char form);
 
-int							ft_str_size_num(const char *format);
-int							ft_check_the_entry(const char *def_str,
+int							str_size_num(const char *format);
+int							check_the_entry(const char *def_str,
 const int sym);
 
-void						ft_select_num_sys(va_list format);
-char						*ft_work_buf(const char *inbuf, int size_inbuf);
-void						ft_write_buf_and_clean(char *buf);
-void						ft_other_spec(va_list format);
-void						ft_double_to_str(va_list format);
-void						ft_base_to_str(unsigned long long int num);
-int							ft_color_format(const char *string);
+void						select_num_sys(va_list format);
+char						*work_buf(const char *inbuf, int size_inbuf);
+void						write_buf_and_clean(char *buf);
+void						other_spec(va_list format);
+void						double_to_str(va_list format);
+void						base_to_str(unsigned long long int num);
+int							color_format(const char *string);
 void						invisible_sym(va_list format);
 void						write_and_free_malloc(char *buf, size_t size_str);
 
 void						write_to_file(va_list format);
-int							ft_mem_rec_cmp_for_color(char *str1,
+int							mem_rec_cmp_for_color(char *str1,
 char *str2, size_t n);
-void						ft_memset_buf(int sym, int size);
-int							ft_check_loc_buf(int size);
+void						memset_buf(int sym, int size);
+int							check_loc_buf(int size);
 
 void						ft_print_test(const char *form);
 
@@ -211,7 +211,7 @@ void						test_f(void);
 void						test_other(void);
 /*
 **void						__TEST__return_printf(int flag);
-**void						__TEST__check_ft_ismy(int flag);
+**void						__TEST__check_ismy(int flag);
 */
 
 #endif

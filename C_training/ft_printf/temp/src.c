@@ -41,9 +41,9 @@ static	void push_buf(int date, char sym)
 
 	str = ft_itoa(date);
 	len = ft_strlen(str);
-	ft_work_buf(str, len);
+	work_buf(str, len);
 	if (sym)
-		ft_work_buf(&sym, 1);
+		work_buf(&sym, 1);
 	ft_strdel(&str);
 }
 
@@ -52,7 +52,7 @@ static void	work_buf(t_date date)
 	int iso_years;
 
 	if ((iso_years = (4 - ft_size_num(date.years))) > 0)
-		ft_memset_buf('0', iso_years);
+		memset_buf('0', iso_years);
 		push_buf(date.years, '-');
 		push_buf_sym_time(date.months, '0');
 		push_buf(date.months, '-');
@@ -62,7 +62,7 @@ static void	work_buf(t_date date)
 		push_buf(date.hours, ':');
 		push_buf_sym_time(date.min, '0');
 		push_buf(date.min, 0);
-	ft_write_buf_and_clean(WRITE_BUF);
+	write_buf_and_clean(WRITE_BUF);
 }
 
 void	date_to_str(unsigned long long int num_date) //va_list format
