@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 16:55:57 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/06/30 10:31:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 13:58:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void		__TEST__return_printf(int flag)
 	}
 }
 
-void		__TEST__check_ft_ismy(int flag)
+void		__TEST__check_ismy(int flag)
 {
 	int		ascii;
 	int		ret_ft_isitmy;

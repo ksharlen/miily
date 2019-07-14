@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_work_to_format.c                                :+:      :+:    :+:   */
+/*   work_to_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/08 08:34:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:01:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		ft_count_sym_to_spec(const char *format)
 {
 	g_spec.shift_spec = 0;
 	g_spec.spec = 0;
-	while (!ft_ismy(*format) && *format)
+	while (!ismy(*format) && *format)
 	{
 		++g_spec.shift_spec;
 		++format;
@@ -36,19 +36,19 @@ static void		ft_count_sym_to_spec(const char *format)
 
 static void		ft_control_var(va_list format)
 {
-	if (ft_check_the_entry(NUM_INT, g_spec.spec))
-		ft_select_num_sys(format);
-	else if (ft_check_the_entry(NUM_STRING, g_spec.spec))
+	if (check_the_entry(NUM_INT, g_spec.spec))
+		select_num_sys(format);
+	else if (check_the_entry(NUM_STRING, g_spec.spec))
 	{
 		if (g_spec.spec == 'c' || g_spec.spec == 'C')
-			ft_char_to_str(format);
+			char_to_str(format);
 		else if (g_spec.spec == 's' || g_spec.spec == 'S')
-			ft_str_to_str(format);
+			str_to_str(format);
 	}
-	else if (ft_check_the_entry(NUM_DOUBLE, g_spec.spec))
-		ft_double_to_str(format);
-	else if (ft_check_the_entry(NUM_OTHER, g_spec.spec))
-		ft_other_spec(format);
+	else if (check_the_entry(NUM_DOUBLE, g_spec.spec))
+		double_to_str(format);
+	else if (check_the_entry(NUM_OTHER, g_spec.spec))
+		other_spec(format);
 	else
 		not_spec();
 }
@@ -64,7 +64,7 @@ static void		call_fun_format(const char *format, va_list form)
 	ft_control_var(form);
 }
 
-void			ft_work_to_format(const char *format, va_list form)
+void			work_to_format(const char *format, va_list form)
 {
 	while (*format)
 	{
@@ -76,12 +76,12 @@ void			ft_work_to_format(const char *format, va_list form)
 		else
 		{
 			if (*format == '{' && *(format + 1) == '/' &&
-				(g_spec.shift_spec = ft_color_format(format + 2)) > 2)
+				(g_spec.shift_spec = color_format(format + 2)) > 2)
 				(format += g_spec.shift_spec) &&
 				(g_spec.ret_printf -= g_spec.shift_spec);
 			else
 			{
-				ft_work_buf(format, 1);
+				work_buf(format, 1);
 				format++;
 			}
 		}

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base_depth.c                                    :+:      :+:    :+:   */
+/*   base_depth.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-size_t					ft_base_depth(unsigned long long int num, int base)
+size_t					base_depth(unsigned long long int num, int base)
 {
 	size_t				depth;
 	unsigned long long	num_cp;

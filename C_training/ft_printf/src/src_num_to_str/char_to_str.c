@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_to_str.c                                   :+:      :+:    :+:   */
+/*   char_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -21,8 +21,8 @@ static void	ft_push_buf_sa(char sym)
 {
 	char	*buf;
 
-	buf = ft_work_buf(&sym, 1);
-	ft_memset_buf(' ', g_spec.width);
+	buf = work_buf(&sym, 1);
+	memset_buf(' ', g_spec.width);
 	// ft_memset(buf, ' ', g_spec.width - 1);
 	// g_spec.size_write += (g_spec.width - 1);
 	// g_spec.size_buf -= (g_spec.width - 1);
@@ -36,12 +36,12 @@ static void	ft_push_buf_as(char sym)
 	for_zero = ' ';
 	if (g_spec.flags & ZERO)
 		for_zero = '0';
-	buf = ft_work_buf(GET_POINT, 0);
-	ft_memset_buf(for_zero, g_spec.width);
+	buf = work_buf(GET_POINT, 0);
+	memset_buf(for_zero, g_spec.width);
 	// ft_memset(buf, for_zero, g_spec.width - 1);
 	// g_spec.size_write += (g_spec.width - 1);
 	// g_spec.size_buf -= (g_spec.width - 1);
-	ft_work_buf(&sym, 1);
+	work_buf(&sym, 1);
 }
 
 static void	ft_push_buf(char sym)
@@ -55,10 +55,10 @@ static void	ft_push_buf(char sym)
 			ft_push_buf_as(sym);
 	}
 	else
-		ft_work_buf(&sym, 1);
+		work_buf(&sym, 1);
 }
 
-void		ft_char_to_str(va_list format)
+void		char_to_str(va_list format)
 {
 	char	sym;
 

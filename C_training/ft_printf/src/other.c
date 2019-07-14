@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:58:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/03 10:17:38 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:08 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int					ft_check_the_entry(const char *def_str, const int sym)
+int					check_the_entry(const char *def_str, const int sym)
 {
 	if (ft_memchr(def_str, sym, ft_strlen(def_str)))
 		return (1);
@@ -20,7 +20,7 @@ int					ft_check_the_entry(const char *def_str, const int sym)
 		return (0);
 }
 
-int					ft_str_size_num(const char *format)
+int					str_size_num(const char *format)
 {
 	int				ret;
 
@@ -30,7 +30,7 @@ int					ft_str_size_num(const char *format)
 	return (ret);
 }
 
-int					ft_ismy(char form)
+int					ismy(char form)
 {
 	if (((form >= 0 && form < 32) || (form > 32 && form < 35) ||
 		form == 37 || form == '%' || form == '$' || form == '&' ||
@@ -45,7 +45,7 @@ int					ft_ismy(char form)
 	return (0);
 }
 
-int					ft_mem_rec_cmp_for_color(char *str1, char *str2, size_t n)
+int					mem_rec_cmp_for_color(char *str1, char *str2, size_t n)
 {
 	unsigned char	*s1;
 	unsigned char	*s2;
@@ -74,7 +74,7 @@ char			*type;
 		type = "hh";
 	else if (g_spec.mod & PLUS)
 		type = "h";
-	else if (g_spec.mod & DASH && ft_check_the_entry(NUM_DOUBLE, g_spec.spec))
+	else if (g_spec.mod & DASH && check_the_entry(NUM_DOUBLE, g_spec.spec))
 		type = "L";
 	else if (g_spec.mod & DASH)
 		type = "l";

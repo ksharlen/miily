@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base_to_str.c                                   :+:      :+:    :+:   */
+/*   base_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/11 13:28:50 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/14 14:02:56 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char			*ft_size_work(char *str, size_t size_num)
+char			*size_work(char *str, size_t size_num)
 {
 	if (g_spec.flags & DASH)
 		ft_memset(str + size_num, ' ', g_spec.width - size_num);
@@ -32,7 +32,7 @@ unsigned long long int num, size_t size_str, int base)
 	int						cp_num;
 	size_t					size_num;
 
-	size_num = ft_base_depth(num, base);
+	size_num = base_depth(num, base);
 	cp_num = num;
 	while (size_num--)
 	{
@@ -54,7 +54,7 @@ void		write_and_free_malloc(char *buf, size_t size_str)
 {
 	g_spec.size_write -= size_str;
 	g_spec.size_buf += size_str;
-	ft_write_buf_and_clean(WRITE_BUF);
+	write_buf_and_clean(WRITE_BUF);
 	g_spec.ret_printf += write(g_spec.fd, buf, size_str);
 	ft_strdel(&buf);
 }
@@ -65,12 +65,12 @@ static void		ft_work_base(unsigned long long num, int base)
 	size_t		size_num;
 	size_t		size_str;
 
-	size_num = ft_base_depth(num, base);
+	size_num = base_depth(num, base);
 	size_str = g_spec.width > size_num ? g_spec.width : size_num;
 	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
 	{
-		ft_write_buf_and_clean(WRITE_BUF);
-		buf = ft_work_buf(GET_POINT, 0);
+		write_buf_and_clean(WRITE_BUF);
+		buf = work_buf(GET_POINT, 0);
 	}
 	else if (SIZE_BUF < size_str)
 	{
@@ -79,14 +79,14 @@ static void		ft_work_base(unsigned long long num, int base)
 			exit(0);
 	}
 	else
-		buf = ft_work_buf(GET_POINT, 0);
+		buf = work_buf(GET_POINT, 0);
 	push_num_to_str(g_spec.width > size_num ?\
-		ft_size_work(buf, size_num) : buf, num, size_str, base);
+		size_work(buf, size_num) : buf, num, size_str, base);
 	if (SIZE_BUF < size_str)
 		write_and_free_malloc(buf, size_str);
 }
 
-void			ft_base_to_str(unsigned long long int num)
+void			base_to_str(unsigned long long int num)
 {
 	int			base;
 
