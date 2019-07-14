@@ -4,13 +4,15 @@ SRC_FILES := $(wildcard $(addsuffix /*.c, $(SRC_DIRS)))
 OBJ_FILES := $(notdir $(SRC_FILES))
 OBJ_FILES := $(OBJ_FILES:.c=.o)
 CC := gcc
-INCLUDE_DIR := ./include
-INCLUDE_DIR := $(addprefix -I , $(INCLUDE_DIR))
+LIBFT := libft.a
+#INCLUDE_DIR := ./include
+#INCLUDE_DIR := $(addprefix -I , $(INCLUDE_DIR))
+INCLUDE_DIR := -I ./include
 REMOVE := /bin/rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) -lft
+$(NAME): $(OBJ_FILES)
 	ar rc $@ $(OBJ_FILES)
 	ranlib $@
 
@@ -24,11 +26,11 @@ clean:
 	$(REMOVE) $(OBJ_FILES)
 
 .PHONY: dclean
-dclean: clean
+dclean:
 	$(REMOVE) $(wildcard *.d)
 
 .PHONY: fclean
-fclean: dclean
+fclean: clean
 	$(REMOVE) $(NAME)
 
-include $(wildcard *.d)
+#include $(wildcard *.d)
