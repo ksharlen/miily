@@ -165,7 +165,7 @@ static int					rounding_number(t_long *res, int len)
 	int						i;
 
 	i = res->len_fract - len - 1;
-	if (res->nbr_fract[i] >= 5 && (banker_rounding(res, i) || ++i == res->len_fract) && (res->nbr_fract[i] += 1))
+	if (res->nbr_fract[i] >= 5 && (banker_rounding(res, i) && (res->nbr_fract[i] += 1) || ++i == res->len_fract && (res->nbr_fract[i] += 1)))
 		while(res->nbr_fract[i] == 10 && i != res->len_fract)
 		{
 			res->nbr_fract[i] = 0;
