@@ -12,18 +12,18 @@
 
 #include "ft_printf.h"
 
-// void						test(t_uni *u)
-// {
-// 	printf("exh = %d\n", u->bits.exp);
-// 	printf("sign = %d\n", u->bits.sign);
+void						test(t_uni *u)
+{
+	printf("exh = %d\n", u->bits.exp);
+	printf("sign = %d\n", u->bits.sign);
 
-// 	int i = 64;
-// 	while (i--)
-// 	{
-// 		printf("%lu", u->bits.mantissa >> i & 1);
-// 	}
-// 	printf("\n");
-// }
+	int i = 64;
+	while (i--)
+	{
+		printf("%lu", u->bits.mantissa >> i & 1);
+	}
+	printf("\n");
+}
 
 //! блок динной арифметики
 
@@ -148,25 +148,25 @@ void						malloc_long(t_uni *real_num, t_long *res)
 //! конец блока длинной арифметики
 
 // !блок функций для spec f_F
-static int					banker_rounding(t_long *res, int i)
+static int					banker_rounding(unsigned int *res, int i, int len)
 {
-	if (res->nbr_fract[i] > 5 || res->nbr_fract[i + 1] & 1)
+	if (res[i] > 5 || res[i + 1] & 1 || (i + 1) == len)
 		return (1);
 	while (i--)
 	{
-		if (res->nbr_fract[i])
+		if (res[i])
 			return (1);
 	}
 	return (0);
 }
 
-static int					rounding_number(t_long *res, int len)
+static int					rounding_number_with_fract(t_long *res, int len)
 {
 	int						i;
 
 	i = res->len_fract - len - 1;
-	if (res->nbr_fract[i] >= 5 && (banker_rounding(res, i) && (res->nbr_fract[i] += 1) || ++i == res->len_fract && (res->nbr_fract[i] += 1)))
-		while(res->nbr_fract[i] == 10 && i != res->len_fract)
+	if (res->nbr_fract[i] >= 5 && banker_rounding(res->nbr_fract, i, res->len_fract) && (res->nbr_fract[++i] += 1))
+		while(i != res->len_fract && res->nbr_fract[i] == 10)
 		{
 			res->nbr_fract[i] = 0;
 			res->nbr_fract[++i] += 1;
@@ -249,6 +249,12 @@ static void					nan_infinity(t_uni *real_num)
 	// }
 }
 
+void						rounding_number_for_e(t_long *res, size_t l)
+{
+	if (l >= res->len_int)
+		rounding_number_with_fract(res, l - res->len_int);
+}
+
 size_t						size_num_for_long(t_long *res)
 {
 	size_t					l;
@@ -256,12 +262,12 @@ size_t						size_num_for_long(t_long *res)
 	if (g_spec.spec == 'f' || g_spec.spec == 'F')
 	{
 		l = res->len_int + (g_spec.flags & DOT ? g_spec.accuracy : 6);
-		l += rounding_number(res, l - res->len_int);
+		l += rounding_number_with_fract(res, l - res->len_int);
 	}
 	else
 	{
 		l = (g_spec.flags & DOT ? g_spec.accuracy + 1 : 7);
-		/* code */
+		rounding_number_for_e(res, l);
 	}
 	if (g_spec.flags & HASH || !(g_spec.flags & DOT) ||\
 	(g_spec.flags & DOT && g_spec.accuracy))
@@ -299,6 +305,7 @@ void						double_to_str(va_list format)
 
 	real_num.num = pull_double_arg(format);
 	real_num.bits.exp -= 16383;
+	test(&real_num);
 	if (real_num.bits.sign)
 		g_spec.flags |= DEC;
 	if (real_num.bits.exp != -16384)
