@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/13 12:54:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/15 09:39:57 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 
 int		main(void)
 {
-	// test_s();
-	// test_o();
-	// test_x();
-	// test_d();
-	// test_f();
-	// test_other();
+	test_s();
+	test_o();
+	test_x();
+	test_d();
+	test_f();
+	test_other();
 
 	// int ret_ft;
 	// int ret;

@@ -48,8 +48,6 @@ long long int num, size_t size_str, size_t size_num)
 	{
 		buf[size_num] = num % 10 * sign + '0';
 		num /= 10;
-		g_spec.size_write++;
-		g_spec.size_buf--;
 	}
 	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
 		buf[0] = chr_space_plus_dec();
@@ -63,19 +61,7 @@ void				int_to_str(long long int num)
 
 	size_num = ft_size_num_for_int(num);
 	size_str = (size_num < g_spec.width ? g_spec.width : size_num);
-	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
-	{
-		write_buf_and_clean(WRITE_BUF);
-		buf = work_buf(GET_POINT, 0);
-	}
-	else if (SIZE_BUF < size_str)
-	{
-		buf = ft_memalloc(size_str);
-		if (!buf)
-			exit(0);
-	}
-	else
-		buf = work_buf(GET_POINT, 0);
+	buf = check_buf(size_str);
 	push_num_to_str(g_spec.width > size_num ?
 		size_work(buf, size_num) : buf, num, size_str, size_num);
 	if (SIZE_BUF < size_str)
