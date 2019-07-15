@@ -1,36 +1,64 @@
 NAME := libftprintf.a
-SRC_DIRS := src src/buf src/src_num_to_str src/bonus libft
-SRC_FILES := $(wildcard $(addsuffix /*.c, $(SRC_DIRS)))
-OBJ_FILES := $(notdir $(SRC_FILES))
-OBJ_FILES := $(OBJ_FILES:.c=.o)
-CC := gcc
 LIBFT := libft.a
-#INCLUDE_DIR := ./include
-#INCLUDE_DIR := $(addprefix -I , $(INCLUDE_DIR))
-INCLUDE_DIR := -I ./include
-REMOVE := /bin/rm -f
+CC := gcc
+CFLAGS := -Wall -Wextra -Werror
+DIR_BUF := buf/
+DIR_BONUS := bonus/
+DIR_NUM := src_num_to_str/
+DIR_SRC := src/
+
+SRC_MAIN := 	ft_printf.c\
+				other.c\
+				work_spec_form.c\
+				work_to_format.c
+
+SRC_BUF := 		buf.c\
+				work_buf_by_hand.c
+
+SRC_BONUS := color.c\
+				date.c\
+				for_date.c\
+				invisible_sym.c\
+				size_formats.c\
+				write_to_file.c
+
+SRC_NUM := base_depth.c\
+				base_to_str.c\
+				char_to_str.c\
+				data_to_str.c\
+				double_to_str.c\
+				int_to_str.c\
+				not_spec.c\
+				other_spec.c\
+				select_num_sys.c\
+				str_to_str.c
+
+OBJ1 := $(MAIN_SRC:.c=.o)
+OBJ2 := $(SRC_BUF:.c=.o)
+OBJ3 := $(SRC_BONUS:.c=.o)
+OBJ4 := $(SRC_NUM:.c=.o)
+
+OBJS := $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
+
+#ADD DIR PREFIX FOR ALL FILES .c
+SRC_BUF		:= $(addprefix $(DIR_BUF), $(SRC_BUF))
+SRC_BONUS	:= $(addprefix $(DIR_BONUS), $(SRC_BONUS))
+SRC_NUM		:= $(addprefix $(DIR_NUM), $(SRC_NUM))
+
+#ADD SRC PREFIX FOR ALL FILES .c
+MAIN_SRC	:= $(addprefix $(DIR_SRC), $(SRC_MAIN))
+SRC_BUF 	:= $(addprefix $(DIR_SRC), $(SRC_BUF))
+SRC_BONUS	:= $(addprefix $(DIR_SRC), $(SRC_BONUS))
+SRC_NUM		:= $(addprefix $(DIR_SRC), $(SRC_NUM))
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES)
-	ar rc $@ $(OBJ_FILES)
-	ranlib $@
+$(NAME): $(OBJS)
+	ar rc $(NAME)
 
-VPATH := $(SRC_DIRS)
-
-$(OBJ_FILES): %.o: %.c
-	$(CC) -c $^ $(INCLUDE_DIR) -MD -pipe
-
-.PHONY: clean
-clean:
-	$(REMOVE) $(OBJ_FILES)
-
-.PHONY: dclean
-dclean:
-	$(REMOVE) $(wildcard *.d)
-
-.PHONY: fclean
-fclean: clean
-	$(REMOVE) $(NAME)
-
-#include $(wildcard *.d)
+echo:
+	@echo main:	$(MAIN_SRC)
+	@echo src_buf: $(SRC_BUF)
+	@echo src_bonus: $(SRC_BONUS)
+	@echo src_num: $(SRC_NUM)
+	@echo objs: $(OBJS)
