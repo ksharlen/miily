@@ -21,8 +21,6 @@ char			*size_work(char *str, size_t size_num)
 		ft_memset(str, ' ', g_spec.width - size_num);
 		str += g_spec.width - size_num;
 	}
-	g_spec.size_write += g_spec.width - size_num;
-	g_spec.size_buf -= g_spec.width - size_num;
 	return (str);
 }
 
@@ -39,8 +37,6 @@ unsigned long long int num, size_t size_str, int base)
 		buf[size_num] = (num % base > 9 ? num %
 		base + g_spec.spec - 33 : num % base + '0');
 		num /= base;
-		g_spec.size_write++;
-		g_spec.size_buf--;
 	}
 	if (g_spec.flags & HASH && cp_num &&
 	(g_spec.spec == 'x' || g_spec.spec == 'X'))
@@ -52,8 +48,6 @@ unsigned long long int num, size_t size_str, int base)
 
 void		write_and_free_malloc(char *buf, size_t size_str)
 {
-	g_spec.size_write -= size_str;
-	g_spec.size_buf += size_str;
 	write_buf_and_clean(WRITE_BUF);
 	g_spec.ret_printf += write(g_spec.fd, buf, size_str);
 	ft_strdel(&buf);
@@ -67,19 +61,7 @@ static void		ft_work_base(unsigned long long num, int base)
 
 	size_num = base_depth(num, base);
 	size_str = g_spec.width > size_num ? g_spec.width : size_num;
-	if (g_spec.size_buf < size_str && SIZE_BUF >= size_str)
-	{
-		write_buf_and_clean(WRITE_BUF);
-		buf = work_buf(GET_POINT, 0);
-	}
-	else if (SIZE_BUF < size_str)
-	{
-		buf = ft_memalloc(size_str);
-		if (!buf)
-			exit(0);
-	}
-	else
-		buf = work_buf(GET_POINT, 0);
+	buf = check_buf(size_str);
 	push_num_to_str(g_spec.width > size_num ?\
 		size_work(buf, size_num) : buf, num, size_str, base);
 	if (SIZE_BUF < size_str)
