@@ -14,7 +14,7 @@
 
 void						test(t_uni *u)
 {
-	printf("exh = %d\n", u->bits.exp);
+	// printf("exh = %d\n", u->bits.exp);
 	printf("sign = %d\n", u->bits.sign);
 
 	int i = 64;
@@ -135,6 +135,8 @@ void						malloc_long(t_uni *real_num, t_long *res)
 		;
 	exp -= i;
 	res->len_fract = (exp < -6 ? NUM_MOD(exp) : 6);
+	printf("exp = %d\n", exp);
+
 	res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
 	res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
 	res->nbr_tmp = (unsigned int *)malloc(sizeof(int) * res->len_tmp);
