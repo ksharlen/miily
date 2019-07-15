@@ -264,7 +264,7 @@ size_t						size_num_for_long(t_long *res)
 		/* code */
 	}
 	if (g_spec.flags & HASH || !(g_spec.flags & DOT) ||\
-	g_spec.flags & DOT && g_spec.accuracy)
+	(g_spec.flags & DOT && g_spec.accuracy))
 		++l;
 	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
 		++l;
