@@ -1,6 +1,6 @@
 
 NAME := libftprintf.a
-SRC_DIRS := src src/buf src/src_num_to_str src/bonus libft
+SRC_DIRS := src src/buf src/src_num_to_str src/bonus libft tests
 SRC_FILES := $(wildcard $(addsuffix /*.c, $(SRC_DIRS)))
 OBJ_FILES := $(notdir $(SRC_FILES))
 OBJ_FILES := $(OBJ_FILES:.c=.o)
@@ -20,7 +20,7 @@ $(NAME): $(OBJ_FILES)
 VPATH := $(SRC_DIRS)
 
 $(OBJ_FILES): %.o: %.c
-	$(CC) -c $^ $(INCLUDE_DIR) -pipe
+	$(CC) -c $^ $(INCLUDE_DIR) -pipe -w
 
 .PHONY: clean
 clean:
