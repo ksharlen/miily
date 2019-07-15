@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 19:11:44 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_check_loc_buf(int size)
+int		check_loc_buf(int size)
 {
 	if (SIZE_BUF < size)
 		return (-1);
@@ -22,10 +22,10 @@ int		ft_check_loc_buf(int size)
 		return (0);
 }
 
-void			ft_write_buf_and_clean(char *buf)
+void			write_buf_and_clean(char *buf)
 {
 	if (!buf)
-		ft_work_buf(NULL, SIZE_BUF - g_spec.size_write + 1);
+		work_buf(NULL, SIZE_BUF - g_spec.size_write + 1);
 	else if (g_spec.size_write > 0)
 	{
 		g_spec.ret_printf += write(g_spec.fd, buf, g_spec.size_write);
@@ -66,7 +66,7 @@ static void		ft_write_big_data(const char **inbuf, int *size_inbuf)
 	}
 }
 
-char			*ft_work_buf(const char *inbuf, int size_inbuf)
+char			*work_buf(const char *inbuf, int size_inbuf)
 {
 	static char buf[SIZE_BUF];
 	char		*ret_buf;
@@ -74,15 +74,15 @@ char			*ft_work_buf(const char *inbuf, int size_inbuf)
 	const char	*p_inbuf;
 
 	p_inbuf = inbuf;
-	ret_check_loc = ft_check_loc_buf(size_inbuf);
+	ret_check_loc = check_loc_buf(size_inbuf);
 	if (ret_check_loc == 1)
 	{
-		ft_write_buf_and_clean(buf);
+		write_buf_and_clean(buf);
 		ret_buf = (buf + g_spec.size_write);
 	}
 	else if (ret_check_loc == -1)
 	{
-		ft_write_buf_and_clean(buf);
+		write_buf_and_clean(buf);
 		ft_write_big_data(&p_inbuf, &size_inbuf);
 	}
 	ret_buf = ft_push_buf(p_inbuf, size_inbuf, buf);

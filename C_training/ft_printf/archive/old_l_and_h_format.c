@@ -1,4 +1,4 @@
-void		ft_l_format(const char *format)
+void		l_format(const char *format)
 {
 		if ((*(++format) == 'l'))
 		{
@@ -12,7 +12,7 @@ void		ft_l_format(const char *format)
 		}
 }
 
-void		ft_h_format(const char *format)
+void		h_format(const char *format)
 {
 		if ((*(++format) == 'h'))
 		{
