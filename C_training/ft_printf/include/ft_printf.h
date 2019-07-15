@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:27:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/15 09:38:19 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,8 @@ void						push_buf_sym_time(int num, char sym);
 t_date						get_date(unsigned long long int num_date, t_date date);
 void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
 void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
+
+char						*check_buf(ssize_t size_str);
 
 void						test_d(void);
 void						test_o(void);
