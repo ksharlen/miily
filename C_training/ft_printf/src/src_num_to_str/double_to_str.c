@@ -150,7 +150,7 @@ void						malloc_long(t_uni *real_num, t_long *res)
 // !блок функций для spec f_F
 static int					banker_rounding(t_long *res, int i)
 {
-	if (res->nbr_fract[i] > 5 || res->nbr_fract[i + 1] & 1 || (i + 1 == res->len_fract && res->nbr_int[0] & 1))
+	if (res->nbr_fract[i] > 5 || res->nbr_fract[i + 1] & 1)
 		return (1);
 	while (i--)
 	{
@@ -165,14 +165,14 @@ static int					rounding_number(t_long *res, int len)
 	int						i;
 
 	i = res->len_fract - len - 1;
-	if (res->nbr_fract[i] >= 5 && banker_rounding(res, i) && (res->nbr_fract[++i] += 1))
+	if (res->nbr_fract[i] >= 5 && (banker_rounding(res, i) || ++i == res->len_fract) && (res->nbr_fract[i] += 1))
 		while(res->nbr_fract[i] == 10 && i != res->len_fract)
 		{
 			res->nbr_fract[i] = 0;
 			res->nbr_fract[++i] += 1;
 		}
 	i = 0;
-	if (res->nbr_fract[res->len_fract] && (res->nbr_int[i] += 1))
+	if (res->nbr_fract[res->len_fract] && res->nbr_int[i] & 1 && (res->nbr_int[i] += 1))
 		while (res->nbr_int[i] == 10 && i != res->len_int)
 		{
 			res->nbr_int[i] = 0;
