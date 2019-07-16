@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/15 09:38:19 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/16 17:26:04 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			100
+# define SIZE_BUF			128
 # define WRITE_BUF			NULL
 # define GET_POINT			WRITE_BUF
 
@@ -81,13 +81,13 @@
 */
 //# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
 
-# define NUM_INT 			"dDoOxXuUibB"
+# define NUM_INT 			"dDoOxXuUibBp"
 # define NUM_DOUBLE 		"fFeEgGaA"
-# define NUM_STRING			"scSC" //!Проверить тут
-# define NUM_OTHER 			"nprkv"
+# define NUM_STRING			"sc" //!Проверить тут
+# define NUM_OTHER 			"nrkv"
 
 # define SIGNED_INT 		"dicCD"
-# define UNSIGNED_INT 		"uxXoUbB"
+# define UNSIGNED_INT 		"puxXoUbB"
 
 # define UNDEF_BEH			"!\"&()/\\<=>?@[]^_`{}|~"
 # define SIZE_MOD			"zjlht"

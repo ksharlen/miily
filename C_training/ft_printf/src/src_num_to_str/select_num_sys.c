@@ -57,6 +57,8 @@ static unsigned long long	pull_unsigned_int_arg(va_list format)
 		ret = va_arg(format, size_t);
 	else if ((g_spec.spec == 'U' || g_spec.spec == 'O') && !g_spec.mod)
 		ret = va_arg(format, unsigned long);
+	else if (g_spec.spec == 'p')
+		ret = va_arg(format, uintptr_t);
 	else
 		ret = va_arg(format, unsigned int);
 	return (ret);

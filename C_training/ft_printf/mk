@@ -1,0 +1,3 @@
+all:
+	make -f Makefile
+	@gcc -w libftprintf.a main.c -I ./include

@@ -56,18 +56,12 @@ static void			ft_push_wa(char *inbuf)
 	{
 		buf = work_buf(inbuf, g_spec.size_num);
 		memset_buf(sym, g_spec.width);
-		// ft_memset(buf, ' ', g_spec.width);
-		// g_spec.size_write += g_spec.width;
-		// g_spec.size_buf -= g_spec.width;
 	}
 	else
 	{
 		buf = work_buf(GET_POINT, 0);
 		if (g_spec.flags & ZERO)
 			sym = '0';
-		// ft_memset(buf, sym, g_spec.width);//!переполнение буфера подумать
-		// g_spec.size_write += g_spec.width;
-		// g_spec.size_buf -= g_spec.width;
 		memset_buf(sym, g_spec.width);
 		work_buf(inbuf, g_spec.size_num);
 	}
@@ -78,10 +72,18 @@ void				str_to_str(va_list format)
 	char			*inbuf;
 
 	inbuf = ft_get_va_arg(format);
-	if (inbuf)
-	{
-		g_spec.size_num = ft_strlen(inbuf);
-		ft_work_aw();
-		ft_push_wa(inbuf);
-	}
+	if (!inbuf)
+		inbuf = "(null)";
+	g_spec.size_num = ft_strlen(inbuf);
+	ft_work_aw();
+	ft_push_wa(inbuf);
+	// if (inbuf)
+	// {
+	// 	g_spec.size_num = ft_strlen(inbuf);
+	// 	ft_work_aw();
+	// 	ft_push_wa(inbuf);
+	// }
+	// else
+	// 	inbuf = "(null)";
+
 }

@@ -313,6 +313,4 @@ void						double_to_str(va_list format)
 		if (SIZE_BUF < size_str)
 			write_and_free_malloc(buf, size_str);
 	}
-	// else
-		// nan_infinity(&real_num);
 }
