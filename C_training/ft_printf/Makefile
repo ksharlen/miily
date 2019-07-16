@@ -63,7 +63,7 @@ OBJ4 := $(SRC_NUM:.c=.o)
 
 OBJS := $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
 
-all: $(NAME)
+all: $(DIR_BIN) $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(DIR_LIBFT)
@@ -71,17 +71,17 @@ $(NAME): $(OBJS)
 	mv $(LIBFT) $(NAME)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
 
-$(OBJS):%.o:%.c $(HEADERS) dir_obj
+$(OBJS):%.o:%.c
 	$(CC) -c $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
 
-dir_obj:
-	mkdir -p $(DIR_BIN)
+$(DIR_BIN):
+	mkdir -p $@
 
-clean:
+clean: clean_libft
 	$(REMOVE) $(addprefix $(DIR_BIN), $(OBJS))
 	$(REMOVE) $(DIR_BIN)
 
-fclean: clean
+fclean: clean fclean_libft
 	$(REMOVE) $(NAME)
 
 re: fclean all
@@ -91,5 +91,11 @@ echo:
 	@echo $(DIRS)
 	@echo $(SRC_BONUS)
 
-.PHONY: clean fclean re
+clean_libft:
+	make clean -C $(DIR_LIBFT)
+
+fclean_libft: clean_libft
+	make fclean -C $(DIR_LIBFT)
+
+.PHONY: clean fclean re clean_libft fclean_libft
 
