@@ -3,6 +3,7 @@ LIBFT := libft.a
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 REMOVE := /bin/rm -f
+DIR_BIN := bin/
 DIR_INCLUDE := -I ./include
 DIR_LIBFT := libft/
 DIR_BUF := buf/
@@ -53,6 +54,7 @@ OBJ4 := $(SRC_NUM:.c=.o)
 
 OBJS := $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
 OBJS_FOR_LIB := $(notdir $(OBJS))
+OBJS_FOR_LIB := $(addprefix $(DIR_BIN), $(OBJS_FOR_LIB))
 
 all: $(NAME)
 
@@ -64,7 +66,7 @@ $(NAME): $(OBJS)
 	ranlib $(NAME)
 
 $(OBJS): %.o: %.c
-	$(CC) -c $^ $(DIR_INCLUDE)
+	$(CC) -c $^ $(DIR_INCLUDE) -o $(DIR_BIN)
 
 clean:
 	$(REMOVE) $(OBJS_FOR_LIB)
