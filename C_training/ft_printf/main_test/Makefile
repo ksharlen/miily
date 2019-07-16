@@ -11,16 +11,18 @@ FLAGS := -g
 CC := gcc
 
 VPATH := $(source_dirs)
+.SILENT: all clean fclean echo re $(NAME) $(object_files)
 
 all: $(NAME)
 
 $(NAME): $(object_files)
-	make -C $(DIR_LIBFT)
-	mv $(DIR_LIBFT)$(LIBFT) .
-	$(CC) $(FLAGS) $(object_files) $(LIBFT) -o $(NAME) -I ../include
+	@make -C $(DIR_LIBFT)
+	@mv $(DIR_LIBFT)$(LIBFT) .
+	@$(CC) $(FLAGS) $(object_files) $(LIBFT) -o $(NAME) -I ../include
+	@./ft_printf
 
 $(object_files):%.o: %.c
-	$(CC) $(FLAGS) -c $^ -I ../include
+	@$(CC) $(FLAGS) -c $^ -I ../include
 
 clean:
 	$(remove) $(object_files)

@@ -155,19 +155,6 @@ void						malloc_long(t_uni *real_num, t_long *res)
 //! конец блока длинной арифметики
 
 // !блок функций для spec f_F
-static int					banker_rounding(unsigned int *nbr, int i, int len)
-{
-	if (nbr[i] > 5 || (i + 1) == len || nbr[i + 1] & 1)
-		return (1);
-	while (i--)
-	{
-		if (nbr[i])
-			return (1);
-	}
-	return (0);
-}
-
-
 
 
 char						*size_work_for_long(char *str, size_t size_num)
@@ -182,23 +169,23 @@ char						*size_work_for_long(char *str, size_t size_num)
 	return (str);
 }
 
-// static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num)
-// {
-// 	size_str -= size_num;
-// 	if ((g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC) && size_num--)
-// 		*buf++ = chr_space_plus_dec();
-// 	if (!(g_spec.flags & DASH) && g_spec.flags & ZERO)
-// 		while (size_str--)
-// 			*buf++ = '0';
-// 	while (res->len_int-- && (size_num-- > 0))
-// 		*buf++ = res->nbr_int[res->len_int] + '0';
-// 	if (size_num-- > 0)
-// 		*buf++ = '.';
-// 	while (res->len_fract-- && (size_num-- > 0))
-// 		*buf++ = res->nbr_fract[res->len_fract] + '0';
-// 	while (size_num-- > 0)
-// 		*buf++ = '0';
-// }
+int							push_e_to_str(char *buf, t_long *res, ssize_t size_num)
+{
+	int						n;
+	int						sign;
+
+	sign = res->e;
+	n = 0;
+	while (res->e || n < 2)
+	{
+		buf[--size_num] = (CHECK_MOD(res->e) % 10) + '0';
+		res->e /= 10;
+		++n;
+	}
+	buf[--size_num] = (sign >= 0 ? '+' : '-');
+	buf[--size_num] = g_spec.spec;
+	return (n + 2);
+}
 
 static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num)
 {
@@ -208,6 +195,8 @@ static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t
 	if (!(g_spec.flags & DASH) && g_spec.flags & ZERO)
 		while (size_str--)
 			*buf++ = '0';
+	if (g_spec.spec == 'e' || g_spec.spec == 'E')
+	 	size_num -= push_e_to_str(buf, res, size_num);
 	while (res->len_int-- && (size_num-- > 0))
 		*buf++ = res->nbr_tmp[--res->len_tmp] + '0';
 	if (size_num-- > 0)
@@ -249,6 +238,17 @@ static void					nan_infinity(t_uni *real_num)
 	// }
 }
 
+static int					banker_rounding(unsigned int *nbr, int i, int len)
+{
+	if (nbr[i] > 5 || (i + 1) == len || nbr[i + 1] & 1)
+		return (1);
+	while (i--)
+	{
+		if (nbr[i])
+			return (1);
+	}
+	return (0);
+}
 
 ssize_t						rounding_number(t_long *res, unsigned int *nbr, ssize_t i)
 {
@@ -267,6 +267,30 @@ ssize_t						rounding_number(t_long *res, unsigned int *nbr, ssize_t i)
 	return (0);
 }
 
+void						check_e(t_long *res)
+{
+	int						e;
+	size_t					len;
+
+	e = 0;
+	len = res->len_tmp - 1;
+	if (!res->nbr_tmp[len])
+	{
+		while (!res->nbr_tmp[len] && len)
+		{
+			--e;
+			--len;
+		}
+		if (!res->nbr_tmp[len] && !len)
+			e = 0;
+	}
+	else
+	{
+		e = res->len_int - 1;
+	}
+	res->e = e;
+}
+
 size_t						size_num_for_long(t_long *res)
 {
 	ssize_t					l;
@@ -279,7 +303,13 @@ size_t						size_num_for_long(t_long *res)
 	else
 	{
 		l = (g_spec.flags & DOT ? g_spec.accuracy + 1 : 7);
-		// rounding_number_for_e(res, l);
+		check_e(res);
+		if (res->e < 0)
+			res->len_tmp += res->e;
+		res->e += rounding_number(res, res->nbr_tmp, res->len_tmp - l - 1);
+		res->len_fract += res->e;
+		res->len_int = 1;
+		l += 4 + res->e / 10;
 	}
 	if (g_spec.flags & HASH || !(g_spec.flags & DOT) ||\
 	(g_spec.flags & DOT && g_spec.accuracy))

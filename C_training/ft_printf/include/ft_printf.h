@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/15 18:28:04 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/16 09:40:13 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ typedef struct				s_long
 	int						len_int;
     int						len_fract;
     int						len_tmp;
+	int						e;
 }							t_long;
 
 typedef struct				s_spec

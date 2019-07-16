@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
+#    By: cormund <cormund@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/15 09:56:07 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/16 09:44:23 by cormund          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,3 +113,5 @@ re: fclean all
 
 $(OBJ): %.o: %.c
 	@$(CC) $(FLAGS) -c $^ $(INCLUDE) -pipe
+
+.SILENT: all clean fclean re $(NAME)
