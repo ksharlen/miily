@@ -62,7 +62,6 @@ OBJ3 := $(SRC_BONUS:.c=.o)
 OBJ4 := $(SRC_NUM:.c=.o)
 
 OBJS := $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
-#OBJS := $(notdir $(OBJS))
 
 all: $(NAME)
 
