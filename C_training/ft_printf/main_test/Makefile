@@ -1,9 +1,8 @@
 NAME := ft_printf
 LIBFT := libft.a
-MAIN := main_ft_printf.c
 DIR_LIBFT := ../libft/
-source_dirs := . bonus buf src_num_to_str
-source_dirs := $(addprefix ../src/, $(source_dirs))
+source_dirs := bonus buf src_num_to_str .
+source_dirs := $(addprefix ../src/, $(source_dirs)) .
 source_files := $(wildcard $(addsuffix /*.c, $(source_dirs)))
 object_files := $(source_files:.c=.o)
 object_files := $(notdir $(object_files))
@@ -18,7 +17,7 @@ all: $(NAME)
 $(NAME): $(object_files)
 	make -C $(DIR_LIBFT)
 	mv $(DIR_LIBFT)$(LIBFT) .
-	$(CC) $(FLAGS) $(object_files) $(MAIN) $(LIBFT) -o $(NAME) -I ../include
+	$(CC) $(FLAGS) $(object_files) $(LIBFT) -o $(NAME) -I ../include
 
 $(object_files):%.o: %.c
 	$(CC) $(FLAGS) -c $^ -I ../include
@@ -28,5 +27,10 @@ clean:
 
 fclean: clean
 	$(remove) $(NAME)
+
+echo:
+	@echo $(source_dirs)
+	@echo $(source_files)
+	@echo $(object_files)
 
 re: fclean all

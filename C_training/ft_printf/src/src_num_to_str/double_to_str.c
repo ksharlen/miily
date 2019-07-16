@@ -14,8 +14,9 @@
 
 void						test(t_uni *u)
 {
-	// printf("exh = %d\n", u->bits.exp);
+	printf("exh = %d\n", u->bits.exp);
 	printf("sign = %d\n", u->bits.sign);
+	printf("man = %lu\n", u->bits.mantissa);
 
 	int i = 64;
 	while (i--)
@@ -121,6 +122,11 @@ void            			long_arithmetic(t_uni *real_num, t_long *res)
         }
         --real_num->bits.exp;
 	}
+	ft_memcpy(res->nbr_tmp, res->nbr_fract, res->len_fract * sizeof(int));
+	ft_memcpy(res->nbr_tmp + res->len_fract, res->nbr_int, res->len_int * sizeof(int));
+	res->nbr_dot = res->nbr_tmp + res->len_fract;
+	res->len_tmp = res->len_int + res->len_fract;
+	// freeX2
 }
 
 void						malloc_long(t_uni *real_num, t_long *res)
@@ -134,13 +140,12 @@ void						malloc_long(t_uni *real_num, t_long *res)
 	while (i-- && !(real_num->bits.mantissa >> (63 - i) & 1))
 		;
 	exp -= i;
-	res->len_fract = (exp < -6 ? NUM_MOD(exp) : 6);
-	printf("exp = %d\n", exp);
-
-	res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
+	res->len_fract = (exp < -6 && real_num->bits.mantissa ? NUM_MOD(exp) : 6);
+	// res->len_tmp = (res->len_int >= res->len_fract ? res->len_int : res->len_fract);
+	res->len_tmp = res->len_int + res->len_fract;
 	res->nbr_int = (unsigned int *)malloc(sizeof(int) * res->len_int);
-	res->nbr_tmp = (unsigned int *)malloc(sizeof(int) * res->len_tmp);
 	res->nbr_fract = (unsigned int *)malloc(sizeof(int) * (res->len_fract + 1));
+	res->nbr_tmp = (unsigned int *)malloc(sizeof(int) * res->len_tmp);
 	if (!res->nbr_int || !res->nbr_tmp || !res->nbr_fract)
 		exit(0);
 	ft_bzero(res->nbr_int, sizeof(int) * res->len_int);
@@ -150,43 +155,18 @@ void						malloc_long(t_uni *real_num, t_long *res)
 //! конец блока длинной арифметики
 
 // !блок функций для spec f_F
-static int					banker_rounding(unsigned int *res, int i, int len)
+static int					banker_rounding(unsigned int *nbr, int i, int len)
 {
-	if (res[i] > 5 || res[i + 1] & 1 || (i + 1) == len)
+	if (nbr[i] > 5 || (i + 1) == len || nbr[i + 1] & 1)
 		return (1);
 	while (i--)
 	{
-		if (res[i])
+		if (nbr[i])
 			return (1);
 	}
 	return (0);
 }
 
-static int					rounding_number_with_fract(t_long *res, int len)
-{
-	int						i;
-
-	i = res->len_fract - len - 1;
-	if (res->nbr_fract[i] >= 5 && banker_rounding(res->nbr_fract, i, res->len_fract) && (res->nbr_fract[++i] += 1))
-		while(i != res->len_fract && res->nbr_fract[i] == 10)
-		{
-			res->nbr_fract[i] = 0;
-			res->nbr_fract[++i] += 1;
-		}
-	i = 0;
-	if (res->nbr_fract[res->len_fract] && res->nbr_int[i] & 1 && (res->nbr_int[i] += 1))
-		while (res->nbr_int[i] == 10 && i != res->len_int)
-		{
-			res->nbr_int[i] = 0;
-			res->nbr_int[++i] += 1;
-		}
-	if (res->nbr_int[res->len_int])
-	{
-		++res->len_int;
-		return (1);
-	}
-	return (0);
-}
 
 
 
@@ -202,6 +182,24 @@ char						*size_work_for_long(char *str, size_t size_num)
 	return (str);
 }
 
+// static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num)
+// {
+// 	size_str -= size_num;
+// 	if ((g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC) && size_num--)
+// 		*buf++ = chr_space_plus_dec();
+// 	if (!(g_spec.flags & DASH) && g_spec.flags & ZERO)
+// 		while (size_str--)
+// 			*buf++ = '0';
+// 	while (res->len_int-- && (size_num-- > 0))
+// 		*buf++ = res->nbr_int[res->len_int] + '0';
+// 	if (size_num-- > 0)
+// 		*buf++ = '.';
+// 	while (res->len_fract-- && (size_num-- > 0))
+// 		*buf++ = res->nbr_fract[res->len_fract] + '0';
+// 	while (size_num-- > 0)
+// 		*buf++ = '0';
+// }
+
 static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num)
 {
 	size_str -= size_num;
@@ -211,11 +209,11 @@ static void					push_num_to_str(char *buf, t_long *res, size_t size_str, ssize_t
 		while (size_str--)
 			*buf++ = '0';
 	while (res->len_int-- && (size_num-- > 0))
-		*buf++ = res->nbr_int[res->len_int] + '0';
+		*buf++ = res->nbr_tmp[--res->len_tmp] + '0';
 	if (size_num-- > 0)
 		*buf++ = '.';
 	while (res->len_fract-- && (size_num-- > 0))
-		*buf++ = res->nbr_fract[res->len_fract] + '0';
+		*buf++ = res->nbr_tmp[--res->len_tmp] + '0';
 	while (size_num-- > 0)
 		*buf++ = '0';
 }
@@ -251,25 +249,37 @@ static void					nan_infinity(t_uni *real_num)
 	// }
 }
 
-void						rounding_number_for_e(t_long *res, size_t l)
+
+ssize_t						rounding_number(t_long *res, unsigned int *nbr, ssize_t i)
 {
-	if (l >= res->len_int)
-		rounding_number_with_fract(res, l - res->len_int);
+	if (i >= 0 && nbr[i] >= 5 && banker_rounding(nbr, i, res->len_tmp) && (nbr[++i] += 1))
+		while(i != res->len_tmp && nbr[i] == 10)
+		{
+			nbr[i] = 0;
+			nbr[++i] += 1;
+		}
+	if (nbr[res->len_tmp])
+	{
+		++res->len_int;
+		++res->len_tmp;
+		return (1);
+	}
+	return (0);
 }
 
 size_t						size_num_for_long(t_long *res)
 {
-	size_t					l;
+	ssize_t					l;
 
 	if (g_spec.spec == 'f' || g_spec.spec == 'F')
 	{
 		l = res->len_int + (g_spec.flags & DOT ? g_spec.accuracy : 6);
-		l += rounding_number_with_fract(res, l - res->len_int);
+		l += rounding_number(res, res->nbr_tmp, res->len_tmp - l - 1);
 	}
 	else
 	{
 		l = (g_spec.flags & DOT ? g_spec.accuracy + 1 : 7);
-		rounding_number_for_e(res, l);
+		// rounding_number_for_e(res, l);
 	}
 	if (g_spec.flags & HASH || !(g_spec.flags & DOT) ||\
 	(g_spec.flags & DOT && g_spec.accuracy))
@@ -307,7 +317,7 @@ void						double_to_str(va_list format)
 
 	real_num.num = pull_double_arg(format);
 	real_num.bits.exp -= 16383;
-	test(&real_num);
+	// test(&real_num);
 	if (real_num.bits.sign)
 		g_spec.flags |= DEC;
 	if (real_num.bits.exp != -16384)

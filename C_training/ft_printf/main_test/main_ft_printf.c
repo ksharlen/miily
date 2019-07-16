@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/15 12:41:19 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/16 09:14:39 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int		main(void)
 	// printf("ret_ft = %d\nret = %d\n", ret_ft, ret);
 	// ft_printf("time: \n%k\n%k\n%s", 199203010325, 9506012200, "hello world\n");
 
-	ft_printf("%e\n", 0.0);
-	printf("%e\n", 0.0);
+	ft_printf("% 010.f\n", 9.9500000);
+	printf("% 010.f\n", 9.9500000);
 
 	return (0);
 }
