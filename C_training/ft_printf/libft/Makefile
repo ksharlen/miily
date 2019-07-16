@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/16 14:05:55 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/16 14:13:47 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,4 +115,4 @@ fclean: clean
 re: fclean all
 
 $(OBJ): %.o: %.c $(LIBFT)
-	@$(CC) $(FLAGS) -c $^ $(INCLUDE)
+	@$(CC) $(FLAGS) -c $< $(INCLUDE)

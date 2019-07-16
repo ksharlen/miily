@@ -1,8 +1,9 @@
 NAME := libftprintf.a
 LIBFT := libft.a
+HEADERS := libft.h ft_printf.h
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
-REMOVE := /bin/rm -f
+REMOVE := /bin/rm -rf
 DIR_BIN := bin/
 DIR_INCLUDE := -I ./include
 DIR_LIBFT := libft/
@@ -10,6 +11,25 @@ DIR_BUF := buf/
 DIR_BONUS := bonus/
 DIR_NUM := src_num_to_str/
 DIR_SRC := src/
+DIRS := $(addprefix $(DIR_SRC), $(DIR_BUF) $(DIR_NUM) $(DIR_BONUS)) $(DIR_SRC)
+
+vpath %.c $(DIRS)
+vpath %.o $(DIR_BIN)
+vpath %.h $(DIR_INCLUDE)
+
+#ADD DIR PREFIX FOR ALL FILES .c
+# SRC_BUF		:= $(addprefix $(DIR_BUF), $(SRC_BUF))
+# SRC_BONUS	:= $(addprefix $(DIR_BONUS), $(SRC_BONUS))
+# SRC_NUM		:= $(addprefix $(DIR_NUM), $(SRC_NUM))
+
+#ADD SRC PREFIX FOR ALL FILES .c
+# MAIN_SRC	:= $(addprefix $(DIR_SRC), $(SRC_MAIN))
+# SRC_BUF 	:= $(addprefix $(DIR_SRC), $(SRC_BUF))
+# SRC_BONUS	:= $(addprefix $(DIR_SRC), $(SRC_BONUS))
+# SRC_NUM		:= $(addprefix $(DIR_SRC), $(SRC_NUM))
+
+# OBJS_FOR_LIB := $(notdir $(OBJS))
+# OBJS_FOR_LIB := $(addprefix $(DIR_BIN), $(OBJS_FOR_LIB))
 
 SRC_MAIN 	:= 	ft_printf.c\
 					other.c\
@@ -36,40 +56,31 @@ SRC_NUM 	:= base_depth.c\
 					select_num_sys.c\
 					str_to_str.c
 
-#ADD DIR PREFIX FOR ALL FILES .c
-SRC_BUF		:= $(addprefix $(DIR_BUF), $(SRC_BUF))
-SRC_BONUS	:= $(addprefix $(DIR_BONUS), $(SRC_BONUS))
-SRC_NUM		:= $(addprefix $(DIR_NUM), $(SRC_NUM))
-
-#ADD SRC PREFIX FOR ALL FILES .c
-MAIN_SRC	:= $(addprefix $(DIR_SRC), $(SRC_MAIN))
-SRC_BUF 	:= $(addprefix $(DIR_SRC), $(SRC_BUF))
-SRC_BONUS	:= $(addprefix $(DIR_SRC), $(SRC_BONUS))
-SRC_NUM		:= $(addprefix $(DIR_SRC), $(SRC_NUM))
-
-OBJ1 := $(MAIN_SRC:.c=.o)
+OBJ1 := $(SRC_MAIN:.c=.o)
 OBJ2 := $(SRC_BUF:.c=.o)
 OBJ3 := $(SRC_BONUS:.c=.o)
 OBJ4 := $(SRC_NUM:.c=.o)
 
 OBJS := $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
-OBJS_FOR_LIB := $(notdir $(OBJS))
-OBJS_FOR_LIB := $(addprefix $(DIR_BIN), $(OBJS_FOR_LIB))
+#OBJS := $(notdir $(OBJS))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(DIR_LIBFT)
-	cp 	$(DIR_LIBFT)$(LIBFT) .
-	mv	$(LIBFT) $(NAME)
-	ar rc $(NAME) $(OBJS_FOR_LIB)
-	ranlib $(NAME)
+	cp $(DIR_LIBFT)$(LIBFT) .
+	mv $(LIBFT) $(NAME)
+	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
 
-$(OBJS): %.o: %.c
-	$(CC) -c $^ $(DIR_INCLUDE) -o $(DIR_BIN)
+$(OBJS):%.o:%.c $(HEADERS) dir_obj
+	$(CC) -c $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
+
+dir_obj:
+	mkdir -p $(DIR_BIN)
 
 clean:
-	$(REMOVE) $(OBJS_FOR_LIB)
+	$(REMOVE) $(addprefix $(DIR_BIN), $(OBJS))
+	$(REMOVE) $(DIR_BIN)
 
 fclean: clean
 	$(REMOVE) $(NAME)
@@ -77,17 +88,9 @@ fclean: clean
 re: fclean all
 
 echo:
-	@echo main:	$(MAIN_SRC)
-	@echo src_buf: $(SRC_BUF)
-	@echo src_bonus: $(SRC_BONUS)
-	@echo src_num: $(SRC_NUM)
-	@echo objs: $(OBJS)
+	@echo $(OBJS)
+	@echo $(DIRS)
+	@echo $(SRC_BONUS)
 
-clean_libft:
-	make clean -C $(DIR_LIBFT)
-
-fclean_libft: clean_libft
-	make fclean -C $(DIR_LIBFT)
-
-.PHONY: clean fclean re echo
+.PHONY: clean fclean re
 
