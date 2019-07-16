@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/15 09:56:07 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/16 14:05:55 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ FLAGS 	:= -Wextra -Werror -Wall
 CC 		:= gcc
 REMOVE 	:= /bin/rm -f
 INCLUDE := -I ../include
+LIBFT	:= libft.h
 SRC 	:= ft_arrfind.c\
 			ft_atoi.c\
 			ft_bzero.c\
@@ -97,6 +98,8 @@ SRC 	:= ft_arrfind.c\
 
 OBJ := $(SRC:.c=.o)
 
+vpath %.h $(INCLUDE)
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -111,5 +114,5 @@ fclean: clean
 
 re: fclean all
 
-$(OBJ): %.o: %.c
-	@$(CC) $(FLAGS) -c $^ $(INCLUDE) -pipe
+$(OBJ): %.o: %.c $(LIBFT)
+	@$(CC) $(FLAGS) -c $^ $(INCLUDE)
