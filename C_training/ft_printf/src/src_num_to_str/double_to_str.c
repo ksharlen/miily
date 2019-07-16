@@ -103,7 +103,7 @@ void						long_arithmetic_power(short int exponenta, t_long *res)
 		multiplication_and_normalization(res, ft_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
 }
 
-void            			long_arithmetic(t_uni *real_num, t_long *res)
+void            			long_arithmetic(t_uni real_num, t_long *res)
 {
     int						i;
 
@@ -111,16 +111,16 @@ void            			long_arithmetic(t_uni *real_num, t_long *res)
     res->len_int = 1;
 	while (i--)
 	{
-        if (real_num->bits.mantissa >> i & 1)
+        if (real_num.bits.mantissa >> i & 1)
         {
-	        long_arithmetic_power(real_num->bits.exp, res);
-            if (real_num->bits.exp >= 0)
+	        long_arithmetic_power(real_num.bits.exp, res);
+            if (real_num.bits.exp >= 0)
 				addition_and_normalization(res, res->nbr_int, &res->len_int);
 			else
             	addition_and_normalization(res, res->nbr_fract + (res->len_fract - res->len_tmp), &res->len_tmp);
             ft_bzero(res->nbr_tmp, sizeof(int) * res->len_tmp);
         }
-        --real_num->bits.exp;
+        --real_num.bits.exp;
 	}
 	ft_memcpy(res->nbr_tmp, res->nbr_fract, res->len_fract * sizeof(int));
 	ft_memcpy(res->nbr_tmp + res->len_fract, res->nbr_int, res->len_int * sizeof(int));
@@ -291,10 +291,30 @@ void						check_e(t_long *res)
 	res->e = e;
 }
 
-size_t						size_num_for_long(t_long *res)
+size_t						size_num_for_long(t_long *res, short int exp)
 {
 	ssize_t					l;
+	int						p;
 
+	if (g_spec.spec == 'g' || g_spec.spec == 'G')
+	{
+		if (!(g_spec.flags & DOT))
+			p = 6;
+		else if (!g_spec.accuracy)
+			p = 1;
+		else
+			p = g_spec.accuracy;
+		if (-4 <=  exp && exp < p)
+		{
+			g_spec.spec -= 1;
+			g_spec.accuracy = p - exp - 1;
+		}
+		else
+		{
+			g_spec.spec -= 2;
+			g_spec.accuracy = p + 1;
+		}
+	}
 	if (g_spec.spec == 'f' || g_spec.spec == 'F')
 	{
 		l = res->len_int + (g_spec.flags & DOT ? g_spec.accuracy : 6);
@@ -353,8 +373,8 @@ void						double_to_str(va_list format)
 	if (real_num.bits.exp != -16384)
 	{
 		malloc_long(&real_num, &res);
-		long_arithmetic(&real_num, &res);
-		size_num = size_num_for_long(&res);
+		long_arithmetic(real_num, &res);
+		size_num = size_num_for_long(&res, real_num.bits.exp);
 		size_str = g_spec.width > size_num ? g_spec.width : size_num;
 		buf = check_buf(size_str);
 		push_num_to_str(g_spec.width > size_num ?\
