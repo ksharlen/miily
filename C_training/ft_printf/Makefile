@@ -17,20 +17,6 @@ vpath %.c $(DIRS)
 vpath %.o $(DIR_BIN)
 vpath %.h $(DIR_INCLUDE)
 
-#ADD DIR PREFIX FOR ALL FILES .c
-# SRC_BUF		:= $(addprefix $(DIR_BUF), $(SRC_BUF))
-# SRC_BONUS	:= $(addprefix $(DIR_BONUS), $(SRC_BONUS))
-# SRC_NUM		:= $(addprefix $(DIR_NUM), $(SRC_NUM))
-
-#ADD SRC PREFIX FOR ALL FILES .c
-# MAIN_SRC	:= $(addprefix $(DIR_SRC), $(SRC_MAIN))
-# SRC_BUF 	:= $(addprefix $(DIR_SRC), $(SRC_BUF))
-# SRC_BONUS	:= $(addprefix $(DIR_SRC), $(SRC_BONUS))
-# SRC_NUM		:= $(addprefix $(DIR_SRC), $(SRC_NUM))
-
-# OBJS_FOR_LIB := $(notdir $(OBJS))
-# OBJS_FOR_LIB := $(addprefix $(DIR_BIN), $(OBJS_FOR_LIB))
-
 SRC_MAIN 	:= 	ft_printf.c\
 					other.c\
 					work_spec_form.c\
@@ -63,7 +49,7 @@ OBJ4 := $(SRC_NUM:.c=.o)
 
 OBJS := $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
 
-all: $(DIR_BIN) $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C $(DIR_LIBFT)
@@ -71,7 +57,7 @@ $(NAME): $(OBJS)
 	mv $(LIBFT) $(NAME)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
 
-$(OBJS):%.o:%.c
+$(OBJS):%.o:%.c | $(DIR_BIN)
 	$(CC) -c $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
 
 $(DIR_BIN):
@@ -98,4 +84,3 @@ fclean_libft: clean_libft
 	make fclean -C $(DIR_LIBFT)
 
 .PHONY: clean fclean re clean_libft fclean_libft
-

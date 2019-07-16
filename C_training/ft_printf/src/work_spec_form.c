@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 13:54:55 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 13:59:28 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/16 16:51:56 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,6 @@ void			work_spec_form(const char *format, va_list form)
 	g_spec.width = 0;
 	g_spec.accuracy = 0;
 	g_spec.mod = 0;
+	//printf("spec = %c\n", g_spec.spec);
 	work_spec(format, form);
 }
