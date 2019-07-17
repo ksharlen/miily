@@ -17,7 +17,7 @@ static char			*ft_get_va_arg(va_list format)
 	return (va_arg(format, char *));
 }
 
-static void			ft_work_aw(void)
+void			ft_work_aw(void)
 {
 	if ((g_spec.size_num <= g_spec.accuracy && g_spec.accuracy <
 	g_spec.width) || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
@@ -46,7 +46,7 @@ static void			ft_work_aw(void)
 	}
 }
 
-static void			ft_push_wa(char *inbuf)
+void			ft_push_wa(char *inbuf)
 {
 	int				sym;
 	char			*buf;

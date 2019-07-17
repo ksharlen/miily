@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:45 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/16 15:46:06 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/17 22:25:09 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <assert.h>
 #include <wchar.h>
 #include <float.h>
+#include <math.h>
 
 int		main(void)
 {
@@ -48,11 +49,35 @@ int		main(void)
 
 	// ft_printf("|%.0E|\n", 0.99);
 
-	double y = 1234567.0;
 	// ft_printf("|%.20g|\n", 123.9912345678123456789123456789);
 	// printf("|%.20g|\n", 123.9912345678123456789123456789);
-	ft_printf("|%g|\n", 123.99);
-	printf("|%g|\n", 123.99);
+	// ft_printf("|%g|\n", 123.99);
+	// printf("|%g|\n", 123.99);
 	// printf("|%.20g|\n", 123.99);
+	double x = INFINITY / 0;
+    // printf("%e\n", x);
+	// ft_printf("%e\n", x);
+    // printf("%f\n", x);
+    // ft_printf("%f\n", x);
+    // printf("%+10g\n", x);
+    // ft_printf("%+10g\n", x);
+    // printf("\n");
+
+	double z = 950.59990000;
+    // printf("%.2e\n", z);
+	// ft_printf("%.2e\n", z);
+    // printf("%f\n", z);
+    // ft_printf("%f\n", z);
+    // printf("%.1g\n", z);
+    // ft_printf("%.1g\n", z);
+    // printf("\n");
+
+    double y = 0.000;
+    // printf("%.0e\n", y);
+	// ft_printf("%.0e\n", y);
+    // printf("%f\n", y);
+    // ft_printf("%f\n", y);
+    printf("%g\n", y);
+    ft_printf("%g\n", y);
 	return (0);
 }
