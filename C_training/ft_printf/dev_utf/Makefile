@@ -1,5 +1,5 @@
 NAME := utf-8
-src := main.c utf-8.c
+src := main.c utf-8.c mask.c
 obj := $(src:.c=.o)
 dir_bin := bin/
 
@@ -8,7 +8,7 @@ vpath %.o $(dir_bin)
 all: $(NAME)
 
 $(NAME): $(obj)
-	gcc $(addprefix $(dir_bin), $(obj)) -o $(NAME) -I.
+	gcc $(addprefix $(dir_bin), $(obj)) libftprintf.a -o $(NAME) -I.
 
 $(obj):%.o:%.c main.h | $(dir_bin)
 	gcc -c $< -o $(dir_bin)$@
