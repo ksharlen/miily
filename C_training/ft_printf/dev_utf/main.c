@@ -2,10 +2,10 @@
 
 int		main(void)
 {
-	wchar_t *str;
+	t_utf utf;
 
-	str = L"привет мир";
-	while (*str)
-		printf("%d\n", *str++);
+	utf.bytes = 4;
+	utf = inst_mask(utf);
+	//printf("utf = %u\n", utf.utf_sym);
 	return (0);
 }
