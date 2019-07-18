@@ -20,7 +20,7 @@ void	check_ovf_to_date(int *num, int *num1, int ovf, int check)
 	}
 }
 
-void	push_buf_sym_time(int num, char sym)
+void	push_buf_sym_time(int num, unsigned char sym)
 {
 	if (num < 10)
 		work_buf(&sym, 1);

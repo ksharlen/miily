@@ -112,11 +112,11 @@ void            			long_arithmetic(t_uni *real_num, t_long *res)
 	{
         if (real_num->bits.mantissa >> i & 1)
         {
-	        long_arithmetic_power(real_num->bits.exp, res);
+			long_arithmetic_power(real_num->bits.exp, res);
             if (real_num->bits.exp >= 0)
 				addition_and_normalization(res, res->nbr_int, &res->len_int);
 			else
-            	addition_and_normalization(res, res->nbr_fract + (res->len_fract - res->len_tmp), &res->len_tmp);
+				addition_and_normalization(res, res->nbr_fract + (res->len_fract - res->len_tmp), &res->len_tmp);
             ft_bzero(res->nbr_tmp, sizeof(int) * res->len_tmp);
         }
         --real_num->bits.exp;

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_ustrdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 14:01:09 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 20:50:32 by ksharlen         ###   ########.fr       */
+/*   Created: 2019/07/18 20:49:22 by ksharlen          #+#    #+#             */
+/*   Updated: 2019/07/18 20:50:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_ustrdel(unsigned char **str)
 {
-	if (as && *as)
+	if (str && *str)
 	{
-		free(*as);
-		*as = NULL;
+		free(*str);
+		*str = NULL;
 	}
 }
