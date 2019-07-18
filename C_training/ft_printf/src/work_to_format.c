@@ -82,7 +82,7 @@ void			work_to_format(const char *format, va_list form)
 			}
 			else
 			{
-				work_buf(format, 1);
+				work_buf((unsigned char *)format, 1);
 				format++;
 			}
 		}
