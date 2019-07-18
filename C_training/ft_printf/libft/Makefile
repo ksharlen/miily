@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/17 11:24:29 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/18 08:54:05 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,10 @@ SRC 	:= ft_arrfind.c\
 			ft_swap.c\
 			ft_tolower.c\
 			ft_toupper.c\
-			get_next_line.c
+			get_next_line.c\
+			ft_set_bit.c\
+			ft_set_bits.c\
+			ft_bitscpy.c
 
 OBJ := $(SRC:.c=.o)
 
@@ -108,7 +111,7 @@ $(NAME): $(OBJ)
 	ranlib $@
 
 $(OBJ):%.o: %.c $(LIBFT) | $(DIR_BIN)
-	$(CC) $(FLAGS) -c $< -o $(DIR_BIN)$@ $(addprefix -I, $(DIR_INCLUDE))
+	$(CC) $(FLAGS) -c $< -o $(DIR_BIN)$@ $(addprefix -I, $(DIR_INCLUDE)) -pipe
 
 $(DIR_BIN):
 	mkdir -p $@
@@ -121,4 +124,3 @@ fclean: clean
 	$(REMOVE) $(NAME)
 
 re: fclean all
-
