@@ -29,17 +29,17 @@ static	t_date work_date(t_date date)
 	return (date);
 }
 
-static	void push_buf(int date, char sym)
+static void push_buf(int date, unsigned char sym)
 {
-	size_t len;
-	char	*str;
+	size_t			len;
+	unsigned char	*str;
 
-	str = ft_itoa(date);
-	len = ft_strlen(str);
+	str = (unsigned char *)ft_itoa(date);
+	len = ft_strlen((const char *)str);
 	work_buf(str, len);
 	if (sym)
 		work_buf(&sym, 1);
-	ft_strdel(&str);
+	ft_ustrdel(&str);
 }
 
 static void	work_iso(t_date date)

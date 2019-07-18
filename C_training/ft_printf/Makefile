@@ -58,7 +58,6 @@ $(NAME): $(OBJS)
 	cp $(DIR_LIBFT)$(LIBFT) .
 	mv $(LIBFT) $(NAME)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
-	bash copy.sh
 
 $(OBJS):%.o:%.c | $(DIR_BIN)
 	$(CC) -c $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)

@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/18 13:43:14 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/18 20:56:41 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME 	:= libft.a
 FLAGS 	:= -Wextra -Werror -Wall
 CC 		:= gcc
 REMOVE 	:= /bin/rm -rf
-DIR_INCLUDE := ../include
 LIBFT	:= libft.h
 DIR_BIN := bin/
 SRC 	:= ft_arrfind.c\
@@ -99,11 +98,12 @@ SRC 	:= ft_arrfind.c\
 			ft_set_bit.c\
 			ft_set_bits.c\
 			ft_bitscpy.c\
-			ft_wcslen.c
+			ft_wcslen.c\
+			ft_ustrdel.c
 
 OBJ := $(SRC:.c=.o)
 
-vpath %.h $(DIR_INCLUDE)
+vpath %.o $(DIR_BIN)
 
 all: $(NAME)
 
