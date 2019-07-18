@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/17 20:43:13 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/18 11:57:08 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,11 @@ void						invisible_sym(va_list format);
 void						write_and_free_malloc(char *buf, size_t size_str);
 void						ft_work_aw(void);
 void						ft_push_wa(char *inbuf);
+
+void            			long_arithmetic(t_uni real_num, t_long *res);
+void						malloc_long(t_uni *real_num, t_long *res);
+size_t						size_num_for_long(t_long *res);
+void				    	push_double_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num);
 
 void						write_to_file(va_list format);
 int							mem_rec_cmp_for_color(char *str1,

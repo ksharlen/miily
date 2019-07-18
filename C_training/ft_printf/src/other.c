@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   other1.c                                           :+:      :+:    :+:   */
+/*   other.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:58:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:04:08 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 10:39:22 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char						*check_buf(ssize_t size_str)
+{
+	char					*buf;
+
+	if (SIZE_BUF >= size_str)
+	{
+		if (g_spec.size_buf < size_str)
+			write_buf_and_clean(WRITE_BUF);
+		buf = work_buf(GET_POINT, 0);
+		g_spec.size_write += size_str;
+		g_spec.size_buf -= size_str;
+	}
+	else if (!(buf = ft_memalloc(size_str)))
+		exit(0);
+	return (buf);
+}
 
 int					check_the_entry(const char *def_str, const int sym)
 {
