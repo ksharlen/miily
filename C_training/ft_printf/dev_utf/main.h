@@ -3,6 +3,7 @@
 
 # include <wchar.h>
 # include <stdio.h>
+# include "../include/libft.h"
 
 
 typedef struct 	s_utf
