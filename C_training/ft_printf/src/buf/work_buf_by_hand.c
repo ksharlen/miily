@@ -6,15 +6,15 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 16:02:30 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		memset_buf(int sym, int size)
+void		memset_buf(unsigned char sym, int size)
 {
-	char 	*buf;
+	unsigned char 	*buf;
 	int 	ret_check_loc;
 
 	buf = work_buf(NULL, 0);

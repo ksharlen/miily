@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/18 08:54:05 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/18 13:43:14 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,8 @@ SRC 	:= ft_arrfind.c\
 			get_next_line.c\
 			ft_set_bit.c\
 			ft_set_bits.c\
-			ft_bitscpy.c
+			ft_bitscpy.c\
+			ft_wcslen.c
 
 OBJ := $(SRC:.c=.o)
 
