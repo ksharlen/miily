@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 11:03:00 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 16:02:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ typedef	struct				s_utf
 {
 	wchar_t					unicode;
 	unsigned				bytes;
-	unsigned				utf_sym;
+	wchar_t					utf_sym;
 }							t_utf;
 
 typedef struct				s_date
@@ -196,7 +196,7 @@ void						write_and_free_malloc(char *buf, size_t size_str);
 void						write_to_file(va_list format);
 int							mem_rec_cmp_for_color(char *str1,
 char *str2, size_t n);
-void						memset_buf(int sym, int size);
+void						memset_buf(unsigned char sym, int size);
 int							check_loc_buf(int size);
 
 void						ft_print_test(const char *form);
@@ -226,6 +226,7 @@ unsigned					def_num_bytes(wchar_t unicode);
 unsigned					inst_mask(t_utf utf);
 t_utf						push_unicode(t_utf utf);
 unsigned char				*push_wchar_to_buf(t_utf utf);
+wchar_t						*convert_utf8(wchar_t *str);
 
 /*
 **void						__TEST__return_printf(int flag);

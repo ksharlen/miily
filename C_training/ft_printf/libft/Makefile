@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/18 11:59:23 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/18 16:01:29 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,8 @@ SRC 	:= ft_arrfind.c\
 			get_next_line.c\
 			ft_set_bit.c\
 			ft_set_bits.c\
-			ft_bitscpy.c
+			ft_bitscpy.c\
+			ft_wcslen.c
 
 OBJ := $(SRC:.c=.o)
 
@@ -112,7 +113,7 @@ $(NAME): $(OBJ)
 	ranlib $@
 
 $(OBJ):%.o: %.c $(LIBFT) | $(DIR_BIN)
-	$(CC) $(FLAGS) -c $< -o $(DIR_BIN)$@ $(addprefix -I, $(DIR_INCLUDE)) -pipe
+	$(CC) $(FLAGS) -c $< -o $(DIR_BIN)$@ $(addprefix -I , $(DIR_INCLUDE)) -pipe
 
 $(DIR_BIN):
 	mkdir -p $@

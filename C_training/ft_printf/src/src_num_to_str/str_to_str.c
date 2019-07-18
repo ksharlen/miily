@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static char			*ft_get_va_arg(va_list format)
+static wchar_t		*ft_get_va_arg(va_list format)
 {
-	return (va_arg(format, char *));
+	return (va_arg(format, wchar_t *));
 }
 
 static void			ft_work_aw(void)
@@ -46,10 +46,10 @@ static void			ft_work_aw(void)
 	}
 }
 
-static void			ft_push_wa(char *inbuf)
+static void			ft_push_wa(unsigned char *inbuf)
 {
-	int				sym;
-	char			*buf;
+	unsigned char	sym;
+	unsigned char	*buf;
 
 	sym = ' ';
 	if (g_spec.flags & DASH && g_spec.width > 0)
@@ -69,21 +69,13 @@ static void			ft_push_wa(char *inbuf)
 
 void				str_to_str(va_list format)
 {
-	char			*inbuf;
+	wchar_t			*inbuf;
 
 	inbuf = ft_get_va_arg(format);
 	if (!inbuf)
 		inbuf = "(null)";
+	//ф-ия для преобразования целой строк для utf-8
 	g_spec.size_num = ft_strlen(inbuf);
 	ft_work_aw();
 	ft_push_wa(inbuf);
-	// if (inbuf)
-	// {
-	// 	g_spec.size_num = ft_strlen(inbuf);
-	// 	ft_work_aw();
-	// 	ft_push_wa(inbuf);
-	// }
-	// else
-	// 	inbuf = "(null)";
-
 }
