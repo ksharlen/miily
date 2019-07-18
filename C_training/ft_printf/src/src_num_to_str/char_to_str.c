@@ -12,25 +12,22 @@
 
 #include "ft_printf.h"
 
-static char	ft_get_va_arg(va_list format)
+static wchar_t	ft_get_va_arg(va_list format)
 {
-	return ((char)va_arg(format, int));
+	return (va_arg(format, wchar_t));
 }
 
-static void	ft_push_buf_sa(char sym)
+static void	ft_push_buf_sa(t_utf utf)
 {
-	char	*buf;
+	unsigned char	*buf;
 
-	buf = work_buf(&sym, 1);
+	buf = push_wchar_to_buf(utf);
 	memset_buf(' ', g_spec.width);
-	// ft_memset(buf, ' ', g_spec.width - 1);
-	// g_spec.size_write += (g_spec.width - 1);
-	// g_spec.size_buf -= (g_spec.width - 1);
 }
 
-static void	ft_push_buf_as(char sym)
+static void	ft_push_buf_as(t_utf utf)
 {
-	char	*buf;
+	unsigned char	*buf;
 	char	for_zero;
 
 	for_zero = ' ';
@@ -38,30 +35,32 @@ static void	ft_push_buf_as(char sym)
 		for_zero = '0';
 	buf = work_buf(GET_POINT, 0);
 	memset_buf(for_zero, g_spec.width);
-	// ft_memset(buf, for_zero, g_spec.width - 1);
-	// g_spec.size_write += (g_spec.width - 1);
-	// g_spec.size_buf -= (g_spec.width - 1);
-	work_buf(&sym, 1);
+	push_wchar_to_buf(utf);
 }
 
-static void	ft_push_buf(char sym)
+static void	ft_push_buf(t_utf utf)
 {
 	if (g_spec.width > 1)
 	{
 		g_spec.width -= 1;
 		if (g_spec.flags & DASH)
-			ft_push_buf_sa(sym);
+			ft_push_buf_sa(utf);
 		else
-			ft_push_buf_as(sym);
+			ft_push_buf_as(utf);
 	}
 	else
-		work_buf(&sym, 1);
+		push_wchar_to_buf(utf);
 }
+
+//Подумать над реализацией побайтного выреза символа
 
 void		char_to_str(va_list format)
 {
-	char	sym;
+	t_utf utf;
 
-	sym = ft_get_va_arg(format);
-	ft_push_buf(sym);
+	utf.unicode = ft_get_va_arg(format);
+	utf.bytes = def_num_bytes(utf.unicode);
+	utf.utf_sym = inst_mask(utf);
+	utf = push_unicode(utf);
+	ft_push_buf(utf);
 }

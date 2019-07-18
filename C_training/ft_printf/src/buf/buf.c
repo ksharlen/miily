@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 10:37:49 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		check_loc_buf(int size)
+int							check_loc_buf(int size)
 {
 	if (SIZE_BUF < size)
 		return (-1);
@@ -22,7 +22,7 @@ int		check_loc_buf(int size)
 		return (0);
 }
 
-void			write_buf_and_clean(char *buf)
+void						write_buf_and_clean(unsigned char *buf)
 {
 	if (!buf)
 		work_buf(NULL, SIZE_BUF - g_spec.size_write + 1);
@@ -35,9 +35,9 @@ void			write_buf_and_clean(char *buf)
 	}
 }
 
-static char		*ft_push_buf(const char *inbuf, int size_inbuf, char *buf)
+static unsigned char		*ft_push_buf(const unsigned char *inbuf, int size_inbuf, unsigned char *buf)
 {
-	char		*ret_buf;
+	unsigned char			*ret_buf;
 
 	ret_buf = (buf + g_spec.size_write);
 	if (size_inbuf > 0 && inbuf)
@@ -50,7 +50,7 @@ static char		*ft_push_buf(const char *inbuf, int size_inbuf, char *buf)
 	return (ret_buf);
 }
 
-static void		ft_write_big_data(const char **inbuf, int *size_inbuf)
+static void					ft_write_big_data(const unsigned char **inbuf, int *size_inbuf)
 {
 	while (*size_inbuf > 0 && *inbuf)
 	{
@@ -66,12 +66,12 @@ static void		ft_write_big_data(const char **inbuf, int *size_inbuf)
 	}
 }
 
-char			*work_buf(const char *inbuf, int size_inbuf)
+unsigned char				*work_buf(const unsigned char *inbuf, int size_inbuf)
 {
-	static char buf[SIZE_BUF];
-	char		*ret_buf;
-	int			ret_check_loc;
-	const char	*p_inbuf;
+	static unsigned char	buf[SIZE_BUF];
+	unsigned char			*ret_buf;
+	int						ret_check_loc;
+	const unsigned char		*p_inbuf;
 
 	p_inbuf = inbuf;
 	ret_check_loc = check_loc_buf(size_inbuf);

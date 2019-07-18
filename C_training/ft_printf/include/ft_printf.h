@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/16 17:26:04 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 11:03:00 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,13 @@
 # define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
 # define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
 
+typedef	struct				s_utf
+{
+	wchar_t					unicode;
+	unsigned				bytes;
+	unsigned				utf_sym;
+}							t_utf;
+
 typedef struct				s_date
 {
 	int						min;
@@ -177,8 +184,8 @@ int							check_the_entry(const char *def_str,
 const int sym);
 
 void						select_num_sys(va_list format);
-char						*work_buf(const char *inbuf, int size_inbuf);
-void						write_buf_and_clean(char *buf);
+unsigned char				*work_buf(const unsigned char *inbuf, int size_inbuf);
+void						write_buf_and_clean(unsigned char *buf);
 void						other_spec(va_list format);
 void						double_to_str(va_list format);
 void						base_to_str(unsigned long long int num);
@@ -211,6 +218,15 @@ void						test_s(void);
 void						test_b(void);
 void						test_f(void);
 void						test_other(void);
+
+//Utf-8
+//Расположенны по порядку вызовов
+
+unsigned					def_num_bytes(wchar_t unicode);
+unsigned					inst_mask(t_utf utf);
+t_utf						push_unicode(t_utf utf);
+unsigned char				*push_wchar_to_buf(t_utf utf);
+
 /*
 **void						__TEST__return_printf(int flag);
 **void						__TEST__check_ismy(int flag);

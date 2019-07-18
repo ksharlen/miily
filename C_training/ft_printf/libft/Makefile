@@ -6,7 +6,7 @@
 #    By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/07/18 08:54:05 by ksharlen         ###   ########.fr        #
+#    Updated: 2019/07/18 11:59:23 by ksharlen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,6 +103,7 @@ SRC 	:= ft_arrfind.c\
 OBJ := $(SRC:.c=.o)
 
 vpath %.h $(DIR_INCLUDE)
+vpath %.o $(DIR_BIN)
 
 all: $(NAME)
 

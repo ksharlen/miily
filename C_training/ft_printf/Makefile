@@ -30,7 +30,9 @@ SRC_BONUS 	:= color.c\
 					for_date.c\
 					invisible_sym.c\
 					size_formats.c\
-					write_to_file.c
+					write_to_file.c\
+					utf-8.c\
+					work_wchar.c
 
 SRC_NUM 	:= base_depth.c\
 					base_to_str.c\
@@ -56,6 +58,7 @@ $(NAME): $(OBJS)
 	cp $(DIR_LIBFT)$(LIBFT) .
 	mv $(LIBFT) $(NAME)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
+	bash copy.sh
 
 $(OBJS):%.o:%.c | $(DIR_BIN)
 	$(CC) -c $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
@@ -84,3 +87,4 @@ fclean_libft: clean_libft
 	make fclean -C $(DIR_LIBFT)
 
 .PHONY: clean fclean re clean_libft fclean_libft
+.SILENT: all $(OBJS) $(DIR_BIN) clean fclean re echo clean_libft fclean_libft
