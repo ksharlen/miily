@@ -188,7 +188,7 @@ static int					rounding_number(t_long *res, int len)
 
 
 
-char						*size_work_for_long(char *str, size_t size_num)
+unsigned char						*size_work_for_long(unsigned char *str, size_t size_num)
 {
 	if (g_spec.flags & DASH)
 		ft_memset(str + size_num, ' ', g_spec.width - size_num);
@@ -272,9 +272,9 @@ size_t						size_num_for_long(t_long *res)
 }
 
 //! ниже немного переписал наше с тобой творение - получилось короче + добавил size_write и size_buf в нужное место
-char						*check_buf(ssize_t size_str)
+unsigned char				*check_buf(ssize_t size_str)
 {
-	char					*buf;
+	unsigned char			*buf;
 
 	if (SIZE_BUF >= size_str)
 	{
@@ -293,7 +293,7 @@ void						double_to_str(va_list format)
 {
 	t_uni					real_num;
 	t_long					res;
-	char					*buf;
+	unsigned char			*buf;
 	size_t					size_num;
 	size_t					size_str;
 
