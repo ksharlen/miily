@@ -10,6 +10,7 @@ vpath %.o $(dir_obj)
 all: $(NAME)
 
 $(NAME): $(obj)
+	make -C ../
 	gcc $(addprefix $(dir_obj), $(obj)) libftprintf.a -o $@ -I ../include
 
 $(obj): %.o:%.c ft_printf.h | $(dir_obj)
