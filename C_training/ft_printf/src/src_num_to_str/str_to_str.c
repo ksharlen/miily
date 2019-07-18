@@ -12,12 +12,12 @@
 
 #include "ft_printf.h"
 
-static wchar_t		*ft_get_va_arg(va_list format)
+static wchar_t		*get_va_arg(va_list format)
 {
 	return (va_arg(format, wchar_t *));
 }
 
-static void			ft_work_aw(void)
+static void			work_aw(void)
 {
 	if ((g_spec.size_num <= g_spec.accuracy && g_spec.accuracy <
 	g_spec.width) || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
@@ -46,7 +46,7 @@ static void			ft_work_aw(void)
 	}
 }
 
-static void			ft_push_wa(unsigned char *inbuf)
+static void			push_wa(unsigned char *inbuf)
 {
 	unsigned char	sym;
 	unsigned char	*buf;
@@ -54,28 +54,36 @@ static void			ft_push_wa(unsigned char *inbuf)
 	sym = ' ';
 	if (g_spec.flags & DASH && g_spec.width > 0)
 	{
-		buf = work_buf(inbuf, g_spec.size_num);
+		memcpy_buf(inbuf, g_spec.size_num);
 		memset_buf(sym, g_spec.width);
 	}
 	else
 	{
-		buf = work_buf(GET_POINT, 0);
 		if (g_spec.flags & ZERO)
 			sym = '0';
 		memset_buf(sym, g_spec.width);
-		work_buf(inbuf, g_spec.size_num);
+		memcpy_buf(inbuf, g_spec.size_num);
 	}
 }
 
 void				str_to_str(va_list format)
 {
 	wchar_t			*inbuf;
+	unsigned char	*utf_str;
 
-	inbuf = ft_get_va_arg(format);
+	inbuf = get_va_arg(format);
 	if (!inbuf)
-		inbuf = "(null)";
-	//ф-ия для преобразования целой строк для utf-8
-	g_spec.size_num = ft_strlen(inbuf);
-	ft_work_aw();
-	ft_push_wa(inbuf);
+	{
+		utf_str = (unsigned char *)"(null)";
+		work_aw();
+		g_spec.size_num = ft_strlen((const char *)utf_str);
+		push_wa(utf_str);
+	}
+	else
+	{
+		work_aw();
+		utf_str = convert_utf8(inbuf);
+		g_spec.size_num = ft_strlen((const char *)utf_str);
+		push_wa(utf_str);
+	}
 }

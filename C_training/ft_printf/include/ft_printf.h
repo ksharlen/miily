@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 16:02:45 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:59:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,8 +226,9 @@ unsigned					def_num_bytes(wchar_t unicode);
 unsigned					inst_mask(t_utf utf);
 t_utf						push_unicode(t_utf utf);
 unsigned char				*push_wchar_to_buf(t_utf utf);
-wchar_t						*convert_utf8(wchar_t *str);
+unsigned char				*convert_utf8(wchar_t *str);
 
+void						memcpy_buf(void *src, size_t size);
 /*
 **void						__TEST__return_printf(int flag);
 **void						__TEST__check_ismy(int flag);

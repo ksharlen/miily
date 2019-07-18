@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 16:12:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 20:28:28 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ static unsigned char	*ft_check_color(const char *string)
 {
 	unsigned char	*color;
 
-	color = ft_memalloc(11);
+	if (!(color = (unsigned char *)ft_memalloc(sizeof(unsigned char) * 11)))
+		return (NULL);
 	if (!ft_memcmp(string, "black", 5) && *(string + 5) == '}')
 		color = (unsigned char *)";30m";
 	else if (!ft_memcmp(string, "red", 3) && *(string + 3) == '}')
@@ -71,7 +72,8 @@ static void				ft_push_buf_and_clean_string(unsigned char *str_clean, int size_s
 	str = (unsigned char *)"\e[";
 	work_buf((unsigned char *)"\e[", 2);
 	work_buf(str_clean, size_str);
-	ft_strdel((char **)str_clean);
+	free(str_clean);
+	str_clean = NULL;
 }
 
 int						color_format(const char *string)
