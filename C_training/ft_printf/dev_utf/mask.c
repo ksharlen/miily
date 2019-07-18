@@ -1,22 +1,21 @@
 #include "main.h"
 
-unsigned set_bit(unsigned val, int num)
-{
-	return (val | (1 << num));
-}
+// unsigned set_bit(unsigned val, unsigned num)
+// {
+// 	return (val | (1 << num));
+// }
 
-unsigned set_bits(unsigned val, unsigned bits, int num)
-{
-	while (bits--)
-		val = set_bit(val, num--);
-	return (val);
-}
+// unsigned set_bits(unsigned val, unsigned bits, int num)
+// {
+// 	while (bits--)
+// 		val = set_bit(val, num--);
+// 	return (val);
+// }
 
-unsigned set_bits_in(unsigned value, unsigned inval, int num)
-{
-	/*num - позиция с которой начнется заполнение в старшую сторону */
-	return (value | (inval << num));
-}
+// unsigned set_bits_in(unsigned value, unsigned inval, int num)
+// {
+// 	return (value | (inval << num));
+// }
 
 static unsigned set_mask_10(unsigned val, int bytes)
 {
