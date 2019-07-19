@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   work_buf_by_hand.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:20:19 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void		memset_buf(int sym, int size)
 {
-	char 	*buf;
-	int 	ret_check_loc;
+	char	*buf;
+	int		ret_check_loc;
 
 	buf = work_buf(NULL, 0);
 	ret_check_loc = check_loc_buf(size);

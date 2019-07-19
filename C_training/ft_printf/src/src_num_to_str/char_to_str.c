@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_to_str.c                                   :+:      :+:    :+:   */
+/*   char_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 12:07:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:23:33 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ static void	ft_push_buf_sa(char sym)
 
 	buf = work_buf(&sym, 1);
 	memset_buf(' ', g_spec.width);
-	// ft_memset(buf, ' ', g_spec.width - 1);
-	// g_spec.size_write += (g_spec.width - 1);
-	// g_spec.size_buf -= (g_spec.width - 1);
 }
 
 static void	ft_push_buf_as(char sym)
@@ -38,9 +35,6 @@ static void	ft_push_buf_as(char sym)
 		for_zero = '0';
 	buf = work_buf(GET_POINT, 0);
 	memset_buf(for_zero, g_spec.width);
-	// ft_memset(buf, for_zero, g_spec.width - 1);
-	// g_spec.size_write += (g_spec.width - 1);
-	// g_spec.size_buf -= (g_spec.width - 1);
 	work_buf(&sym, 1);
 }
 

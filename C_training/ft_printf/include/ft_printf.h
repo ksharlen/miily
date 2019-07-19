@@ -6,10 +6,9 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 11:57:08 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/18 18:07:34 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -113,7 +112,7 @@ typedef struct				s_date
 	int						years;
 }							t_date;
 
-typedef union				s_uni
+typedef	union				u_uni
 {
 	long double				num;
 	struct
@@ -127,12 +126,11 @@ typedef union				s_uni
 typedef struct				s_long
 {
 	unsigned int			*nbr_int;
-    unsigned int			*nbr_fract;
-    unsigned int			*nbr_tmp;
-	unsigned int			*nbr_dot;
+	unsigned int			*nbr_fract;
+	unsigned int			*nbr_tmp;
 	int						len_int;
-    int						len_fract;
-    int						len_tmp;
+	int						len_fract;
+	int						len_tmp;
 	int						e;
 }							t_long;
 
@@ -190,10 +188,14 @@ void						write_and_free_malloc(char *buf, size_t size_str);
 void						ft_work_aw(void);
 void						ft_push_wa(char *inbuf);
 
-void            			long_arithmetic(t_uni real_num, t_long *res);
+void						long_arithmetic(t_uni real_num, t_long *res);
 void						malloc_long(t_uni *real_num, t_long *res);
 size_t						size_num_for_long(t_long *res);
-void				    	push_double_to_str(char *buf, t_long *res, size_t size_str, ssize_t size_num);
+int							banker_rounding(unsigned int *nbr, int i, int len);
+ssize_t						delete_zero(t_long *res, unsigned int *nbr,\
+																ssize_t i);
+void						push_double_to_str(char *buf, t_long *res,\
+										size_t size_str, ssize_t size_num);
 
 void						write_to_file(va_list format);
 int							mem_rec_cmp_for_color(char *str1,
@@ -203,13 +205,16 @@ int							check_loc_buf(int size);
 
 void						ft_print_test(const char *form);
 
-void						date_to_str(va_list);
+void						date_to_str(va_list format);
 int							get_quan_days(int month, int years);
 int							get_leap(int years);
 void						push_buf_sym_time(int num, char sym);
-t_date						get_date(unsigned long long int num_date, t_date date);
-void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
-void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
+t_date						get_date(unsigned long long int num_date,\
+															t_date date);
+void						check_ovf_to_time(int *num, int *num1, int ovf,\
+																	int check);
+void						check_ovf_to_date(int *num, int *num1, int ovf,\
+																	int check);
 
 char						*check_buf(ssize_t size_str);
 

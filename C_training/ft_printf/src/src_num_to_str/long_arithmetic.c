@@ -6,16 +6,16 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:24:29 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/18 10:32:02 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 09:07:47 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void						multiplication_and_normalization(t_long *res, unsigned int multiplier, int len)
+static void			mul_and_norm(t_long *res, unsigned int multiplier, int len)
 {
-	unsigned int			tmp;
-	int						i;
+	unsigned int	tmp;
+	int				i;
 
 	tmp = 0;
 	i = 0;
@@ -40,9 +40,9 @@ static void						multiplication_and_normalization(t_long *res, unsigned int mult
 		res->len_tmp = i;
 }
 
-static void						addition_and_normalization(t_long *res, unsigned int *nbr, int *len)
+static void			add_and_norm(t_long *res, unsigned int *nbr, int *len)
 {
-    int						i;
+	int				i;
 
 	i = 0;
 	while (i != res->len_tmp)
@@ -67,57 +67,58 @@ static void						addition_and_normalization(t_long *res, unsigned int *nbr, int 
 		*len = i;
 }
 
-static void						long_arithmetic_power(short int exponenta, t_long *res)
+static void			long_arithmetic_power(short int exponenta, t_long *res)
 {
 	res->nbr_tmp[0] = 1;
 	res->len_tmp = (exponenta >= 0 ? 1 : CHECK_MOD(exponenta));
 	while (exponenta >= 28)
 	{
-		multiplication_and_normalization(res, TWO_POW_TWENTY_EIGHT, res->len_tmp);
+		mul_and_norm(res, TWO_POW_TWENTY_EIGHT, res->len_tmp);
 		exponenta -= 28;
 	}
 	if (exponenta > 0)
-		multiplication_and_normalization(res, ft_pow(2, exponenta), res->len_tmp);
+		mul_and_norm(res, ft_pow(2, exponenta), res->len_tmp);
 	while (exponenta <= -12)
 	{
-		multiplication_and_normalization(res, FIVE_POW_TWENTEEN, res->len_tmp);
+		mul_and_norm(res, FIVE_POW_TWENTEEN, res->len_tmp);
 		exponenta += 12;
 	}
 	if (exponenta < 0)
-		multiplication_and_normalization(res, ft_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
+		mul_and_norm(res, ft_pow(5, CHECK_MOD(exponenta)), res->len_tmp);
 }
 
-void            			long_arithmetic(t_uni real_num, t_long *res)
+void				long_arithmetic(t_uni real_num, t_long *res)
 {
-    int						i;
+	int				i;
 
 	i = 64;
-    res->len_int = 1;
+	res->len_int = 1;
 	while (i--)
 	{
-        if (real_num.bits.mantissa >> i & 1)
-        {
-	        long_arithmetic_power(real_num.bits.exp, res);
-            if (real_num.bits.exp >= 0)
-				addition_and_normalization(res, res->nbr_int, &res->len_int);
+		if (real_num.bits.mantissa >> i & 1)
+		{
+			long_arithmetic_power(real_num.bits.exp, res);
+			if (real_num.bits.exp >= 0)
+				add_and_norm(res, res->nbr_int, &res->len_int);
 			else
-            	addition_and_normalization(res, res->nbr_fract + (res->len_fract - res->len_tmp), &res->len_tmp);
-            ft_bzero(res->nbr_tmp, sizeof(int) * res->len_tmp);
-        }
-        --real_num.bits.exp;
+				add_and_norm(res, res->nbr_fract + res->len_fract -\
+										res->len_tmp, &res->len_tmp);
+			ft_bzero(res->nbr_tmp, sizeof(int) * res->len_tmp);
+		}
+		--real_num.bits.exp;
 	}
 	ft_memcpy(res->nbr_tmp, res->nbr_fract, res->len_fract * sizeof(int));
-	ft_memcpy(res->nbr_tmp + res->len_fract, res->nbr_int, res->len_int * sizeof(int));
-	res->nbr_dot = res->nbr_tmp + res->len_fract;
+	ft_memcpy(res->nbr_tmp + res->len_fract, res->nbr_int,\
+								res->len_int * sizeof(int));
 	res->len_tmp = res->len_int + res->len_fract;
 	free(res->nbr_int);
 	free(res->nbr_fract);
 }
 
-void						malloc_long(t_uni *real_num, t_long *res)
+void				malloc_long(t_uni *real_num, t_long *res)
 {
-    int						i;
-    short int				exp;
+	int				i;
+	short int		exp;
 
 	exp = real_num->bits.exp;
 	res->len_int = (exp > 0 ? exp / 3 + 2 : 2);

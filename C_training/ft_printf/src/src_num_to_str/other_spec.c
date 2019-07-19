@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   other_spec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 13:10:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:09:20 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:53:36 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ static void	ft_push_n_format(void **p_n)
 		**((int **)p_n) = g_spec.size_write + g_spec.ret_printf;
 }
 
-static void ft_n_format(va_list format)
+static void	ft_n_format(va_list format)
 {
-	void 	*n;
+	void	*n;
 
 	n = ft_get_va_arg(format);
 	ft_push_n_format(&n);

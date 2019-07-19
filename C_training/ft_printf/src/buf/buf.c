@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   buf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:04:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:19:43 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		check_loc_buf(int size)
+int				check_loc_buf(int size)
 {
 	if (SIZE_BUF < size)
 		return (-1);

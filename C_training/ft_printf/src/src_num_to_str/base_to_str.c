@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   base_to_str.c                                   :+:      :+:    :+:   */
+/*   base_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/14 14:02:56 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/18 17:22:02 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ unsigned long long int num, size_t size_str, int base)
 		buf[0] = g_spec.spec;
 }
 
-void		write_and_free_malloc(char *buf, size_t size_str)
+void			write_and_free_malloc(char *buf, size_t size_str)
 {
 	write_buf_and_clean(WRITE_BUF);
 	g_spec.ret_printf += write(g_spec.fd, buf, size_str);

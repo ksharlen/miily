@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:58:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 10:39:22 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/18 17:55:55 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int					mem_rec_cmp_for_color(char *str1, char *str2, size_t n)
 
 void				ft_print_test(const char *form)
 {
-char			*type;
+	char			*type;
 	type = NULL;
 	if (form)
 		printf("string:	\"%s\"\n", form);

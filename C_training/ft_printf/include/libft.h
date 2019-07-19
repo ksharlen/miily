@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 11:59:37 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/18 18:08:52 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-# define MAXLONG 9223372036854775807
-# define FD_MAX 7198
-# define BUFF_SIZE 20
+# define MAXLONG	9223372036854775807
+# define FD_MAX		7198
+# define BUFF_SIZE	20
+
 typedef struct		s_list
 {
 	void			*content;

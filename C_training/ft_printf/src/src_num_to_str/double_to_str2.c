@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   double_to_str3.c                                   :+:      :+:    :+:   */
+/*   double_to_str2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:47:39 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/18 10:59:01 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/18 17:33:46 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		banker_rounding(unsigned int *nbr, int i, int len)
+int				banker_rounding(unsigned int *nbr, int i, int len)
 {
 	if (i < 0 || i >= len)
 		return (0);
@@ -34,7 +34,7 @@ static int		banker_rounding(unsigned int *nbr, int i, int len)
 static ssize_t	rounding_number(t_long *res, unsigned int *nbr, ssize_t i)
 {
 	if (i >= 0 && banker_rounding(nbr, i, res->len_tmp) && (nbr[++i] += 1))
-		while(i != res->len_tmp && nbr[i] == 10)
+		while (i != res->len_tmp && nbr[i] == 10)
 		{
 			nbr[i] = 0;
 			nbr[++i] += 1;
@@ -48,34 +48,11 @@ static ssize_t	rounding_number(t_long *res, unsigned int *nbr, ssize_t i)
 	return (0);
 }
 
-static ssize_t	delete_zero(t_long *res, unsigned int *nbr, ssize_t i)
+static void		check_e(t_long *res)
 {
-	ssize_t		size;
-
-	if (g_spec.spec == 'e' || g_spec.spec == 'E' || g_spec.flags & HASH)
-		return (0);
-	size = (i < 0 ? i : 0);
-	if (i <= 0 && !*nbr)
-	{
-		i = 1;
-		--size;
-	}
-	while ((i + 1) < res->len_tmp &&\
-	(banker_rounding(nbr, i - 1, res->len_tmp) ? nbr[i] == 9 : !nbr[i]))
-	{
-		--size;
-		++i;
-	}
-	if ((res->len_tmp - i) == res->len_int)
-		--size;
-	return (size);
-}
-
-static void     check_e(t_long *res)
-{
-	ssize_t     len;
-	int         tmp;
-	int         len_tmp;
+	ssize_t		len;
+	int			tmp;
+	int			len_tmp;
 
 	res->e = 0;
 	len = res->len_tmp - 1;
@@ -90,7 +67,7 @@ static void     check_e(t_long *res)
 	len = len_tmp - 2 - (g_spec.flags & DOT ? g_spec.accuracy : 6);
 	tmp = 0;
 	if (len >= 0 && banker_rounding(res->nbr_tmp, len++, len_tmp) && ++tmp)
-		while(len != len_tmp && (res->nbr_tmp[len] + tmp) == 10)
+		while (len != len_tmp && (res->nbr_tmp[len] + tmp) == 10)
 			++len;
 	if (len == len_tmp)
 		++res->e;
@@ -114,7 +91,8 @@ static ssize_t	size_num_for_long_g(t_long *res)
 		g_spec.spec -= 2;
 		g_spec.accuracy -= 1;
 	}
-	return (delete_zero(res, res->nbr_tmp, res->len_tmp - g_spec.accuracy - res->len_int));
+	return (delete_zero(res, res->nbr_tmp, res->len_tmp - g_spec.accuracy -\
+			res->len_int));
 }
 
 size_t			size_num_for_long(t_long *res)
