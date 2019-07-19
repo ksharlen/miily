@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   int_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/19 14:53:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 16:08:26 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ static int			ft_size_num_for_int(long long int num)
 	g_spec.flags & DOT && g_spec.accuracy > l ? l = g_spec.accuracy : 0;
 	g_spec.flags & SPACE || g_spec.flags & PLUS || num < 0 ? ++l : 0;
 	num < 0 ? g_spec.flags |= DEC : 0;
-	g_spec.flags & ZERO && g_spec.width > l && !(g_spec.flags & DOT) ?\
-	l = g_spec.width : 0;
+	g_spec.flags & ZERO && g_spec.width > l && !(g_spec.flags & DASH) &&\
+	!(g_spec.flags & DOT) ? l = g_spec.width : 0;
 	return (l);
 }
 
