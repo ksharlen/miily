@@ -63,7 +63,7 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
 
 $(OBJS):%.o:%.c | $(DIR_BIN)
-	$(CC) -c $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
+	$(CC) -c $(CFLAGS) $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
 
 $(DIR_BIN):
 	mkdir -p $@

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   int_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/19 12:11:51 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:53:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ unsigned char		chr_space_plus_dec(void)
 	return (' ');
 }
 
-static size_t		ft_size_num_for_int(long long int num)
+static int			ft_size_num_for_int(long long int num)
 {
-	size_t			l;
+	int				l;
 	long long int	num_cp;
 
 	num_cp = num;
@@ -39,7 +39,7 @@ static size_t		ft_size_num_for_int(long long int num)
 }
 
 static void			push_num_to_str(unsigned char *buf,
-					long long int num, size_t size_str, size_t size_num)
+					long long int num, size_t size_num)
 {
 	short			sign;
 
@@ -55,7 +55,7 @@ static void			push_num_to_str(unsigned char *buf,
 
 void				int_to_str(long long int num)
 {
-	size_t			size_num;
+	int				size_num;
 	size_t			size_str;
 	unsigned char	*buf;
 
@@ -63,7 +63,7 @@ void				int_to_str(long long int num)
 	size_str = (size_num < g_spec.width ? g_spec.width : size_num);
 	buf = check_buf(size_str);
 	push_num_to_str(g_spec.width > size_num ?
-		size_work(buf, size_num) : buf, num, size_str, size_num);
+		size_work(buf, size_num) : buf, num, size_num);
 	if (SIZE_BUF < size_str)
 		write_and_free_malloc(buf, size_str);
 }

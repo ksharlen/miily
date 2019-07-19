@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   work_wchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:06:48 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:46:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static unsigned char	*push_wchar_in_char(t_utf utf, unsigned char *str)
 {
-	unsigned char		instr;
-
 	while (utf.bytes)
 	{
 		*str++ = (utf.utf_sym >> (8 * (utf.bytes - 1)));
@@ -44,14 +42,12 @@ unsigned char			*convert_utf8(wchar_t *str)
 {
 	t_utf				utf;
 	size_t				len;
-	size_t				len_wc;
 	size_t				index;
 	unsigned char		*ret_str;
 	unsigned char		*p_ret_str;
 
 	index = 0;
 	len = bytelen(str);
-	len_wc = ft_wcslen(str);
 	if (!(ret_str = (unsigned char *)malloc(len + 1)))
 		return (NULL);
 	p_ret_str = ret_str;

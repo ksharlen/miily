@@ -3,40 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 11:54:00 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:42:05 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int				ft_check_end(const char *string)
-{
-	if (*string == ':')
-		return (1);
-	else if (*string == '}')
-		return (2);
-	else
-		return (0);
-}
-
-static unsigned char	*ft_check_format(const char *string)
-{
-	unsigned char		*format;
-
-	format = NULL;
-	if (!ft_memcmp(string, "greasy", 6))
-		format = (unsigned char *)";1";
-	else if (!ft_memcmp(string, "italic", 6))
-		format = (unsigned char *)";3";
-	else if (!ft_memcmp(string, "highlighted", 11))
-		format = (unsigned char *)";4";
-	else
-		return (NULL);
-	return ((unsigned char *)ft_strdup((const char *)format));
-}
 
 static unsigned char	*ft_check_color(const char *string)
 {
@@ -68,9 +42,6 @@ static unsigned char	*ft_check_color(const char *string)
 static void				ft_push_buf_and_clean_string(unsigned char *str_clean,\
 																int size_str)
 {
-	unsigned char		*str;
-
-	str = (unsigned char *)"\e[";
 	work_buf((unsigned char *)"\e[", 2);
 	work_buf(str_clean, size_str);
 	free(str_clean);
@@ -80,7 +51,7 @@ static void				ft_push_buf_and_clean_string(unsigned char *str_clean,\
 int						color_format(const char *string)
 {
 	unsigned char		*color;
-	int					shift;
+
 	int					len;
 
 	if ((color = ft_check_color(string)) && g_spec.fd == 1)

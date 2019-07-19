@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   char_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:11:35 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:51:50 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,17 @@ static wchar_t		ft_get_va_arg(va_list format)
 
 static void			ft_push_buf_sa(t_utf utf)
 {
-	unsigned char	*buf;
-
-	buf = push_wchar_to_buf(utf);
+	push_wchar_to_buf(utf);
 	memset_buf(' ', g_spec.width);
 }
 
 static void			ft_push_buf_as(t_utf utf)
 {
-	unsigned char	*buf;
 	char			for_zero;
 
 	for_zero = ' ';
 	if (g_spec.flags & ZERO)
 		for_zero = '0';
-	buf = work_buf(GET_POINT, 0);
 	memset_buf(for_zero, g_spec.width);
 	push_wchar_to_buf(utf);
 }

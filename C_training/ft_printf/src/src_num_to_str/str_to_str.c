@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:29:59 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:57:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void				work_aw(void)
 void				push_wa(unsigned char *inbuf)
 {
 	unsigned char	sym;
-	unsigned char	*buf;
 
 	sym = ' ';
 	if (g_spec.flags & DASH && g_spec.width > 0)
