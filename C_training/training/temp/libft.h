@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/10 11:59:37 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/18 20:51:24 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,10 @@ int					ft_memisstr(const char *str,
 	const char *chek_format, size_t size);
 void				ft_swap(int *a, int *b);
 size_t				ft_size_num(int a);
+unsigned			ft_set_bit(unsigned val, unsigned num);
+unsigned			ft_set_bits(unsigned val, unsigned bits, unsigned num);
+unsigned 			ft_bitscpy(unsigned value, unsigned inval, unsigned num);
+size_t				ft_wcslen(const wchar_t *str);
+void				ft_ustrdel(unsigned char **str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 14:56:54 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 15:00:12 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,22 +236,6 @@ void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
 
 void						work_aw(void);
 void						push_wa(unsigned char *inbuf);
-
-
-
-
-
-
-
-
-void						test_d(void);
-void						test_o(void);
-void						test_x(void);
-void						test_s(void);
-void						test_b(void);
-void						test_f(void);
-void						test_other(void);
-void						ft_print_test(const char *form);
 
 //Utf-8
 //Расположенны по порядку вызовов

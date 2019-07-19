@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 13:54:55 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/16 16:51:56 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 15:00:52 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int		check_mod(const char *format)
 	else if (*format == 'j' || *format == 'z' || *format == 't')
 		ret = j_z_t_format(*format);
 	else if (*format == 'L')
-		ret = big_l(*format);
+		ret = big_l();
 	else
 		ret = 1;
 	return (ret);
