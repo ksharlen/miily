@@ -2,7 +2,6 @@
 
 int		main(void)
 {
-	ft_printf("hello world\n");
-
+	ft_printf("str = %s\n", "Привет мир");
 	return (0);
 }
