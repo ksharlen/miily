@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_to_str.c                                    :+:      :+:    :+:   */
+/*   str_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 12:08:34 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:29:59 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static wchar_t		*get_va_arg(va_list format)
 	return (va_arg(format, wchar_t *));
 }
 
-static void			work_aw(void)
+void				work_aw(void)
 {
 	if ((g_spec.size_num <= g_spec.accuracy && g_spec.accuracy <
 	g_spec.width) || (g_spec.width > g_spec.size_num && g_spec.accuracy >=
@@ -46,7 +46,7 @@ static void			work_aw(void)
 	}
 }
 
-static void			push_wa(unsigned char *inbuf)
+void				push_wa(unsigned char *inbuf)
 {
 	unsigned char	sym;
 	unsigned char	*buf;

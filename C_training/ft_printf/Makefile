@@ -31,13 +31,16 @@ SRC_BONUS 	:= color.c\
 					invisible_sym.c\
 					size_formats.c\
 					write_to_file.c\
-					utf-8.c\
+					utf_8.c\
 					work_wchar.c
 
 SRC_NUM 	:= base_depth.c\
 					base_to_str.c\
+					long_arithmetic.c\
 					char_to_str.c\
 					double_to_str.c\
+					double_to_str2.c\
+					double_to_str3.c\
 					int_to_str.c\
 					not_spec.c\
 					other_spec.c\

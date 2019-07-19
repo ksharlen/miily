@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   date.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/19 11:55:56 by cormund           #+#    #+#             */
+/*   Updated: 2019/07/19 11:59:02 by cormund          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-t_date	get_date(unsigned long long int num_date, t_date date)
+t_date						get_date(unsigned long long int num_date,\
+															t_date date)
 {
 	date.min = (num_date % 100);
 	num_date /= 100;
@@ -14,9 +27,9 @@ t_date	get_date(unsigned long long int num_date, t_date date)
 	return (date);
 }
 
-static	t_date work_date(t_date date)
+static t_date				work_date(t_date date)
 {
-	int		day_in_month;
+	int						day_in_month;
 
 	check_ovf_to_time(&date.min, &date.hours, 60, 59);
 	check_ovf_to_time(&date.hours, &date.days, 24, 23);
@@ -29,10 +42,10 @@ static	t_date work_date(t_date date)
 	return (date);
 }
 
-static void push_buf(int date, unsigned char sym)
+static void					push_buf(int date, unsigned char sym)
 {
-	size_t			len;
-	unsigned char	*str;
+	size_t					len;
+	unsigned char			*str;
 
 	str = (unsigned char *)ft_itoa(date);
 	len = ft_strlen((const char *)str);
@@ -42,28 +55,28 @@ static void push_buf(int date, unsigned char sym)
 	ft_ustrdel(&str);
 }
 
-static void	work_iso(t_date date)
+static void					work_iso(t_date date)
 {
-	int iso_years;
+	int						iso_years;
 
 	if ((iso_years = (4 - ft_size_num(date.years))) > 0)
 		memset_buf('0', iso_years);
-		push_buf(date.years, '-');
-		push_buf_sym_time(date.months, '0');
-		push_buf(date.months, '-');
-		push_buf_sym_time(date.days, '0');
-		push_buf(date.days, 'T');
-		push_buf_sym_time(date.hours, '0');
-		push_buf(date.hours, ':');
-		push_buf_sym_time(date.min, '0');
-		push_buf(date.min, 0);
+	push_buf(date.years, '-');
+	push_buf_sym_time(date.months, '0');
+	push_buf(date.months, '-');
+	push_buf_sym_time(date.days, '0');
+	push_buf(date.days, 'T');
+	push_buf_sym_time(date.hours, '0');
+	push_buf(date.hours, ':');
+	push_buf_sym_time(date.min, '0');
+	push_buf(date.min, 0);
 	write_buf_and_clean(WRITE_BUF);
 }
 
-void	date_to_str(va_list format) //va_list format
+void						date_to_str(va_list format)
 {
-	t_date	date;
-	unsigned long long int num_date;
+	t_date					date;
+	unsigned long long int	num_date;
 
 	num_date = va_arg(format, unsigned long long int);
 	date = get_date(num_date, date);

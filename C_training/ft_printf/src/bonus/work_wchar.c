@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   work_wchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 18:57:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:06:48 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static unsigned char		*push_wchar_in_char(t_utf utf, unsigned char *str)
+static unsigned char	*push_wchar_in_char(t_utf utf, unsigned char *str)
 {
-	unsigned char instr;
+	unsigned char		instr;
 
 	while (utf.bytes)
 	{
@@ -24,7 +24,7 @@ static unsigned char		*push_wchar_in_char(t_utf utf, unsigned char *str)
 	return (str);
 }
 
-static size_t				bytelen(wchar_t *str)
+static size_t			bytelen(wchar_t *str)
 {
 	size_t len;
 
@@ -42,12 +42,12 @@ static size_t				bytelen(wchar_t *str)
 
 unsigned char			*convert_utf8(wchar_t *str)
 {
-	t_utf 			utf;
-	size_t 			len;
-	size_t			len_wc;
-	size_t 			index;
-	unsigned char	*ret_str;
-	unsigned char	*p_ret_str;
+	t_utf				utf;
+	size_t				len;
+	size_t				len_wc;
+	size_t				index;
+	unsigned char		*ret_str;
+	unsigned char		*p_ret_str;
 
 	index = 0;
 	len = bytelen(str);
@@ -68,10 +68,10 @@ unsigned char			*convert_utf8(wchar_t *str)
 	return (ret_str);
 }
 
-unsigned char		*push_wchar_to_buf(t_utf utf)
+unsigned char			*push_wchar_to_buf(t_utf utf)
 {
-	unsigned char 	*buf;
-	unsigned char	inbuf;
+	unsigned char		*buf;
+	unsigned char		inbuf;
 
 	while (utf.bytes)
 	{

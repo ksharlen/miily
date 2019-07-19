@@ -3,19 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   work_buf_by_hand.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 17:03:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:33:07 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		memset_buf(unsigned char sym, int size)
+unsigned char				*check_buf(ssize_t size_str)
 {
-	unsigned char 	*buf;
-	int 	ret_check_loc;
+	unsigned char			*buf;
+
+	if (SIZE_BUF >= size_str)
+	{
+		if (g_spec.size_buf < size_str)
+			write_buf_and_clean(WRITE_BUF);
+		buf = work_buf(GET_POINT, 0);
+		g_spec.size_write += size_str;
+		g_spec.size_buf -= size_str;
+	}
+	else if (!(buf = ft_memalloc(size_str)))
+		exit(0);
+	return (buf);
+}
+
+void				memset_buf(unsigned char sym, int size)
+{
+	unsigned char	*buf;
+	int				ret_check_loc;
 
 	buf = work_buf(GET_POINT, 0);
 	ret_check_loc = check_loc_buf(size);
@@ -34,9 +51,9 @@ void		memset_buf(unsigned char sym, int size)
 	}
 }
 
-void		memcpy_buf(void *src, size_t size)
+void				memcpy_buf(void *src, size_t size)
 {
-	unsigned char 	*buf;
+	unsigned char	*buf;
 	int				ret_check_loc;
 
 	buf = work_buf(GET_POINT, 0);

@@ -9,5 +9,10 @@
 		{
 			"path": "/Users/cormund/git_clones/git_mil/C_training/ft_printf/tests"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"ft_printf.h": "c"
+		}
+	}
 }

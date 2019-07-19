@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utf-8.c                                            :+:      :+:    :+:   */
+/*   utf_8.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:35:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 11:08:40 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:04:42 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static unsigned			set_mask_10(unsigned val, unsigned bytes)
 
 static unsigned char	get_6_bits(unsigned unicode)
 {
-	unsigned char buf;
+	unsigned char		buf;
 
 	buf = unicode;
 	buf <<= 2;
@@ -33,10 +33,10 @@ static unsigned char	get_6_bits(unsigned unicode)
 	return (buf);
 }
 
-t_utf push_unicode(t_utf utf)
+t_utf					push_unicode(t_utf utf)
 {
-	int index;
-	unsigned bytes;
+	int					index;
+	unsigned			bytes;
 
 	bytes = utf.bytes;
 	index = 0;
@@ -58,7 +58,7 @@ t_utf push_unicode(t_utf utf)
 
 unsigned				def_num_bytes(wchar_t unicode)//вызывается из вне
 {
-	unsigned	bytes;
+	unsigned			bytes;
 
 	//проверить на 0 в основной ф-ии
 	bytes = 0;
