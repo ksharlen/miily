@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 20:28:28 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 11:54:00 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int			ft_check_end(const char *string)
+static int				ft_check_end(const char *string)
 {
 	if (*string == ':')
 		return (1);
@@ -24,7 +24,7 @@ static int			ft_check_end(const char *string)
 
 static unsigned char	*ft_check_format(const char *string)
 {
-	unsigned char 	*format;
+	unsigned char		*format;
 
 	format = NULL;
 	if (!ft_memcmp(string, "greasy", 6))
@@ -65,7 +65,8 @@ static unsigned char	*ft_check_color(const char *string)
 	return ((unsigned char *)ft_strdup((const char *)color));
 }
 
-static void				ft_push_buf_and_clean_string(unsigned char *str_clean, int size_str)
+static void				ft_push_buf_and_clean_string(unsigned char *str_clean,\
+																int size_str)
 {
 	unsigned char		*str;
 

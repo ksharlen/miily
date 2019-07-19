@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 21:05:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:31:39 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ typedef struct				s_long
 	int						len_int;
     int						len_fract;
     int						len_tmp;
+	int						e;
 }							t_long;
 
 typedef struct				s_spec
@@ -170,10 +171,10 @@ char						*ptr_to_str(unsigned long long ptr);
 void						str_to_str(va_list format);
 size_t						base_depth(unsigned long long int num, int base);
 void						char_to_str(va_list format);
-char						chr_space_plus_dec(void);
+unsigned char				chr_space_plus_dec(void);
 void						not_spec(void);
 
-char						*size_work(char *str, size_t size_num);
+unsigned char				*size_work(unsigned char *str, size_t size_num);
 void						work_to_format(const char *format, va_list form);
 void						work_spec_form(const char *format, va_list form);
 
@@ -191,7 +192,16 @@ void						double_to_str(va_list format);
 void						base_to_str(unsigned long long int num);
 int							color_format(const char *string);
 void						invisible_sym(va_list format);
-void						write_and_free_malloc(char *buf, size_t size_str);
+void						write_and_free_malloc(unsigned char *buf, size_t size_str);
+
+void						long_arithmetic(t_uni real_num, t_long *res);
+void						malloc_long(t_uni *real_num, t_long *res);
+size_t						size_num_for_long(t_long *res);
+int							banker_rounding(unsigned int *nbr, int i, int len);
+ssize_t						delete_zero(t_long *res, unsigned int *nbr,\
+																ssize_t i);
+void						push_double_to_str(unsigned char *buf, t_long *res,\
+										size_t size_str, ssize_t size_num);
 
 void						write_to_file(va_list format);
 int							mem_rec_cmp_for_color(char *str1,
@@ -209,6 +219,8 @@ t_date						get_date(unsigned long long int num_date, t_date date);
 void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
 void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
 
+void						work_aw(void);
+void						push_wa(unsigned char *inbuf);
 unsigned char				*check_buf(ssize_t size_str);
 
 void						test_d(void);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   buf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 10:37:49 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:08:32 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void						write_buf_and_clean(unsigned char *buf)
 	}
 }
 
-static unsigned char		*ft_push_buf(const unsigned char *inbuf, int size_inbuf, unsigned char *buf)
+static unsigned char		*ft_push_buf(const unsigned char *inbuf,\
+									int size_inbuf, unsigned char *buf)
 {
 	unsigned char			*ret_buf;
 
@@ -50,7 +51,8 @@ static unsigned char		*ft_push_buf(const unsigned char *inbuf, int size_inbuf, u
 	return (ret_buf);
 }
 
-static void					ft_write_big_data(const unsigned char **inbuf, int *size_inbuf)
+static void					ft_write_big_data(const unsigned char **inbuf,\
+															int *size_inbuf)
 {
 	while (*size_inbuf > 0 && *inbuf)
 	{
@@ -66,7 +68,8 @@ static void					ft_write_big_data(const unsigned char **inbuf, int *size_inbuf)
 	}
 }
 
-unsigned char				*work_buf(const unsigned char *inbuf, int size_inbuf)
+unsigned char				*work_buf(const unsigned char *inbuf,\
+													int size_inbuf)
 {
 	static unsigned char	buf[SIZE_BUF];
 	unsigned char			*ret_buf;

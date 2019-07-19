@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_to_str.c                                   :+:      :+:    :+:   */
+/*   char_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/06 12:07:07 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 12:11:35 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static wchar_t	ft_get_va_arg(va_list format)
+static wchar_t		ft_get_va_arg(va_list format)
 {
 	return (va_arg(format, wchar_t));
 }
 
-static void	ft_push_buf_sa(t_utf utf)
+static void			ft_push_buf_sa(t_utf utf)
 {
 	unsigned char	*buf;
 
@@ -25,10 +25,10 @@ static void	ft_push_buf_sa(t_utf utf)
 	memset_buf(' ', g_spec.width);
 }
 
-static void	ft_push_buf_as(t_utf utf)
+static void			ft_push_buf_as(t_utf utf)
 {
 	unsigned char	*buf;
-	char	for_zero;
+	char			for_zero;
 
 	for_zero = ' ';
 	if (g_spec.flags & ZERO)
@@ -38,7 +38,7 @@ static void	ft_push_buf_as(t_utf utf)
 	push_wchar_to_buf(utf);
 }
 
-static void	ft_push_buf(t_utf utf)
+static void			ft_push_buf(t_utf utf)
 {
 	if (g_spec.width > 1)
 	{
@@ -54,9 +54,9 @@ static void	ft_push_buf(t_utf utf)
 
 //Подумать над реализацией побайтного выреза символа
 
-void		char_to_str(va_list format)
+void				char_to_str(va_list format)
 {
-	t_utf utf;
+	t_utf			utf;
 
 	utf.unicode = ft_get_va_arg(format);
 	utf.bytes = def_num_bytes(utf.unicode);
