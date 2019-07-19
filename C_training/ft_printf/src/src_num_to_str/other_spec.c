@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   other_spec.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 13:10:49 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:12:17 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:56:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ static void	ft_n_format(va_list format)
 
 void		other_spec(va_list format)
 {
-	void	*n;
-
 	if (g_spec.spec == 'n')
 		ft_n_format(format);
 	else if (g_spec.spec == 'v')

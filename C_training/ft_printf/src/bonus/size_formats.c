@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size_formats.c                                  :+:      :+:    :+:   */
+/*   size_formats.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 16:11:59 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/14 14:02:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/19 14:45:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		j_z_t_format(const int check_mod)
 	return (1);
 }
 
-int		big_l(const int check_mod)
+int		big_l(void)
 {
 	if (check_the_entry(NUM_DOUBLE, g_spec.spec))
 		g_spec.mod = DASH;

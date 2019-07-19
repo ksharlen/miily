@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   double_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:29:28 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:52:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void					double_to_str(va_list format)
 	t_uni				real_num;
 	t_long				res;
 	unsigned char		*buf;
-	size_t				size_num;
+	int					size_num;
 	size_t				size_str;
 
 	real_num.num = pull_double_arg(format);

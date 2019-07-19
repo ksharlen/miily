@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   invisible_sym.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 12:02:39 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/19 12:02:40 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:42:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void				invisible_sym(va_list format)
 	unsigned char	sym;
 
 	sym = va_arg(format, int);
-	if (sym >= 0 && sym < 12)
+	if (sym < 12)
 		before_11(sym);
 	else if (sym > 11 && sym < 24)
 		before_23(sym);

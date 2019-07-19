@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:31:39 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:56:54 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,51 +147,72 @@ typedef struct				s_spec
 	int						flags;
 	int						width;
 	int						accuracy;
-	unsigned int			mod;
-	char					spec;
+	int						mod;
+	unsigned char			spec;
 	int						ret_printf;
 	int						size_buf;
 	int						size_write;
 	size_t					shift_spec;
-	size_t					size_num;
+	int						size_num;
 	int						fd;
 }							t_spec;
 
 extern	t_spec				g_spec;
 
+/*
+**main function
+*/
 int							ft_printf(const char *format, ...);
-
-int							l_format(const int next_symbal);
-int							h_format(const int next_symbal);
-int							j_z_t_format(const int check_mod);
-int							big_l(const int check_mod);
-
-void						int_to_str(long long int num);
-char						*ptr_to_str(unsigned long long ptr);
-void						str_to_str(va_list format);
-size_t						base_depth(unsigned long long int num, int base);
-void						char_to_str(va_list format);
-unsigned char				chr_space_plus_dec(void);
-void						not_spec(void);
-
-unsigned char				*size_work(unsigned char *str, size_t size_num);
 void						work_to_format(const char *format, va_list form);
 void						work_spec_form(const char *format, va_list form);
 
-int							ismy(char form);
+/*
+**size function
+*/
+int							l_format(const int next_symbal);
+int							h_format(const int next_symbal);
+int							j_z_t_format(const int check_mod);
+int							big_l(void);
 
-int							str_size_num(const char *format);
-int							check_the_entry(const char *def_str,
-const int sym);
+/*
+**format function
+*/
+void						int_to_str(long long int num);
+void						base_to_str(unsigned long long int num);
+char						*ptr_to_str(unsigned long long ptr);
+void						str_to_str(va_list format);
+void						char_to_str(va_list format);
+void						double_to_str(va_list format);
+void						other_spec(va_list format);
+void						not_spec(void);
 
-void						select_num_sys(va_list format);
+/*
+**Buffer function
+*/
 unsigned char				*work_buf(const unsigned char *inbuf, int size_inbuf);
 void						write_buf_and_clean(unsigned char *buf);
-void						other_spec(va_list format);
-void						double_to_str(va_list format);
-void						base_to_str(unsigned long long int num);
+int							check_loc_buf(int size);
+void						memset_buf(unsigned char sym, int size);
+void						memcpy_buf(void *src, size_t size);
+unsigned char				*check_buf(ssize_t size_str);
+
+/*
+**bonus function
+*/
 int							color_format(const char *string);
 void						invisible_sym(va_list format);
+void						write_to_file(va_list format);
+void						date_to_str(va_list);
+
+
+int							base_depth(unsigned long long int num, int base);
+unsigned char				chr_space_plus_dec(void);
+unsigned char				*size_work(unsigned char *str, size_t size_num);
+int							ismy(char form);
+int							str_size_num(const char *format);
+int							check_the_entry(const char *def_str,
+											const int sym);
+void						select_num_sys(va_list format);
 void						write_and_free_malloc(unsigned char *buf, size_t size_str);
 
 void						long_arithmetic(t_uni real_num, t_long *res);
@@ -199,21 +220,15 @@ void						malloc_long(t_uni *real_num, t_long *res);
 size_t						size_num_for_long(t_long *res);
 int							banker_rounding(unsigned int *nbr, int i, int len);
 ssize_t						delete_zero(t_long *res, unsigned int *nbr,\
-																ssize_t i);
+										ssize_t i);
 void						push_double_to_str(unsigned char *buf, t_long *res,\
 										size_t size_str, ssize_t size_num);
 
-void						write_to_file(va_list format);
 int							mem_rec_cmp_for_color(char *str1,
 char *str2, size_t n);
-void						memset_buf(unsigned char sym, int size);
-int							check_loc_buf(int size);
-
-void						ft_print_test(const char *form);
-
-void						date_to_str(va_list);
 int							get_quan_days(int month, int years);
 int							get_leap(int years);
+
 void						push_buf_sym_time(int num, unsigned char sym);
 t_date						get_date(unsigned long long int num_date, t_date date);
 void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
@@ -221,7 +236,13 @@ void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
 
 void						work_aw(void);
 void						push_wa(unsigned char *inbuf);
-unsigned char				*check_buf(ssize_t size_str);
+
+
+
+
+
+
+
 
 void						test_d(void);
 void						test_o(void);
@@ -230,6 +251,7 @@ void						test_s(void);
 void						test_b(void);
 void						test_f(void);
 void						test_other(void);
+void						ft_print_test(const char *form);
 
 //Utf-8
 //Расположенны по порядку вызовов
@@ -240,7 +262,6 @@ t_utf						push_unicode(t_utf utf);
 unsigned char				*push_wchar_to_buf(t_utf utf);
 unsigned char				*convert_utf8(wchar_t *str);
 
-void						memcpy_buf(void *src, size_t size);
 /*
 **void						__TEST__return_printf(int flag);
 **void						__TEST__check_ismy(int flag);

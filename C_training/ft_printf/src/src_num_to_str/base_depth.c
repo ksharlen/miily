@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   base_depth.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 08:28:06 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:10:40 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:47:48 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t					base_depth(unsigned long long int num, int base)
+int						base_depth(unsigned long long int num, int base)
 {
-	size_t				depth;
+	int					depth;
 	unsigned long long	num_cp;
 
 	num_cp = num;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   base_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/19 12:25:06 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:50:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ unsigned char		*size_work(unsigned char *str, size_t size_num)
 }
 
 static void			push_num_to_str(unsigned char *buf,
-					unsigned long long int num, size_t size_str, int base)
+					unsigned long long int num, int base)
 {
 	int						cp_num;
 	size_t					size_num;
@@ -56,14 +56,14 @@ void				write_and_free_malloc(unsigned char *buf, size_t size_str)
 static void			ft_work_base(unsigned long long num, int base)
 {
 	unsigned char	*buf;
-	size_t			size_num;
+	int				size_num;
 	size_t			size_str;
 
 	size_num = base_depth(num, base);
 	size_str = g_spec.width > size_num ? g_spec.width : size_num;
 	buf = check_buf(size_str);
 	push_num_to_str(g_spec.width > size_num ?\
-		size_work(buf, size_num) : buf, num, size_str, base);
+		size_work(buf, size_num) : buf, num, base);
 	if (SIZE_BUF < size_str)
 		write_and_free_malloc(buf, size_str);
 }
