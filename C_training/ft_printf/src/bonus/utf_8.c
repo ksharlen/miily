@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utf_8.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:35:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:04:42 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/19 14:00:16 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ t_utf					push_unicode(t_utf utf)
 		utf.utf_sym = utf.unicode;
 	return (utf);
 }
-
 
 unsigned				def_num_bytes(wchar_t unicode)//вызывается из вне
 {
