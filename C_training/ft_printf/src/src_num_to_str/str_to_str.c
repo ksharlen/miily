@@ -6,16 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 14:57:10 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 12:58:59 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static wchar_t		*get_va_arg(va_list format)
-{
-	return (va_arg(format, wchar_t *));
-}
 
 void				work_aw(void)
 {
@@ -70,19 +65,18 @@ void				str_to_str(va_list format)
 	wchar_t			*inbuf;
 	unsigned char	*utf_str;
 
-	inbuf = get_va_arg(format);
-	if (!inbuf)
+	if ((g_spec.spec == 'S') || (g_spec.spec == 's' && g_spec.mod & DASH))
 	{
-		utf_str = (unsigned char *)"(null)";
-		work_aw();
-		g_spec.size_num = ft_strlen((const char *)utf_str);
-		push_wa(utf_str);
+		inbuf = va_arg(format, wchar_t *);
+		utf_str = convert_utf8(inbuf);
 	}
 	else
-	{
-		work_aw();
-		utf_str = convert_utf8(inbuf);
-		g_spec.size_num = ft_strlen((const char *)utf_str);
-		push_wa(utf_str);
-	}
+		utf_str = va_arg(format, unsigned char *);
+	if (!utf_str)
+		utf_str = (unsigned char *)"(null)";
+	work_aw();
+	g_spec.size_num = ft_strlen((const char *)utf_str);
+	push_wa(utf_str);
+	if ((g_spec.spec == 'S') || (g_spec.spec == 's' && g_spec.mod & DASH))
+		ft_ustrdel(&utf_str);
 }

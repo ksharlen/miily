@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   work_to_format.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:13:10 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/20 12:07:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void		count_sym_to_spec(const char *format)
 
 static void		control_var(va_list format)
 {
+	//printf("spec = %c", g_spec.spec);
 	if (check_the_entry(NUM_INT, g_spec.spec))
 		select_num_sys(format);
 	else if (check_the_entry(NUM_STRING, g_spec.spec))

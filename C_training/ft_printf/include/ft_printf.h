@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 15:00:12 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 12:05:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@
 
 # define NUM_INT 			"dDoOxXuUibBp"
 # define NUM_DOUBLE 		"fFeEgGaA"
-# define NUM_STRING			"sc" //!Проверить тут
+# define NUM_STRING			"sScC"
 # define NUM_OTHER 			"nrkv"
 
 # define SIGNED_INT 		"dicCD"
