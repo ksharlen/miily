@@ -1,2 +1,2 @@
 # miily
-Hello_world
+this is my first training repository
