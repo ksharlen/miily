@@ -6,22 +6,34 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/19 14:50:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 13:33:51 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned char		*size_work(unsigned char *str, size_t size_num)
+int						base_depth(unsigned long long int num, int base)
 {
-	if (g_spec.flags & DASH)
-		ft_memset(str + size_num, ' ', g_spec.width - size_num);
-	else
-	{
-		ft_memset(str, ' ', g_spec.width - size_num);
-		str += g_spec.width - size_num;
-	}
-	return (str);
+	int					depth;
+	unsigned long long	num_cp;
+
+	num_cp = num;
+	depth = 1;
+	while (num_cp /= base)
+		++depth;
+	if (g_spec.flags & HASH && num &&
+	base != 16 && g_spec.flags & DOT && g_spec.accuracy <= depth)
+		++depth;
+	if (g_spec.flags & DOT && g_spec.accuracy > depth)
+		depth = g_spec.accuracy;
+	if (g_spec.flags & HASH && num && base == 16)
+		depth += 2;
+	depth = g_spec.flags & ZERO && !(g_spec.flags & DOT) &&
+	!(g_spec.flags & DASH) && g_spec.width > depth ? g_spec.width : depth;
+	depth = g_spec.flags & DOT && !g_spec.accuracy && !num ? 0 : depth;
+	g_spec.flags & HASH && base == 8 &&
+	!num && g_spec.flags & DOT && !g_spec.accuracy ? ++depth : 0;
+	return (depth);
 }
 
 static void			push_num_to_str(unsigned char *buf,

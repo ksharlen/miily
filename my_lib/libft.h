@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/18 20:51:24 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 13:47:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 # define MAXLONG 9223372036854775807
 # define FD_MAX 7198
 # define BUFF_SIZE 20
+
+# define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
+# define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
+# define SET_BIT(val, num)	((val) = ((val) | (1 << (num))))
+
 typedef struct		s_list
 {
 	void			*content;

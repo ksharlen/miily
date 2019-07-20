@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   int_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 08:18:38 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/19 16:08:26 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/20 13:33:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+unsigned char		*size_work(unsigned char *str, size_t size_num)
+{
+	if (g_spec.flags & DASH)
+		ft_memset(str + size_num, ' ', g_spec.width - size_num);
+	else
+	{
+		ft_memset(str, ' ', g_spec.width - size_num);
+		str += g_spec.width - size_num;
+	}
+	return (str);
+}
 
 unsigned char		chr_space_plus_dec(void)
 {
