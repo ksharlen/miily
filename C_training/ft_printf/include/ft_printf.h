@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 13:11:00 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 13:51:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@
 /*
 **Exeptions
 */
-//# define TYPE 				"dioOxXufeEgGaAnprkUDsScCbBvr"
-
 # define NUM_INT 			"dDoOxXuUibBp"
 # define NUM_DOUBLE 		"fFeEgGaA"
 # define NUM_STRING			"sScC"
@@ -100,9 +98,6 @@
 
 # define TWO_POW_TWENTY_EIGHT	268435456
 # define FIVE_POW_TWENTEEN	244140625
-
-# define NUM_MOD(x)			((x) = (x > 0) ? x : -(x))
-# define CHECK_MOD(x)		((x) > 0) ? (x) : -(x)
 
 typedef	struct				s_utf
 {
@@ -203,18 +198,16 @@ int							color_format(const char *string);
 void						invisible_sym(va_list format);
 void						write_to_file(va_list format);
 void						date_to_str(va_list);
+int							get_quan_days(int month, int years);
+int							get_leap(int years);
+void						push_buf_sym_time(int num, unsigned char sym);
+t_date						get_date(unsigned long long int num_date, t_date date);
+void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
+void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
 
-
-int							base_depth(unsigned long long int num, int base);
-unsigned char				chr_space_plus_dec(void);
-unsigned char				*size_work(unsigned char *str, size_t size_num);
-int							ismy(char form);
-int							str_size_num(const char *format);
-int							check_the_entry(const char *def_str,
-											const int sym);
-void						select_num_sys(va_list format);
-void						write_and_free_malloc(unsigned char *buf, size_t size_str);
-
+/*
+**double function
+*/
 void						long_arithmetic(t_uni real_num, t_long *res);
 void						malloc_long(t_uni *real_num, t_long *res);
 size_t						size_num_for_long(t_long *res);
@@ -224,26 +217,29 @@ ssize_t						delete_zero(t_long *res, unsigned int *nbr,\
 void						push_double_to_str(unsigned char *buf, t_long *res,\
 										size_t size_str, ssize_t size_num);
 
-int							mem_rec_cmp_for_color(char *str1,
-char *str2, size_t n);
-int							get_quan_days(int month, int years);
-int							get_leap(int years);
-
-void						push_buf_sym_time(int num, unsigned char sym);
-t_date						get_date(unsigned long long int num_date, t_date date);
-void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
-void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
-
-void						work_aw(void);
-void						push_wa(unsigned char *inbuf);
-
-//Utf-8
-//Расположенны по порядку вызовов
-
+/*
+**UTF-8
+*/
 unsigned					def_num_bytes(wchar_t unicode);
 unsigned					inst_mask(t_utf utf);
 t_utf						push_unicode(t_utf utf);
 unsigned char				*push_wchar_to_buf(t_utf utf);
 unsigned char				*convert_utf8(wchar_t *str);
+
+/*
+**other function
+*/
+int							base_depth(unsigned long long int num, int base);
+unsigned char				chr_space_plus_dec(void);
+unsigned char				*size_work(unsigned char *str, size_t size_num);
+int							ismy(char form);
+int							str_size_num(const char *format);
+void						select_num_sys(va_list format);
+void						work_aw(void);
+void						push_wa(unsigned char *inbuf);
+void						write_and_free_malloc(unsigned char *buf,
+size_t size_str);
+int							check_the_entry(const char *def_str,
+											const int sym);
 
 #endif

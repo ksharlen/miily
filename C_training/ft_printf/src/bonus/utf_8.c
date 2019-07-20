@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:35:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 14:00:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 13:52:03 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static unsigned			set_mask_10(unsigned val, unsigned bytes)
 	--bytes;
 	while (bytes)
 	{
-		val = ft_set_bit(val, (bytes * 8) - 1);
+		SET_BIT(val, (bytes * 8) - 1);
 		bytes--;
 	}
 	return (val);
@@ -55,11 +55,10 @@ t_utf					push_unicode(t_utf utf)
 	return (utf);
 }
 
-unsigned				def_num_bytes(wchar_t unicode)//вызывается из вне
+unsigned				def_num_bytes(wchar_t unicode)
 {
 	unsigned			bytes;
 
-	//проверить на 0 в основной ф-ии
 	bytes = 0;
 	if (unicode >= 0 && unicode < 128)
 		bytes = 1;

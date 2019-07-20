@@ -34,8 +34,7 @@ SRC_BONUS 	:= color.c\
 					utf_8.c\
 					work_wchar.c
 
-SRC_NUM 	:= base_depth.c\
-					base_to_str.c\
+SRC_NUM 	:= 	base_to_str.c\
 					long_arithmetic.c\
 					char_to_str.c\
 					double_to_str.c\

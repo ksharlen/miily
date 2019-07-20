@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 14:42:05 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/20 13:42:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static unsigned char	*ft_check_color(const char *string)
 {
-	unsigned char	*color;
+	unsigned char		*color;
 
 	if (!(color = (unsigned char *)ft_memalloc(sizeof(unsigned char) * 11)))
 		return (NULL);
