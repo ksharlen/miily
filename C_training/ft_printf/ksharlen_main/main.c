@@ -20,7 +20,8 @@ int		ret_ft;
 	//printf("{%5p}\n", 0);
 	//ft_printf("{%5p}\n", 0);
 
-	printf("%#o", 42);
+	//printf("%#o", 42);
+	printf("%c", 200);
 //!END_FAILD
 
 //?BEGIN_DONE
