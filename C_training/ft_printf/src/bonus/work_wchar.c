@@ -6,13 +6,24 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 12:08:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 17:00:26 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static unsigned char	*push_wchar_in_char(t_utf utf, unsigned char *str)
+t_utf					convert_sym_utf8(wchar_t sym)
+{
+	t_utf				utf;
+
+	utf.bytes = def_num_bytes(sym);
+	utf.unicode = sym;
+	utf.utf_sym = inst_mask(utf);
+	utf = push_unicode(utf);
+	return (utf);
+}
+
+unsigned char	*push_wchar_in_char(t_utf utf, unsigned char *str)
 {
 	while (utf.bytes)
 	{
@@ -54,10 +65,7 @@ unsigned char			*convert_utf8(wchar_t *str)
 	ft_bzero(ret_str, len + 1);
 	while (index < len)
 	{
-		utf.bytes = def_num_bytes(str[index]);
-		utf.unicode = str[index];
-		utf.utf_sym = inst_mask(utf);
-		utf = push_unicode(utf);
+		utf = convert_sym_utf8(str[index]);
 		p_ret_str = push_wchar_in_char(utf, p_ret_str);
 		index++;
 	}

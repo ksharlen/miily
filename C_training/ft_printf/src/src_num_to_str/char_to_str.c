@@ -6,16 +6,11 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 10:31:43 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 17:28:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static wchar_t		get_arg(va_list format)
-{
-	return (va_arg(format, wchar_t));
-}
 
 static void			push_buf_sa(t_utf utf)
 {
@@ -52,9 +47,15 @@ void				char_to_str(va_list format)
 {
 	t_utf			utf;
 
-	utf.unicode = get_arg(format);
-	utf.bytes = def_num_bytes(utf.unicode);
-	utf.utf_sym = inst_mask(utf);
-	utf = push_unicode(utf);
+	if (g_spec.spec == 'C' || (g_spec.spec == 'c' && g_spec.mod == DASH))
+	{
+		utf.unicode = va_arg(format, wchar_t);
+		utf = convert_sym_utf8(utf.unicode);
+	}
+	else if (g_spec.spec == 'c')
+	{
+		utf.utf_sym = (unsigned char)va_arg(format, int);
+		utf.bytes = 1;
+	}
 	push_buf(utf);
 }
