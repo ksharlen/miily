@@ -6,11 +6,19 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 12:58:59 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 12:14:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void				zeroing_negative_num(void)
+{
+	if (g_spec.width < 0)
+		g_spec.width = 0;
+	if (g_spec.accuracy < 0)
+		g_spec.accuracy = 0;
+}
 
 void				work_aw(void)
 {
@@ -74,8 +82,9 @@ void				str_to_str(va_list format)
 		utf_str = va_arg(format, unsigned char *);
 	if (!utf_str)
 		utf_str = (unsigned char *)"(null)";
-	work_aw();
 	g_spec.size_num = ft_strlen((const char *)utf_str);
+	work_aw();
+	zeroing_negative_num();
 	push_wa(utf_str);
 	if ((g_spec.spec == 'S') || (g_spec.spec == 's' && g_spec.mod & DASH))
 		ft_ustrdel(&utf_str);
