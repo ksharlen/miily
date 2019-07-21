@@ -16,8 +16,8 @@ int		main(void)
 	// printf("%u", 0);
 	// ft_printf("%u", 0);
 
-	ft_printf("%u\n", 12342113);
-	printf("%u\n", 12342113);
+	// ft_printf("%u\n", 12342113);
+	// printf("%u\n", 12342113);
 
 	// ft_printf("str: %10s\n", "hello world");
 	// printf("str: %10s\n", "hello world");
