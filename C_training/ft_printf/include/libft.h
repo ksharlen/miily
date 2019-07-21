@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 10:05:14 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 11:21:33 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <assert.h>
 
 # define MAXLONG 9223372036854775807
 # define FD_MAX 7198
