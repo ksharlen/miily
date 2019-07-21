@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 13:54:55 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 10:32:27 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 17:47:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ static int		check_star_and_push(va_list form)
 	{
 		g_spec.accuracy = va_arg(form, int);
 		if (g_spec.accuracy < 0)
+		{
 			g_spec.accuracy = 0;
+			g_spec.flags &= (~(DOT));
+		}
 		ret_shift = 2;
 	}
 	else if (g_spec.flags & STAR_WITH)
@@ -59,6 +62,7 @@ static int		find_width_accuracy(const char *format, va_list form)
 {
 	int			shift;
 
+	printf("here\n");
 	if (*format == '*')
 	{
 		g_spec.flags |= STAR_WITH;
@@ -116,4 +120,5 @@ void			work_spec_form(const char *format, va_list form)
 	g_spec.accuracy = 0;
 	g_spec.mod = 0;
 	work_spec(format, form);
+	printf("width = %d\naccuracy = %d\n", g_spec.width, g_spec.accuracy);
 }

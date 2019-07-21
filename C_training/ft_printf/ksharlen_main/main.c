@@ -16,6 +16,7 @@ int		main(void)
 
 	//ft_printf("%c", 'g');
 
+
 //!BEGIN_FAILD
 int		ret;
 int		ret_ft;
@@ -37,6 +38,12 @@ int		ret_ft;
 	// ret_ft = ft_printf("%");
 	// ret = printf("%");
 	// assert(ret_ft == ret);
+
+	//printf("{%.*s}", -5, "42");
+	//ft_printf("{%.*s}", -5, "42");
+
+	//printf("{%05.*d}", -15, 42);
+	//ft_printf("{%05.*d}", -15, 42);
 //?END_DONE
 
 	// printf("ret = %d\n", ret);
