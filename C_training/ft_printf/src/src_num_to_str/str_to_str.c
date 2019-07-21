@@ -6,13 +6,13 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 12:14:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 13:36:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void				zeroing_negative_num(void)
+static void			zeroing_negative_num(void)
 {
 	if (g_spec.width < 0)
 		g_spec.width = 0;
