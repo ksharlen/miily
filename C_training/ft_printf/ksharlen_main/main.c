@@ -1,7 +1,18 @@
-#include "ft_printf.h"
+#include "testing.h"
 
 int		main(void)
 {
+	test_d();
+	test_o();
+	test_x();
+	test_b();
+	test_other();
+	test_c();
+	test_s();
+
+	// ft_printf("str: %10s\n", "hello world");
+	// printf("str: %10s\n", "hello world");
+
 	// ft_printf("1) string1: %S\n", L"Привет мир");
 	// ft_printf("2) string1.1: %S\n", "Привет мир");
 
@@ -25,7 +36,7 @@ int		main(void)
 
 	// ft_printf("14) chara3.1: %c\n", 'h');
 
-	printf("%ls", "Привет мир");
+	// printf("%ls", "Привет мир");
 
 	// ft_printf("%ls", NULL);
 
