@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 13:05:27 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 11:37:33 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 10:31:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ static void			push_buf(t_utf utf)
 	else
 		push_wchar_to_buf(utf);
 }
-
-//Подумать над реализацией побайтного выреза символа
 
 void				char_to_str(va_list format)
 {
