@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 13:51:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 09:47:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,7 +201,6 @@ void						date_to_str(va_list);
 int							get_quan_days(int month, int years);
 int							get_leap(int years);
 void						push_buf_sym_time(int num, unsigned char sym);
-t_date						get_date(unsigned long long int num_date, t_date date);
 void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
 void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
 
