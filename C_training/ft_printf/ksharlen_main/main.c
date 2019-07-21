@@ -10,53 +10,26 @@ int		main(void)
 	// test_c();
 	// test_s();
 
-	// ft_printf("%#6o\n", 2500);
-	// printf("%#6o\n", 2500);
+//!BEGIN_FAILD
+int		ret;
+int		ret_ft;
 
-	// printf("%u", 0);
-	// ft_printf("%u", 0);
+	//printf("%p\n", 0);
+	//ft_printf("%p\n", 0);
 
-	ft_printf("%u\n", 12342113);
-	printf("%u\n", 12342113);
+	//printf("{%5p}\n", 0);
+	//ft_printf("{%5p}\n", 0);
 
-	// ft_printf("str: %10s\n", "hello world");
-	// printf("str: %10s\n", "hello world");
+	printf("%#o", 42);
+//!END_FAILD
 
-	// ft_printf("1) string1: %S\n", L"Привет мир");
-	// ft_printf("2) string1.1: %S\n", "Привет мир");
+//?BEGIN_DONE
+	// ret_ft = ft_printf("%");
+	// ret = printf("%");
+	// assert(ret_ft == ret);
+//?END_DONE
 
-	// ft_printf("3) string2: %ls\n", L"Привет мир");
-	// ft_printf("4) stirng2.1: %ls\n", "Привет мир");
-
-	// ft_printf("5) string3: %s\n", L"Привет мир");
-	// ft_printf("6) string3.1: %s\n", "Привет мир");
-
-	// ft_printf("7) char1: %C\n", L'П');
-
-	// ft_printf("8) char2: %lc\n", L'П');
-
-	// ft_printf("9) char2: %c\n", L'П');
-
-	// ft_printf("10) chara1: %C\n", L'h');
-	// ft_printf("11) chara1.1: %C\n", 'h');
-
-	// ft_printf("12) chara2: %lc\n", L'h');
-	// ft_printf("13) chara2.1: %lc\n", 'h');
-
-	// ft_printf("14) chara3.1: %c\n", 'h');
-
-	// printf("%ls", "Привет мир");
-
-	// ft_printf("%ls", NULL);
-
-	// ft_printf("%f\n", 124.4123);
-
-	//ft_printf("color {/purple} how are you?");
-	// int a;
-
-	// a = 0;
-	// SET_BIT(a, 3);
-	// //printf("a = %d\n", a);
-	// ft_printf("String = %ls\n", L"Привет мир!!!");
+	// printf("ret = %d\n", ret);
+	// printf("ret_ft = %d\n", ret_ft);
 	return (0);
 }
