@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/20 13:33:51 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 10:31:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int						base_depth(unsigned long long int num, int base)
 	return (depth);
 }
 
-static void			push_num_to_str(unsigned char *buf,
-					unsigned long long int num, int base)
+static void				push_num_to_str(unsigned char *buf,
+unsigned long long int num, int base)
 {
-	int						cp_num;
-	size_t					size_num;
+	int					cp_num;
+	size_t				size_num;
 
 	size_num = base_depth(num, base);
 	cp_num = num;
@@ -58,18 +58,19 @@ static void			push_num_to_str(unsigned char *buf,
 		buf[0] = g_spec.spec;
 }
 
-void				write_and_free_malloc(unsigned char *buf, size_t size_str)
+void					write_and_free_malloc(unsigned char *buf,
+size_t size_str)
 {
 	write_buf_and_clean(WRITE_BUF);
 	g_spec.ret_printf += write(g_spec.fd, buf, size_str);
 	ft_ustrdel(&buf);
 }
 
-static void			ft_work_base(unsigned long long num, int base)
+static void				ft_work_base(unsigned long long num, int base)
 {
-	unsigned char	*buf;
-	int				size_num;
-	size_t			size_str;
+	unsigned char		*buf;
+	int					size_num;
+	size_t				size_str;
 
 	size_num = base_depth(num, base);
 	size_str = g_spec.width > size_num ? g_spec.width : size_num;
@@ -80,9 +81,9 @@ static void			ft_work_base(unsigned long long num, int base)
 		write_and_free_malloc(buf, size_str);
 }
 
-void				base_to_str(unsigned long long int num)
+void					base_to_str(unsigned long long int num)
 {
-	int				base;
+	int					base;
 
 	base = 0;
 	if (g_spec.spec == 'x' || g_spec.spec == 'X')
