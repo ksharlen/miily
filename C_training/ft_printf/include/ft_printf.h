@@ -6,10 +6,9 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 09:47:37 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 10:04:55 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -115,7 +114,7 @@ typedef struct				s_date
 	int						years;
 }							t_date;
 
-typedef union				s_uni
+typedef union				u_uni
 {
 	long double				num;
 	struct
@@ -128,12 +127,12 @@ typedef union				s_uni
 
 typedef struct				s_long
 {
-	unsigned int			*nbr_int;
-    unsigned int			*nbr_fract;
-    unsigned int			*nbr_tmp;
+	unsigned				*nbr_int;
+	unsigned				*nbr_fract;
+	unsigned				*nbr_tmp;
 	int						len_int;
-    int						len_fract;
-    int						len_tmp;
+	int						len_fract;
+	int						len_tmp;
 	int						e;
 }							t_long;
 
@@ -184,7 +183,8 @@ void						not_spec(void);
 /*
 **Buffer function
 */
-unsigned char				*work_buf(const unsigned char *inbuf, int size_inbuf);
+unsigned char				*work_buf(const unsigned char *inbuf,
+int size_inbuf);
 void						write_buf_and_clean(unsigned char *buf);
 int							check_loc_buf(int size);
 void						memset_buf(unsigned char sym, int size);
@@ -197,12 +197,14 @@ unsigned char				*check_buf(ssize_t size_str);
 int							color_format(const char *string);
 void						invisible_sym(va_list format);
 void						write_to_file(va_list format);
-void						date_to_str(va_list);
+void						date_to_str(va_list format);
 int							get_quan_days(int month, int years);
 int							get_leap(int years);
 void						push_buf_sym_time(int num, unsigned char sym);
-void						check_ovf_to_time(int *num, int *num1, int ovf, int check);
-void						check_ovf_to_date(int *num, int *num1, int ovf, int check);
+void						check_ovf_to_time(int *num, int *num1,
+int ovf, int check);
+void						check_ovf_to_date(int *num, int *num1,
+int ovf, int check);
 
 /*
 **double function

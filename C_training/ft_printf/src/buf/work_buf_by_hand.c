@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   work_buf_by_hand.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:33:07 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/21 10:28:36 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned char				*check_buf(ssize_t size_str)
+unsigned char		*check_buf(ssize_t size_str)
 {
-	unsigned char			*buf;
+	unsigned char	*buf;
 
 	if (SIZE_BUF >= size_str)
 	{
@@ -34,17 +34,20 @@ void				memset_buf(unsigned char sym, int size)
 	unsigned char	*buf;
 	int				ret_check_loc;
 
-	buf = work_buf(GET_POINT, 0);
 	ret_check_loc = check_loc_buf(size);
 	if (ret_check_loc == 1)
 		write_buf_and_clean(NULL);
 	else if (ret_check_loc == -1)
 	{
 		write_buf_and_clean(NULL);
-		g_spec.ret_printf += write(g_spec.fd, ft_memset(buf, sym, size), size);//тут уязвимость, нужно будет устранить
+		buf = (unsigned char *)ft_memalloc(size);
+		ft_memset(buf, sym, size);
+		g_spec.ret_printf += write(g_spec.fd, buf, size);
+		ft_ustrdel(&buf);
 	}
 	else
 	{
+		buf = work_buf(GET_POINT, 0);
 		ft_memset(buf, sym, size);
 		g_spec.size_write += size;
 		g_spec.size_buf -= size;

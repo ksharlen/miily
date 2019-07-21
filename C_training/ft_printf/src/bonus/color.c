@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:56:37 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 13:42:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 10:25:06 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void				ft_push_buf_and_clean_string(unsigned char *str_clean,\
 int						color_format(const char *string)
 {
 	unsigned char		*color;
-
 	int					len;
 
 	if ((color = ft_check_color(string)) && g_spec.fd == 1)

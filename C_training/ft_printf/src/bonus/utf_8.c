@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:35:12 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/20 13:52:03 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 10:25:53 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ t_utf					push_unicode(t_utf utf)
 	{
 		while (bytes)
 		{
-			utf.utf_sym = ft_bitscpy(utf.utf_sym, get_6_bits(utf.unicode), index);
+			utf.utf_sym = ft_bitscpy(utf.utf_sym,\
+			get_6_bits(utf.unicode), index);
 			utf.unicode >>= 6;
 			index += 8;
 			--bytes;
@@ -80,7 +81,8 @@ unsigned				inst_mask(t_utf utf)
 	if (utf.bytes > 1)
 	{
 		mask = ft_set_bits(mask, utf.bytes, utf.bytes - 1);
-		utf.utf_sym = ft_bitscpy(utf.utf_sym, mask, (utf.bytes * 8) - utf.bytes);
+		utf.utf_sym = ft_bitscpy(utf.utf_sym, mask,\
+			(utf.bytes * 8) - utf.bytes);
 		utf.utf_sym = set_mask_10(utf.utf_sym, utf.bytes);
 	}
 	return (utf.utf_sym);
