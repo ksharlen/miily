@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   date.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 11:55:56 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/19 11:59:02 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/21 09:49:27 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_date						get_date(unsigned long long int num_date,\
-															t_date date)
+static t_date				get_date(unsigned long long int num_date)
 {
+	t_date					date;
+
 	date.min = (num_date % 100);
 	num_date /= 100;
 	date.hours = (num_date % 100);
@@ -75,11 +76,11 @@ static void					work_iso(t_date date)
 
 void						date_to_str(va_list format)
 {
-	t_date					date;
 	unsigned long long int	num_date;
+	t_date					date;
 
 	num_date = va_arg(format, unsigned long long int);
-	date = get_date(num_date, date);
+	date = get_date(num_date);
 	date = work_date(date);
 	work_iso(date);
 }
