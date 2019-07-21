@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 10:04:55 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 14:04:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 
 # define BIN 				2
 # define OCT 				8
+# define DECEM				10
 # define HEX 				16
 
 /*

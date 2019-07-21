@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/21 10:31:25 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/21 14:04:17 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void					base_to_str(unsigned long long int num)
 		base = OCT;
 	else if (g_spec.spec == 'b' || g_spec.spec == 'B')
 		base = BIN;
+	else if (g_spec.spec == 'u' || g_spec.spec == 'U')
+		base = DECEM;
 	else if (g_spec.spec == 'p')
 	{
 		g_spec.flags |= HASH;

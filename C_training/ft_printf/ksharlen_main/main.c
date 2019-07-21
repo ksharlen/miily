@@ -2,13 +2,22 @@
 
 int		main(void)
 {
-	test_d();
-	test_o();
-	test_x();
-	test_b();
-	test_other();
-	test_c();
-	test_s();
+	// test_d();
+	// test_o();
+	// test_x();
+	// test_b();
+	// test_other();
+	// test_c();
+	// test_s();
+
+	// ft_printf("%#6o\n", 2500);
+	// printf("%#6o\n", 2500);
+
+	// printf("%u", 0);
+	// ft_printf("%u", 0);
+
+	ft_printf("%u\n", 12342113);
+	printf("%u\n", 12342113);
 
 	// ft_printf("str: %10s\n", "hello world");
 	// printf("str: %10s\n", "hello world");
