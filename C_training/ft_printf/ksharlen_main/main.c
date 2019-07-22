@@ -16,6 +16,11 @@ int		main(void)
 
 	//ft_printf("%c", 'g');
 
+	// printf("%.4d\n", 42);
+	// ft_printf("%.4d\n", 42);
+
+// printf("%u\n", -42);
+// ft_printf("%u\n", -42);
 
 //!BEGIN_FAILD
 int		ret;
@@ -31,6 +36,11 @@ int		ret_ft;
 	// printf("%c\n", 200);
 	// ft_printf("%c\n", 200);
 //!END_FAILD
+
+	// ret = ft_printf("% ");
+	// printf("ret = %d\n", ret);
+
+	ft_printf("%05%\n");
 
 //?BEGIN_DONE
 	// printf("%c\n", 200);
