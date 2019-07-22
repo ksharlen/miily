@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   base_to_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 17:11:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/21 14:04:17 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/22 16:35:27 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,22 @@ int						base_depth(unsigned long long int num, int base)
 	depth = 1;
 	while (num_cp /= base)
 		++depth;
-	if (g_spec.flags & HASH && num &&
-	base != 16 && g_spec.flags & DOT && g_spec.accuracy <= depth)
+	if (g_spec.flags & HASH && num && base != 16)
 		++depth;
 	if (g_spec.flags & DOT && g_spec.accuracy > depth)
 		depth = g_spec.accuracy;
 	if (g_spec.flags & HASH && num && base == 16)
 		depth += 2;
-	depth = g_spec.flags & ZERO && !(g_spec.flags & DOT) &&
-	!(g_spec.flags & DASH) && g_spec.width > depth ? g_spec.width : depth;
-	depth = g_spec.flags & DOT && !g_spec.accuracy && !num ? 0 : depth;
-	g_spec.flags & HASH && base == 8 &&
-	!num && g_spec.flags & DOT && !g_spec.accuracy ? ++depth : 0;
+	if (g_spec.flags & ZERO && !(g_spec.flags & DOT) &&
+		!(g_spec.flags & DASH) && g_spec.width > depth)
+		depth = g_spec.width;
+	if (g_spec.flags & DOT && !g_spec.accuracy && !num)
+		depth = 0;
+	if (g_spec.flags & HASH && base == 8 &&
+		!num && g_spec.flags & DOT && !g_spec.accuracy)
+		++depth;
+	if (g_spec.spec == 'p' && !num)
+		depth += 2;
 	return (depth);
 }
 
@@ -41,13 +45,16 @@ unsigned long long int num, int base)
 {
 	int					cp_num;
 	size_t				size_num;
+	size_t				mod;
+	int					ascii;
 
 	size_num = base_depth(num, base);
 	cp_num = num;
+	ascii = -33 + (g_spec.spec != 'p' ? g_spec.spec : 'x');
 	while (size_num--)
 	{
-		buf[size_num] = (num % base > 9 ? num %
-		base + g_spec.spec - 33 : num % base + '0');
+		mod = num % base;
+		buf[size_num] = (mod > 9 ? mod + ascii : mod + '0');
 		num /= base;
 	}
 	if (g_spec.flags & HASH && cp_num &&
@@ -56,6 +63,8 @@ unsigned long long int num, int base)
 	if (g_spec.flags & HASH && cp_num &&
 	(g_spec.spec == 'b' || g_spec.spec == 'B'))
 		buf[0] = g_spec.spec;
+	if (g_spec.spec == 'p')
+		buf[1] = 'x';
 }
 
 void					write_and_free_malloc(unsigned char *buf,
@@ -97,7 +106,6 @@ void					base_to_str(unsigned long long int num)
 	else if (g_spec.spec == 'p')
 	{
 		g_spec.flags |= HASH;
-		g_spec.spec = 'x';
 		base = HEX;
 	}
 	ft_work_base(num, base);

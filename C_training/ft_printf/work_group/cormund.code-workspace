@@ -1,16 +1,10 @@
 {
 	"folders": [
 		{
+			"path": "/Users/cormund/git_clones/git_mil/C_training/ft_printf/main_test"
+		},
+		{
 			"path": "/Users/cormund/git_clones/git_mil/C_training/ft_printf"
-		},
-		{
-			"path": "/Users/cormund/git_clones/git_mil/my_lib"
-		},
-		{
-			"path": "/Users/cormund/git_clones/git_mil/C_training/ft_printf/tests"
-		},
-		{
-			"path": "/Users/cormund/git_clones/git_norminette/C_training/ft_printf"
 		}
 	],
 	"settings": {

@@ -2,13 +2,13 @@
 
 int		main(void)
 {
-	// test_d();
-	// test_o();
-	// test_x();
-	// test_b();
-	// test_other();
-	// test_c();
-	// test_s();
+	test_d();
+	test_o();
+	test_x();
+	test_b();
+	test_other();
+	test_c();
+	test_s();
 
 	// ft_printf("%lc", L'П');
 
@@ -40,7 +40,7 @@ int		ret_ft;
 	// ret = ft_printf("% ");
 	// printf("ret = %d\n", ret);
 
-	ft_printf("%05%\n");
+	// ft_printf("%05%\n");
 
 //?BEGIN_DONE
 	// printf("%c\n", 200);

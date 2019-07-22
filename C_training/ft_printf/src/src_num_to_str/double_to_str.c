@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   double_to_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 14:52:16 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/22 17:02:53 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static void				nan_infinity(t_uni *real_num)
 		inbuf = (unsigned char *)(g_spec.spec > 96 ? " inf" : " INF");
 	else
 		inbuf = (unsigned char *)(g_spec.spec > 96 ? "inf" : "INF");
-	work_aw();
 	g_spec.size_num = ft_strlen((const char *)inbuf);
+	work_aw();
 	push_wa(inbuf);
 }
 
