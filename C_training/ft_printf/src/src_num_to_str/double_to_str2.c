@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:47:39 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/18 17:33:46 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/23 16:05:46 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ size_t			size_num_for_long(t_long *res)
 		rounding_number(res, res->nbr_tmp, res->len_tmp - l - 1);
 		res->len_fract += res->e;
 		res->len_int = 1;
-		l += 4 + res->e / 10;
+		l += 3 + ft_size_num((CHECK_MOD(res->e) / 10));
 	}
 	if (g_spec.flags & HASH || !(g_spec.flags & DOT) ||\
 	(g_spec.flags & DOT && g_spec.accuracy))
