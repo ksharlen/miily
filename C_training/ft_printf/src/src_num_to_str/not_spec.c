@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 09:57:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/23 07:47:37 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 08:42:46 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static void			put_width(void)
 	define_width();
 	if (g_spec.flags & DASH)
 	{
+		sym = ' ';
 		work_buf(&g_spec.spec, 1);
 		memset_buf(sym, g_spec.width);
 	}
@@ -39,6 +40,7 @@ static void			put_width(void)
 		memset_buf(sym, g_spec.width);
 		work_buf(&g_spec.spec, 1);
 	}
+	write_buf_and_clean(WRITE_BUF);
 }
 
 void				not_spec(void)

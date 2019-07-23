@@ -1,4 +1,3 @@
-#include <capture.h>
 #include "testing.h"
 
 int		main(void)
@@ -29,10 +28,18 @@ int		ret_ft;
 
 	ret = printf("%");
 	ret_ft = ft_printf("%");
+	printf("\n");
+	printf("ret = %d\nret_ft = %d\n", ret, ret_ft);
 //!END_FAILD
 
+	// ret = ft_printf("% hZ%");
+	//printf("\n");
+	//printf("ret = %d\n", ret);
+	// ret = printf("%-05%");
+	// printf("\n");
+	// ft_printf("%-05%");
+	// printf("\n");
 
-	printf("%d", __VA_ARGS__);
 	// ret = ft_printf("% ");
 	// printf("ret = %d\n", ret);
 
