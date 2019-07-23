@@ -29,7 +29,10 @@ static void				nan_infinity(t_uni *real_num)
 	unsigned char		*inbuf;
 
 	if (g_spec.flags & DOT)
+	{
 		(g_spec.flags ^= DOT);
+		g_spec.accuracy = 0;
+	}
 	if (g_spec.flags & ZERO)
 		(g_spec.flags ^= ZERO);
 	if (real_num->bits.mantissa << 1)
