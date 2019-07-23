@@ -60,6 +60,7 @@ $(NAME): $(OBJS)
 	cp $(DIR_LIBFT)$(LIBFT) .
 	mv $(LIBFT) $(NAME)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
+	cp -r $(NAME) ksharlen_main
 
 $(OBJS):%.o:%.c $(HEADERS) | $(DIR_BIN)
 	$(CC) -c $(CFLAGS) $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)

@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 09:57:05 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 14:55:06 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 07:47:37 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ static void			put_width(void)
 
 void				not_spec(void)
 {
-	put_width();
+	if (g_spec.spec)
+		put_width();
 }

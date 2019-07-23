@@ -1,14 +1,15 @@
+#include <capture.h>
 #include "testing.h"
 
 int		main(void)
 {
-	test_d();
-	test_o();
-	test_x();
-	test_b();
-	test_other();
-	test_c();
-	test_s();
+	// test_d();
+	// test_o();
+	// test_x();
+	// test_b();
+	// test_other();
+	// test_c();
+	// test_s();
 
 	// ft_printf("%lc", L'П');
 
@@ -26,17 +27,12 @@ int		main(void)
 int		ret;
 int		ret_ft;
 
-	//printf("%p\n", 0);
-	//ft_printf("%p\n", 0);
-
-	//printf("{%5p}\n", 0);
-	//ft_printf("{%5p}\n", 0);
-
-	//printf("%#o", 42);
-	// printf("%c\n", 200);
-	// ft_printf("%c\n", 200);
+	ret = printf("%");
+	ret_ft = ft_printf("%");
 //!END_FAILD
 
+
+	printf("%d", __VA_ARGS__);
 	// ret = ft_printf("% ");
 	// printf("ret = %d\n", ret);
 
@@ -56,7 +52,28 @@ int		ret_ft;
 	//ft_printf("{%05.*d}", -15, 42);
 //?END_DONE
 
+	// ret = printf("%");
+	// ret_ft = ft_printf("%");
+
+	// printf("ret_ft = %d\nret = %d\n", ret_ft, ret);
+
+	// ret_ft = ft_printf("% lh123");
+	// printf("ret_ft = %d\n", ret_ft);
+	// printf("spec = %d\n", g_spec.spec);
+
+	// ret = printf("%");
+	// ret_ft = ft_printf("%");
+
+	// printf("ret = %d\nret_ft = %d\n", ret, ret_ft);
+
+	//assert(printf("%") == ft_printf("%"));
+	//printf("hello world");
+	// ret = ft_printf("%c", 13);
+	// printf("ret = %d\n", ret);
 	// printf("ret = %d\n", ret);
 	// printf("ret_ft = %d\n", ret_ft);
+
+	//printf("testing\n");
+
 	return (0);
 }

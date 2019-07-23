@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 14:35:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 08:28:10 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 static void		define_spec(const char *format_string)
 {
-	char		format;
-
 	format_string += g_spec.shift_spec;
-	format = *format_string;
-	g_spec.spec = format;
-	++g_spec.shift_spec;
+	g_spec.spec = *format_string;
 }
 
 static void		count_sym_to_spec(const char *format)
@@ -61,6 +57,7 @@ static void		call_fun_format(const char *format, va_list form)
 		work_spec_form(format, form);
 		control_var(form);
 	}
+	g_spec.shift_spec += (g_spec.spec ? 1 : 0);
 }
 
 void			work_to_format(const char *format, va_list form)
@@ -69,8 +66,9 @@ void			work_to_format(const char *format, va_list form)
 	{
 		if (*format == '%')
 		{
-			call_fun_format(format + 1, form);
-			format += g_spec.shift_spec + 1;
+			++format;
+			call_fun_format(format, form);
+			format += g_spec.shift_spec;
 		}
 		else
 		{
