@@ -6,15 +6,15 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 17:00:26 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 10:15:39 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_utf					convert_sym_utf8(wchar_t sym)
+t_utf				convert_sym_utf8(wchar_t sym)
 {
-	t_utf				utf;
+	t_utf			utf;
 
 	utf.bytes = def_num_bytes(sym);
 	utf.unicode = sym;
@@ -23,7 +23,7 @@ t_utf					convert_sym_utf8(wchar_t sym)
 	return (utf);
 }
 
-unsigned char	*push_wchar_in_char(t_utf utf, unsigned char *str)
+unsigned char		*push_wchar_in_char(t_utf utf, unsigned char *str)
 {
 	while (utf.bytes)
 	{
@@ -33,9 +33,9 @@ unsigned char	*push_wchar_in_char(t_utf utf, unsigned char *str)
 	return (str);
 }
 
-static size_t			bytelen(wchar_t *str)
+static size_t		bytelen(wchar_t *str)
 {
-	size_t len;
+	size_t			len;
 
 	len = 0;
 	if (str)
@@ -49,13 +49,13 @@ static size_t			bytelen(wchar_t *str)
 	return (len);
 }
 
-unsigned char			*convert_utf8(wchar_t *str)
+unsigned char		*convert_utf8(wchar_t *str)
 {
-	t_utf				utf;
-	size_t				len;
-	size_t				index;
-	unsigned char		*ret_str;
-	unsigned char		*p_ret_str;
+	t_utf			utf;
+	size_t			len;
+	size_t			index;
+	unsigned char	*ret_str;
+	unsigned char	*p_ret_str;
 
 	index = 0;
 	len = bytelen(str);
@@ -72,10 +72,10 @@ unsigned char			*convert_utf8(wchar_t *str)
 	return (ret_str);
 }
 
-unsigned char			*push_wchar_to_buf(t_utf utf)
+unsigned char		*push_wchar_to_buf(t_utf utf)
 {
-	unsigned char		*buf;
-	unsigned char		inbuf;
+	unsigned char	*buf;
+	unsigned char	inbuf;
 
 	while (utf.bytes)
 	{
