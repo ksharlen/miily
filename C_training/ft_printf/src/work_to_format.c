@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/23 08:50:50 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 09:29:22 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ static void		define_spec(const char *format_string)
 
 static void		count_sym_to_spec(const char *format)
 {
-	g_spec.shift_spec = 0;
 	g_spec.spec = 0;
 	while (!ismy(*format) && *format)
 	{
@@ -64,19 +63,13 @@ void			work_to_format(const char *format, va_list form)
 {
 	while (*format)
 	{
-		//printf("1\n");
 		if (*format == '%')
 		{
+			g_spec.shift_spec = 0;
 			++format;
-			call_fun_format(format, form);
+			if (*format)
+				call_fun_format(format, form);
 			format += g_spec.shift_spec;
-// printf("spec = %c\n", g_spec.spec);
-// printf("mod = %d\n", g_spec.mod);
-// printf("accuracy = %d\n", g_spec.accuracy);
-// printf("width = %d\n", g_spec.width);
-// printf("shift_spec = %ld\n", g_spec.shift_spec);
-// printf("size_write = %d\n", g_spec.size_write);
-// printf("ret_printf = %d\n", g_spec.ret_printf);
 		}
 		else
 		{

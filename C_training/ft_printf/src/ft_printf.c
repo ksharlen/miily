@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 07:55:41 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/23 07:46:42 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 09:23:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int				ft_printf(const char *format, ...)
 	g_spec.ret_printf = 0;
 	g_spec.fd = 1;
 	g_spec.size_write = 0;
+	g_spec.shift_spec = 0;
 	g_spec.size_buf = SIZE_BUF;
 	va_start(form, format);
 	work_to_format(format, form);

@@ -245,9 +245,3 @@ void	test_x(void)
 	printf("------------test21-------------\n");
 	assert(ft_printf("%#.10x\n", 1) == printf("%#.10x\n", 1));
 }
-
-void	test_b(void)
-{
-	printf("------------test1--------------\n");
-	assert(ft_printf("|%20b|\n", 1) == printf("|%20b|\n", 1));
-}

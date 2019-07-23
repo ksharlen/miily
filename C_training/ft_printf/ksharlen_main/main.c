@@ -9,6 +9,7 @@ int		main(void)
 	// test_other();
 	// test_c();
 	// test_s();
+	// test_b();
 
 	// ft_printf("%lc", L'П');
 
@@ -26,15 +27,18 @@ int		main(void)
 int		ret;
 int		ret_ft;
 
-	ret = printf("%");
-	ret_ft = ft_printf("%");
-	printf("\n");
-	printf("ret = %d\nret_ft = %d\n", ret, ret_ft);
+	// ret = printf("%");
+	// ret_ft = ft_printf("%");
+	// printf("\n");
+	// printf("ret = %d\nret_ft = %d\n", ret, ret_ft);
 //!END_FAILD
 
+	ft_printf("%hU", 4294967296);
+
 	// ret = ft_printf("% hZ%");
-	//printf("\n");
-	//printf("ret = %d\n", ret);
+	// printf("size_write = %d\n", g_spec.size_write);
+	// printf("\n");
+	// printf("ret = %d\n", ret);
 	// ret = printf("%-05%");
 	// printf("\n");
 	// ft_printf("%-05%");
