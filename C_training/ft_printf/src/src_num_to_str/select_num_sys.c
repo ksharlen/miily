@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   select_num_sys.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/28 19:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:12:30 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/23 09:57:25 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ static unsigned long long	pull_unsigned_int_arg(va_list format)
 	unsigned long long int	ret;
 
 	ret = 0;
-	if (g_spec.mod == ZERO)
+	if ((g_spec.spec == 'U' || g_spec.spec == 'O'))
+		ret = va_arg(format, unsigned long);
+	else if (g_spec.mod == ZERO)
 		ret = (unsigned char)va_arg(format, unsigned int);
 	else if (g_spec.mod == PLUS)
 		ret = (unsigned short)va_arg(format, unsigned int);
@@ -55,8 +57,6 @@ static unsigned long long	pull_unsigned_int_arg(va_list format)
 		ret = va_arg(format, uintmax_t);
 	else if (g_spec.mod == DOT || g_spec.mod == DEC)
 		ret = va_arg(format, size_t);
-	else if ((g_spec.spec == 'U' || g_spec.spec == 'O') && !g_spec.mod)
-		ret = va_arg(format, unsigned long);
 	else if (g_spec.spec == 'p')
 		ret = va_arg(format, uintptr_t);
 	else

@@ -33,7 +33,12 @@ int		ret_ft;
 	// printf("ret = %d\nret_ft = %d\n", ret, ret_ft);
 //!END_FAILD
 
+	int pow;
+
 	ft_printf("%hU", 4294967296);
+	//ft_printf("%U", 1234);
+	//pow = ft_pow(2, 16);
+	//printf("pow = %u\n", pow);
 
 	// ret = ft_printf("% hZ%");
 	// printf("size_write = %d\n", g_spec.size_write);
