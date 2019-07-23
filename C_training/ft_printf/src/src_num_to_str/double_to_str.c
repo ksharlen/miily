@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/30 15:25:14 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/22 17:02:53 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/23 12:08:47 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ static void				nan_infinity(t_uni *real_num)
 	unsigned char		*inbuf;
 
 	if (g_spec.flags & DOT)
+	{
 		(g_spec.flags ^= DOT);
+		g_spec.accuracy = 0;
+	}
 	if (g_spec.flags & ZERO)
 		(g_spec.flags ^= ZERO);
 	if (real_num->bits.mantissa << 1)

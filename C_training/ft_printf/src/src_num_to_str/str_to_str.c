@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 13:36:37 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 12:09:03 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void				push_wa(unsigned char *inbuf)
 	unsigned char	sym;
 
 	sym = ' ';
+	zeroing_negative_num();
 	if (g_spec.flags & DASH && g_spec.width > 0)
 	{
 		memcpy_buf(inbuf, g_spec.size_num);
@@ -84,7 +85,6 @@ void				str_to_str(va_list format)
 		utf_str = (unsigned char *)"(null)";
 	g_spec.size_num = ft_strlen((const char *)utf_str);
 	work_aw();
-	zeroing_negative_num();
 	push_wa(utf_str);
 	if ((g_spec.spec == 'S') || (g_spec.spec == 's' && g_spec.mod & DASH))
 		ft_ustrdel(&utf_str);
