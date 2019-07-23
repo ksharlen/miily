@@ -1,6 +1,6 @@
 NAME := libftprintf.a
 LIBFT := libft.a
-HEADERS := libft.h ft_printf.h
+HEADERS := ft_printf.h
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 REMOVE := /bin/rm -rf
@@ -61,7 +61,7 @@ $(NAME): $(OBJS)
 	mv $(LIBFT) $(NAME)
 	ar rc $(NAME) $(addprefix $(DIR_BIN), $(OBJS))
 
-$(OBJS):%.o:%.c | $(DIR_BIN)
+$(OBJS):%.o:%.c $(HEADERS) | $(DIR_BIN)
 	$(CC) -c $(CFLAGS) $< -o $(DIR_BIN)$@ $(DIR_INCLUDE)
 
 $(DIR_BIN):

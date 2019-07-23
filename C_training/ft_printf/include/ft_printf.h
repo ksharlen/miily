@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 17:00:46 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/23 06:39:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 /*
 **sysNum
 */
-
 # define BIN 				2
 # define OCT 				8
 # define DECEM				10
