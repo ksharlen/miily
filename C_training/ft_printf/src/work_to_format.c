@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 16:06:53 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/23 09:29:22 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/24 11:16:40 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void			work_to_format(const char *format, va_list form)
 			}
 			else
 			{
+				//printf("\nhere, haha\n");
+				//printf("*format = %d\n", *format);
 				work_buf((unsigned char *)format, 1);
 				format++;
 			}

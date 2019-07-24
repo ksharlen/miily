@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/21 10:28:36 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/24 11:18:45 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,13 @@ void				memcpy_buf(void *src, size_t size)
 	buf = work_buf(GET_POINT, 0);
 	ret_check_loc = check_loc_buf(size);
 	if (ret_check_loc == 1)
-		write_buf_and_clean(NULL);
-	else if (ret_check_loc == -1)
 	{
 		write_buf_and_clean(NULL);
+		work_buf(src, size);
+	}
+	else if (ret_check_loc == -1)
+	{
+		write_buf_and_clean(WRITE_BUF);
 		g_spec.ret_printf += write(g_spec.fd, src, size);
 	}
 	else

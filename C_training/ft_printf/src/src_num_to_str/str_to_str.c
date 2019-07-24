@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/23 16:02:32 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 11:19:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,15 @@ void				push_wa(unsigned char *inbuf)
 	if (g_spec.flags & DASH && g_spec.width > 0)
 	{
 		memcpy_buf(inbuf, g_spec.size_num);
-		memset_buf(sym, g_spec.width);
+		if (g_spec.width)
+			memset_buf(sym, g_spec.width);
 	}
 	else
 	{
 		if (g_spec.flags & ZERO)
 			sym = '0';
-		memset_buf(sym, g_spec.width);
+		if (g_spec.width)
+			memset_buf(sym, g_spec.width);
 		memcpy_buf(inbuf, g_spec.size_num);
 	}
 }

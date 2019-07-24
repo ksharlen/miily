@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   buf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/03 08:55:01 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/19 12:08:32 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 11:19:02 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ unsigned char				*work_buf(const unsigned char *inbuf,\
 	if (ret_check_loc == 1)
 	{
 		write_buf_and_clean(buf);
-		ret_buf = (buf + g_spec.size_write);
+		ret_buf = buf;
 	}
 	else if (ret_check_loc == -1)
 	{
