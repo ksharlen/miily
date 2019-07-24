@@ -28,8 +28,8 @@ int		ret;
 int		ret_ft;
 
 	//ret = printf("%s %s %s\n", "this", "is", "a");
-	ret_ft = ft_printf("%s %s %s\n", "this", "is", "a");
-	printf("ret_ft = %d\n", ret_ft);
+	// ret_ft = ft_printf("%s %s %s\n", "this", "is", "a");
+	// printf("ret_ft = %d\n", ret_ft);
 	//printf("ret = %d\nret_ft = %d\n", ret, ret_ft);
 	//printf("%p\n", 0);
 	//ft_printf("%p\n", 0);
@@ -66,7 +66,7 @@ int		ret_ft;
 	// printf("\\!/%61.31le\\!/\n", 0.000000000000000000000000434535353534535345345345345345345345);
 	// ft_printf("\\!/%61.31le\\!/\n", 0.000000000000000000000000434535353534535345345345345345345345);
 
-	printf(">>>>>>>>>>>>>>>>>>>>%+60.22f<<<<<<<<<<<<<<<<<<\n", NAN);
-	ft_printf(">>>>>>>>>>>>>>>>>>>>%+60.22f<<<<<<<<<<<<<<<<<<\n", NAN);
+	printf("|%19.4lg|\n", 15.000);
+	ft_printf("|%19.4lg|\n", 15.000);
 	return (0);
 }

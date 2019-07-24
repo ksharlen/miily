@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 11:36:19 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 12:34:35 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ typedef struct				s_long
 	unsigned				*nbr_int;
 	unsigned				*nbr_fract;
 	unsigned				*nbr_tmp;
+	unsigned				*nbr_dot;
 	int						len_int;
 	int						len_fract;
 	int						len_tmp;
