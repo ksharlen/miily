@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 09:24:29 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 12:38:59 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 15:00:13 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void				long_arithmetic(t_uni real_num, t_long *res)
 	ft_memcpy(res->nbr_tmp + res->len_fract, res->nbr_int,\
 								res->len_int * sizeof(int));
 	res->len_tmp = res->len_int + res->len_fract;
-	res->nbr_dot = res->nbr_tmp + res->len_int + 1;
+	res->nbr_dot = res->nbr_tmp + res->len_fract;
 	free(res->nbr_int);
 	free(res->nbr_fract);
 }

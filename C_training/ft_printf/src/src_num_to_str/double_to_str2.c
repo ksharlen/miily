@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:47:39 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 14:20:36 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 16:05:05 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ static ssize_t	size_num_for_long_g(t_long *res)
 	{
 		g_spec.spec -= 2;
 		g_spec.accuracy -= 1;
-		len = res->len_tmp - g_spec.accuracy + (res->e < 0 ? res->e : 0);
+		len = res->len_tmp - g_spec.accuracy + (res->e < 0 ? res->e : 0) - 1;
+		res->nbr_dot = res->nbr_tmp + res->len_tmp + (res->e < 0 ? res->e : -1);
 	}
 	return (delete_zero(res, res->nbr_tmp, len));
 }
@@ -113,7 +114,7 @@ size_t			size_num_for_long(t_long *res)
 	else
 	{
 		// printf("acc = %d\n", g_spec.accuracy);
-		l = (g_spec.flags & DOT ? g_spec.accuracy + 1 : 7);
+		l += (g_spec.flags & DOT ? g_spec.accuracy + 1 : 7);
 		// printf("l = %zd\n", l);
 		check_e(res);
 		res->len_tmp += (res->e < 0 ? res->e : 0);
@@ -127,6 +128,6 @@ size_t			size_num_for_long(t_long *res)
 		++l;
 	if (g_spec.flags & SPACE || g_spec.flags & PLUS || g_spec.flags & DEC)
 		++l;
-// printf("l = %zd\nlen_fract = %d\nlen_tmp = %d\n", l, res->len_fract, res->len_tmp);
+  	printf("l = %zd\nlen_fract = %d\nlen_tmp = %d\n", l, res->len_fract, res->len_tmp);
 	return (l);
 }
