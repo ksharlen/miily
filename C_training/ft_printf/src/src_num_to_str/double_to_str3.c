@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:40:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 16:15:13 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 16:49:46 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ ssize_t			delete_zero(t_long *res, unsigned int *nbr, ssize_t i)
 
 	if (g_spec.flags & HASH)
 		return (0);
-	// printf("i = %zd\n", i);
-	// printf("res->len_tmp = %zd\n", res->len_tmp);
 	size = (i < 0 ? i : 0);
 	if (i <= 0 && !*nbr)
 	{
@@ -29,19 +27,12 @@ ssize_t			delete_zero(t_long *res, unsigned int *nbr, ssize_t i)
 	while (i > 0 && (i + 1) < res->len_tmp && (nbr + i) != res->nbr_dot &&\
 	(banker_rounding(nbr, i - 1, res->len_tmp) ? nbr[i] == 9 : !nbr[i]))
 	{
-		// printf("§");
 		--size;
 		++i;
 	}
-	printf("res->len_tmp - i = %zd\n e = %d\n", res->len_tmp - i, res->e);
-	// if ((res->len_tmp - i) == res->len_int || (res->len_tmp - i) == 1)
-	if ((nbr + i) == res->nbr_dot)
-	{
-		printf("1\n");
+	if ((res->e < 0 && (nbr + i + 1) == res->nbr_dot) || (res->e > 0 &&\
+		(nbr + i) == res->nbr_dot) || (res->len_tmp - i) == res->len_int)
 		res->nbr_dot = NULL;
-	}
-	// printf("acc = %d\n", g_spec.accuracy);
-	printf("size = %zd\n", size);
 	return (size);
 }
 
