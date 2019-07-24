@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   work_buf_by_hand.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/06 10:56:35 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 11:34:54 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 12:51:41 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,10 @@ void				memset_buf(unsigned char sym, int size)
 		ft_ustrdel(&buf);
 		return ;
 	}
-	// else
-	// {
-		buf = work_buf(GET_POINT, 0);
-		ft_memset(buf, sym, size);
-		g_spec.size_write += size;
-		g_spec.size_buf -= size;
-	//}
+	buf = work_buf(GET_POINT, 0);
+	ft_memset(buf, sym, size);
+	g_spec.size_write += size;
+	g_spec.size_buf -= size;
 }
 
 void				memcpy_buf(void *src, size_t size)
