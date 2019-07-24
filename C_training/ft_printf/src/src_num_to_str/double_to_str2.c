@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:47:39 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 12:45:04 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 12:57:46 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ static ssize_t	rounding_number(t_long *res, unsigned int *nbr, ssize_t i)
 		}
 	if (nbr[res->len_tmp])
 	{
-		// ++res->len_int;
-		++res->nbr_dot;
+		++res->len_int;
 		++res->len_tmp;
 		return (1);
 	}

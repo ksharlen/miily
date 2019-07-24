@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:40:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 12:33:56 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 13:00:06 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ ssize_t			delete_zero(t_long *res, unsigned int *nbr, ssize_t i)
 		--size;
 		++i;
 	}
-	// if ((res->len_tmp - i) == res->len_int)
-	// 	--size;
+	if ((res->len_tmp - i) == res->len_int)
+		res->nbr_dot == NULL;
 	return (size);
 }
 
