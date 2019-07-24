@@ -6,7 +6,7 @@
 /*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 10:40:44 by cormund           #+#    #+#             */
-/*   Updated: 2019/07/24 13:00:06 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 13:16:19 by cormund          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ssize_t			delete_zero(t_long *res, unsigned int *nbr, ssize_t i)
 {
 	ssize_t		size;
 
-	if (g_spec.spec == 'e' || g_spec.spec == 'E' || g_spec.flags & HASH)
+	if (g_spec.flags & HASH)
 		return (0);
 	size = (i < 0 ? i : 0);
 	if (i <= 0 && !*nbr)
@@ -30,8 +30,8 @@ ssize_t			delete_zero(t_long *res, unsigned int *nbr, ssize_t i)
 		--size;
 		++i;
 	}
-	if ((res->len_tmp - i) == res->len_int)
-		res->nbr_dot == NULL;
+	if ((res->len_tmp - i) == res->len_int || (res->len_tmp - i) == 1)
+		res->nbr_dot = NULL;
 	return (size);
 }
 
