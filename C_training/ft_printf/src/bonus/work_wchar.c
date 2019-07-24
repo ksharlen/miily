@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/23 10:15:39 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/24 14:19:13 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ unsigned char		*convert_utf8(wchar_t *str)
 
 	index = 0;
 	len = bytelen(str);
-	if (!(ret_str = (unsigned char *)malloc(len + 1)))
-		return (NULL);
+	if (!(ret_str = (unsigned char *)malloc
+		(sizeof(unsigned char) * (len + 1))))
+		exit(0);
 	p_ret_str = ret_str;
 	ft_bzero(ret_str, len + 1);
 	while (index < len)
