@@ -3,6 +3,26 @@
 
 int		main(void)
 {
+	long a;
+	long *p_a;
+
+	p_a = &a;
+	//ft_printf("%#025b", 4123);
+	//ft_printf("hello world%zn how are you?\n", p_a);
+	//printf("a = %d\n", *p_a);
+
+	// ft_printf("%ls", L"Привет мир!!!\n");
+	// ft_printf("%S", L"Привет еще раз мир!!!\n");
+	// ft_printf("%ls", L"Привет мир!!!\n");
+	// ft_printf("%S", L"Привет еще раз мир!!!\n");
+	// ft_printf("%ls", L"Привет мир!!!\n");
+	// ft_printf("%S", L"Привет еще раз мир!!!\n");
+	// ft_printf("%ls", L"Привет мир!!!\n");
+	// ft_printf("%S", L"Привет еще раз мир!!!\n");
+	ft_printf("%S", L"");
+	ft_printf("%S", L"");
+	ft_printf("%S", L"");
+	ft_printf("%S", L"");
 	// test_d();
 	// test_o();
 	// test_x();
@@ -66,7 +86,7 @@ int		ret_ft;
 	// printf("\\!/%61.31le\\!/\n", 0.000000000000000000000000434535353534535345345345345345345345);
 	// ft_printf("\\!/%61.31le\\!/\n", 0.000000000000000000000000434535353534535345345345345345345345);
 
-	printf("|%19.4lg|\n", 15.000);
-	ft_printf("|%19.4lg|\n", 15.000);
+	// printf("|%19.4lg|\n", 15.000);
+	// ft_printf("|%19.4lg|\n", 15.000);
 	return (0);
 }
