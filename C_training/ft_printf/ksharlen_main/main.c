@@ -11,18 +11,15 @@ int		main(void)
 	//ft_printf("hello world%zn how are you?\n", p_a);
 	//printf("a = %d\n", *p_a);
 
-	// ft_printf("%ls", L"Привет мир!!!\n");
-	// ft_printf("%S", L"Привет еще раз мир!!!\n");
-	// ft_printf("%ls", L"Привет мир!!!\n");
-	// ft_printf("%S", L"Привет еще раз мир!!!\n");
-	// ft_printf("%ls", L"Привет мир!!!\n");
-	// ft_printf("%S", L"Привет еще раз мир!!!\n");
-	// ft_printf("%ls", L"Привет мир!!!\n");
-	// ft_printf("%S", L"Привет еще раз мир!!!\n");
-	ft_printf("%S", L"");
-	ft_printf("%S", L"");
-	ft_printf("%S", L"");
-	ft_printf("%S", L"");
+	ft_printf("%ls", L"Привет мир!!!\n");
+	ft_printf("%S", L"Привет еще раз мир!!!\n");
+	ft_printf("%ls", L"Привет мир!!!\n");
+	ft_printf("%S", L"Привет еще раз мир!!!\n");
+	ft_printf("%ls", L"Привет мир!!!\n");
+	ft_printf("%S", L"Привет еще раз мир!!!\n");
+	ft_printf("%ls", L"Привет мир!!!\n");
+	ft_printf("%S", L"Привет еще раз мир!!!\n");
+	ft_printf("%S", L"test");
 	// test_d();
 	// test_o();
 	// test_x();

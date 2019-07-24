@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cormund <cormund@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 12:34:35 by cormund          ###   ########.fr       */
+/*   Updated: 2019/07/24 16:14:15 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <stddef.h>
 
-# define SIZE_BUF			1
+# define SIZE_BUF			64
 # define WRITE_BUF			NULL
 # define GET_POINT			WRITE_BUF
 
@@ -228,7 +228,7 @@ t_utf						push_unicode(t_utf utf);
 unsigned char				*push_wchar_to_buf(t_utf utf);
 t_utf						convert_sym_utf8(wchar_t sym);
 unsigned char				*push_wchar_in_char(t_utf utf, unsigned char *str);
-unsigned char				*convert_utf8(wchar_t *str);
+unsigned char				*convert_utf8(wchar_t *str, size_t len_utf8);
 
 /*
 **other function

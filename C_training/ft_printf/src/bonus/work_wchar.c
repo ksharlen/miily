@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/18 18:57:24 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 14:19:13 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/24 16:06:31 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@ t_utf				convert_sym_utf8(wchar_t sym)
 
 unsigned char		*push_wchar_in_char(t_utf utf, unsigned char *str)
 {
+	unsigned char sym;
+
 	while (utf.bytes)
 	{
-		*str++ = (utf.utf_sym >> (8 * (utf.bytes - 1)));
+		sym = (utf.utf_sym >> (8 * (utf.bytes - 1)));
+		*str = sym;
+		str++;
 		--utf.bytes;
 	}
 	return (str);
@@ -49,7 +53,7 @@ static size_t		bytelen(wchar_t *str)
 	return (len);
 }
 
-unsigned char		*convert_utf8(wchar_t *str)
+unsigned char		*convert_utf8(wchar_t *str, size_t len_utf8)
 {
 	t_utf			utf;
 	size_t			len;
@@ -59,12 +63,10 @@ unsigned char		*convert_utf8(wchar_t *str)
 
 	index = 0;
 	len = bytelen(str);
-	if (!(ret_str = (unsigned char *)malloc
-		(sizeof(unsigned char) * (len + 1))))
+	if (!(ret_str = (unsigned char *)ft_memalloc(len + 1)))
 		exit(0);
 	p_ret_str = ret_str;
-	ft_bzero(ret_str, len + 1);
-	while (index < len)
+	while (index < len_utf8)
 	{
 		utf = convert_sym_utf8(str[index]);
 		p_ret_str = push_wchar_in_char(utf, p_ret_str);
