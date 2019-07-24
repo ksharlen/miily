@@ -9,6 +9,10 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/ksharlen_main/main",
+			"name": "main",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/ksharlen_main/",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -16,4 +20,6 @@
 			"externalConsole": false,
 			"MIMode": "lldb"
 		}
+		},
+	]
 }

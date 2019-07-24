@@ -6,7 +6,7 @@
 /*   By: ksharlen <ksharlen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 17:54:33 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/07/24 14:16:47 by ksharlen         ###   ########.fr       */
+/*   Updated: 2019/07/24 16:06:43 by ksharlen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,14 @@ void				str_to_str(va_list format)
 {
 	wchar_t			*inbuf;
 	unsigned char	*utf_str;
+	size_t			len;
 
+	utf_str = NULL;
 	if ((g_spec.spec == 'S') || (g_spec.spec == 's' && g_spec.mod & DASH))
 	{
 		inbuf = va_arg(format, wchar_t *);
-		utf_str = convert_utf8(inbuf);
+		len = ft_wcslen(inbuf);
+		utf_str = convert_utf8(inbuf, len);
 	}
 	else
 		utf_str = va_arg(format, unsigned char *);
